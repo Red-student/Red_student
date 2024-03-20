@@ -132,7 +132,7 @@ a {
 }
 
 /*Стиль для ссылки при наведение курсора*/
-a:hover {
+.container a:hover {
     text-decoration: underline;
 }
 

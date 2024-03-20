@@ -1,0 +1,600 @@
+/*Стили для всех элементов в теге body*/
+body{
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Стили header*/
+header{
+    display: flex;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+    width: 100%;
+}
+
+/*Логотип*/
+.logo{
+    height: 90px;
+    width: auto;
+    margin: 7px 0 7px 35px;
+}
+
+/*Стили навигационного меню */
+nav{
+    margin-left: 20px; 
+}
+
+/*Стили навигационного меню для списка*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px 0px;
+}
+
+/*Стили навигационного меню для а (ссылки)*/
+nav a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    transition: .4s ease-in-out;
+}
+
+/*Стили для элементов списка верхнего уровня в меню*/
+.menu > li {
+    display: inline-block;
+    position: relative;
+    padding: 12px 25px;
+}
+
+/*Стили для ссылок в элементах списка верхнего уровня*/
+.menu > li > a {
+    font-family: 'Exo 2', sans-serif;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 30px;
+    font-weight: bold;
+    color: #003559;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+/*Стили для псевдоэлемента*/
+.down:after {
+    content: "\25BC";
+    margin-left: 8px;
+    font-family: "FontAwesome";
+    color: inherit;
+}
+
+/*Стили для ссылок в списках при наведении на них курсора*/
+.menu li a:hover {
+    color: #D81324;
+}
+
+/*Стили для выпадающего меню при на ведении на пункт меню*/
+.menu > li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+/*Стили для выпадающего меню*/
+.submenu {
+    position: absolute;
+    width: 100%;
+    background-color: #003559;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.33s ease;
+}
+
+/*Стили для ссылок в выпадающем меню*/
+.submenu a {
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+
+/*Стили для ссылок в выпадающем меню при наведении на них курсора*/
+.submenu li a:hover {
+    color: #ffffff; 
+    background-color: #D81324; 
+}
+
+/*Стили для блока каталога новых автомобилей */
+.pois_blok1 {
+    padding-top: 5px;
+    padding-bottom: 18px;
+}
+
+/* Стили для обертки блока каталога */
+.pois_blok2 {
+    width: 100%;
+    max-width: 1460px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Стили для внутреннего контейнера блока каталога */
+.pois_blok3 {
+    position: relative;
+    border-radius: 20px;
+    background-color: rgba(198, 198, 198, 0.408);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+/* Стили для заголовка каталога */
+.h1_title {
+    display: flex;
+    margin-bottom: 16px;
+    font-size: 40px;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0 0 0 10px;
+    padding: 10px 10px 0 10px;
+    font-style: normal;
+    line-height: 1.333;
+    letter-spacing: .01em;
+}
+
+/* Стили для блока параметров каталога */
+.pois_catalog {
+    padding: 20px;
+    max-width: 99%;
+}
+
+/* Стили для внутреннего контейнера блока параметров каталога */
+.pois_catalog2 {
+    box-sizing: border-box;
+    padding-bottom: 0;
+    padding: 20px 20px 8px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.567);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для заголовка параметров каталога */
+.pois_catalog2_h3 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 30px;
+    line-height: 1.5;
+    text-decoration: none;
+    margin: 0 0 18px;
+    font-style: normal;
+    letter-spacing: .01em;
+    color: #000000;
+}
+
+/*Стили для контейнера фильтров */
+.pois_catalog3 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Стили для контейнера фильтров */
+.filter-container1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 13rem;
+    margin-right: 20px;
+}
+
+/* Стили для контейнера фильтров */
+.filter-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* Стили для группы фильтров */
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/* Стили для элемента фильтра */
+.filter-item {
+    margin-bottom: 20px;
+}
+
+/* Стили для метки элемента фильтра */
+.filter-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+/* Стили для ценового фильтра */
+.price-filter {
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для выпадающего списка и поля ввода фильтра */
+.filter-item select,
+.filter-item input {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 550;
+    padding: 10px 10px 9px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Стили для выпадающего списка фильтра */
+.filter-item select{
+    cursor: pointer;
+}
+
+/* Стили для контейнера кнопок */
+.filter-container3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+/* Стили для кнопок */
+button{
+    cursor: pointer;
+}
+
+/*Стиль для блок в котором находится кнопка сбросить параметры*/
+.extended-search {
+    display: flex;
+}
+
+/*Стиль для кнопки сбросить параметры*/
+.extended-search button {
+    width: 240px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 550;
+    padding: 10px;
+    background-color: #003a61;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/*Стиль для кнопки сбросить параметры при наведении курсора*/
+.extended-search:hover button {
+    color: #ffffff;
+    background-color: #0056b3;
+}
+
+/* Стили для кнопки показа */
+.show-button button {
+    text-align: center;
+    width: 240px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px;
+    background-color: #003a61;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для кнопки показа при наведении курсора мыши */
+.show-button:hover button{
+    color: #ffffff;
+    background-color: #0056b3;
+}
+
+/* Стили для строки поиска */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для поля ввода строки поиска */
+.search-bar input{
+    width: 240px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Стили для иконки поиска */
+.search-icon {
+    position: absolute; 
+    right: 10px; 
+    cursor: pointer; 
+    fill: #333; 
+}
+
+/* Стили для отступа между элементами */
+span{
+    padding-left: 5px;
+}
+
+/* Стили для выпадающего списка */
+select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M6 9.5L12 15.5L18 9.5" stroke="%23494949" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+/* Стили для скрытия стрелки выпадающего списка в IE */
+select::-ms-expand {
+  display: none; 
+}
+
+/* Стили для блока контента */
+.content_block1{
+    width: 100%;
+    max-width: 1460px;
+    margin: 0 auto;
+}
+
+/* Стили для внутреннего контейнера блока контента */
+.content_block2{
+    position: relative;
+    height: 100%;
+    padding: 20px 20px 12.5px 20px;
+    background-color: rgba(198, 198, 198, 0.408);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+}
+
+/* Стили для отступа снизу */
+.content_block3{
+    margin-bottom: 32px;
+}
+
+/* Стили для контейнера заголовка и элемента фильтра */
+.content_block4{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стили для заголовка */
+.content_block5{
+    font-size: 34px;
+    font-weight: 550;
+}
+
+/* Стили для элемента фильтра */
+.content_block5-1{
+    flex-basis: 240px;
+    width: 240px;
+    margin-left: 16px 
+}
+
+/* Стили для выпадающего списка фильтра */
+.content_block5-2{
+    display: inline-block;
+    position: relative;
+    outline: 0;
+    width: 100%;
+    max-height: 40px 
+}
+
+/* Общие стили для выпадающего списка */
+.select-css { 
+    display: block; 
+    font-size: 18px; 
+    font-weight: 550; 
+    color: #444; 
+    line-height: 1.3; 
+    padding: 10px 22px 9px 10px;
+    width: 100%;  
+    box-sizing: border-box; 
+    margin: 0; 
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04); 
+    border-radius: 8px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: #fff; 
+    background-image: url("../img/filtr.png"); 
+    background-repeat: no-repeat, repeat;
+    background-position: right 9px top 50%, 0 0;
+    background-size: 20px auto, 100%;
+}
+
+/* Стили для скрытия стрелки выпадающего списка в IE */
+.select-css::-ms-expand { 
+    display: none;
+}
+
+/* Стили при наведении на выпадающий список */
+.select-css:hover{ 
+    border-color: #000000;
+}
+
+/* Стили при фокусе на выпадающем списке */
+.select-css:focus{ 
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.7);
+    color: #000000;
+    outline: none; 
+} 
+
+/* Стили для контейнера автомобилей */
+.car-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+/* Стили для блока автомобиля */
+.car-block {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: calc(25% - 20px);
+    margin-bottom: 10px; /* Отступ между блоками */
+}
+
+/* Стили для ссылки в блоке автомобиля */
+.car-block a{
+    color: black; 
+    text-decoration: none; 
+}
+
+/* Стили для заголовка блока автомобиля */
+.car-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+  
+/* Стили для содержимого блока автомобиля */
+.car-content {
+    color: #9f9f9f;
+    text-align: justify;
+    margin-right: 15px;
+}
+
+/* Стили для отступа между элементами содержимого блока автомобиля */
+.car-content + .car-content {
+    margin-top: -9px; 
+}
+
+/* Стили для контейнера изображения автомобиля и краткой информации */
+.pod_car{
+    position: relative;
+    padding: 0 8px 0 8px; 
+}
+
+/* Стили для изображения автомобиля */
+.car-image {
+    width: 100%; 
+    height: 270px; 
+    border-radius: 10px 10px 0 0;
+}
+
+/* Стили для иконки "сердце" */
+.heart-icon {
+    color:#000000;
+    margin-right: 15px; 
+    font-size: 35px;
+}
+
+/* Стили для контейнера автомобилей (второй блок) */
+.car-container2{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Стили для переключении между страницами контента */
+.pagination {
+    text-align: center; 
+    margin-top: 25px; 
+}
+
+/* Стили для списка страниц*/
+.pagination ul {
+    list-style: none; 
+    padding: 0;
+}
+
+/* Стили для элементов списка страниц */
+.pagination li {
+    display: inline; 
+    margin: 0 5px; 
+}
+
+/* Стили для ссылок в списке страниц */
+.pagination li a {
+    text-decoration: none;
+    color: #000; 
+    font-size: 23px; 
+}
+
+/* Стили при наведении на ссылки в списке страниц */
+.pagination li a:hover {
+    color: #f00; 
+}
+
+/* Стили для описания блока с информацией о том что даелает данная страница */
+.catalog-description{
+    background-color: rgba(198, 198, 198, 0.611);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 20px;
+    margin: 25px 0 10px 0;
+    color: #333;
+    text-align: center;
+}
+
+/* Стили для футера */
+footer{
+    position: absolute;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+    box-sizing: border-box;
+    padding: 40px 0 20px 0;
+}
+
+/* Стили для строк футера */
+.footer-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: top;
+}
+
+/* Стили для текста в футере */
+.footer-text1{
+    padding: 0 20px 0 20px;
+    color: #ffffff;
+    align-self: flex-start;
+    max-width: 800px;
+}
+
+/* Стили для текста в футере */
+.footer-text2{
+    padding: 0 0 0 0;
+    color: #ffffff;
+}
+
+/* Стили для текста в футере */
+.footer-text3{
+    padding: 0 30px 10px 20px;
+    color: #ffffff;
+}
+
+/* Стили для иконок в футере */
+.footer-icons > * + *{
+    margin-left: 40px;
+} 
+
+/* Стили для иконок в футере */
+.footer-icons a{
+    text-decoration: none;
+}

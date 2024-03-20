@@ -1,0 +1,460 @@
+/*Стили для всех элементов в теге body*/
+body{
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Стили header*/
+header{
+    display: flex;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+    width: 100%;
+}
+
+/*Логотип*/
+.logo{
+    height: 90px;
+    width: auto;
+    margin: 7px 0 7px 35px;
+}
+
+/*Стили навигационного меню */
+nav{
+    margin-left: 20px; 
+}
+
+/*Стили навигационного меню для списка*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px 0px;
+}
+
+/*Стили навигационного меню для а (ссылки)*/
+nav a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    transition: .4s ease-in-out;
+}
+
+/*Стили для элементов списка верхнего уровня в меню*/
+.menu > li {
+    display: inline-block;
+    position: relative;
+    padding: 12px 25px;
+}
+
+/*Стили для ссылок в элементах списка верхнего уровня*/
+.menu > li > a {
+    font-family: 'Exo 2', sans-serif;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 30px;
+    font-weight: bold;
+    color: #003559;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+/*Стили для псевдоэлемента*/
+.down:after {
+    content: "\25BC";
+    margin-left: 8px;
+    font-family: "FontAwesome";
+    color: inherit;
+}
+
+/*Стили для ссылок в списках при наведении на них курсора*/
+.menu li a:hover {
+    color: #D81324;
+}
+
+/*Стили для выпадающего меню при на ведении на пункт меню*/
+.menu > li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+/*Стили для выпадающего меню*/
+.submenu {
+    position: absolute;
+    width: 100%;
+    background-color: #003559;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.33s ease;
+}
+
+/*Стили для ссылок в выпадающем меню*/
+.submenu a {
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+
+/*Стили для ссылок в выпадающем меню при наведении на них курсора*/
+.submenu li a:hover {
+    color: #ffffff; 
+    background-color: #D81324; 
+}
+
+/*Стили для первого блока с текстом и изображением*/
+.marginBottom_large {
+    margin-bottom: 0px;
+    height: 575px;
+    position: relative;
+}
+
+/*Стили для контейнера изображения*/
+.image-container {
+    padding: 0px 0px;
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    display: block;
+    flex-wrap: wrap;
+}
+
+/*Стили для блока с текстом*/
+.div_block1{
+    position: absolute;
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0);
+    color: #000000;
+    padding: 20px 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*Стили для текста внутри блока .div_block1*/
+.div_text1{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Стиль для основоного блока в котором лежит текст и картинка*/
+.div_block2{
+    display: flex;
+    padding-right: 7%;
+    padding-left: 7%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+/* Стиль для блока с текстом */
+.div_block3{
+    transform: none;
+    width: 100%;
+    opacity: 0;
+    position: relative;
+    padding-right: 15px;
+    padding-left: 50px;
+    margin-right: 50px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Стиль для текста заголовка */
+.div_title span{
+    font-size: 21px;
+    color: #D81324;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Стиль для абзаца */
+.div_title p{
+    font-size: 20px;
+    color: #000000;
+    line-height: 28px;
+    text-align: justify;
+}
+
+/* Стиль для заголовка (второго) */
+.div_title h2{
+    font-size: 33px;
+    color: #0B2154;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/*стиль для блока в котором находится картинка*/
+.div_title_img{
+    transform: none;
+    opacity: 0;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    transition: opacity 0.7s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Стиль для анимации появления блоков */
+.left-block {
+    transform: translateX(-100px); 
+}
+
+/* Стиль для анимации появления блоков */
+.right-block {
+    transform: translateX(100px); 
+}
+
+/* Стиль для изображений в блоке */
+.div_title_acardimg img{
+    display: block; 
+    margin: 0 auto; 
+    width: 100%; 
+    height: auto;
+    border: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Анимация появления блоков */
+.div_block2:hover .left-block {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Анимация появления блоков */
+.div_block2:hover .right-block {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Стиль для второго основного блока, содержащего текст и картинку */
+.div_block2-2{
+    display: flex;
+    padding-right: 7%;
+    padding-left: 7%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 120px;
+    margin-bottom: 150px;
+}
+
+/* Стиль для блока с текстом */
+.div_block3-2{
+    transform: none;
+    width: 50%;
+    opacity: 0;
+    position: relative;
+    padding-right: 15PX;
+    padding-left: 50px;
+    margin-right: 50px;
+    transition: opacity 0.7s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/*Стиль для блока в котором находится картинка*/
+.div_title_img2{
+    transform: none;
+    opacity: 0;
+    position: relative;
+    min-height: 1px;
+    margin-left: 15PX;
+    transition: opacity 0.7s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Стиль для анимации появления блоков */
+.left-block2 {
+    transform: translateX(-100px); 
+}
+
+/* Стиль для анимации появления блоков */
+.right-block2 {
+    transform: translateX(100px); 
+}
+
+/* Стиль для изображений в блоке */
+.div_title_acardimg2 img{
+    display: block; 
+    width: 113%;
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Стиль для анимации появления блоков */
+.div_block2-2:hover .left-block2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Стиль для анимации появления блоков */
+.div_block2-2:hover .right-block2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Стили для списка блока*/
+.videocard_list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Стили для элемента списка блока */
+.videocard_list li {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Стили для SVG-иконок в элементе списка*/
+.videocard_list li svg {
+    margin-right: 10px;
+}
+
+/* Стили для абзацев в элементе списка*/
+.videocard_list li p {
+    margin: 0;
+}
+
+/* Стили для контейнера с новостями */
+.news-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 15px;
+    flex-wrap: wrap;
+}
+  
+/* Стили для центрированного заголовка новостей */
+.news-center{
+    text-align: center;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+    margin-top: 60px;
+}
+
+/* Стили для блока новости */
+.news-block {
+    width: calc(30% - 40px);
+    padding: 20px;
+    background-color: rgb(195, 195, 195,0.15);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px; 
+}
+
+/* Анимация появления для блоков новостей */
+.news-block.fade-in {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+@media screen and (max-width: 768px) {
+    .news-block {
+        width: calc(50% - 40px); 
+    }
+}
+
+/* Медиа-запрос для устройств с шириной экрана меньше 480px */
+@media screen and (max-width: 480px) {
+    .news-block {
+        width: calc(100% - 40px); 
+    }
+}
+
+/* Стили для ссылок в блоке новости */
+.news-block a{
+    color: #c21220; 
+    text-decoration: none; 
+}
+
+/* Стили для заголовка новости */
+.news-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #003559;
+}
+
+/* Стили для содержания новости */
+.news-content {
+    color: #000000;
+    text-align: justify;
+}
+
+/* Стили для ссылок "Читать больше" */
+.news-details a{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #003559; 
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Анимация изменения цвета ссылок при наведении */
+.news-details:hover a{
+    color: #D81324;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Стили для изображения новостей (картинки) */
+.news-image {
+    width: 100%; 
+    height: 300px; 
+}
+
+/* Стили для футера */
+footer{
+    position: absolute;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+    box-sizing: border-box;
+    padding: 40px 0 20px 0;
+}
+
+/* Стили для строк футера */
+.footer-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: top;
+}
+
+/* Стили для текста в футере */
+.footer-text1{
+    padding: 0 20px 0 20px;
+    color: #ffffff;
+    align-self: flex-start;
+    max-width: 800px;
+}
+
+/* Стили для текста в футере */
+.footer-text2{
+    padding: 0 0 0 0;
+    color: #ffffff;
+}
+
+/* Стили для текста в футере */
+.footer-text3{
+    padding: 0 30px 10px 20px;
+    color: #ffffff;
+}
+
+/* Стили для иконок в футере */
+.footer-icons > * + *{
+    margin-left: 40px;
+} 
+
+/* Стили для иконок в футере */
+.footer-icons a{
+    text-decoration: none;
+}

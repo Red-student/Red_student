@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Автомобили</title>
+
+        <!-- Подключение стиля -->
+        <link rel="stylesheet" href="Cars_style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+        <!-- Хедер с логотипом и меню -->
+        <header>
+            <!-- Логотип -->
+            <div>
+                <a href="../index.html">
+                    <img src="../img/Logo.png" alt="logo" class="logo">
+                </a>
+            </div>
+            <!-- Меню навигации -->
+            <div>
+                <nav>
+                    <ul class="menu">
+                        <li>
+                            <a href="../index.html">Главная</a>
+                        </li>
+                        <li>
+                            <a href="Cars.html" class="down">Автомобили</a>
+                            <ul class="submenu">
+                                <li><a href="Sub_menu/New_cars.html">Автомобиль с пробегом</a></li>
+                                <li><a href="Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+                                <li><a href="Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../Services/Services.html"  class="down">Услуги</a>
+                            <ul class="submenu">
+                                <li><a href="../Services/Sub_menu/Lending.html">Кредитование</a></li>
+                                <li><a href="../Services/Sub_menu/Insurance.html">Страхование</a></li>
+                                <li><a href="../Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
+                                <li><a href="../Services/Sub_menu/stocks.html">Акции</a></li>
+                                <li><a href="../Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
+                                <li><a href="../Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../Favourites/Favourites.html">Избранное</a>
+                        </li>
+                        <li class="hreader_right">
+                            <a href="../About%20us/About_us.html">О нас</a>
+                        </li>
+                        <li class="hreader_right">
+                            <a href="../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!--Блок main-->
+        <main>
+            <!--Блок поисковой системы-->
+            <div class="pois_blok1">
+                <div class="pois_blok2">
+                    <div class="pois_blok3">
+                        <h1 class="h1_title">Каталог новых автомобилей</h1>
+                        <div class="pois_catalog">
+                            <div class="pois_catalog2">
+                                <h3 class="pois_catalog2_h3">Основные параметры</h3>
+                                <div class="pois_catalog3">
+                                    <div class="filter-container1">
+                                        <div class="filter-group">
+                                            <div class="filter-item">
+                                                <select id="brand">
+                                                    <option value="">Марка авто</option>
+                                                    <option value="volvo">Volvo</option>
+                                                    <option value="audi">Audi</option>
+                                                    <option value="bmw">BMW</option>
+                                                    <option value="mercedes">Mercedes-Benz</option>
+                                                    <option value="toyota">Toyota</option>
+                                                    <option value="honda">Honda</option>
+                                                    <option value="ford">Ford</option>
+                                                    <option value="chevrolet">Chevrolet</option>
+                                                    <option value="subaru">Subaru</option>
+                                                    <option value="nissan">Nissan</option>
+                                                    <option value="kia">Kia</option>
+                                                    <option value="hyundai">Hyundai</option>
+                                                    <option value="volkswagen">Volkswagen</option>
+                                                    <option value="mazda">Mazda</option>
+                                                    <option value="lexus">Lexus</option>
+                                                    <option value="mitsubishi">Mitsubishi</option>
+                                                    <option value="haval">Haval</option>
+                                                    <option value="chery">Chery</option>
+                                                    <option value="geely">Geely</option>
+                                                </select>
+                                            </div>
+                                            <div class="filter-item" title="Выберите марку авто">
+                                                <select id="model" disabled style="cursor: not-allowed;">
+                                                    <option value="" selected>Модель</option>
+                                                </select>
+                                            </div>
+                                            <div class="filter-item" title="Выберите марку и модель">
+                                                <select id="generation" disabled style="cursor: not-allowed;">
+                                                    <option value="" selected>Поколение</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter-container1">
+                                        <div class="filter-group">
+                                            <div class="filter-item">
+                                                <select id="transmission">
+                                                    <option value="">Коробка передач</option>
+                                                    <option value="manual">Механическая</option>
+                                                    <option value="automatic">Автоматическая</option>
+                                                    <option value="Robotic">Роботизированная</option>
+                                                    <option value="Variable">Вариативная </option>
+                                                </select>
+                                            </div>
+                                            <div class="filter-item">
+                                                <select id="fuel">
+                                                    <option value="">Топливо</option>
+                                                    <option value="petrol">Бензин</option>
+                                                    <option value="diesel">Дизель</option>
+                                                    <option value="electric">Электрический</option>
+                                                    <option value="hybrid_petrol">Гибрид бензин</option>
+                                                </select>
+                                            </div>
+                                            <div class="filter-item">
+                                                <select id="color">
+                                                    <option value="">Цвет</option>
+                                                    <option value="white">Белый</option>
+                                                    <option value="black">Черный</option>
+                                                    <option value="red">Красный</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter-container2">    
+                                        <div class="filter-group">
+                                            <div class="filter-item">
+                                                <div class="price-filter">
+                                                    <input type="number" id="price-from" placeholder="Цена, От">
+                                                    <input type="number" id="price-to" placeholder="До">
+                                                </div>
+                                            </div>
+                                            <div class="filter-item">
+                                                <div class="price-filter">
+                                                    <input type="number" id="credit-from" placeholder="Кредит, От">
+                                                    <input type="number" id="credit-to" placeholder="До">
+                                                </div>
+                                            </div>
+                                            <div class="filter-item">
+                                                <div class="price-filter">
+                                                    <input type="number" id="engine-volume1" min="0" max="10" placeholder="Объем двигателя, От" step="0.1">
+                                                    <input type="number" id="engine-volume2" min="0" max="10" placeholder="До" step="0.1">
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="filter-container3">
+                                    <div class="extended-search">
+                                        <button>Сбросить параметры</button>
+                                    </div>
+                                    <div class="show-button">
+                                        <button>Показать</button>
+                                    </div>
+                                    <div class="search-bar">
+                                        <input type="text" placeholder="Поиск...">
+                                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M20.709 19.296L15.414 14H14l-.29-.293a8 8 0 1 0-.414.414L14 14v1.414l5.295 5.295a1 1 0 0 0 1.414-1.414zM10 16a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Блок с контентом после использования фильтра или без его использования-->
+            <div class="content_block1">
+                <div class="content_block2">
+                    <div class="content_block3">
+                        <div class="content_block4">
+                            <div class="content_block5">
+                                Найдено:<span>168</span>авто
+                            </div>
+                            <div class="content_block5-1">
+                                <div class="content_block5-2">
+                                    <select class="select-css">
+                                        <option value="0">
+                                            Сортировать по дате
+                                        </option>
+                                        <option value="date">
+                                            По дате добавления
+                                        </option>
+                                        <option value="deshevle">
+                                            Сначала дешевые
+                                        </option>
+                                        <option value="doroshe">
+                                            Сначала дорогие
+                                        </option>
+                                        <option value="name (A/Z)">
+                                            По названию (А/Я)
+                                        </option>
+                                        <option value="name (Z/A)">
+                                            По названию (Я/А)
+                                        </option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <div class="car-container">
+                            <div class="car-block">
+                                <img src="../img/Car_1.png" alt="car_1" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Geely Tugella</p>
+                                    <p class="car-content">Luxury, Flagship</p>
+                                    <p class="car-content">2л, бензин, автомат 8 ст., полный привод, белый</p>
+                                    <p class="car-title">Цена: 15 490 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span> </p>
+                                </div>
+                            </div>
+                        
+                            <div class="car-block">
+                                <img src="../img/Car_2.png" alt="car_2" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Toyota Land Cruiser Prado</p>
+                                    <p class="car-content">Terra, Comfort, Comfort+, Pestige 2.7</p>
+                                    <p class="car-content">2л, бензин, автомат 6 ст., полный привод, белый</p>
+                                    <p class="car-title">Цена: 24 330 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                        
+                            <div class="car-block">
+                                <img src="../img/Car_3.png" alt="car_3" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Chery Tiggo 8 Pro</p>
+                                    <p class="car-content">Premium, Luxury</p>
+                                    <p class="car-content">1,6л, бензин, робот 7 ст., передний привод, красный</p>
+                                    <p class="car-title">Цена: 11 800 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                                <div class="car-block">
+                                    <img src="../img/Car_4.png" alt="car_4" class="car-image">
+                                    <div class="pod_car">
+                                        <p class="car-title">Haval F7</p>
+                                        <p class="car-content">Comfort</p>
+                                        <p class="car-content">1.5л, бензин, робот 7 ст., припод передний, красный</p>
+                                        <p class="car-title">Цена: 13 490 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="car-container2">
+                            <div class="car-block">
+                                <img src="../img/Car_1.png" alt="car_1" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Geely Tugella</p>
+                                    <p class="car-content">Luxury, Flagship</p>
+                                    <p class="car-content">2л, бензин, автомат 8 ст., полный привод, белый</p>
+                                    <p class="car-title">Цена: 15 490 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span> </p>
+                                </div>
+                            </div>
+                        
+                            <div class="car-block">
+                                <img src="../img/Car_2.png" alt="car_2" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Toyota Land Cruiser Prado</p>
+                                    <p class="car-content">Terra, Comfort, Comfort+, Pestige 2.7</p>
+                                    <p class="car-content">2л, бензин, автомат 6 ст., полный привод, белый</p>
+                                    <p class="car-title">Цена: 24 330 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                        
+                            <div class="car-block">
+                                <img src="../img/Car_3.png" alt="car_3" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Chery Tiggo 8 Pro</p>
+                                    <p class="car-content">Premium, Luxury</p>
+                                    <p class="car-content">1,6л, бензин, робот 7 ст., передний привод, красный</p>
+                                    <p class="car-title">Цена: 11 800 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                                <div class="car-block">
+                                    <img src="../img/Car_4.png" alt="car_4" class="car-image">
+                                    <div class="pod_car">
+                                        <p class="car-title">Haval F7</p>
+                                        <p class="car-content">Comfort</p>
+                                        <p class="car-content">1.5л, бензин, робот 7 ст., припод передний, красный</p>
+                                        <p class="car-title">Цена: 13 490 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="car-container2">
+                            <div class="car-block">
+                                <img src="../img/Car_1.png" alt="car_1" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Geely Tugella</p>
+                                    <p class="car-content">Luxury, Flagship</p>
+                                    <p class="car-content">2л, бензин, автомат 8 ст., полный привод, белый</p>
+                                    <p class="car-title">Цена: 15 490 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span> </p>
+                                </div>
+                            </div>
+                        
+                            <div class="car-block">
+                                <img src="../img/Car_2.png" alt="car_2" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Toyota Land Cruiser Prado</p>
+                                    <p class="car-content">Terra, Comfort, Comfort+, Pestige 2.7</p>
+                                    <p class="car-content">2л, бензин, автомат 6 ст., полный привод, белый</p>
+                                    <p class="car-title">Цена: 24 330 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                        
+                            <div class="car-block">
+                                <img src="../img/Car_3.png" alt="car_3" class="car-image">
+                                <div class="pod_car">
+                                    <p class="car-title">Chery Tiggo 8 Pro</p>
+                                    <p class="car-content">Premium, Luxury</p>
+                                    <p class="car-content">1,6л, бензин, робот 7 ст., передний привод, красный</p>
+                                    <p class="car-title">Цена: 11 800 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                                <div class="car-block">
+                                    <img src="../img/Car_4.png" alt="car_4" class="car-image">
+                                    <div class="pod_car">
+                                        <p class="car-title">Haval F7</p>
+                                        <p class="car-content">Comfort</p>
+                                        <p class="car-content">1.5л, бензин, робот 7 ст., припод передний, красный</p>
+                                        <p class="car-title">Цена: 13 490 000 &#8376; <span class="heart-icon" title="Добавить в избранное">&#9825;</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagination">
+                            <ul>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">6</a></li>
+                                <li><a href="#">7</a></li>
+                                <li><a href="#">...</a></li>
+                                <li><a href="#">14</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>
+                <div class="catalog-description">
+                    <p>Для Вашего удобства все автомобили, размещенные в каталоге, разделены по маркам. Каждая модель будет иметь свою собственную страницу с подробными сведениями о комплектациях, ценах, а также иллюстрациями, демонстрирующими экстерьер и интерьер автомобиля. Наш опыт в продаже автомобилей гарантирует профессиональное обслуживание и помощь в выборе подходящего варианта.</p>
+                </div>
+            </div>
+        </main>
+
+
+
+        <!--Блок footer(подвал)-->
+        <footer>
+            <div class="footer-row">
+                <div class="footer-text1">
+                    <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность каждой единицы транспортного средства. </p>
+                    <p>© 2024 Все права защищены.</p>
+                </div>
+                <div class="footer-text1">
+                    <p>Связь с разработчиком</p>
+                    <p>APO2013@ku.edu.kz</p>
+                    <p>+7 705 268 3304</p>
+                </div>
+                <div class="footer-text3">
+                    <p>Следите за нашими новостями в социальных сетях!</p>
+                    <div class="footer-icons">
+                        <a href="https://www.instagram.com/kozybayevuniversity/">
+                            <img src="../img/instagram.svg" alt="instagram">
+                        </a>
+
+                        <a href="https://www.facebook.com/kozybayevuniversity/">
+                            <img src="../img/facebook.svg" alt="facebook">
+                        </a>
+
+                        <a href="https://t.me/s/kozybayevuniversity/1973">
+                            <img src="../img/telegram.svg" alt="telegram">
+                        </a>
+                    </div>
+                </div>            
+            </div>
+        </footer>
+    </body>
+</html>

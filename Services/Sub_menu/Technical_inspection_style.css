@@ -1,0 +1,207 @@
+/*Стили для всех элементов в теге body*/
+body{
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Стили header*/
+header{
+    display: flex;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+    width: 100%;
+}
+
+/*Логотип*/
+.logo{
+    height: 90px;
+    width: auto;
+    margin: 7px 0 7px 35px;
+}
+
+/*Стили навигационного меню */
+nav{
+    margin-left: 20px; 
+}
+
+/*Стили навигационного меню для списка*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px 0px;
+}
+
+/*Стили навигационного меню для а (ссылки)*/
+nav a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    transition: .4s ease-in-out;
+}
+
+/*Стили для элементов списка верхнего уровня в меню*/
+.menu > li {
+    display: inline-block;
+    position: relative;
+    padding: 12px 25px;
+}
+
+/*Стили для ссылок в элементах списка верхнего уровня*/
+.menu > li > a {
+    font-family: 'Exo 2', sans-serif;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 30px;
+    font-weight: bold;
+    color: #003559;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+/*Стили для псевдоэлемента*/
+.down:after {
+    content: "\25BC";
+    margin-left: 8px;
+    font-family: "FontAwesome";
+    color: inherit;
+}
+
+/*Стили для ссылок в списках при наведении на них курсора*/
+.menu li a:hover {
+    color: #D81324;
+}
+
+/*Стили для выпадающего меню при на ведении на пункт меню*/
+.menu > li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+/*Стили для выпадающего меню*/
+.submenu {
+    position: absolute;
+    width: 100%;
+    background-color: #003559;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.33s ease;
+}
+
+/*Стили для ссылок в выпадающем меню*/
+.submenu a {
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+
+/*Стили для ссылок в выпадающем меню при наведении на них курсора*/
+.submenu li a:hover {
+    color: #ffffff; 
+    background-color: #D81324; 
+}
+
+/* Стили блока <main> */
+main{
+    height: 375px;
+    text-align: center;
+}
+
+/* Анимация мигания текста */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Стили для текста, мигающего */
+.blinking-text {
+    color: #003559;
+    animation: blink 1s infinite; 
+}
+
+/* Анимация движения круга */
+@keyframes moveCircle {
+    0% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(200px, 200px);
+    }
+    40% {
+        transform: translate(400px, 0);
+    }
+    60%{
+        transform: translate(600px, 200px);
+    }
+    80%{
+        transform: translate(800px, 0);
+    }
+    100%{
+        transform: translate(1000px, 200px);
+    }
+}
+
+/* Стили для круга */
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(12, 94, 24);
+    border-radius: 50%;
+    position: absolute;
+    animation: moveCircle 4s infinite;
+}
+
+/* Стили для футера */
+footer{
+    position: absolute;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+    box-sizing: border-box;
+    padding: 40px 0 20px 0;
+}
+
+/* Стили для строк футера */
+.footer-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: top;
+}
+
+/* Стили для текста в футере */
+.footer-text1{
+    padding: 0 20px 0 20px;
+    color: #ffffff;
+    align-self: flex-start;
+    max-width: 800px;
+}
+
+/* Стили для текста в футере */
+.footer-text2{
+    padding: 0 0 0 0;
+    color: #ffffff;
+}
+
+/* Стили для текста в футере */
+.footer-text3{
+    padding: 0 30px 10px 20px;
+    color: #ffffff;
+}
+
+/* Стили для иконок в футере */
+.footer-icons > * + *{
+    margin-left: 40px;
+} 
+
+/* Стили для иконок в футере */
+.footer-icons a{
+    text-decoration: none;
+}

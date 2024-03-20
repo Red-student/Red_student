@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Главная страница</title>
+        <!-- Подключение стиля -->
+        <link rel="stylesheet" href="Tire_servise_style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+    <body>
+        <!-- Хедер с логотипом и меню -->
+        <header>
+            <div>
+                <a href="../../index.html">
+                    <img src="../../img/Logo.png" alt="logo" class="logo">
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul class="menu">
+                        <li>
+                            <a href="../../index.html">Главная</a>
+                        </li>
+                        <li>
+                            <a href="../../Cars/Cars.html" class="down">Автомобили</a>
+                            <ul class="submenu">
+                                <li><a href="../../Cars/Sub_menu/New_cars.html">Новые автомобили</a></li>
+                                <li><a href="../../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+                                <li><a href="../../Cars/Sub_menu/used_cars.html">Б/У Автомобили</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../Services.html"  class="down">Услуги</a>
+                            <ul class="submenu">
+                                <li><a href="Lending.html">Кредитование</a></li>
+                                <li><a href="Insurance.html">Страхование</a></li>
+                                <li><a href="Test_drive.html">Тест-драйв</a></li>
+                                <li><a href="stocks.html">Акции</a></li>
+                                <li><a href="Technical_inspection.html">Техосмотр</a></li>
+                                <li><a href="Tire_service.html">Шиномонтаж</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../../Favourites/Favourites.html">Избранное</a>
+                        </li>
+                        <li class="hreader_right">
+                            <a href="../../About%20us/About_us.html">О нас</a>
+                        </li>
+                        <li class="hreader_right">
+                            <a href="../../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!--Блок main-->
+        <main>
+            <!-- Анимация пульсации многоугольника -->
+            <svg width="200" height="200" viewBox="0 0 200 200">
+                <polygon points="100,50 150,100 100,150 50,100" fill="#003559">
+                    <animate attributeName="points" dur="2s" repeatCount="indefinite"
+                    values="100,50 150,100 100,150 50,100;
+                            100,150 150,200 100,250 50,200;
+                            100,250 150,300 100,350 50,300;
+                            100,150 150,100 100,50 50,100" />
+                  </polygon>
+            </svg>
+
+            <!-- Анимация движения квадрата -->
+            <svg width="400" height="150" viewBox="0 0 400 150">
+                <!-- Путь -->
+                <path id="motionPath" d="M10 80 Q 95 10 180 80 T 350 80" fill="none" stroke="#4682B4" stroke-width="2"></path>
+                <!-- Квадрат -->
+                <rect x="10" y="70" width="20" height="20" fill="#D81324">
+                    <!-- Анимация движения -->
+                    <animateMotion dur="3s" repeatCount="indefinite">
+                    <mpath href="#motionPath"></mpath>
+                    </animateMotion>
+                </rect>
+            </svg>
+
+            <!-- Блок текста в виде дуги -->
+            <svg width="400" height="100" viewBox="0 0 400 100">
+                <path id="textPath" d="M10 80 Q 95 10 180 80 T 350 80" fill="none"></path>
+                <text class="path-text">
+                    <textPath href="#textPath">автосалон, Машина</textPath>
+                </text>
+            </svg>
+
+            <!--Анимация изменения радиуса круга-->
+            <svg width="400" height="200" viewBox="0 0 400 200">
+                <!-- Круг для анимации -->
+                <circle cx="100" cy="100" r="20" fill="blue">
+                    <!-- Анимация изменения радиуса -->
+                    <animate attributeName="r" dur="2s" values="20;50;20" repeatCount="indefinite" />
+                </circle>
+            </svg>
+
+            <!--Маска-SVG-->
+            <svg width="400" height="300" viewBox="0 0 400 300">
+                <!-- Загружаем изображение маски -->
+                <defs>
+                    <mask id="mask" x="0" y="0" width="400" height="300">
+                    <image xlink:href="../../img/details_3.png" x="0" y="0" width="400" height="300" />
+                    </mask>
+                </defs>
+                <!-- Применяем маску к прямоугольнику -->
+                <rect x="0" y="0" width="400" height="300" mask="url(#mask)"></rect>
+            </svg>
+        </main>
+
+        <!--Блок footer(подвал)-->
+        <footer>
+            <div class="footer-row">
+                <div class="footer-text1">
+                    <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность каждой единицы транспортного средства. </p>
+                    <p>© 2024 Все права защищены.</p>
+                </div>
+                <div class="footer-text1">
+                    <p>Связь с разработчиком</p>
+                    <p>APO2013@ku.edu.kz</p>
+                    <p>+7 705 268 3304</p>
+                </div>
+                <div class="footer-text3">
+                    <p>Следите за нашими новостями в социальных сетях!</p>
+                    <div class="footer-icons">
+                        <a href="https://www.instagram.com/kozybayevuniversity/">
+                            <img src="../../img/instagram.svg" alt="instagram">
+                        </a>
+
+                        <a href="https://www.facebook.com/kozybayevuniversity/">
+                            <img src="../../img/facebook.svg" alt="facebook"> 
+                        </a>
+
+                        <a href="https://t.me/s/kozybayevuniversity/1973">
+                            <img src="../../img/telegram.svg" alt="telegram">
+                        </a>
+                    </div>
+                </div>            
+            </div>
+        </footer>
+    </body>
+</html>

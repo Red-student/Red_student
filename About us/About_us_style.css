@@ -1,0 +1,216 @@
+/*Стили для всех элементов в теге body*/
+body{
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Стили header*/
+header{
+    display: flex;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+    width: 100%;
+}
+
+/*Логотип*/
+.logo{
+    height: 90px;
+    width: auto;
+    margin: 7px 0 7px 35px;
+}
+
+/*Стили навигационного меню */
+nav{
+    margin-left: 20px; 
+}
+
+/*Стили навигационного меню для списка*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px 0px;
+}
+
+/*Стили навигационного меню для а (ссылки)*/
+nav a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    transition: .4s ease-in-out;
+}
+
+/*Стили для элементов списка верхнего уровня в меню*/
+.menu > li {
+    display: inline-block;
+    position: relative;
+    padding: 12px 25px;
+}
+
+/*Стили для ссылок в элементах списка верхнего уровня*/
+.menu > li > a {
+    font-family: 'Exo 2', sans-serif;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 30px;
+    font-weight: bold;
+    color: #003559;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+/*Стили для псевдоэлемента*/
+.down:after {
+    content: "\25BC";
+    margin-left: 8px;
+    font-family: "FontAwesome";
+    color: inherit;
+}
+
+/*Стили для ссылок в списках при наведении на них курсора*/
+.menu li a:hover {
+    color: #D81324;
+}
+
+/*Стили для выпадающего меню при на ведении на пункт меню*/
+.menu > li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+/*Стили для выпадающего меню*/
+.submenu {
+    position: absolute;
+    width: 100%;
+    background-color: #003559;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.33s ease;
+}
+
+/*Стили для ссылок в выпадающем меню*/
+.submenu a {
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+
+/*Стили для ссылок в выпадающем меню при наведении на них курсора*/
+.submenu li a:hover {
+    color: #ffffff; 
+    background-color: #D81324; 
+}
+
+/* Стили для блока .div_block1 */
+.div_block1 {
+    background-color: rgba(198, 198, 198, 0.408);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 8px 20px 20px 20px;
+    margin: 15px 30px;
+}
+
+/* Стили для заголовка h1 */
+h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Стили для абзацев внутри блока .div_block2 */
+.div_block2 p {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Стили для элементов списка */
+li{
+    font-size: 17px;
+}
+
+/* Стили для контейнера .chart-container */
+.chart-container {
+    display: flex;
+    margin: 0 auto;
+    width: 500px;
+}
+
+/* Стили для элемента с идентификатором #map */
+#map { 
+    height: 400px; 
+    width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* Стили для всплывающей информации */
+.popup-info {
+    min-width: 125px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Стили для содержимого всплывающего окна Leaflet */
+.leaflet-popup-content {
+    font-size: 10px; 
+    max-width: 400px; 
+    padding: 0 auto;
+}
+
+/* Стили для подсветки элемента при наведении */
+.highlighted {
+    filter: brightness(150%); 
+}
+
+/* Стили для футера */
+footer{
+    position: absolute;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+    box-sizing: border-box;
+    padding: 40px 0 20px 0;
+}
+
+/* Стили для строк футера */
+.footer-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: top;
+}
+
+/* Стили для текста в футере */
+.footer-text1{
+    padding: 0 20px 0 20px;
+    color: #ffffff;
+    align-self: flex-start;
+    max-width: 800px;
+}
+
+/* Стили для текста в футере */
+.footer-text2{
+    padding: 0 0 0 0;
+    color: #ffffff;
+}
+
+/* Стили для текста в футере */
+.footer-text3{
+    padding: 0 30px 10px 20px;
+    color: #ffffff;
+}
+
+/* Стили для иконок в футере */
+.footer-icons > * + *{
+    margin-left: 40px;
+} 
+
+/* Стили для иконок в футере */
+.footer-icons a{
+    text-decoration: none;
+}

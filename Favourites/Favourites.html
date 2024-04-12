@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Favourites_style.css">
+    <link rel="icon" href="../img/badge.png" type="image/png">
+    <title>Избранное</title>
+  </head>
+  <body>
+    <!-- Хедер с логотипом и меню -->
+    <header>
+      <!-- Логотип -->
+      <div>
+        <a href="../index.html">
+          <img src="../img/Logo.png" alt="logo" class="logo">
+        </a>
+      </div>
+      <!-- Меню навигации -->
+      <div>
+        <nav>
+          <ul class="menu">
+            <li>
+              <a href="../index.html">Главная</a>
+            </li>
+            <li>
+              <a href="../Cars/Cars.html" class="down">Автомобили</a>
+              <ul class="submenu">
+                <li><a href="../Cars/Sub_menu/New_cars.html">Новые автомобили</a></li>
+                <li><a href="../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+                <li><a href="../Cars/Sub_menu/used_cars.html">Б/У Автомобили</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="../Services/Services.html"  class="down">Услуги</a>
+              <ul class="submenu">
+                <li><a href="../Services/Sub_menu/Lending.html">Кредитование</a></li>
+                <li><a href="../Services/Sub_menu/Insurance.html">Страхование</a></li>
+                <li><a href="../Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
+                <li><a href="../Services/Sub_menu/stocks.html">Акции</a></li>
+                <li><a href="../Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
+                <li><a href="../Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
+              </ul>
+            </li>
+            <li>
+                <a href="./Favourites.html">Избранное</a>
+            </li>
+            <li class="hreader_right">
+              <a href="../About%20us/About_us.html">О нас</a>
+              <ul class="submenu">
+                <li><a href="../About%20us/Feedback.html">Обратная связь</a></li>
+              </ul>
+            </li>
+            <li class="hreader_right">
+              <a href="../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--Блок main-->
+    <main>
+      <div class="container">
+        <h1>Кошки и Мыши</h1>
+        <div id="story">
+          <p>В доме, полном мышей, жил большой толстый <span class="keyword">КОТ</span>. Этот <span class="keyword">КОТ</span> был известен своей ленью, но когда речь заходила о охоте, он был исключительно умелым. Для этого <span class="keyword">КОТА</span> его добычей были мыши, которые бродили по дому.</p>
+          <p>Кошка тихо преследовала свою добычу, терпеливо ждущую идеального момента для прыжка. И когда это происходило, это было как удар молнии в землю. Мыши разбегались в ужасе, но <span class="keyword">КОТУ</span> всегда удавалось поймать одну или двух.</p>
+          <p>Однажды хитренькая мышка разработала план, чтобы перехитрить <span class="keyword">КОТА</span>. Она установила ловушки и препятствия по всему дому, делая невозможным для <span class="keyword">КОТА</span> её поймать. <span class="keyword">КОТ</span> был озадачен внезапным изменением поведения своей добычи.</p>
+          <p>Когда <span class="keyword">КОТ</span> боролся, чтобы поймать хотя бы одну мышку, он понял, что ему нужно адаптировать свою стратегию охоты. Он стал более терпеливым, более стратегическим и, в конце концов, ему удалось поймать хитрую маленькую мышку, которая перехитрила его.</p>
+        </div>
+        <img src="../img/cat_mouse.png" alt="Кот с мышью" class="cat-image">
+      </div>
+    </main>
+
+    <!--Блок footer(подвал)-->
+    <footer>
+      <div class="footer-row">
+        <div class="footer-text1">
+          <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность каждой единицы транспортного средства. </p>
+          <p>© 2024 Все права защищены.</p>
+        </div>
+        <div class="footer-text1">
+          <p>Связь с разработчиком</p>
+          <p>APO2013@ku.edu.kz</p>
+          <p>+7 705 268 3304</p>
+        </div>
+        <div class="footer-text3">
+          <p>Следите за нашими новостями в социальных сетях!</p>
+          <div class="footer-icons">
+            <a href="https://www.instagram.com/kozybayevuniversity/">
+              <img src="../img/instagram.svg" alt="instagram">
+            </a>
+
+            <a href="https://www.facebook.com/kozybayevuniversity/">
+              <img src="../img/facebook.svg" alt="facebook">
+            </a>
+
+            <a href="https://t.me/s/kozybayevuniversity/1973">
+              <img src="../img/telegram.svg" alt="telegram">
+            </a>
+          </div> 
+        </div>          
+      </div>
+    </footer>
+
+    <!--Библиотека jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--Скрипт работы появления графического и текстовго блока (по очереди)-->
+    <script src="./Favourites_script.js"></script>
+  </body>
+</html>

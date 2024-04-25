@@ -50,7 +50,17 @@ nav a {
 }
 /* Стили для бургер-меню */
 .menu__btn {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    
 }
 
 /* Стили для бургер-иконки */
@@ -78,6 +88,15 @@ nav a {
 /* Контейнер для меню */
 .menu__box {
     display: none;
+}
+
+/* Анимация бургер-меню при нажатии */
+.menu__btn:active span::before {
+    transform: translateY(20px) rotate(-45deg);
+}
+
+.menu__btn:active span::after {
+    transform: translateY(-20px) rotate(45deg)
 }
 
 /* Показываем бургер-меню при уменьшении экрана */

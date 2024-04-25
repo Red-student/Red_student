@@ -21,8 +21,7 @@
     
             <!-- Меню навигации -->
             <div>
-                <nav class="nav-menu">
-                    <input type="checkbox" id="menu__toggle">
+                <nav class="nav-menu" id="navMenu">
                     <label for="menu__toggle" class="menu__btn">
                         <span></span>
                     </label>
@@ -63,6 +62,7 @@
                         </li>
                     </ul>
                 </nav>
+                
             </div>
             <!-- Бургер-иконка 
             <div class="hamburger-menu">
@@ -268,7 +268,25 @@ window.addEventListener('scroll', function() {
             }
         });
             //Бургер скрипт
-           
+            function toggleMenu() {
+  var menu = document.getElementById('navMenu');
+  menu.classList.toggle('active');
+}
+
+// JavaScript для проверки ширины экрана и показа/скрытия бургер-меню
+window.addEventListener('resize', function() {
+  var menuBtn = document.querySelector('.menu__btn');
+  var menu = document.getElementById('navMenu');
+  var screenWidth = window.innerWidth;
+
+  if (screenWidth <= 768) {
+    menuBtn.style.display = 'block'; // Показываем бургер-меню
+    menu.classList.remove('active'); // Скрываем меню
+  } else {
+    menuBtn.style.display = 'none'; // Скрываем бургер-меню
+    menu.classList.remove('active'); // Скрываем меню
+  }
+});
 
             function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();

@@ -21,6 +21,14 @@ header{
     margin: 7px 0 7px 35px;
 }
 
+@media screen and (max-width: 768px) {
+    /* Стили для логотипа при меньших экранах */
+    .logo {
+        height: 60px; /* Уменьшаем высоту логотипа */
+        margin: 7px 0 7px 10px; /* Уменьшаем отступы логотипа */
+    }
+}
+
 /*Стили навигационного меню */
 nav{
     margin-left: 20px; 
@@ -40,106 +48,80 @@ nav a {
     outline: none;
     transition: .4s ease-in-out;
 }
+/* Стили для бургер-меню */
+.menu__btn {
+    display: none;
+}
 
-/* Скрытие чекбокса */
-#menu__toggle {
-    display: none;
-  }
-  
-  /* Стилизация кнопки бургер-меню */
-  .menu__btn {
-    display: none;
-  }
-  
-  .menu__btn span,
-  .menu__btn span::before,
-  .menu__btn span::after {
+/* Стили для бургер-иконки */
+.menu__btn span,
+.menu__btn span::before,
+.menu__btn span::after {
     display: block;
     position: absolute;
-    width: 100%;
-    height: 2px;
+    width: 30px;
+    height: 4px;
     background-color: #333;
     transition: all 0.3s ease;
-  }
-  
-  .menu__btn span::before {
+}
+
+.menu__btn span::before {
     content: '';
     top: -8px;
-  }
-  
-  .menu__btn span::after {
+}
+
+.menu__btn span::after {
     content: '';
     top: 8px;
-  }
-  
-  /* Контейнер для меню */
-  .menu__box {
+}
+
+/* Контейнер для меню */
+.menu__box {
     display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    z-index: 999;
-    transform: translateX(250px);
-  }
-  
-  /* Элементы меню */
-  .menu__item {
-    padding: 15px;
-    font-size: 18px;
-    color: #333;
-    transition: all 0.3s ease;
-  }
-  
-  .menu__item:hover {
-    background-color: #f0f0f0;
-  }
-  
-  /* Медиа-запрос для мобильных устройств и планшетов */
-  @media screen and (max-width: 768px) {
-    /* Показываем кнопку бургер-меню */
+}
+
+/* Показываем бургер-меню при уменьшении экрана */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+    }
     .menu__btn {
-      display: flex;
-      align-items: center;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1000;
     }
-  
-    /* Показываем контейнер для меню при активации чекбокса */
+
+    .menu__box {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 999;
+        overflow-y: auto;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .menu__btn span {
+        width: 24px;
+        height: 2px;
+    }
+
+    .menu__btn span::before,
+    .menu__btn span::after {
+        width: 24px;
+        height: 2px;
+    }
+
     #menu__toggle:checked ~ .menu__box {
-      display: block;
-      transform: translateX(0);
+        transform: translateY(0);
     }
-  }
-.menu__item:hover {
-    background-color: #f0f0f0;
 }
-
-/* Добавляем стили к основному контенту страницы */
-.main-content {
-  margin-left: 0; /* Сбрасываем отступы, вызывающие сдвиг */
-  transition: margin-left 0.3s ease; /* Добавляем анимацию при сдвиге */
-}
-
-/* Показываем контейнер для меню при активации чекбокса и сдвигаем основной контент */
-#menu__toggle:checked ~ .menu__box {
-  display: block;
-  transform: translateX(0);
-}
-
-#menu__toggle:checked ~ .main-content {
-  margin-left: 250px; /* Сдвигаем основной контент вправо */
-}
-
 /*Стили для элементов списка верхнего уровня в меню*/
 .menu > li {
     display: inline-block;
@@ -231,7 +213,13 @@ nav a {
         font-size: 14px;
     }
 }
-
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 /*Стили для первого блока с текстом и изображением*/
 .marginBottom_large {
     margin-bottom: 0px;

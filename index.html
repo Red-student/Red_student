@@ -22,6 +22,10 @@
             <!-- Меню навигации -->
             <div>
                 <nav class="nav-menu">
+                    <input type="checkbox" id="menu__toggle">
+                    <label for="menu__toggle" class="menu__btn">
+                        <span></span>
+                    </label>
                     <ul class="menu">
                         <li>
                             <a href="index.html">Главная</a>
@@ -253,6 +257,16 @@
         </footer>
 
         <script>
+window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.style.position = 'fixed';
+                header.style.top = '0';
+                header.style.width = '100%';
+            } else {
+                header.style.position = 'static';
+            }
+        });
             //Бургер скрипт
            
 

@@ -198,16 +198,6 @@ nav a {
     transition: opacity 0.7s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Стиль для анимации появления блоков */
-.left-block {
-    transform: translateX(-100px); 
-}
-
-/* Стиль для анимации появления блоков */
-.right-block {
-    transform: translateX(100px); 
-}
-
 /* Стиль для изображений в блоке */
 .div_title_acardimg img{
     display: block; 
@@ -217,18 +207,6 @@ nav a {
     border: 0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-}
-
-/* Анимация появления блоков */
-.div_block2:hover .left-block {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Анимация появления блоков */
-.div_block2:hover .right-block {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 /* Стиль для второго основного блока, содержащего текст и картинку */

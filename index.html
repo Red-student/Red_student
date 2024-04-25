@@ -18,9 +18,10 @@
                     <img src="./img/Logo.png" alt="logo" class="logo">
                 </a>
             </div>
+    
             <!-- Меню навигации -->
             <div>
-                <nav>
+                <nav class="nav-menu">
                     <ul class="menu">
                         <li>
                             <a href="index.html">Главная</a>
@@ -59,6 +60,49 @@
                     </ul>
                 </nav>
             </div>
+            <!-- Бургер-иконка 
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                  <span></span>
+                </label>
+                <ul class="menu__box">
+                    <li>
+                        <a href="index.html">Главная</a>
+                    </li>
+                    <li>
+                        <a href="./Cars/Cars.html" class="down">Автомобили</a>
+                        <ul class="submenu">
+                            <li><a href="./Cars/Sub_menu/New_cars.html">Новые автомобили</a></li>
+                            <li><a href="./Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+                            <li><a href="./Cars/Sub_menu/used_cars.html">Б/У Автомобили</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./Services/Services.html"  class="down">Услуги</a>
+                        <ul class="submenu">
+                            <li><a href="./Services/Sub_menu/Lending.html">Кредитование</a></li>
+                            <li><a href="./Services/Sub_menu/Insurance.html">Страхование</a></li>
+                            <li><a href="./Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
+                            <li><a href="./Services/Sub_menu/stocks.html">Акции</a></li>
+                            <li><a href="./Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
+                            <li><a href="./Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./Favourites/Favourites.html">Избранное</a>
+                    </li>
+                    <li class="hreader_right">
+                        <a href="./About%20us/About_us.html">О нас</a>
+                        <ul class="submenu">
+                            <li><a href="./About%20us/Feedback.html">Обратная связь</a></li>
+                        </ul>
+                    </li>
+                    <li class="hreader_right">
+                        <a href="./Login_Registration/Login_Registration.html">Вход / Регистрация</a>
+                    </li>
+                </ul>
+            </div>-->
         </header>
 
         <!--Блок main-->
@@ -207,5 +251,51 @@
                 </div>            
             </div>
         </footer>
+
+        <script>
+            //Бургер скрипт
+           
+
+            function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Функция для обработки события прокрутки
+function handleScroll() {
+  var block3 = document.querySelector('.div_block3');
+  var titleImg = document.querySelector('.div_title_img');
+
+  // Проверяем, виден ли блок div_block3
+  if (isElementInViewport(block3)) {
+    block3.classList.add('visible');
+    block3.classList.remove('hidden'); // Добавляем эту строку
+  } else {
+    block3.classList.remove('visible');
+    block3.classList.add('hidden'); // Добавляем эту строку
+  }
+
+  // Проверяем, виден ли блок div_title_img
+  if (isElementInViewport(titleImg)) {
+    titleImg.classList.add('visible');
+    titleImg.classList.remove('hidden'); // Добавляем эту строку
+  } else {
+    titleImg.classList.remove('visible');
+    titleImg.classList.add('hidden'); // Добавляем эту строку
+  }
+}
+
+// Добавляем обработчик события прокрутки
+window.addEventListener('scroll', handleScroll);
+
+// Вызываем функцию handleScroll() при загрузке страницы
+document.addEventListener('DOMContentLoaded', handleScroll);
+
+        </script>
     </body>
 </html>

@@ -218,7 +218,9 @@ nav a {
     margin-bottom: 5px;
     margin-right: 10px;
 }
-
+#brands {
+    width: 300px; /* Задайте ту же ширину для списка, что и для поля ввода */
+}
 /* Стили для ценового фильтра */
 .price-filter {
     display: flex;

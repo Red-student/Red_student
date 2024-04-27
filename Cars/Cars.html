@@ -76,9 +76,9 @@
                                     <div class="filter-container1">
                                         <div class="filter-group">
                                             <div class="filter-item">
-                                                <select id="brand">
-                                                    <option value="">Марка авто</option>
-                                                    <option value="volvo">Volvo</option>
+                                                <input type="text" id="brandInput" list="brands" placeholder="Выберите или введите марку">
+                                                <datalist id="brands">
+                                                    <option value="Volvo">
                                                     <option value="audi">Audi</option>
                                                     <option value="bmw">BMW</option>
                                                     <option value="mercedes">Mercedes-Benz</option>
@@ -97,7 +97,7 @@
                                                     <option value="haval">Haval</option>
                                                     <option value="chery">Chery</option>
                                                     <option value="geely">Geely</option>
-                                                </select>
+                                                </datalist>
                                             </div>
                                             <div class="filter-item" title="Выберите марку авто">
                                                 <select id="model" disabled style="cursor: not-allowed;">
@@ -395,5 +395,256 @@
                 </div>            
             </div>
         </footer>
+
+
+
+
+
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Находим кнопку "Сбросить параметры"
+    var resetButton = document.querySelector('.extended-search button');
+
+    // Добавляем обработчик события клика на кнопку "Сбросить параметры"
+    resetButton.addEventListener('click', function() {
+        // Получаем все поля ввода внутри блока .price-filter
+        var inputFields = document.querySelectorAll('.price-filter input');
+
+        // Сбрасываем значения во всех полях ввода
+        inputFields.forEach(function(input) {
+            input.value = '';
+        });
+
+        // Получаем выпадающий список цвета
+        var colorSelect = document.getElementById('color');
+
+        // Сбрасываем значение выпадающего списка на первый элемент (пустое значение)
+        colorSelect.selectedIndex = 0;
+        // Получаем выпадающий список цвета
+        var fuelSelect = document.getElementById('fuel');
+
+        // Сбрасываем значение выпадающего списка на первый элемент (пустое значение)
+        fuelSelect.selectedIndex = 0;
+        // Получаем выпадающий список цвета
+        var transmissionSelect = document.getElementById('transmission');
+
+        // Сбрасываем значение выпадающего списка на первый элемент (пустое значение)
+        transmissionSelect.selectedIndex = 0;
+        // Получаем выпадающий список цвета
+        var brandSelect = document.getElementById('brand');
+
+        // Сбрасываем значение выпадающего списка на первый элемент (пустое значение)
+        brandSelect.selectedIndex = 0;
+        // Получаем выпадающий список цвета
+        var modelSelect = document.getElementById('model');
+
+        // Сбрасываем значение выпадающего списка на первый элемент (пустое значение)
+        modelSelect.selectedIndex = 0;
+         // Получаем выпадающий список цвета
+         var generationSelect = document.getElementById('generation');
+
+        // Сбрасываем значение выпадающего списка на первый элемент (пустое значение)
+        generationSelect.selectedIndex = 0;
+        // Добавляем обработчик события клика на кнопку "Сбросить параметры"
+         resetButton.addEventListener('click', function() {
+        // Сбрасываем значения в списке марок
+        brandSelect.selectedIndex = 0;
+
+        // Очищаем и деактивируем список моделей
+        modelSelect.innerHTML = '<option value="" selected>Модель</option>';
+        modelSelect.disabled = true;
+        modelSelect.style.cursor = 'not-allowed';
+
+        // Очищаем и деактивируем список поколений
+        generationSelect.innerHTML = '<option value="" selected>Поколение</option>';
+        generationSelect.disabled = true;
+        generationSelect.style.cursor = 'not-allowed';
+    });
+    });
+});
+
+ 
+
+
+function showBrandInput() {
+        var brandLabel = document.getElementById('brandLabel');
+        var brandSelect = document.getElementById('brand');
+        var brandInput = document.getElementById('brandInput');
+
+        // Проверяем, видим ли сейчас элемент выбора марки
+        if (brandSelect.style.display === 'none') {
+            // Если скрыт, то показываем
+            brandSelect.style.display = 'block';
+            brandInput.style.display = 'none'; // Скрываем поле ввода
+            brandLabel.textContent = "Поиск"; // Меняем текст на "Поиск"
+        } else {
+            // Если показан, то скрываем
+            brandSelect.style.display = 'none';
+            brandInput.style.display = 'inline-block'; // Показываем поле ввода
+            brandLabel.textContent = "Марка"; // Меняем текст на "Марка"
+        }
+    }
+
+
+
+
+
+
+
+
+var modelsAndGenerations = {
+    "volvo": {
+        "models": ["S60", "S90", "XC40", "XC60", "XC90"],
+        "generations": ["1st generation", "2nd generation"]
+    },
+    "audi": {
+        "models": ["A3", "A4", "A5", "A6", "Q3", "Q5", "Q7"],
+        "generations": ["B8", "B9"]
+    },
+    "bmw": {
+        "models": ["3 Series", "5 Series", "X3", "X5", "X7"],
+        "generations": ["E90", "G20"]
+    },
+    "mercedes": {
+        "models": ["C-Class", "E-Class", "S-Class", "GLC", "GLE", "GLS"],
+        "generations": ["W204", "W213"]
+    },
+    "toyota": {
+        "models": ["Camry", "Corolla", "RAV4", "Highlander", "Prius"],
+        "generations": ["XV50", "XV70"]
+    },
+    "honda": {
+        "models": ["Civic", "Accord", "CR-V", "Pilot", "Odyssey"],
+        "generations": ["10th generation", "5th generation"]
+    },
+    "ford": {
+        "models": ["Focus", "Fiesta", "Escape", "Explorer", "F-150"],
+        "generations": ["MK4", "MK5"]
+    },
+    "chevrolet": {
+        "models": ["Cruze", "Malibu", "Equinox", "Tahoe", "Suburban"],
+        "generations": ["2nd generation", "4th generation"]
+    },
+    "subaru": {
+        "models": ["Impreza", "Legacy", "Outback", "Forester", "Ascent"],
+        "generations": ["4th generation", "5th generation"]
+    },
+    "nissan": {
+        "models": ["Altima", "Maxima", "Rogue", "Pathfinder", "Armada"],
+        "generations": ["4th generation", "5th generation"]
+    },
+    "kia": {
+        "models": ["Optima", "Sorento", "Sportage", "Telluride", "Stinger"],
+        "generations": ["4th generation", "5th generation"]
+    },
+    "hyundai": {
+        "models": ["Sonata", "Elantra", "Tucson", "Santa Fe", "Palisade"],
+        "generations": ["DN8", "NX4"]
+    },
+    "volkswagen": {
+        "models": ["Golf", "Passat", "Tiguan", "Atlas", "Jetta"],
+        "generations": ["MK7", "MK8"]
+    },
+    "mazda": {
+        "models": ["Mazda3", "Mazda6", "CX-5", "CX-9", "MX-5 Miata"],
+        "generations": ["4th generation", "5th generation"]
+    },
+    "lexus": {
+        "models": ["IS", "ES", "RX", "NX", "GX"],
+        "generations": ["2nd generation", "3rd generation"]
+    },
+    "mitsubishi": {
+        "models": ["Lancer", "Outlander", "Eclipse Cross", "Pajero", "ASX"],
+        "generations": ["10th generation", "11th generation"]
+    },
+    "haval": {
+        "models": ["H2", "H6", "H9", "H5", "F7"],
+        "generations": ["1st generation", "2nd generation"]
+    },
+    "chery": {
+        "models": ["Tiggo", "Arrizo", "QQ", "E5", "Fulwin"],
+        "generations": ["3rd generation", "4th generation"]
+    },
+    "geely": {
+        "models": ["Coolray", "Emgrand", "Atlas", "Vision", "Bo Yue"],
+        "generations": ["2nd generation", "3rd generation"]
+    }
+};
+document.addEventListener('DOMContentLoaded', function() {
+    // Получаем список марок автомобилей
+    var brandSelect = document.getElementById('brand');
+
+    // Получаем список моделей автомобилей
+    var modelSelect = document.getElementById('model');
+
+    // Получаем список поколений автомобилей
+    var generationSelect = document.getElementById('generation');
+
+    // Добавляем обработчик события изменения значения в списке марок автомобилей
+    brandSelect.addEventListener('change', function() {
+        // Получаем выбранную марку автомобиля
+        var selectedBrand = brandSelect.value;
+
+        // Очищаем список моделей и поколений
+        modelSelect.innerHTML = '<option value="">Модель</option>';
+        generationSelect.innerHTML = '<option value="">Поколение</option>';
+
+        // Проверяем, была ли выбрана какая-либо марка автомобиля
+        if (selectedBrand !== '') {
+            // Получаем список моделей для выбранной марки
+            var models = modelsAndGenerations[selectedBrand].models;
+
+            // Добавляем модели в список моделей
+            models.forEach(function(model) {
+                var option = document.createElement('option');
+                option.value = model;
+                option.textContent = model;
+                modelSelect.appendChild(option);
+            });
+
+             // Активируем список моделей и меняем стиль курсора
+             modelSelect.disabled = false;
+             modelSelect.style.cursor = 'pointer';
+        } else {
+            // Если марка не выбрана, деактивируем список моделей и поколений
+            modelSelect.disabled = true;
+            modelSelect.style.cursor = 'not-allowed';
+            generationSelect.disabled = true;
+            generationSelect.style.cursor = 'not-allowed';
+        }
+    });
+
+    // Добавляем обработчик события изменения значения в списке моделей автомобилей
+    modelSelect.addEventListener('change', function() {
+        // Получаем выбранную модель автомобиля
+        var selectedModel = modelSelect.value;
+
+        // Очищаем список поколений
+        generationSelect.innerHTML = '<option value="">Поколение</option>';
+
+        // Проверяем, была ли выбрана какая-либо модель автомобиля
+        if (selectedModel !== '') {
+            // Получаем список поколений для выбранной модели
+            var generations = modelsAndGenerations[brandSelect.value].generations;
+
+            // Добавляем поколения в список поколений
+            generations.forEach(function(generation) {
+                var option = document.createElement('option');
+                option.value = generation;
+                option.textContent = generation;
+                generationSelect.appendChild(option);
+            });
+
+            // Активируем список поколений и меняем стиль курсора
+            generationSelect.disabled = false;
+            generationSelect.style.cursor = 'pointer';
+        } else {
+            // Если модель не выбрана, деактивируем список поколений и меняем стиль курсора
+            generationSelect.disabled = true;
+            generationSelect.style.cursor = 'not-allowed';
+        }
+    });
+});
+        </script>
     </body>
 </html>

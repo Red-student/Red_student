@@ -274,17 +274,64 @@ nav a {
     text-align: center;
 }
 
+/* Скрыть все слайды по умолчанию */
+.slides {
+    display: none;
+}
+
+/* Стили для кнопок prev/next */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Анимация для слайдов */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
 /*Стиль для основоного блока в котором лежит текст и картинка*/
 .div_block2{
     display: flex;
-    
+    overflow: hidden;
     padding-right: 7%;
     padding-left: 7%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 50px;
 }
-
+@media screen and (max-width: 768px) {
+    .div_block3{
+        padding: 0px;
+        margin: 0px;
+    }
+    
+}
 /* Стиль для блока с текстом */
 .div_block3{
     transform: none;
@@ -294,7 +341,16 @@ nav a {
     padding-left: 50px;
     margin-right: 50px;
 }
-
+@media screen and (max-width: 768px) {
+    .div_block3{
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: 0px;
+        opacity: 1;
+    }
+    
+    
+}
 /* Стиль для текста заголовка */
 .div_title span{
     font-size: 21px;
@@ -326,7 +382,6 @@ nav a {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-
 }
 
 /* Стиль для изображений в блоке */
@@ -340,37 +395,11 @@ nav a {
     border-radius: 10px;
 }
 
-.div_title_img {
-    opacity: 0;
-    transform: translateX(50px); /* Сдвигаем блоки влево за пределы экрана при исчезновении */
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Устанавливаем общее время анимации */
-    transition-delay: 0.1s; /* Задержка перед началом анимации */
-  }
-  
-  .div_block3 {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Устанавливаем общее время анимации */
-    transition-delay: 0.1s; /* Задержка перед началом анимации */
-  }
-  
-  .div_block3.visible, .div_title_img.visible {
-    opacity: 1;
-    transform: translateX(0); /* Возвращаем блоки в исходное положение */
-  }
-  
-  .div_block3.hidden {
-    opacity: 0;
-    
-  }
-  .div_title_img.hidden{
-    opacity: 0;
-
-  }
 
 /* Стиль для второго основного блока, содержащего текст и картинку */
 .div_block2-2{
     display: flex;
+    overflow: hidden;
     padding-right: 7%;
     padding-left: 7%;
     margin-right: auto;
@@ -379,6 +408,35 @@ nav a {
     margin-bottom: 150px;
 }
 
+@media screen and (max-width: 768px) {
+    .div_block2{
+        flex-wrap: wrap;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-bottom: 0px;
+    }
+    .div_block2-2{
+        flex-wrap: wrap;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-bottom: 0px;
+        margin-top: 75px;
+    }
+    .div_title{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .div_title span{
+        font-size: 20px;
+    }
+    .div_title h2{
+        font-size: 32px;
+    }
+    .div_title p {
+        font-size: 19px;
+    }
+    
+}
 /* Стиль для блока с текстом */
 .div_block3-2{
     transform: none;
@@ -389,6 +447,19 @@ nav a {
     margin-right: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    .div_block3-2{
+        width: 100%;
+        margin-right: 0px;
+        
+        padding-right: 0px;
+    
+        padding-left: 0px;
+    }
+   
+}
+
+
 /*Стиль для блока в котором находится картинка*/
 .div_title_img2{
     transform: none;
@@ -397,6 +468,21 @@ nav a {
     margin-left: 15PX;
 }
 
+.delighter.right {
+    transform: translate(100%);
+    opacity: 0;
+    transition: all 0.75s ease-out;
+}
+
+.delighter.right.started {
+    transform: none;
+    opacity: 1;
+}
+@media screen and (max-width: 768px) {
+    .div_title_img2 {
+        margin-right: 15px; 
+    }
+}
 /* Стиль для изображений в блоке */
 .div_title_acardimg2 img{
     display: block; 
@@ -404,6 +490,19 @@ nav a {
     height: auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+}
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+@media screen and (max-width: 768px) {
+    .div_title_acardimg2 img {
+        text-align: center;
+        width: 100%; 
+    }
+    .div_title_acardimg2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 .hidden {
@@ -420,8 +519,19 @@ nav a {
     flex-wrap: wrap;
     justify-content: center;
     padding: 0;
+    margin: 0;
 }
-
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+@media screen and (max-width: 768px) {
+    .videocard_list ul {
+        margin-bottom: 15px; 
+    }
+    .videocard_list{
+        padding-right: 1px;
+    
+        padding-left: 1px;
+    }
+}
 /* Стили для элемента списка блока */
 .videocard_list li {
     flex: 0 0 50%;
@@ -431,6 +541,7 @@ nav a {
     margin-bottom: 20px;
 }
 
+
 /* Стили для SVG-иконок в элементе списка*/
 .videocard_list li svg {
     margin-right: 10px;
@@ -439,8 +550,29 @@ nav a {
 /* Стили для абзацев в элементе списка*/
 .videocard_list li p {
     margin: 0;
+    padding: 0;
 }
 
+.delighter.left {
+    transform: translate(-100%);
+    opacity: 0;
+    transition: all 0.75s ease-out;
+  }
+  .delighter.left.started {
+    transform: none;
+    opacity: 1;
+  }
+
+.delighter.right {
+    transform: translate(100%);
+    opacity: 0;
+    transition: all 0.75s ease-out;
+}
+
+.delighter.right.started {
+    transform: none;
+    opacity: 1;
+}
 /* Стили для контейнера с новостями */
 .news-container {
     display: flex;
@@ -528,12 +660,12 @@ nav a {
     width: 100%;  
 }
 
-
 ::-webkit-scrollbar{
     
     background: none;
     z-index: -1;
 }
+
 ::-webkit-scrollbar-thumb{
     position: absolute;
     background-color: #3a3a3a;

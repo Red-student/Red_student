@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Услуги</title>
+        
+        <!-- Подключение стиля -->
+        <link rel="stylesheet" href="Lending_sryle.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../../img/badge.png" type="image/png">
+    </head>
+
+    <body>
+        <!-- Хедер с логотипом и меню -->
+        <header>
+            <!-- Логотип -->
+            <div>
+                <a href="../../index.html">
+                    <img src="../../img/Logo.png" alt="logo" class="logo">
+                </a>
+            </div>
+            <!-- Меню навигации -->
+            <div>
+                <nav>
+                    <ul class="menu">
+                        <li>
+                            <a href="../../index.html">Главная</a>
+                        </li>
+                        <li>
+                            <a href="../../Cars/Cars.html" class="down">Автомобили</a>
+                            <ul class="submenu">
+                                <li><a href="../../Cars/Sub_menu/New_cars.html">Автомобиль с пробегом</a></li>
+                                <li><a href="../../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+                                <li><a href="../../Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../Services.html"  class="down">Услуги</a>
+                            <ul class="submenu">
+                                <li><a href="./Lending.html">Кредитование</a></li>
+                                <li><a href="./Insurance.html">Страхование</a></li>
+                                <li><a href="./Test_drive.html">Тест-драйв</a></li>
+                                <li><a href="./stocks.html">Акции</a></li>
+                                <li><a href="./Technical_inspection.html">Техосмотр</a></li>
+                                <li><a href="./Tire_service.html">Шиномонтаж</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../../Favourites/Favourites.html">Избранное</a>
+                        </li>
+                        <li class="hreader_right">
+                            <a href="../../About%20us/About_us.html">О нас</a>
+                            <ul class="submenu">
+                                <li><a href="../../About%20us/Feedback.html">Обратная связь</a></li>
+                            </ul>
+                        </li>
+                        <li class="hreader_right">
+                            <a href="../../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!--Блок main-->
+        <main>
+            <div class="content_block1">
+                <div class="content_block2">
+                    <div class="content_block3">
+                        <div class="block3_img">
+                            <img src="https://i.pinimg.com/originals/e4/b0/27/e4b027e78e410876ecac908fec062791.jpg" alt="credit_auto">
+                        </div>
+                        <div class="block3_img_and_text">
+                            <div class="block3_img_text">
+                                <h1>
+                                    Купить автомобиль
+                                    <br>
+                                    в кредит - это просто!
+                                    <br>
+                                    Отправьте заявку
+                                    <br>
+                                    на консультацию
+                                    <br>
+                                    по кредитованию
+                                    <br>
+                                    нажав кнопку 
+                                    <br>
+                                    "Подробнее"
+                                </h1>
+                                <div class="block3_img_text_detailed">
+                                    <a href="#" onclick="toggleForm()" target="_top">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="block3_text">
+                                <p>
+                                    Многие наши клиенты уже убедились, что совсем не обязательно экономить на себе для того, чтобы через год-два стать счастливым обладателем нового автомобиля. Чтобы мечта стала реальностью уже сегодня, можно просто купить авто в кредит. PETRO AVTO предлагает автокредиты в Петропавловске на выгодных условиях!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_block4">
+                    <div class="block4_text1">
+                        <h1>
+                            Оформление кредитования!
+                        </h1>
+                    </div>
+                    <div class="block4_text1">
+                        <h2>
+                            Выберите автомобиль
+                        </h2>
+                        <div class="block4_forma">
+                            <div class="filter-item">
+                                <input type="text" id="brandInput" list="brands" placeholder="Выберите или введите марку">
+                                <datalist id="brands">
+                                    <option value="Volvo">
+                                    <option value="Audi"></option>
+                                    <option value="BMW"></option>
+                                    <option value="Mercedes-Benz"></option>
+                                    <option value="Toyota"></option>
+                                    <option value="Honda"></option>
+                                    <option value="ford">Ford</option>
+                                    <option value="chevrolet">Chevrolet</option>
+                                    <option value="subaru">Subaru</option>
+                                    <option value="nissan">Nissan</option>
+                                    <option value="kia">Kia</option>
+                                    <option value="hyundai">Hyundai</option>
+                                    <option value="volkswagen">Volkswagen</option>
+                                    <option value="mazda">Mazda</option>
+                                    <option value="lexus">Lexus</option>
+                                    <option value="mitsubishi">Mitsubishi</option>
+                                    <option value="haval">Haval</option>
+                                    <option value="chery">Chery</option>
+                                    <option value="geely">Geely</option>
+                                </datalist>
+                            </div>
+                            <div class="filter-item" title="Выберите марку авто">
+                                <input type="text" id="modelInput" list="model" placeholder="Модель" disabled style="cursor: not-allowed;">
+                                <datalist id="model">
+                                    <option value="" selected>Модель</option>
+                                </datalist>
+                            </div>
+                            <div class="filter-item" title="Выберите марку и модель">
+                                <input type="text" id="generationInput" list="generation" placeholder="Поколение" disabled style="cursor: not-allowed;">
+                                <datalist id="generation">
+                                    <option value="" selected>Поколение</option>
+                                </datalist>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block4_text1">
+                        <h2>
+                            Контактные данные
+                        </h2>
+                        <div class="block4_Contact_information">
+                            <form>
+                                <label for="username2">Ваше имя:</label><br>
+                                <input type="text" id="username2" name="username2" required placeholder="Введите имя"><br>
+                                <label for="phone2">Ваш телефон:</label><br>
+                                <input type="tel" id="phone2" name="phone2" data-phone-pattern="+7 (___) ___-__-__" required placeholder="Введите номер телефона"><br>
+                                <label for="your_email2">Ваша почта*</label><br>
+                                <input type="email" id="your_email2" name="your_email2" required placeholder="Введите email"><br>
+                                <input type="checkbox" id="consent" required>
+                                <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
+                                <button type="submit" id="submit-btn">Отправить заявку</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myForm" class="form-container">
+                <span class="close" onclick="toggleForm()">&times;</span>
+                <h2>Заявка на консультацию</h2>
+                <form>
+                    <label for="username">Ваше имя:</label><br>
+                    <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
+                    <label for="phone">Ваш телефон:</label><br>
+                    <input type="tel" id="phone" name="phone" data-phone-pattern="+7 (___) ___-__-__" required placeholder="Введите номер телефона"><br>
+                    <label for="your_email">Ваша почта*</label><br>
+                    <input type="email" id="your_email" name="your_email" required placeholder="Введите email"><br>
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
+                    <button type="submit" id="submit-btn">Отправить заявку</button>
+                </form>
+              </div>
+        </main>
+
+
+        <!--Блок footer(подвал)-->
+        <footer>
+            <div class="footer-row">
+                <div class="footer-text1">
+                    <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность каждой единицы транспортного средства. </p>
+                    <p>© 2024 Все права защищены.</p>
+                </div>
+                <div class="footer-text1">
+                    <p>Связь с разработчиком</p>
+                    <p>APO2013@ku.edu.kz</p>
+                    <p>+7 705 268 3304</p>
+                </div>
+                <div class="footer-text3">
+                    <p>Следите за нашими новостями в социальных сетях!</p>
+                    <div class="footer-icons">
+                        <a href="https://www.instagram.com/kozybayevuniversity/">
+                            <img src="../../img/instagram.svg" alt="instagram">
+                        </a>
+
+                        <a href="https://www.facebook.com/kozybayevuniversity/">
+                            <img src="../../img/facebook.svg" alt="facebook">
+                        </a>
+
+                        <a href="https://t.me/s/kozybayevuniversity/1973">
+                            <img src="../../img/telegram.svg" alt="telegram">
+                        </a>
+                    </div>
+                </div>            
+            </div>
+        </footer>
+
+        <script>
+function toggleForm() {
+  var form = document.getElementById("myForm");
+  if (form.style.display === "none" || form.style.display === "") {
+    form.style.display = "block";
+  } else {
+    form.style.display = "none";
+  }
+}
+
+
+var phoneInputCallback = function(event) {
+      var el = event.target,
+        clearVal = el.dataset.phoneClear,
+        pattern = el.dataset.phonePattern,
+        matrix_def = "+7 (___) ___-__-__",
+        matrix = pattern ? pattern : matrix_def,
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = event.target.value.replace(/\D/g, "");
+        // проверяем длину значения и очищаем поле, если оно неполное
+         if (clearVal !== 'false' && event.type === 'blur') {
+            if (val.length < matrix.match(/([\_\d])/g).length) {
+            event.target.value = '';
+            return;
+            }
+        }
+        // Заменяем символы ввода на шаблон телефонного номера
+        if (def.length >= val.length) val = def;
+        event.target.value = matrix.replace(/./g, function(a) {
+            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+        });
+    };
+    
+    // Получаем все элементы с атрибутом data-phone-pattern
+    var phoneInputs = document.querySelectorAll('[data-phone-pattern]');
+    for (let elem of phoneInputs) {
+      for (let ev of ['input', 'blur', 'focus']) {
+        elem.addEventListener(ev, phoneInputCallback);
+      }
+    }
+
+
+//скрипт формы подачи заявки на кредит автомобиля
+    var modelsAndGenerations = {
+    "volvo": {
+        "models": ["S60", "S90", "XC40", "XC60", "XC90"],
+        "generations": ["1st generation", "2nd generation"]
+    },
+    "audi": {
+        "models": ["A3", "A4", "A5", "A6", "Q3", "Q5", "Q7"],
+        "generations": ["B8", "B9"]
+    },
+    "bmw": {
+        "models": ["3 Series", "5 Series", "X3", "X5", "X7"],
+        "generations": ["E90", "G20"]
+    },
+    "mercedes": {
+        "models": ["C-Class", "E-Class", "S-Class", "GLC", "GLE", "GLS"],
+        "generations": ["W204", "W213"]
+    },
+    "toyota": {
+        "models": ["Camry", "Corolla", "RAV4", "Highlander", "Prius"],
+        "generations": ["XV50", "XV70"]
+    },
+    "honda": {
+        "models": ["Civic", "Accord", "CR-V", "Pilot", "Odyssey"],
+        "generations": ["10th generation", "5th generation"]
+    },
+    "ford": {
+        "models": ["Focus", "Fiesta", "Escape", "Explorer", "F-150"],
+        "generations": ["MK4", "MK5"]
+    },
+    "chevrolet": {
+        "models": ["Cruze", "Malibu", "Equinox", "Tahoe", "Suburban"],
+        "generations": ["2nd generation", "4th generation"]
+    },
+    "subaru": {
+        "models": ["Impreza", "Legacy", "Outback", "Forester", "Ascent"],
+        "generations": ["4th generation", "5th generation"]
+    },
+    "nissan": {
+        "models": ["Altima", "Maxima", "Rogue", "Pathfinder", "Armada"],
+        "generations": ["4th generation", "5th generation"]
+    },
+    "kia": {
+        "models": ["Optima", "Sorento", "Sportage", "Telluride", "Stinger"],
+        "generations": ["4th generation", "5th generation"]
+    },
+    "hyundai": {
+        "models": ["Sonata", "Elantra", "Tucson", "Santa Fe", "Palisade"],
+        "generations": ["DN8", "NX4"]
+    },
+    "volkswagen": {
+        "models": ["Golf", "Passat", "Tiguan", "Atlas", "Jetta"],
+        "generations": ["MK7", "MK8"]
+    },
+    "mazda": {
+        "models": ["Mazda3", "Mazda6", "CX-5", "CX-9", "MX-5 Miata"],
+        "generations": ["4th generation", "5th generation"]
+    },
+    "lexus": {
+        "models": ["IS", "ES", "RX", "NX", "GX"],
+        "generations": ["2nd generation", "3rd generation"]
+    },
+    "mitsubishi": {
+        "models": ["Lancer", "Outlander", "Eclipse Cross", "Pajero", "ASX"],
+        "generations": ["10th generation", "11th generation"]
+    },
+    "haval": {
+        "models": ["H2", "H6", "H9", "H5", "F7"],
+        "generations": ["1st generation", "2nd generation"]
+    },
+    "chery": {
+        "models": ["Tiggo", "Arrizo", "QQ", "E5", "Fulwin"],
+        "generations": ["3rd generation", "4th generation"]
+    },
+    "geely": {
+        "models": ["Coolray", "Emgrand", "Atlas", "Vision", "Bo Yue"],
+        "generations": ["2nd generation", "3rd generation"]
+    }
+};
+document.getElementById('brandInput').addEventListener('input', function() {
+    var selectedBrand = this.value.toLowerCase();
+    var modelDatalist = document.getElementById('model');
+    var generationDatalist = document.getElementById('generation');
+
+    var brandData = modelsAndGenerations[selectedBrand];
+
+    if (brandData) {
+        modelDatalist.innerHTML = '';
+        brandData.models.forEach(function(model) {
+            var option = document.createElement('option');
+            option.value = model;
+            modelDatalist.appendChild(option);
+        });
+        document.getElementById('modelInput').disabled = false;
+        document.getElementById('modelInput').style.cursor = 'pointer'; // Изменение курсора
+    } else {
+        modelDatalist.innerHTML = '<option value="" selected>Модель</option>';
+        document.getElementById('modelInput').disabled = true;
+        document.getElementById('modelInput').style.cursor = 'not-allowed'; // Изменение курсора
+        generationDatalist.innerHTML = '<option value="" selected>Поколение</option>';
+        document.getElementById('generationInput').disabled = true;
+        document.getElementById('generationInput').style.cursor = 'not-allowed'; // Изменение курсора
+    }
+});
+
+document.getElementById('brandInput').addEventListener('input', function() {
+    if (this.value === "") {
+        document.getElementById('modelInput').value = "";
+        document.getElementById('generationInput').value = "";
+        document.getElementById('modelInput').disabled = true;
+        document.getElementById('generationInput').disabled = true;
+        document.getElementById('modelInput').style.cursor = 'not-allowed'; // Изменение курсора
+        document.getElementById('generationInput').style.cursor = 'not-allowed'; // Изменение курсора
+        document.getElementById('model').innerHTML = '<option value="" selected>Модель</option>';
+        document.getElementById('generation').innerHTML = '<option value="" selected>Поколение</option>';
+    }
+});
+
+document.getElementById('modelInput').addEventListener('input', function() {
+    var selectedBrand = document.getElementById('brandInput').value.toLowerCase();
+    var selectedModel = this.value;
+    var generationDatalist = document.getElementById('generation');
+
+    var brandData = modelsAndGenerations[selectedBrand];
+
+    if (brandData) {
+        var modelData = brandData.models.find(function(model) {
+            return model.toLowerCase() === selectedModel.toLowerCase();
+        });
+
+        if (modelData) {
+            var generations = brandData.generations;
+            generationDatalist.innerHTML = '';
+            generations.forEach(function(generation) {
+                var option = document.createElement('option');
+                option.value = generation;
+                option.textContent = generation;
+                generationDatalist.appendChild(option);
+            });
+            document.getElementById('generationInput').disabled = false;
+            document.getElementById('generationInput').style.cursor = 'pointer'; // Изменение курсора
+        }
+    }
+});
+
+document.getElementById('modelInput').addEventListener('input', function() {
+    if (this.value === "") {
+        document.getElementById('generationInput').value = "";
+        document.getElementById('generationInput').disabled = true;
+        document.getElementById('generationInput').style.cursor = 'not-allowed'; // Изменение курсора
+        document.getElementById('generation').innerHTML = '<option value="" selected>Поколение</option>';
+    }
+});
+        </script>
+    </body>
+</html>

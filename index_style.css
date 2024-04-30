@@ -106,81 +106,68 @@ nav a {
     background-color: #D81324; 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 987px) {
     /* Стили для логотипа при меньших экранах */
     .logo {
-        height: 60px; /* Уменьшаем высоту логотипа */
-        margin: 13px 0 7px 10px; /* Уменьшаем отступы логотипа */
+        height: 60px;
+        margin: 13px 0 7px 10px;
     }
+
     .navbar {
         display: flex;
-        justify-content: flex-end; /* Выравниваем по правому краю */
+        justify-content: flex-end;
         align-items: center;
-      }
-      
-      .navbar-toggle {
+    }
+
+    .navbar-toggle {
         position: absolute;
         cursor: pointer;
-        color: #000; /* Черный цвет для бургера */
+        color: #000;
         top: 16px;
         right: 20px;
-      }
-      
-      .bar {
+    }
+
+    .bar {
         width: 25px;
         height: 3px;
-        background-color: #000; /* Черный цвет для полос бургера */
+        background-color: #000;
         margin: 5px 0;
         transition: 0.4s;
-      }
-      
-      .menu {
+    }
+
+    .menu {
         list-style: none;
         padding: 0;
         margin: 0;
         display: none;
-        position: absolute; /* Позиционируем абсолютно */
-        top: 50px; /* Располагаем под бургером */
-        right: 0; /* Отступ справа */
-        width: 59%; /* Ширина не более половины экрана */
-        max-width: 300px; /* Максимальная ширина */
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 59%;
+        max-width: 300px;
         border-radius: 5px;
-        background-color: #fff; /* Цвет фона меню */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Тень */
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
         z-index: 100;
-      }
-      
-      .menu.active {
+    }
+
+    .menu.active {
         display: block;
-      }
-      
-      .menu li {
+    }
+
+    .menu li {
         padding: 10px 0;
         text-align: center;
-      }
-      
-      .menu li a {
+    }
+
+    .menu li a {
         text-decoration: none;
-        color: #003559; /* Черный цвет для ссылок в меню */
+        color: #003559;
         transition: 0.3s;
-      }
-      
-      .menu li a:hover {
-        color: #D81324; /* Изменение цвета ссылок при наведении */
-      }
-    /* Расположение элементов в заголовке при уменьшении экрана */
-    header {
-        flex-wrap: wrap;
     }
 
-    /* Логотип */
-    .logo {
-        margin-left: 15px;
-    }
-
-    /* Навигационное меню */
-    nav {
-        margin: 0;
+    .menu li a:hover {
+        color: #D81324;
     }
 
     /* Элементы списка верхнего уровня в меню */
@@ -193,6 +180,7 @@ nav a {
     .menu > li > a {
         font-size: 14px;
     }
+
     .submenu {
         display: none;
         position: relative;
@@ -200,40 +188,51 @@ nav a {
         right: 0;
         background-color: #fff;
         border-radius: 0 0 5px 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень */
-      }
-      
-      .menu > li:hover .submenu {
-        display: block;
-        
-      }
-      .submenu.active {
-        display: block;
-        left: 100%; /* Показываем внутренний список слева от внешнего */
-      }
-      .submenu.active {
-        display: block;
-      }
-      
-      .submenu li {
-        margin: 5px 0;
-      }
-      
-      .submenu li a {
-        color: #003559; /* Черный цвет для ссылок в подменю */
-        text-align: center;
-        font-weight: bold;
-      }
-      
-      .submenu li a:hover {
-        color: #ffffff; /* Изменение цвета ссылок при наведении */
-      }
-      .submenu a{
-        text-align: center;
-        font-weight: bold;
-      }
-}
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
+    .menu > li:hover .submenu {
+        display: block;
+    }
+
+    .submenu.active {
+        display: block;
+    }
+
+    .submenu li {
+        margin: 5px 0;
+    }
+
+    .submenu li a {
+        color: #003559;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .submenu li a:hover {
+        color: #ffffff;
+    }
+
+    .submenu a {
+        text-align: center;
+        font-weight: bold;
+    }
+}
+@media screen and (max-width: 397px) {
+    .menu {
+        width: 80%;
+    }
+}
+@media screen and (min-width: 986.5px) and (max-width: 1500px) {
+
+    .menu > li {
+        padding: 12px 0px;
+    }
+    .menu > li > a {
+        padding: 0 15px;
+    }
+
+}
 .fixed {
     position: fixed;
     top: 0;

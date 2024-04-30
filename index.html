@@ -50,7 +50,7 @@
                             <a href="./Favourites/Favourites.html">Избранное</a>
                           </li>
                           <li class="hreader_right">
-                            <a href="./About%20us/About_us.html">О нас</a>
+                            <a href="./About%20us/About_us.html" class="down">О нас</a>
                             <ul class="submenu">
                               <li><a href="./About%20us/Feedback.html">Обратная связь</a></li>
                             </ul>
@@ -270,7 +270,48 @@ function plusSlides(n) {
 }
 */
 
+// Получаем все элементы списка с классом .down
+const downLinks = document.querySelectorAll('.down');
 
+// Проверяем ширину экрана перед добавлением обработчиков событий
+if (window.innerWidth < 986) {
+  // Добавляем обработчик события клика для каждого элемента
+  downLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      // Получаем следующий элемент после текущего элемента списка (подменю)
+      const submenu = this.nextElementSibling;
+
+      // Проверяем, открыто ли подменю
+      if (!submenu.classList.contains('active')) {
+        // Если подменю не открыто, отменяем действие по умолчанию (переход по ссылке)
+        event.preventDefault();
+      }
+
+      // Если подменю уже открыто, удаляем класс active для закрытия
+      submenu.classList.remove('active');
+      
+      // И добавляем класс active для открытия текущего подменю
+      submenu.classList.add('active');
+    });
+  });
+
+  // Добавляем обработчик события клика для каждой ссылки в подменю
+  const submenuLinks = document.querySelectorAll('.submenu a');
+
+  submenuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Закрываем подменю после клика на ссылку
+      const submenu = this.closest('.submenu');
+      submenu.classList.remove('active');
+    });
+  });
+}
+
+// Функция для открытия/закрытия основного меню
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("active");
+}
 
 
 

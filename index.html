@@ -7,106 +7,67 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="./img/badge.png" type="image/png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
 
     <body>
         <!-- Хедер с логотипом и меню -->
         <header>
             <!-- Логотип -->
-            <div>
-                <a href="./index.html">
-                    <img src="./img/Logo.png" alt="logo" class="logo">
-                </a>
-            </div>
-    
-            <!-- Меню навигации -->
-            <div>
-                <nav class="nav-menu" id="navMenu">
-                    <label for="menu__toggle" class="menu__btn">
-                        <span></span>
-                    </label>
-                    <ul class="menu">
-                        <li>
+                <div>
+                    <a href="./index.html">
+                        <img src="./img/Logo.png" alt="logo" class="logo">
+                    </a>
+                </div>
+        
+                <!-- Меню навигации -->
+                <div>
+                    <nav class="navbar">
+                        <ul class="menu" id="menu">
+                          <li>
                             <a href="index.html">Главная</a>
-                        </li>
-                        <li>
+                          </li>
+                          <li>
                             <a href="./Cars/Cars.html" class="down">Автомобили</a>
                             <ul class="submenu">
-                                <li><a href="./Cars/Sub_menu/New_cars.html">Автомобиль с пробегом</a></li>
-                                <li><a href="./Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
-                                <li><a href="./Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
+                              <li><a href="./Cars/Sub_menu/New_cars.html">Автомобиль с пробегом</a></li>
+                              <li><a href="./Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+                              <li><a href="./Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
                             </ul>
-                        </li>
-                        <li>
-                            <a href="./Services/Services.html"  class="down">Услуги</a>
+                          </li>
+                          <li>
+                            <a href="./Services/Services.html" class="down">Услуги</a>
                             <ul class="submenu">
-                                <li><a href="./Services/Sub_menu/Lending.html">Кредитование</a></li>
-                                <li><a href="./Services/Sub_menu/Insurance.html">Страхование</a></li>
-                                <li><a href="./Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
-                                <li><a href="./Services/Sub_menu/stocks.html">Акции</a></li>
-                                <li><a href="./Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
-                                <li><a href="./Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
+                              <li><a href="./Services/Sub_menu/Lending.html">Кредитование</a></li>
+                              <li><a href="./Services/Sub_menu/Insurance.html">Страхование</a></li>
+                              <li><a href="./Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
+                              <li><a href="./Services/Sub_menu/stocks.html">Акции</a></li>
+                              <li><a href="./Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
+                              <li><a href="./Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
                             </ul>
-                        </li>
-                        <li>
+                          </li>
+                          <li>
                             <a href="./Favourites/Favourites.html">Избранное</a>
-                        </li>
-                        <li class="hreader_right">
+                          </li>
+                          <li class="hreader_right">
                             <a href="./About%20us/About_us.html">О нас</a>
                             <ul class="submenu">
-                                <li><a href="./About%20us/Feedback.html">Обратная связь</a></li>
+                              <li><a href="./About%20us/Feedback.html">Обратная связь</a></li>
                             </ul>
-                        </li>
-                        <li class="hreader_right">
+                          </li>
+                          <li class="hreader_right">
                             <a href="./Login_Registration/Login_Registration.html">Вход / Регистрация</a>
-                        </li>
-                    </ul>
-                </nav>
-                
-            </div>
-            <!-- Бургер-иконка 
-            <div class="hamburger-menu">
-                <input id="menu__toggle" type="checkbox" />
-                <label class="menu__btn" for="menu__toggle">
-                  <span></span>
-                </label>
-                <ul class="menu__box">
-                    <li>
-                        <a href="index.html">Главная</a>
-                    </li>
-                    <li>
-                        <a href="./Cars/Cars.html" class="down">Автомобили</a>
-                        <ul class="submenu">
-                            <li><a href="./Cars/Sub_menu/New_cars.html">Новые автомобили</a></li>
-                            <li><a href="./Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
-                            <li><a href="./Cars/Sub_menu/used_cars.html">Б/У Автомобили</a></li>
+                          </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="./Services/Services.html"  class="down">Услуги</a>
-                        <ul class="submenu">
-                            <li><a href="./Services/Sub_menu/Lending.html">Кредитование</a></li>
-                            <li><a href="./Services/Sub_menu/Insurance.html">Страхование</a></li>
-                            <li><a href="./Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
-                            <li><a href="./Services/Sub_menu/stocks.html">Акции</a></li>
-                            <li><a href="./Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
-                            <li><a href="./Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="./Favourites/Favourites.html">Избранное</a>
-                    </li>
-                    <li class="hreader_right">
-                        <a href="./About%20us/About_us.html">О нас</a>
-                        <ul class="submenu">
-                            <li><a href="./About%20us/Feedback.html">Обратная связь</a></li>
-                        </ul>
-                    </li>
-                    <li class="hreader_right">
-                        <a href="./Login_Registration/Login_Registration.html">Вход / Регистрация</a>
-                    </li>
-                </ul>
-            </div>-->
+                        <div class="navbar-toggle" onclick="toggleMenu()">
+                          <div class="bar"></div>
+                          <div class="bar"></div>
+                          <div class="bar"></div>
+                        </div>
+                      </nav>
+                </div>
+
+            
         </header>
 
         <!--Блок main-->
@@ -126,13 +87,13 @@
                 </div>-->
 
                 <div class="slideshow-container">
-                    <div class="slides fade">
+                    <div class="slids fade">
                         <img src="./img/fon.png" style="width:100%">
                     </div>
-                    <div class="slides fade">
+                    <div class="slies fade">
                         <img src="./img/foto1.jpg" style="width:100%">
                     </div>
-                    <div class="slides fade">
+                    <div class="slide fade">
                         <img src="./img/foto2.jpg" style="width:100%">
                     </div>
                     <!-- Добавьте другие изображения здесь -->
@@ -274,36 +235,21 @@
         </footer>
 
         <script>
-window.addEventListener('scroll', function() {
-            var header = document.querySelector('header');
-            if (window.scrollY > 0) {
-                header.style.position = 'fixed';
-                header.style.top = '0';
-                header.style.width = '100%';
-            } else {
-                header.style.position = 'static';
-            }
-        });
-            //Бургер скрипт
-            function toggleMenu() {
-  var menu = document.getElementById('navMenu');
-  menu.classList.toggle('active');
+//скрипт для бургера
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  menu.classList.toggle("active");
 }
-
-// JavaScript для проверки ширины экрана и показа/скрытия бургер-меню
-window.addEventListener('resize', function() {
-  var menuBtn = document.querySelector('.menu__btn');
-  var menu = document.getElementById('navMenu');
-  var screenWidth = window.innerWidth;
-
-  if (screenWidth <= 768) {
-    menuBtn.style.display = 'block'; // Показываем бургер-меню
-    menu.classList.remove('active'); // Скрываем меню
-  } else {
-    menuBtn.style.display = 'none'; // Скрываем бургер-меню
-    menu.classList.remove('active'); // Скрываем меню
-  }
+//скрипт для выпадающего списка в списке
+document.querySelectorAll('.down').forEach(item => {
+  item.addEventListener('click', event => {
+    item.querySelector('.submenu').classList.toggle("active");
+    event.preventDefault();
+  });
 });
+
+
+
 // JavaScript для фотогалереии
 var slideIndex = 0;
 showSlides();

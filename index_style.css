@@ -48,98 +48,94 @@ nav a {
     outline: none;
     transition: .4s ease-in-out;
 }
-/* Стили для бургер-меню */
-.menu__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    z-index: 1000;
-    
-}
-
-/* Стили для бургер-иконки */
-.menu__btn span,
-.menu__btn span::before,
-.menu__btn span::after {
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 4px;
-    background-color: #333;
-    transition: all 0.3s ease;
-}
-
-.menu__btn span::before {
-    content: '';
-    top: -8px;
-}
-
-.menu__btn span::after {
-    content: '';
-    top: 8px;
-}
-
-/* Контейнер для меню */
-.menu__box {
-    display: none;
-}
-
-/* Анимация бургер-меню при нажатии */
-.menu__btn:active span::before {
-    transform: translateY(20px) rotate(-45deg);
-}
-
-.menu__btn:active span::after {
-    transform: translateY(-20px) rotate(45deg)
-}
 
 /* Показываем бургер-меню при уменьшении экрана */
 @media screen and (max-width: 768px) {
-    .menu {
-        display: none;
-    }
-    .menu__btn {
+    .navbar {
         display: flex;
+        justify-content: flex-end; /* Выравниваем по правому краю */
         align-items: center;
-        justify-content: center;
+      }
+      
+      .navbar-toggle {
+        position: absolute;
         cursor: pointer;
-        z-index: 1000;
-    }
-
-    .menu__box {
+        color: #000; /* Черный цвет для бургера */
+        top: 10px;
+        right: 20px;
+      }
+      
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #000; /* Черный цвет для полос бургера */
+        margin: 5px 0;
+        transition: 0.4s;
+      }
+      
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        position: absolute; /* Позиционируем абсолютно */
+        top: 50px; /* Располагаем под бургером */
+        right: 20px; /* Отступ справа */
+        width: 49%; /* Ширина не более половины экрана */
+        max-width: 300px; /* Максимальная ширина */
+        border-radius: 5px;
+        background-color: #fff; /* Цвет фона меню */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень */
+      }
+      
+      .menu.active {
         display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
+      }
+      
+      .menu li {
+        padding: 10px 0;
+        text-align: center;
+      }
+      
+      .menu li a {
+        text-decoration: none;
+        color: #000; /* Черный цвет для ссылок в меню */
+        transition: 0.3s;
+      }
+      
+      .menu li a:hover {
+        color: #ff0; /* Изменение цвета ссылок при наведении */
+      }
+      
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
         background-color: #fff;
-        z-index: 999;
-        overflow-y: auto;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-    }
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      }
+      
+      .menu > li:hover .submenu {
+        display: block;
+      }
 
-    .menu__btn span {
-        width: 24px;
-        height: 2px;
-    }
-
-    .menu__btn span::before,
-    .menu__btn span::after {
-        width: 24px;
-        height: 2px;
-    }
-
-    #menu__toggle:checked ~ .menu__box {
-        transform: translateY(0);
-    }
+      .submenu.active {
+        display: block;
+      }
+      
+      .submenu li {
+        margin: 5px 0;
+      }
+      
+      .submenu li a {
+        color: #000; /* Черный цвет для ссылок в подменю */
+      }
+      
+      .submenu li a:hover {
+        color: #ff0; /* Изменение цвета ссылок при наведении */
+      }
 }
 /*Стили для элементов списка верхнего уровня в меню*/
 .menu > li {
@@ -223,7 +219,7 @@ nav a {
 
     /* Элементы списка верхнего уровня в меню */
     .menu > li {
-        padding: 12px 10px;
+        padding: 0px 10px;
     }
 
     /* Ссылки в элементах списка верхнего уровня */
@@ -232,6 +228,7 @@ nav a {
         font-size: 14px;
     }
 }
+
 .fixed {
     position: fixed;
     top: 0;
@@ -239,6 +236,8 @@ nav a {
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
 /*Стили для первого блока с текстом и изображением*/
 .marginBottom_large {
     margin-bottom: 0px;

@@ -233,32 +233,18 @@ nav a {
     }
 
 }
-.fixed {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.crumbs{
+    margin: 10px 10px;
+    background-color: rgb(195, 195, 195, 0.15);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-
-/*Стили для первого блока с текстом и изображением*/
-.marginBottom_large {
-    margin-bottom: 0px;
-    height: 575px;
-    position: relative;
+.crumbs > h3{
+    padding: 10px 25px;
+    margin: 0px 5px;
 }
-
-/*Стили для контейнера изображения*/
-.image-container {
-    padding: 0px 0px;
-    width: 100%;
-    height: 90%;
-    overflow: hidden;
-    display: block;
-    flex-wrap: wrap;
-}
-
 /*Стили для блока с текстом*/
 .div_block1{
     position: absolute;
@@ -661,6 +647,36 @@ nav a {
 /* Стили для изображения новостей (картинки) */
 .news-image {
     width: 100%;  
+}
+/* Стили для стрелок */
+.prev-btn, .next-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Медиа-запрос для устройств с шириной экрана от 480px до 768px */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .news-block {
+        flex: 0 0 33.333%; /* Показываем все три блока на одном экране */
+        max-width: 33.333%;
+    }
 }
 
 ::-webkit-scrollbar{

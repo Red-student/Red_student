@@ -21,13 +21,6 @@ header{
     margin: 7px 0 7px 35px;
 }
 
-@media screen and (max-width: 768px) {
-    /* Стили для логотипа при меньших экранах */
-    .logo {
-        height: 60px; /* Уменьшаем высоту логотипа */
-        margin: 7px 0 7px 10px; /* Уменьшаем отступы логотипа */
-    }
-}
 
 /*Стили навигационного меню */
 nav{
@@ -49,94 +42,6 @@ nav a {
     transition: .4s ease-in-out;
 }
 
-/* Показываем бургер-меню при уменьшении экрана */
-@media screen and (max-width: 768px) {
-    .navbar {
-        display: flex;
-        justify-content: flex-end; /* Выравниваем по правому краю */
-        align-items: center;
-      }
-      
-      .navbar-toggle {
-        position: absolute;
-        cursor: pointer;
-        color: #000; /* Черный цвет для бургера */
-        top: 10px;
-        right: 20px;
-      }
-      
-      .bar {
-        width: 25px;
-        height: 3px;
-        background-color: #000; /* Черный цвет для полос бургера */
-        margin: 5px 0;
-        transition: 0.4s;
-      }
-      
-      .menu {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: none;
-        position: absolute; /* Позиционируем абсолютно */
-        top: 50px; /* Располагаем под бургером */
-        right: 20px; /* Отступ справа */
-        width: 49%; /* Ширина не более половины экрана */
-        max-width: 300px; /* Максимальная ширина */
-        border-radius: 5px;
-        background-color: #fff; /* Цвет фона меню */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень */
-      }
-      
-      .menu.active {
-        display: block;
-      }
-      
-      .menu li {
-        padding: 10px 0;
-        text-align: center;
-      }
-      
-      .menu li a {
-        text-decoration: none;
-        color: #000; /* Черный цвет для ссылок в меню */
-        transition: 0.3s;
-      }
-      
-      .menu li a:hover {
-        color: #ff0; /* Изменение цвета ссылок при наведении */
-      }
-      
-      .submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #fff;
-        border-radius: 0 0 5px 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      }
-      
-      .menu > li:hover .submenu {
-        display: block;
-      }
-
-      .submenu.active {
-        display: block;
-      }
-      
-      .submenu li {
-        margin: 5px 0;
-      }
-      
-      .submenu li a {
-        color: #000; /* Черный цвет для ссылок в подменю */
-      }
-      
-      .submenu li a:hover {
-        color: #ff0; /* Изменение цвета ссылок при наведении */
-      }
-}
 /*Стили для элементов списка верхнего уровня в меню*/
 .menu > li {
     display: inline-block;
@@ -202,6 +107,67 @@ nav a {
 }
 
 @media screen and (max-width: 768px) {
+    /* Стили для логотипа при меньших экранах */
+    .logo {
+        height: 60px; /* Уменьшаем высоту логотипа */
+        margin: 13px 0 7px 10px; /* Уменьшаем отступы логотипа */
+    }
+    .navbar {
+        display: flex;
+        justify-content: flex-end; /* Выравниваем по правому краю */
+        align-items: center;
+      }
+      
+      .navbar-toggle {
+        position: absolute;
+        cursor: pointer;
+        color: #000; /* Черный цвет для бургера */
+        top: 16px;
+        right: 20px;
+      }
+      
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #000; /* Черный цвет для полос бургера */
+        margin: 5px 0;
+        transition: 0.4s;
+      }
+      
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        position: absolute; /* Позиционируем абсолютно */
+        top: 50px; /* Располагаем под бургером */
+        right: 0; /* Отступ справа */
+        width: 59%; /* Ширина не более половины экрана */
+        max-width: 300px; /* Максимальная ширина */
+        border-radius: 5px;
+        background-color: #fff; /* Цвет фона меню */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Тень */
+        z-index: 100;
+      }
+      
+      .menu.active {
+        display: block;
+      }
+      
+      .menu li {
+        padding: 10px 0;
+        text-align: center;
+      }
+      
+      .menu li a {
+        text-decoration: none;
+        color: #003559; /* Черный цвет для ссылок в меню */
+        transition: 0.3s;
+      }
+      
+      .menu li a:hover {
+        color: #D81324; /* Изменение цвета ссылок при наведении */
+      }
     /* Расположение элементов в заголовке при уменьшении экрана */
     header {
         flex-wrap: wrap;
@@ -219,14 +185,53 @@ nav a {
 
     /* Элементы списка верхнего уровня в меню */
     .menu > li {
+        display: block;
         padding: 0px 10px;
     }
 
     /* Ссылки в элементах списка верхнего уровня */
     .menu > li > a {
-        padding: 0 10px;
         font-size: 14px;
     }
+    .submenu {
+        display: none;
+        position: relative;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень */
+      }
+      
+      .menu > li:hover .submenu {
+        display: block;
+        
+      }
+      .submenu.active {
+        display: block;
+        left: 100%; /* Показываем внутренний список слева от внешнего */
+      }
+      .submenu.active {
+        display: block;
+      }
+      
+      .submenu li {
+        margin: 5px 0;
+      }
+      
+      .submenu li a {
+        color: #003559; /* Черный цвет для ссылок в подменю */
+        text-align: center;
+        font-weight: bold;
+      }
+      
+      .submenu li a:hover {
+        color: #ffffff; /* Изменение цвета ссылок при наведении */
+      }
+      .submenu a{
+        text-align: center;
+        font-weight: bold;
+      }
 }
 
 .fixed {

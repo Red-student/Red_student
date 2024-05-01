@@ -7,7 +7,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="./img/badge.png" type="image/png">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
 
     <body>
@@ -299,12 +298,16 @@
 
 
 //скрипт меню
-// Получаем все элементы списка с классом .down
-const downLinks = document.querySelectorAll('.down');
+window.addEventListener("DOMContentLoaded", function() {
+  const mediaQuery = window.matchMedia("(max-width: 986px)");
 
-// Добавляем обработчик события клика для каждого элемента
-downLinks.forEach(link => {
-  link.addEventListener('click', function(event) {
+  // Функция для обработки событий клика
+  function handleClick(event) {
+    // Если ширина экрана меньше 986px, выходим из функции
+    if (!mediaQuery.matches) {
+      return;
+    }
+
     // Получаем следующий элемент после текущего элемента списка (подменю)
     const submenu = this.nextElementSibling;
 
@@ -321,33 +324,46 @@ downLinks.forEach(link => {
 
     // Открываем текущее подменю
     submenu.classList.add('active');
+  }
+
+  // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
+  const downLinks = document.querySelectorAll('.down');
+  downLinks.forEach(link => {
+    link.addEventListener('click', handleClick);
+  });
+
+  // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
+  const submenuLinks = document.querySelectorAll('.submenu a');
+  submenuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Закрываем подменю после клика на ссылку
+      const submenu = this.closest('.submenu');
+      submenu.classList.remove('active');
+    });
+  });
+
+  // Функция для закрытия всех подменю
+  function closeAllSubmenus() {
+    const submenus = document.querySelectorAll('.submenu');
+    submenus.forEach(submenu => {
+      submenu.classList.remove('active');
+    });
+  }
+
+  // Функция для открытия/закрытия основного меню
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+  }
+
+  // Проверяем изменение медиа-запроса
+  mediaQuery.addEventListener("change", event => {
+    // Если ширина экрана меньше 986px, закрываем все подменю
+    if (!event.matches) {
+      closeAllSubmenus();
+    }
   });
 });
-
-// Добавляем обработчик события клика для каждой ссылки в подменю
-const submenuLinks = document.querySelectorAll('.submenu a');
-
-submenuLinks.forEach(link => {
-  link.addEventListener('click', function() {
-    // Закрываем подменю после клика на ссылку
-    const submenu = this.closest('.submenu');
-    submenu.classList.remove('active');
-  });
-});
-
-// Функция для закрытия всех подменю
-function closeAllSubmenus() {
-  const submenus = document.querySelectorAll('.submenu');
-  submenus.forEach(submenu => {
-    submenu.classList.remove('active');
-  });
-}
-
-// Функция для открытия/закрытия основного меню
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("active");
-}
 
 
 

@@ -281,38 +281,41 @@ nav a {
 /*стили для текста и кнопки на картинке а также под картинкой*/
 .block3_img_and_text{
     display: flex;
+    flex-wrap: wrap;
 }
-
-/*стили для текста на картинке*/
 .block3_img_text{
-    justify-content: space-evenly;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 380px;
-    width: 100%;
-    padding: 50px 70px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
 }
 
 /*стили для текста на картинке*/
 .block3_img_text > h1{
-    padding: 0;
-    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 5px;
     letter-spacing: .01em;
     line-height: 1.2;
-    font-size: 32px;
+    font-size: 16px;
 }
-
+.block3_img_text > h1 > br{
+    display: none;
+}
 /*стили для кнопки "Подробнее" на картинке*/
 .block3_img_text_detailed{
     order: 2;
-    margin-top: 50px;
+    text-align: center;
+    margin-top: 0px;
 }
 
 /*стили для кнопки "Подробнее" на картинке*/
 .block3_img_text_detailed > a{
     display: inline-block;
-    padding: 15px 50px;
+    width: 94%;
+    padding: 15px 0px;
     background-color: #003559;
     color: white;
     text-decoration: none;
@@ -324,6 +327,58 @@ nav a {
     background-color: #0056b3;
 }
 
+@media screen and (min-width:960px) {
+
+/*стили для текста на картинке*/
+.block3_img_text{
+    display: block;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 380px;
+
+    padding: 25px 50px;
+}
+
+/*стили для текста на картинке*/
+.block3_img_text > h1{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 40px;
+    letter-spacing: .01em;
+    line-height: 1.2;
+    font-size: 18px;
+}
+
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed{
+    order: 2;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed > a{
+    display: inline-block;
+    width: 100px;
+    padding: 15px 50px;
+    background-color: #003559;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed > a:hover{
+    background-color: #0056b3;
+}
+.block3_img_text > h1 > br{
+    display:block;
+}
+}
 /*стили для текста под картинкой*/
 .block3_text{
     padding: 20px;
@@ -332,7 +387,7 @@ nav a {
 /*стили всплывающего окна*/
 .form-container {
     display: none;
-    width: 25%;
+    width: 50%;
     position: fixed; /* Фиксированное позиционирование, чтобы она оставалась на месте даже при прокрутке */
     top: 50%; /* Положение по вертикали */
     left: 50%; /* Положение по горизонтали */

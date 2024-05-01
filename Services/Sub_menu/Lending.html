@@ -70,7 +70,7 @@
         <!--Блок main-->
         <main>
             <div class="crumbs">
-                <h3>Услуги/Кредитование</h3>
+                <h3>Услуги / Кредитование</h3>
             </div>
             <div class="content_block1">
                 <div class="content_block2">
@@ -96,7 +96,7 @@
                                     "Подробнее"
                                 </h1>
                                 <div class="block3_img_text_detailed">
-                                    <a href="#" onclick="toggleForm()" target="_top">Подробнее</a>
+                                    <a href="#" onclick="toggleForm()" target="_top"><span>Подробнее</span></a>
                                 </div>
                             </div>
                             <div class="block3_text">
@@ -119,14 +119,14 @@
                         </h2>
                         <div class="block4_forma">
                             <div class="filter-item">
-                                <input type="text" id="brandInput" list="brands" placeholder="Выберите или введите марку">
-                                <datalist id="brands">
-                                    <option value="Volvo">
-                                    <option value="Audi"></option>
-                                    <option value="BMW"></option>
-                                    <option value="Mercedes-Benz"></option>
-                                    <option value="Toyota"></option>
-                                    <option value="Honda"></option>
+                                <select id="brandSelect">
+                                    <option value="" disabled selected>Выберите или введите марку</option>
+                                    <option value="Volvo">Volvo</option>
+                                    <option value="Audi">Audi</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Honda">Honda</option>
                                     <option value="ford">Ford</option>
                                     <option value="chevrolet">Chevrolet</option>
                                     <option value="subaru">Subaru</option>
@@ -140,19 +140,17 @@
                                     <option value="haval">Haval</option>
                                     <option value="chery">Chery</option>
                                     <option value="geely">Geely</option>
-                                </datalist>
+                                </select>
                             </div>
                             <div class="filter-item" title="Выберите марку авто">
-                                <input type="text" id="modelInput" list="model" placeholder="Модель" disabled style="cursor: not-allowed;">
-                                <datalist id="model">
+                                <select id="model" disabled style="cursor: not-allowed;">
                                     <option value="" selected>Модель</option>
-                                </datalist>
+                                </select>
                             </div>
                             <div class="filter-item" title="Выберите марку и модель">
-                                <input type="text" id="generationInput" list="generation" placeholder="Поколение" disabled style="cursor: not-allowed;">
-                                <datalist id="generation">
+                                <select id="generation" disabled style="cursor: not-allowed;">
                                     <option value="" selected>Поколение</option>
-                                </datalist>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -178,7 +176,7 @@
             </div>
             <div id="myForm" class="form-container">
                 <span class="close" onclick="toggleForm()">&times;</span>
-                <h2>Заявка на консультацию</h2>
+                <h4>Заявка на консультацию</h4>
                 <form>
                     <label for="username">Ваше имя:</label><br>
                     <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
@@ -431,79 +429,22 @@ var phoneInputCallback = function(event) {
         "generations": ["2nd generation", "3rd generation"]
     }
 };
-document.getElementById('brandInput').addEventListener('input', function() {
-    var selectedBrand = this.value.toLowerCase();
-    var modelDatalist = document.getElementById('model');
-    var generationDatalist = document.getElementById('generation');
+const brandSelect = document.getElementById('brandSelect');
+const modelSelect = document.getElementById('modelSelect');
+const generationSelect = document.getElementById('generationSelect');
 
-    var brandData = modelsAndGenerations[selectedBrand];
-
-    if (brandData) {
-        modelDatalist.innerHTML = '';
-        brandData.models.forEach(function(model) {
-            var option = document.createElement('option');
-            option.value = model;
-            modelDatalist.appendChild(option);
-        });
-        document.getElementById('modelInput').disabled = false;
-        document.getElementById('modelInput').style.cursor = 'pointer'; // Изменение курсора
-    } else {
-        modelDatalist.innerHTML = '<option value="" selected>Модель</option>';
-        document.getElementById('modelInput').disabled = true;
-        document.getElementById('modelInput').style.cursor = 'not-allowed'; // Изменение курсора
-        generationDatalist.innerHTML = '<option value="" selected>Поколение</option>';
-        document.getElementById('generationInput').disabled = true;
-        document.getElementById('generationInput').style.cursor = 'not-allowed'; // Изменение курсора
-    }
+brandSelect.addEventListener('change', function() {
+    modelSelect.innerHTML = ''; // Clear previous options
+    const selectedBrand = this.value.toLowerCase();
+    // Generate options for models based on selected brand
+    // Example: if selectedBrand === 'audi', populate modelSelect with Audi models
+    modelSelect.removeAttribute('disabled');
 });
 
-document.getElementById('brandInput').addEventListener('input', function() {
-    if (this.value === "") {
-        document.getElementById('modelInput').value = "";
-        document.getElementById('generationInput').value = "";
-        document.getElementById('modelInput').disabled = true;
-        document.getElementById('generationInput').disabled = true;
-        document.getElementById('modelInput').style.cursor = 'not-allowed'; // Изменение курсора
-        document.getElementById('generationInput').style.cursor = 'not-allowed'; // Изменение курсора
-        document.getElementById('model').innerHTML = '<option value="" selected>Модель</option>';
-        document.getElementById('generation').innerHTML = '<option value="" selected>Поколение</option>';
-    }
-});
-
-document.getElementById('modelInput').addEventListener('input', function() {
-    var selectedBrand = document.getElementById('brandInput').value.toLowerCase();
-    var selectedModel = this.value;
-    var generationDatalist = document.getElementById('generation');
-
-    var brandData = modelsAndGenerations[selectedBrand];
-
-    if (brandData) {
-        var modelData = brandData.models.find(function(model) {
-            return model.toLowerCase() === selectedModel.toLowerCase();
-        });
-
-        if (modelData) {
-            var generations = brandData.generations;
-            generationDatalist.innerHTML = '';
-            generations.forEach(function(generation) {
-                var option = document.createElement('option');
-                option.value = generation;
-                option.textContent = generation;
-                generationDatalist.appendChild(option);
-            });
-            document.getElementById('generationInput').disabled = false;
-            document.getElementById('generationInput').style.cursor = 'pointer'; // Изменение курсора
-        }
-    }
-});
-
-document.getElementById('modelInput').addEventListener('input', function() {
-    if (this.value === "") {
-        document.getElementById('generationInput').value = "";
-        document.getElementById('generationInput').disabled = true;
-        document.getElementById('generationInput').style.cursor = 'not-allowed'; // Изменение курсора
-        document.getElementById('generation').innerHTML = '<option value="" selected>Поколение</option>';
-    }
+modelSelect.addEventListener('change', function() {
+    generationSelect.innerHTML = ''; // Clear previous options
+    // Generate options for generations based on selected model
+    generationSelect.removeAttribute('disabled');
 });
         </script>
     </body>

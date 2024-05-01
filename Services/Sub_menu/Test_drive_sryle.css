@@ -1,0 +1,661 @@
+/*Стили для всех элементов в теге body*/
+body{
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Стили header*/
+header{
+    display: flex;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+    width: 100%;
+}
+
+/*Логотип*/
+.logo{
+    height: 90px;
+    width: auto;
+    margin: 7px 0 7px 35px;
+}
+
+/*Стили навигационного меню */
+nav{
+    margin-left: 20px; 
+}
+
+/*Стили навигационного меню для списка*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px 0px;
+}
+
+/*Стили навигационного меню для а (ссылки)*/
+nav a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    transition: .4s ease-in-out;
+}
+
+/*Стили для элементов списка верхнего уровня в меню*/
+.menu > li {
+    display: inline-block;
+    position: relative;
+    padding: 12px 25px;
+}
+
+/*Стили для ссылок в элементах списка верхнего уровня*/
+.menu > li > a {
+    font-family: 'Exo 2', sans-serif;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 30px;
+    font-weight: bold;
+    color: #003559;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+/*Стили для псевдоэлемента*/
+.down:after {
+    content: "\25BC";
+    margin-left: 8px;
+    font-family: "FontAwesome";
+    color: inherit;
+}
+
+/*Стили для ссылок в списках при наведении на них курсора*/
+.menu li a:hover {
+    color: #D81324;
+}
+
+/*Стили для выпадающего меню при на ведении на пункт меню*/
+.menu > li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+/*Стили для выпадающего меню*/
+.submenu {
+    position: absolute;
+    width: 100%;
+    background-color: #003559;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.33s ease;
+}
+
+/*Стили для ссылок в выпадающем меню*/
+.submenu a {
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+
+/*Стили для ссылок в выпадающем меню при наведении на них курсора*/
+.submenu li a:hover {
+    color: #ffffff; 
+    background-color: #D81324; 
+}
+
+@media screen and (max-width: 987px) {
+    /* Стили для логотипа при меньших экранах */
+    .logo {
+        height: 60px;
+        margin: 13px 0 7px 10px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar-toggle {
+        position: absolute;
+        cursor: pointer;
+        color: #000;
+        top: 16px;
+        right: 20px;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #000;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 59%;
+        max-width: 300px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        z-index: 100;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .menu li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: #003559;
+        transition: 0.3s;
+    }
+
+    .menu li a:hover {
+        color: #D81324;
+    }
+
+    /* Элементы списка верхнего уровня в меню */
+    .menu > li {
+        display: block;
+        padding: 0px 10px;
+    }
+
+    /* Ссылки в элементах списка верхнего уровня */
+    .menu > li > a {
+        font-size: 14px;
+    }
+
+    .submenu {
+        display: none;
+        position: relative;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .menu > li:hover .submenu {
+        display: block;
+    }
+
+    .submenu.active {
+        display: block;
+    }
+
+    .submenu li {
+        margin: 5px 0;
+    }
+
+    .submenu li a {
+        color: #003559;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .submenu li a:hover {
+        color: #ffffff;
+    }
+
+    .submenu a {
+        text-align: center;
+        font-weight: bold;
+    }
+}
+@media screen and (max-width: 397px) {
+    .menu {
+        width: 80%;
+    }
+}
+@media screen and (min-width: 986.5px) and (max-width: 1500px) {
+
+    .menu > li {
+        padding: 12px 0px;
+    }
+    .menu > li > a {
+        padding: 0 15px;
+    }
+
+}
+.crumbs{
+    margin: 10px 0px;
+    background-color: rgb(195, 195, 195, 0.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.crumbs > h3{
+    padding: 10px 25px;
+    margin: 0px 5px;
+}
+
+/*стили для первого блока контента*/
+.content_block1{
+    background-color: rgba(198, 198, 198, 0.408);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 8px 20px 20px 20px;
+    margin: 15px 30px;
+}
+
+/*стили для второго блока контента*/
+.content_block2{
+    width: 100%;
+    max-width: 1460px;
+    padding-top: 15px;
+    margin: 0 auto;
+
+}
+
+/*стили для третьего блока контента*/
+.content_block3{
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/*Стили для картинки в 3 блоке*/
+.block3_img{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.block3_img > img{
+    width: 100%;
+}
+/*стили для текста и кнопки на картинке а также под картинкой*/
+.block3_img_and_text{
+    display: flex;
+    flex-wrap: wrap;
+}
+.block3_img_text{
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*стили для текста на картинке*/
+.block3_img_text > h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 5px;
+    letter-spacing: .01em;
+    line-height: 1.2;
+    font-size: 16px;
+}
+.block3_img_text > h1 > br{
+    display: none;
+}
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed{
+    order: 2;
+    text-align: center;
+    margin-top: 0px;
+}
+
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed > a{
+    display: inline-block;
+    width: 94%;
+    padding: 15px 0px;
+    background-color: #003559;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed > a:hover{
+    background-color: #0056b3;
+}
+
+@media screen and (min-width:960px) {
+
+/*стили для текста на картинке*/
+.block3_img_text{
+    display: block;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 380px;
+
+    padding: 25px 50px;
+}
+
+/*стили для текста на картинке*/
+.block3_img_text > h1{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 40px;
+    letter-spacing: .01em;
+    line-height: 1.2;
+    font-size: 18px;
+}
+
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed{
+    order: 2;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed > a{
+    display: inline-block;
+    width: 100px;
+    padding: 15px 50px;
+    background-color: #003559;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/*стили для кнопки "Подробнее" на картинке*/
+.block3_img_text_detailed > a:hover{
+    background-color: #0056b3;
+}
+.block3_img_text > h1 > br{
+    display:block;
+}
+}
+/*стили для текста под картинкой*/
+.block3_text{
+    padding: 20px;
+}
+
+/*стили всплывающего окна*/
+.form-container {
+    display: none;
+    width: 50%;
+    position: fixed; /* Фиксированное позиционирование, чтобы она оставалась на месте даже при прокрутке */
+    top: 50%; /* Положение по вертикали */
+    left: 50%; /* Положение по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование формы */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 99999; /* Поверх всех блоков */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+
+/*стили для крестика*/
+.close {
+    position: absolute;
+    top: -3px;
+    right: 13px;
+    cursor: pointer;
+    font-size: 38px;
+}
+
+/*стили для ввода email*/
+#your_email{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/*стиль для ввода имени*/
+#username{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/*стиль для ввода номера телефона*/
+#phone{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/*стили для ввода email*/
+#your_email2{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/*стиль для ввода имени*/
+#username2{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/*стиль для ввода номера телефона*/
+#phone2{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+/*стили для кнопки*/
+button {
+    padding: 10px 20px;
+    background-color: #003559;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*стили для кнопки*/
+button:hover{
+    background-color: #0056b3;
+}
+
+/*стили блока 4*/
+.content_block4{
+    margin-top: 25px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.block4_text1 > h1,
+.block4_text1 > h2{
+    text-align: center;
+    padding: 15px 20px;
+}
+
+.block4_forma {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.block4_forma {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Изменено на центрирование */
+}
+
+.filter-item {
+    margin-bottom: 20px;
+    width: 25%; /* Изменено на 50% для центрирования */
+}
+
+.filter-item select {
+    width: 100%; /* Изменено на 100% для полной ширины родительского блока */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.filter-item select:disabled {
+    background-color: #f2f2f2;
+    cursor: not-allowed;
+}
+
+.filter-item select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.block4_Contact_information{
+    width: 300px; /* Ширина блока */
+    margin: 0 auto; /* Устанавливаем автоматические отступы по бокам, чтобы выровнять*/
+    margin-bottom: 25px;
+}
+
+.content_block5{
+    width: 100%;
+    max-width: 1460px;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+
+.content_block5_fon{
+    position: relative;
+    height: 100%;
+    padding: 20px 20px 12.5px 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+}
+
+.content_block5_fon > h2 {
+    text-align: center;
+}
+
+.b_about_credit > p{
+    font-size: 20px;
+}
+
+.b_list_simple__list {
+    list-style-type: none; /* Убираем стандартные маркеры списка */
+    padding-left: 0; /* Убираем отступ слева */
+}
+
+.b_list_simple__item::before {
+    content: "\25b6"; /* Заменяем стандартные маркеры на символ "•" */
+    color: #0056b3; /* Устанавливаем голубой цвет для маркеров */
+    display: inline-block; /* Делаем маркеры блочными элементами */
+    width: 1em; /* Задаем фиксированную ширину для маркеров */
+}
+/* Стили для футера */
+footer{
+    position: absolute;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+    box-sizing: border-box;
+    padding: 40px 0 20px 0;
+}
+
+/* Стили для строк футера */
+.footer-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: top;
+}
+
+/* Стили для текста в футере */
+.footer-text1{
+    padding: 0 20px 0 20px;
+    color: #ffffff;
+    max-width: 800px;
+}
+
+/* Стили для текста в футере */
+.footer-text2{
+    padding: 0 0 0 0;
+    color: #ffffff;
+}
+
+/* Стили для текста в футере */
+.footer-text3{
+    padding: 0 30px 10px 20px;
+    color: #ffffff;
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* Стили для иконок в футере */
+.footer-icons a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-icons a:first-child {
+    margin-left: 0; 
+}
+
+.footer-icons a:not(:first-child) {
+    margin-left: 50px; 
+}
+/* Медиа-запросы для адаптивного дизайна */
+@media screen and (max-width: 768px) {
+    .footer-row {
+        flex-direction: column; /* Располагаем элементы в столбец */
+    }
+
+    .footer-text1,
+    .footer-text2,
+    .footer-text3 {
+        margin-bottom: 20px; /* Увеличиваем отступ между блоками на мобильных устройствах */
+    }
+}
+@media screen and (width: 1024px) {
+    .footer-text1{
+        padding: 0 20px 0 20px;
+        color: #ffffff;
+        max-width: 400px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .footer-text3 {
+        padding: 0 20px 10px 20px;
+    }
+    .footer-icons{
+        flex-wrap: nowrap;
+    }
+}

@@ -9,7 +9,6 @@ body{
 header{
     display: flex;
     background-color: #ffffff;
-    position: sticky;
     top: 0; 
     z-index: 100;
     width: 100%;
@@ -21,6 +20,7 @@ header{
     width: auto;
     margin: 7px 0 7px 35px;
 }
+
 
 /*Стили навигационного меню */
 nav{
@@ -106,16 +106,154 @@ nav a {
     background-color: #D81324; 
 }
 
+@media screen and (max-width: 987px) {
+    /* Стили для логотипа при меньших экранах */
+    .logo {
+        height: 60px;
+        margin: 13px 0 7px 10px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar-toggle {
+        position: absolute;
+        cursor: pointer;
+        color: #000;
+        top: 16px;
+        right: 20px;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #000;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 59%;
+        max-width: 300px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        z-index: 100;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .menu li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: #003559;
+        transition: 0.3s;
+    }
+
+    .menu li a:hover {
+        color: #D81324;
+    }
+
+    /* Элементы списка верхнего уровня в меню */
+    .menu > li {
+        display: block;
+        padding: 0px 10px;
+    }
+
+    /* Ссылки в элементах списка верхнего уровня */
+    .menu > li > a {
+        font-size: 14px;
+    }
+
+    .submenu {
+        display: none;
+        position: relative;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .menu > li:hover .submenu {
+        display: block;
+    }
+
+    .submenu.active {
+        display: block;
+    }
+
+    .submenu li {
+        margin: 5px 0;
+    }
+
+    .submenu li a {
+        color: #003559;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .submenu li a:hover {
+        color: #ffffff;
+    }
+
+    .submenu a {
+        text-align: center;
+        font-weight: bold;
+    }
+}
+@media screen and (max-width: 397px) {
+    .menu {
+        width: 80%;
+    }
+}
+@media screen and (min-width: 986.5px) and (max-width: 1500px) {
+
+    .menu > li {
+        padding: 12px 0px;
+    }
+    .menu > li > a {
+        padding: 0 15px;
+    }
+
+}
+
+.crumbs{
+    margin: 10px 0px;
+    background-color: rgb(195, 195, 195, 0.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.crumbs > h3{
+    padding: 10px 25px;
+    margin: 0px 5px;
+}
+
 /*Стили для блока каталога новых автомобилей */
 .pois_blok1 {
-    padding-top: 5px;
+    padding: 10px 15px;
     padding-bottom: 18px;
 }
 
 /* Стили для обертки блока каталога */
 .pois_blok2 {
     width: 100%;
-    max-width: 1460px;
     padding: 0;
     margin: 0 auto;
 }
@@ -144,7 +282,11 @@ nav a {
     line-height: 1.333;
     letter-spacing: .01em;
 }
-
+@media screen and (max-width:768px) {
+    .h1_title{
+        font-size: 30px;
+    }
+}
 /* Стили для блока параметров каталога */
 .pois_catalog {
     padding: 20px;
@@ -218,9 +360,7 @@ nav a {
     margin-bottom: 5px;
     margin-right: 10px;
 }
-#brands {
-    width: 300px; /* Задайте ту же ширину для списка, что и для поля ввода */
-}
+
 /* Стили для ценового фильтра */
 .price-filter {
     display: flex;
@@ -252,7 +392,11 @@ nav a {
     margin-top: 20px;
     margin-bottom: 20px; 
 }
-
+@media screen and (max-width:768px) {
+    .filter-container3{
+        display: block;
+    }
+}
 /* Стили для кнопок */
 button{
     cursor: pointer;
@@ -310,7 +454,7 @@ button{
 
 /* Стили для поля ввода строки поиска */
 .search-bar input{
-    width: 240px;
+    width: 217px;
     border-radius: 5px;
     padding: 10px;
     font-size: 18px;
@@ -345,15 +489,13 @@ select::-ms-expand {
 
 /* Стили для блока контента */
 .content_block1{
-    width: 100%;
-    max-width: 1460px;
+padding: 0 15px;
     margin: 0 auto;
 }
 
 /* Стили для внутреннего контейнера блока контента */
 .content_block2{
     position: relative;
-    height: 100%;
     padding: 20px 20px 12.5px 20px;
     background-color: rgba(198, 198, 198, 0.408);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -441,7 +583,7 @@ select::-ms-expand {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    cursor: pointer;
+
 }
 
 /* Стили для блока автомобиля */
@@ -449,8 +591,8 @@ select::-ms-expand {
     background-color: #f0f0f0;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: calc(25% - 20px);
-    margin-bottom: 10px; /* Отступ между блоками */
+    width: calc(50% - 20px);
+    margin-bottom: 20px; /* Отступ между блоками */
 }
 
 /* Стили для ссылки в блоке автомобиля */
@@ -458,7 +600,12 @@ select::-ms-expand {
     color: black; 
     text-decoration: none; 
 }
-
+/* Медиа-запрос для экранов шире 768px */
+@media screen and (min-width: 768px) {
+    .car-block {
+        width: calc(25% - 20px); /* Три блока в ряд на экранах шире 768px */
+    }
+}
 /* Стили для заголовка блока автомобиля */
 .car-title {
     display: flex;
@@ -490,7 +637,6 @@ select::-ms-expand {
 /* Стили для изображения автомобиля */
 .car-image {
     width: 100%; 
-    height: 270px; 
     border-radius: 10px 10px 0 0;
 }
 
@@ -575,7 +721,6 @@ footer{
 .footer-text1{
     padding: 0 20px 0 20px;
     color: #ffffff;
-    align-self: flex-start;
     max-width: 800px;
 }
 
@@ -590,13 +735,49 @@ footer{
     padding: 0 30px 10px 20px;
     color: #ffffff;
 }
-
-/* Стили для иконок в футере */
-.footer-icons > * + *{
-    margin-left: 40px;
-} 
-
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 /* Стили для иконок в футере */
 .footer-icons a{
     text-decoration: none;
+    display: inline-block;
+}
+
+.footer-icons a:first-child {
+    margin-left: 0; 
+}
+
+.footer-icons a:not(:first-child) {
+    margin-left: 50px; 
+}
+
+/* Медиа-запросы для адаптивного дизайна */
+@media screen and (max-width: 768px) {
+    .footer-row {
+        flex-direction: column; /* Располагаем элементы в столбец */
+    }
+
+    .footer-text1,
+    .footer-text2,
+    .footer-text3 {
+        margin-bottom: 20px; /* Увеличиваем отступ между блоками на мобильных устройствах */
+    }
+}
+@media screen and (width: 1024px) {
+    .footer-text1{
+        padding: 0 20px 0 20px;
+        color: #ffffff;
+        max-width: 400px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .footer-text3 {
+        padding: 0 20px 10px 20px;
+    }
+    .footer-icons{
+        flex-wrap: nowrap;
+    }
 }

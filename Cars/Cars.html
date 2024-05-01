@@ -22,7 +22,7 @@
             <!-- Меню навигации -->
             <div>
                 <nav>
-                    <ul class="menu">
+                    <ul class="menu" id="menu">
                         <li>
                             <a href="../index.html">Главная</a>
                         </li>
@@ -58,6 +58,11 @@
                             <a href="../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
                         </li>
                     </ul>
+                    <div class="navbar-toggle" onclick="toggleMenu()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                      </div>
                 </nav>
             </div>
         </header>
@@ -76,9 +81,9 @@
                                     <div class="filter-container1">
                                         <div class="filter-group">
                                             <div class="filter-item">
-                                                <input type="text" id="brandInput" list="brands" placeholder="Выберите или введите марку">
-                                                <select id="brands">
-                                                    <option value="Volvo">
+                                                <select id="brand" >
+                                                    <option value="" disabled selected>Выберите или введите марку</option>
+                                                    <option value="Volvo">Volvo</option>
                                                     <option value="audi">Audi</option>
                                                     <option value="bmw">BMW</option>
                                                     <option value="mercedes">Mercedes-Benz</option>
@@ -401,6 +406,102 @@
 
 
         <script>
+//скрипт для бургера
+function toggleMenu() {
+                var menu = document.getElementById("menu");
+                menu.classList.toggle("active");
+            }
+            //скрипт для выпадающего списка в списке
+            document.querySelectorAll('.down').forEach(item => {
+                item.addEventListener('click', event => {
+                    item.querySelector('.submenu').classList.toggle("active");
+                    event.preventDefault();
+                });
+            });
+
+
+window.addEventListener("DOMContentLoaded", function() {
+  const mediaQuery = window.matchMedia("(max-width: 986px)");
+
+  // Функция для обработки событий клика
+  function handleClick(event) {
+    // Если ширина экрана меньше 986px, выходим из функции
+    if (!mediaQuery.matches) {
+      return;
+    }
+
+    // Получаем следующий элемент после текущего элемента списка (подменю)
+    const submenu = this.nextElementSibling;
+
+    // Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
+    if (submenu.classList.contains('active')) {
+      return;
+    }
+
+    // Отменяем действие по умолчанию (переход по ссылке)
+    event.preventDefault();
+
+    // Закрываем все подменю
+    closeAllSubmenus();
+
+    // Открываем текущее подменю
+    submenu.classList.add('active');
+  }
+
+  // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
+  const downLinks = document.querySelectorAll('.down');
+  downLinks.forEach(link => {
+    link.addEventListener('click', handleClick);
+  });
+
+  // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
+  const submenuLinks = document.querySelectorAll('.submenu a');
+  submenuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Закрываем подменю после клика на ссылку
+      const submenu = this.closest('.submenu');
+      submenu.classList.remove('active');
+    });
+  });
+
+  // Функция для закрытия всех подменю
+  function closeAllSubmenus() {
+    const submenus = document.querySelectorAll('.submenu');
+    submenus.forEach(submenu => {
+      submenu.classList.remove('active');
+    });
+  }
+
+  // Функция для открытия/закрытия основного меню
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+  }
+
+  // Проверяем изменение медиа-запроса
+  mediaQuery.addEventListener("change", event => {
+    // Если ширина экрана меньше 986px, закрываем все подменю
+    if (!event.matches) {
+      closeAllSubmenus();
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Находим кнопку "Сбросить параметры"
     var resetButton = document.querySelector('.extended-search button');

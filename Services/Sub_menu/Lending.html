@@ -76,7 +76,7 @@
                 <div class="content_block2">
                     <div class="content_block3">
                         <div class="block3_img">
-                            <img src="https://i.pinimg.com/originals/e4/b0/27/e4b027e78e410876ecac908fec062791.jpg" alt="credit_auto">
+                            <img src="../../img/Credit_fon.webp" alt="credit_auto">
                         </div>
                         <div class="block3_img_and_text">
                             <div class="block3_img_text">
@@ -164,12 +164,55 @@
                                 <input type="text" id="username2" name="username2" required placeholder="Введите имя"><br>
                                 <label for="phone2">Ваш телефон:</label><br>
                                 <input type="tel" id="phone2" name="phone2" data-phone-pattern="+7 (___) ___-__-__" required placeholder="Введите номер телефона"><br>
-                                <label for="your_email2">Ваша почта*</label><br>
+                                <label for="your_email2">Ваша почта:</label><br>
                                 <input type="email" id="your_email2" name="your_email2" required placeholder="Введите email"><br>
                                 <input type="checkbox" id="consent" required>
                                 <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
                                 <button type="submit" id="submit-btn">Отправить заявку</button>
                             </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_block5">
+                    <div class="content_block5_fon">
+                        <h2>
+                            Автокредит
+                        </h2>
+                        <div class="b_about_credit">
+                            <p>
+                                Хотите стать счастливым обладателем машины, но средств недостаточно? Не тратьте время на накопления, ведь купить автомобиль в кредит можно уже сегодня. Воспользуйтесь выгодными условиями кредитования наших банков-партнеров и воплотите мечту в реальность! Не забывайте пить достаточно воды в течение дня для поддержания здоровья.
+                            </p>
+                            <div>
+                                <ul class="b_list_simple__list">
+                                    <li class="b_list_simple__item">
+                                        Много кредитных программ
+                                    </li>
+                                    <li class="b_list_simple__item">
+                                        Минимальные требования к заемщику                                
+                                    </li>
+                                    <li class="b_list_simple__item">
+                                        Рассмотрение в течение часа                                
+                                    </li>
+                                    <li class="b_list_simple__item">
+                                        Кредитование от 20 лет до 75 лет, в том числе пенсионеров                                
+                                    </li>
+                                    <li class="b_list_simple__item">
+                                        Программы с низкими процентными ставками                                
+                                    </li>
+                                    <li class="b_list_simple__item">
+                                        Дополнительные скидки на приобретение автомобиля                                
+                                    </li>
+                                    <li class="b_list_simple__item">
+                                        Срок кредита до 7 лет                                
+                                    </li>
+                                    <li class="b_list_simple__item">
+                                        Выдача автомобиля в день подписания договора                                
+                                    </li>
+                                    <li class="b_list_simple__item">
+                                        Без первоначального взноса                                
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -188,7 +231,7 @@
                     <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
                     <button type="submit" id="submit-btn">Отправить заявку</button>
                 </form>
-              </div>
+            </div>
         </main>
 
 
@@ -222,7 +265,7 @@
                 </div>            
             </div>
         </footer>
-
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             //скрипт для бургера
             function toggleMenu() {
@@ -430,22 +473,149 @@ var phoneInputCallback = function(event) {
     }
 };
 const brandSelect = document.getElementById('brandSelect');
-const modelSelect = document.getElementById('modelSelect');
-const generationSelect = document.getElementById('generationSelect');
+const modelSelect = document.getElementById('model');
+const generationSelect = document.getElementById('generation');
 
 brandSelect.addEventListener('change', function() {
-    modelSelect.innerHTML = ''; // Clear previous options
+    modelSelect.innerHTML = '<option value="" selected>Модель</option>'; // Сбрасываем список моделей при изменении марки
+    generationSelect.innerHTML = '<option value="" selected>Поколение</option>'; // Сбрасываем список поколений при изменении марки
     const selectedBrand = this.value.toLowerCase();
-    // Generate options for models based on selected brand
-    // Example: if selectedBrand === 'audi', populate modelSelect with Audi models
-    modelSelect.removeAttribute('disabled');
+    if (selectedBrand !== '') {
+        modelSelect.removeAttribute('disabled');
+        const models = modelsAndGenerations[selectedBrand].models;
+        models.forEach(model => {
+            const option = document.createElement('option');
+            option.value = model;
+            option.textContent = model;
+            modelSelect.appendChild(option);
+        });
+        modelSelect.style.cursor = 'pointer'; // Меняем курсор, если есть доступные модели
+    } else {
+        modelSelect.setAttribute('disabled', true);
+        modelSelect.style.cursor = 'not-allowed'; // Возвращаем курсор на стандартный, если нет выбора марки
+    }
 });
 
 modelSelect.addEventListener('change', function() {
-    generationSelect.innerHTML = ''; // Clear previous options
-    // Generate options for generations based on selected model
-    generationSelect.removeAttribute('disabled');
+    generationSelect.innerHTML = '<option value="" selected>Поколение</option>'; // Сбрасываем список поколений при изменении модели
+    const selectedModel = this.value;
+    if (selectedModel !== '') {
+        generationSelect.removeAttribute('disabled');
+        const generations = modelsAndGenerations[brandSelect.value.toLowerCase()].generations;
+        generations.forEach(generation => {
+            const option = document.createElement('option');
+            option.value = generation;
+            option.textContent = generation;
+            generationSelect.appendChild(option);
+        });
+        generationSelect.style.cursor = 'pointer'; // Меняем курсор, если есть доступные поколения
+    } else {
+        generationSelect.setAttribute('disabled', true);
+        generationSelect.style.cursor = 'not-allowed'; // Возвращаем курсор на стандартный, если нет выбора модели
+    }
 });
+
+generationSelect.addEventListener('change', function() {
+    if (this.value !== '') {
+        this.style.cursor = 'pointer';
+    } else {
+        this.style.cursor = 'not-allowed';
+    }
+});
+
+
+
+
+
+
+$(document).ready(function() {
+    $('.select').each(function() {
+        const _this = $(this),
+            selectOption = _this.find('option'),
+            selectOptionLength = selectOption.length,
+            selectedOption = selectOption.filter(':selected'),
+            duration = 450; // длительность анимации 
+
+        _this.hide();
+        _this.wrap('<div class="select"></div>');
+        $('<div>', {
+            class: 'new-select',
+            text: _this.children('option:disabled').text()
+        }).insertAfter(_this);
+
+        const selectHead = _this.next('.new-select');
+        $('<div>', {
+            class: 'new-select__list'
+        }).insertAfter(selectHead);
+
+        const selectList = selectHead.next('.new-select__list');
+        for (let i = 1; i < selectOptionLength; i++) {
+            $('<div>', {
+                class: 'new-select__item',
+                html: $('<span>', {
+                    text: selectOption.eq(i).text()
+                })
+            })
+            .attr('data-value', selectOption.eq(i).val())
+            .appendTo(selectList);
+        }
+
+        const selectItem = selectList.find('.new-select__item');
+        selectList.slideUp(0);
+
+        // Определение положения выпадающего списка
+        const windowHeight = $(window).height();
+        const selectPosition = selectHead.offset().top;
+
+        selectHead.on('click', function() {
+            if (!$(this).hasClass('on')) {
+                $(this).addClass('on');
+
+                // Если новый селект находится ближе к верху страницы, показать список внизу
+                if (selectPosition < windowHeight / 2) {
+                    selectList.slideDown(duration);
+                } else {
+                    selectList.slideUp(duration);
+                }
+
+                selectItem.on('click', function() {
+                    let chooseItem = $(this).data('value');
+
+                    $('select').val(chooseItem).attr('selected', 'selected');
+                    selectHead.text($(this).find('span').text());
+
+                    selectList.slideUp(duration);
+                    selectHead.removeClass('on');
+                });
+
+            } else {
+                $(this).removeClass('on');
+                selectList.slideUp(duration);
+            }
+        });
+
+        // Обновление положения выпадающего списка при изменении размера окна
+        $(window).on('resize', function() {
+            const newWindowHeight = $(this).height();
+
+            // Обновить положение нового селекта
+            const newSelectPosition = selectHead.offset().top;
+
+            // Если новый селект находится ближе к верху страницы, показать список внизу
+            if (newSelectPosition < newWindowHeight / 2) {
+                selectList.css('top', '100%');
+            } else {
+                selectList.css('top', 'auto');
+                selectList.css('bottom', '100%');
+            }
+        });
+    });
+});
+
+
+
+
+
         </script>
     </body>
 </html>

@@ -24,13 +24,36 @@
 <button id="showDataButton" type="button" style="display: none;">Show Secret Data</button>
 
 <script>
+  // Функция для получения текущей даты и установки срока хранения cookie
+  function setCookieExpiry() {
+    var expiryDate = new Date();
+    expiryDate.setDate(expiryDate.getDate() + 2); // Сегодня + 2 дня
+    document.cookie = "expiryDate=" + expiryDate.toUTCString() + ";path=/";
+  }
+
+  // Вызываем функцию при загрузке страницы
+  setCookieExpiry();
+
+  // Функция для отображения данных из файла cookie текущего сеанса
+  function displayCookieData() {
+    var cookies = document.cookie.split("; ");
+    var cookieData = "";
+    cookies.forEach(function(cookie) {
+      cookieData += cookie + "<br>";
+    });
+    document.getElementById("dataFromCookie").innerHTML = cookieData;
+  }
+
+  // Вызываем функцию при загрузке страницы
+  displayCookieData();
+
   document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Предотвращаем стандартное действие формы
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     var secretWord = document.getElementById("secretWord").value;
 
-    // Проверка логина, пароля и секретного слова (можешь здесь добавить свою логику проверки)
+    // Проверка логина, пароля и секретного слова (можете здесь добавить свою логику проверки)
 
     if (secretWord === "твоё_секретное_слово") {
       // Сохранение данных в cookie с указанием пути '/'
@@ -42,42 +65,36 @@
 
       // Показать кнопку после успешного входа
       document.getElementById("showDataButton").style.display = "block";
+
+      // Перезагрузить данные из файла cookie
+      displayCookieData();
     } else {
       alert("Incorrect secret word!");
     }
   });
 
   // Функция для отображения секретных данных при запросе
-  // Функция для отображения секретных данных при запросе
-function showSecretData() {
-  var cookies = document.cookie.split("; ");
-  var correctSecretWord = false;
+  function showSecretData() {
+    var cookies = document.cookie.split("; ");
+    var correctSecretWord = false;
 
-  // Проверяем наличие правильного секретного слова в cookie
-  cookies.forEach(function(cookie) {
-    var cookiePair = cookie.split("=");
-    var cookieName = cookiePair[0].trim(); // убираем пробелы
-    var cookieValue = cookiePair[1];
-    if (cookieName === "userData") {
-      var userDataArray = cookieValue.split("&");
-      userDataArray.forEach(function(item) {
-        if (item.trim() === "secretWord=твоё_секретное_слово") { // убираем пробелы
-          correctSecretWord = true;
-        }
-      });
+    // Проверяем наличие правильного секретного слова в cookie
+    cookies.forEach(function(cookie) {
+      if (cookie.includes("userData=secretWord=твоё_секретное_слово")) {
+        correctSecretWord = true;
+      }
+    });
+
+    // Если правильное секретное слово найдено, отображаем секретные данные
+    if (correctSecretWord) {
+      document.getElementById("secretData").style.display = "block";
+      document.getElementById("dataFromCookie").innerHTML = "Secret Data: твои_секретные_данные";
+    } else {
+      alert("To show secret data, enter the correct secret word and click the button.");
     }
-  });
-
-  // Если правильное секретное слово найдено, отображаем секретные данные
-  if (correctSecretWord) {
-    document.getElementById("secretData").style.display = "block";
-    document.getElementById("dataFromCookie").innerHTML = "Secret Data: твои_секретные_данные";
-  } else {
-    alert("To show secret data, enter the correct secret word and click the button.");
   }
-}
 
-  // Вызов функции при клике на кнопку запроса
+  // Вызываем функцию при клике на кнопку запроса
   document.getElementById("showDataButton").addEventListener("click", showSecretData);
 </script>
 </body>

@@ -33,11 +33,8 @@
     // Проверка логина, пароля и секретного слова (можешь здесь добавить свою логику проверки)
 
     if (secretWord === "твоё_секретное_слово") {
-      document.getElementById("secretData").style.display = "block";
-      var userData = "Username: " + username + "<br>Password: " + password;
-      document.getElementById("dataFromCookie").innerHTML = userData;
-
       // Сохранение данных в cookie с указанием пути '/'
+      var userData = "Username: " + username + "<br>Password: " + password;
       var expiryDate = new Date();
       expiryDate.setDate(expiryDate.getDate() + 2); // Сегодня + 2 дня
       var cookieValue = "userData=" + userData + ";expires=" + expiryDate.toUTCString() + ";path=/";
@@ -50,32 +47,10 @@
     }
   });
 
-  // Получение текущей даты и установка срока хранения cookie
-  var expiryDate = new Date();
-  expiryDate.setDate(expiryDate.getDate() + 2); // Сегодня + 2 дня
-  document.cookie = "expiryDate=" + expiryDate.toUTCString() + ";path=/";
-
-  // Проверка срока годности cookie
-  function checkCookieExpiry() {
-    var cookies = document.cookie.split("; ");
-    cookies.forEach(function(cookie) {
-      var cookiePair = cookie.split("=");
-      var cookieName = cookiePair[0];
-      var cookieValue = cookiePair[1];
-      if (cookieName === "expiryDate") {
-        var expiryDate = new Date(cookieValue);
-        if (expiryDate < new Date()) {
-          alert("Cookie has expired!");
-        }
-      }
-    });
-  }
-
   // Функция для отображения секретных данных при запросе
   function showSecretData() {
     var cookies = document.cookie.split("; ");
     var correctSecretWord = false;
-    var buttonClicked = false;
 
     // Проверяем наличие правильного секретного слова в cookie
     cookies.forEach(function(cookie) {
@@ -93,20 +68,14 @@
       }
     });
 
-    // Проверяем, нажата ли кнопка "Показать секретные данные"
-    buttonClicked = true;
-
-    // Если оба условия выполнены, показываем секретные данные
-    if (correctSecretWord && buttonClicked) {
+    // Если правильное секретное слово найдено, отображаем секретные данные
+    if (correctSecretWord) {
       document.getElementById("secretData").style.display = "block";
       document.getElementById("dataFromCookie").innerHTML = "Secret Data: твои_секретные_данные";
     } else {
       alert("To show secret data, enter the correct secret word and click the button.");
     }
   }
-
-  // Вызов функции проверки при загрузке страницы
-  checkCookieExpiry();
 
   // Вызов функции при клике на кнопку запроса
   document.getElementById("showDataButton").addEventListener("click", showSecretData);

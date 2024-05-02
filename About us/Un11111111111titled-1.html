@@ -48,34 +48,34 @@
   });
 
   // Функция для отображения секретных данных при запросе
-  function showSecretData() {
-    var cookies = document.cookie.split("; ");
-    var correctSecretWord = false;
+  // Функция для отображения секретных данных при запросе
+function showSecretData() {
+  var cookies = document.cookie.split("; ");
+  var correctSecretWord = false;
 
-    // Проверяем наличие правильного секретного слова в cookie
-    cookies.forEach(function(cookie) {
-      var cookiePair = cookie.split("=");
-      var cookieName = cookiePair[0];
-      var cookieValue = cookiePair[1];
-      if (cookieName === "userData") {
-        var userData = decodeURIComponent(cookieValue);
-        var userDataArray = userData.split("&");
-        userDataArray.forEach(function(item) {
-          if (item.split("=")[0] === "secretWord" && item.split("=")[1] === "твоё_секретное_слово") {
-            correctSecretWord = true;
-          }
-        });
-      }
-    });
-
-    // Если правильное секретное слово найдено, отображаем секретные данные
-    if (correctSecretWord) {
-      document.getElementById("secretData").style.display = "block";
-      document.getElementById("dataFromCookie").innerHTML = "Secret Data: твои_секретные_данные";
-    } else {
-      alert("To show secret data, enter the correct secret word and click the button.");
+  // Проверяем наличие правильного секретного слова в cookie
+  cookies.forEach(function(cookie) {
+    var cookiePair = cookie.split("=");
+    var cookieName = cookiePair[0].trim(); // убираем пробелы
+    var cookieValue = cookiePair[1];
+    if (cookieName === "userData") {
+      var userDataArray = cookieValue.split("&");
+      userDataArray.forEach(function(item) {
+        if (item.trim() === "secretWord=твоё_секретное_слово") { // убираем пробелы
+          correctSecretWord = true;
+        }
+      });
     }
+  });
+
+  // Если правильное секретное слово найдено, отображаем секретные данные
+  if (correctSecretWord) {
+    document.getElementById("secretData").style.display = "block";
+    document.getElementById("dataFromCookie").innerHTML = "Secret Data: твои_секретные_данные";
+  } else {
+    alert("To show secret data, enter the correct secret word and click the button.");
   }
+}
 
   // Вызов функции при клике на кнопку запроса
   document.getElementById("showDataButton").addEventListener("click", showSecretData);

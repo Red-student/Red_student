@@ -387,16 +387,13 @@ nav a {
 /* Стили для контейнера кнопок */
 .filter-container3 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px; 
 }
-@media screen and (max-width:768px) {
-    .filter-container3{
-        display: block;
-    }
-}
+
 /* Стили для кнопок */
 button{
     cursor: pointer;
@@ -410,7 +407,6 @@ button{
 /*Стиль для кнопки сбросить параметры*/
 .extended-search button {
     width: 240px;
-    margin-right: 10px;
     border-radius: 5px;
     font-size: 18px;
     font-weight: 550;
@@ -453,20 +449,36 @@ button{
 }
 
 /* Стили для поля ввода строки поиска */
-.search-bar input{
-    width: 217px;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 700;
+.search-bar input[type="text"]{
+    width: 100%; /* Занимает всю доступную ширину */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 /* Стили для иконки поиска */
 .search-icon {
-    position: absolute; 
-    right: 10px; 
-    cursor: pointer; 
-    fill: #333; 
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 767px) {
+    .filter-container3 {
+        flex-direction: column; /* Располагаем элементы вертикально */
+        align-items: stretch;
+    }
+
+    .filter-container3 > * {
+        margin-bottom: 5px; /* Уменьшаем пространство между элементами */
+    }
+
+    .search-bar {
+        flex-grow: 1; /* Растягиваем по всей доступной ширине */
+        margin-bottom: 10px; /* Пространство между элементами */
+    }
 }
 
 /* Стили для отступа между элементами */
@@ -518,6 +530,17 @@ padding: 0 15px;
 .content_block5{
     font-size: 34px;
     font-weight: 550;
+}
+
+.content_block5 span {
+    font-weight: bold; /* Жирный шрифт для числа */
+}
+
+/* Медиа-запрос для адаптивности */
+@media screen and (max-width: 767px) {
+    .content_block5 {
+        font-size: 18px; /* Уменьшаем размер шрифта для мобильных устройств */
+    }
 }
 
 /* Стили для элемента фильтра */
@@ -591,7 +614,7 @@ padding: 0 15px;
     background-color: #f0f0f0;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: calc(50% - 20px);
+    width: calc(25% - 20px);
     margin-bottom: 20px; /* Отступ между блоками */
 }
 
@@ -600,10 +623,25 @@ padding: 0 15px;
     color: black; 
     text-decoration: none; 
 }
-/* Медиа-запрос для экранов шире 768px */
-@media screen and (min-width: 768px) {
-    .car-block {
-        width: calc(25% - 20px); /* Три блока в ряд на экранах шире 768px */
+
+/* Медиа-запрос для экранов до 1023px */
+@media screen and (max-width:1023px) {
+    .car-block{
+        width: calc(50% - 20px);
+    }
+}
+
+/* Медиа-запрос для экранов до 768px */
+@media screen and (max-width:768px) {
+    .car-block{
+        width: calc(50% - 20px);
+    }
+}
+
+/* Медиа-запрос для экранов до 639px */
+@media screen and (max-width:639px) {
+    .car-block{
+        width: calc(100% - 0px);
     }
 }
 /* Стили для заголовка блока автомобиля */

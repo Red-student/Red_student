@@ -19,17 +19,17 @@
       </div>
       <!-- Меню навигации -->
       <div>
-        <nav>
-          <ul class="menu">
+        <nav class="navbar">
+          <ul class="menu" id="menu">
             <li>
               <a href="../index.html">Главная</a>
             </li>
             <li>
               <a href="../Cars/Cars.html" class="down">Автомобили</a>
               <ul class="submenu">
-                <li><a href="../Cars/Sub_menu/New_cars.html">Новые автомобили</a></li>
+                <li><a href="../Cars/Sub_menu/New_cars.html">Автомобиль с пробегом</a></li>
                 <li><a href="../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
-                <li><a href="../Cars/Sub_menu/used_cars.html">Б/У Автомобили</a></li>
+                <li><a href="../Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
               </ul>
             </li>
             <li>
@@ -47,7 +47,7 @@
                 <a href="../Favourites/Favourites.html">Избранное</a>
             </li>
             <li class="hreader_right">
-              <a href="./About_us.html">О нас</a>
+              <a href="./About_us.html" class="down">О нас</a>
               <ul class="submenu">
                 <li><a href="./Feedback.html">Обратная связь</a></li>
               </ul>
@@ -56,12 +56,18 @@
               <a href="../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
             </li>
           </ul>
+          <div class="navbar-toggle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
         </nav>
       </div>
     </header>
     <main>
-      <a href="#" id="openWindowLink" class="button">Открыть новое окно</a>
-
+      <div class="crumbs">
+        <h3>О нас / Обратная связь</h3>
+      </div>
       <form id="feedback-form">
         <label for="username">Ваше имя:</label><br>
         <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
@@ -77,10 +83,6 @@
         <button type="button" id="toggle-history-btn">Показать историю</button>
       </form>
 
-      <div id="error-messages" class="error-message" style="display: none;"></div>
-      <div id="history" style="display: none;">
-        <!-- Сюда будет добавляться история пользователей -->
-      </div>
     </main>
       <!--Блок footer(подвал)-->
     <footer>
@@ -115,5 +117,86 @@
 
     <!--Внешний скрипт работы гиперссылки-->
     <script src="./Feedback_script.js"></script>
+    <script>
+      //скрипт для бургера
+      function toggleMenu() {
+         var menu = document.getElementById("menu");
+         menu.classList.toggle("active");
+     }
+     //скрипт для выпадающего списка в списке
+     document.querySelectorAll('.down').forEach(item => {
+         item.addEventListener('click', event => {
+             item.querySelector('.submenu').classList.toggle("active");
+             event.preventDefault();
+         });
+     });
+     //скрипт меню
+window.addEventListener("DOMContentLoaded", function() {
+const mediaQuery = window.matchMedia("(max-width: 986px)");
+
+// Функция для обработки событий клика
+function handleClick(event) {
+// Если ширина экрана меньше 986px, выходим из функции
+if (!mediaQuery.matches) {
+return;
+}
+
+// Получаем следующий элемент после текущего элемента списка (подменю)
+const submenu = this.nextElementSibling;
+
+// Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
+if (submenu.classList.contains('active')) {
+return;
+}
+
+// Отменяем действие по умолчанию (переход по ссылке)
+event.preventDefault();
+
+// Закрываем все подменю
+closeAllSubmenus();
+
+// Открываем текущее подменю
+submenu.classList.add('active');
+}
+
+// Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
+const downLinks = document.querySelectorAll('.down');
+downLinks.forEach(link => {
+link.addEventListener('click', handleClick);
+});
+
+// Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
+const submenuLinks = document.querySelectorAll('.submenu a');
+submenuLinks.forEach(link => {
+link.addEventListener('click', function() {
+// Закрываем подменю после клика на ссылку
+const submenu = this.closest('.submenu');
+submenu.classList.remove('active');
+});
+});
+
+// Функция для закрытия всех подменю
+function closeAllSubmenus() {
+const submenus = document.querySelectorAll('.submenu');
+submenus.forEach(submenu => {
+submenu.classList.remove('active');
+});
+}
+
+// Функция для открытия/закрытия основного меню
+function toggleMenu() {
+const menu = document.getElementById("menu");
+menu.classList.toggle("active");
+}
+
+// Проверяем изменение медиа-запроса
+mediaQuery.addEventListener("change", event => {
+// Если ширина экрана меньше 986px, закрываем все подменю
+if (!event.matches) {
+closeAllSubmenus();
+}
+});
+});
+ </script>
   </body>
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Главная страница</title>
+        <title>Шиномонтаж</title>
         <!-- Подключение стиля -->
-        <link rel="stylesheet" href="Tire_servise_style.css">
+        <link rel="stylesheet" href="./Tire_servise_style.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <link rel="icon" href="../../img/badge.png" type="image/png">
     </head>
 
     <body>
@@ -18,8 +18,8 @@
                 </a>
             </div>
             <div>
-                <nav>
-                    <ul class="menu">
+                <nav class="navbar">
+                    <ul class="menu" id="menu">
                         <li>
                             <a href="../../index.html">Главная</a>
                         </li>
@@ -46,70 +46,76 @@
                             <a href="../../Favourites/Favourites.html">Избранное</a>
                         </li>
                         <li class="hreader_right">
-                            <a href="../../About%20us/About_us.html">О нас</a>
+                            <a href="../../About%20us/About_us.html" class="down">О нас</a>
+                            <ul class="submenu">
+                                <li><a href="../../About%20us/Feedback.html">Обратная связь</a></li>
+                            </ul>
                         </li>
                         <li class="hreader_right">
                             <a href="../../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
                         </li>
                     </ul>
+                    <div class="navbar-toggle" onclick="toggleMenu()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
                 </nav>
             </div>
         </header>
 
         <!--Блок main-->
         <main>
-            <!-- Анимация пульсации многоугольника -->
-            <svg width="200" height="200" viewBox="0 0 200 200">
-                <polygon points="100,50 150,100 100,150 50,100" fill="#003559">
-                    <animate attributeName="points" dur="2s" repeatCount="indefinite"
-                    values="100,50 150,100 100,150 50,100;
-                            100,150 150,200 100,250 50,200;
-                            100,250 150,300 100,350 50,300;
-                            100,150 150,100 100,50 50,100" />
-                  </polygon>
-            </svg>
+            <div class="crumbs">
+                <h3>Услуги / Шиномонтаж</h3>
+            </div>
+            <div class="content_block1">
+                <div class="content_block2">
+                    <div class="content_block3">
+                        <div class="block3_img">
+                            <img src="../../img/Tire_service_fon.webp" alt="insurance_auto">
+                        </div>
+                        <div class="block3_img_and_text">
+                            <div class="block3_img_text">
+                                <h1>
+                                    Шиномонтаж автомобиля 
+                                    <br>
+                                    Качественно и
+                                    <br>
+                                    На выгодных условиях!
+                                </h1>
+                                <div class="block3_img_text_detailed">
+                                    <a href="#" onclick="toggleForm()" target="_top"><span>Подробнее</span></a>
+                                </div>
+                            </div>
+                            <div class="block3_text">
+                                <p>
+                                    При обращении в наш центр шиномонтажа вы получите профессиональное обслуживание, направленное на обеспечение безопасности и комфорта вашего автомобиля. Мы ценим ваше доверие и стремимся сделать процесс обслуживания максимально удобным и эффективным.
 
-            <!-- Анимация движения квадрата -->
-            <svg width="400" height="150" viewBox="0 0 400 150">
-                <!-- Путь -->
-                <path id="motionPath" d="M10 80 Q 95 10 180 80 T 350 80" fill="none" stroke="#4682B4" stroke-width="2"></path>
-                <!-- Квадрат -->
-                <rect x="10" y="70" width="20" height="20" fill="#D81324">
-                    <!-- Анимация движения -->
-                    <animateMotion dur="3s" repeatCount="indefinite">
-                    <mpath href="#motionPath"></mpath>
-                    </animateMotion>
-                </rect>
-            </svg>
+Наши высококвалифицированные специалисты осуществляют шиномонтаж с использованием современного оборудования, что гарантирует качественное выполнение работ. Мы также предлагаем широкий выбор шин и дисков от ведущих производителей, чтобы удовлетворить все ваши потребности и предпочтения.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Блок текста в виде дуги -->
-            <svg width="400" height="100" viewBox="0 0 400 100">
-                <path id="textPath" d="M10 80 Q 95 10 180 80 T 350 80" fill="none"></path>
-                <text class="path-text">
-                    <textPath href="#textPath">автосалон, Машина</textPath>
-                </text>
-            </svg>
 
-            <!--Анимация изменения радиуса круга-->
-            <svg width="400" height="200" viewBox="0 0 400 200">
-                <!-- Круг для анимации -->
-                <circle cx="100" cy="100" r="20" fill="blue">
-                    <!-- Анимация изменения радиуса -->
-                    <animate attributeName="r" dur="2s" values="20;50;20" repeatCount="indefinite" />
-                </circle>
-            </svg>
 
-            <!--Маска-SVG-->
-            <svg width="400" height="300" viewBox="0 0 400 300">
-                <!-- Загружаем изображение маски -->
-                <defs>
-                    <mask id="mask" x="0" y="0" width="400" height="300">
-                    <image xlink:href="../../img/details_3.png" x="0" y="0" width="400" height="300" />
-                    </mask>
-                </defs>
-                <!-- Применяем маску к прямоугольнику -->
-                <rect x="0" y="0" width="400" height="300" mask="url(#mask)"></rect>
-            </svg>
+                <div id="myForm" class="form-container">
+                    <span class="close" onclick="toggleForm()">&times;</span>
+                    <h4>Заявка на консультацию</h4>
+                    <form>
+                        <label for="username">Ваше имя:</label><br>
+                        <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
+                        <label for="phone">Ваш телефон:</label><br>
+                        <input type="tel" id="phone" name="phone" data-phone-pattern="+7 (___) ___-__-__" required placeholder="Введите номер телефона"><br>
+                        <label for="your_email">Ваша почта*</label><br>
+                        <input type="email" id="your_email" name="your_email" required placeholder="Введите email"><br>
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
+                        <button type="submit" id="submit-btn">Отправить заявку</button>
+                    </form>
+                </div>
         </main>
 
         <!--Блок footer(подвал)-->
@@ -142,5 +148,133 @@
                 </div>            
             </div>
         </footer>
+
+
+
+        <script>
+            //скрипт для бургера
+            function toggleMenu() {
+                var menu = document.getElementById("menu");
+                menu.classList.toggle("active");
+            }
+            //скрипт для выпадающего списка в списке
+            document.querySelectorAll('.down').forEach(item => {
+                item.addEventListener('click', event => {
+                    item.querySelector('.submenu').classList.toggle("active");
+                    event.preventDefault();
+                });
+            });
+            //скрипт меню
+window.addEventListener("DOMContentLoaded", function() {
+  const mediaQuery = window.matchMedia("(max-width: 986px)");
+
+  // Функция для обработки событий клика
+  function handleClick(event) {
+    // Если ширина экрана меньше 986px, выходим из функции
+    if (!mediaQuery.matches) {
+      return;
+    }
+
+    // Получаем следующий элемент после текущего элемента списка (подменю)
+    const submenu = this.nextElementSibling;
+
+    // Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
+    if (submenu.classList.contains('active')) {
+      return;
+    }
+
+    // Отменяем действие по умолчанию (переход по ссылке)
+    event.preventDefault();
+
+    // Закрываем все подменю
+    closeAllSubmenus();
+
+    // Открываем текущее подменю
+    submenu.classList.add('active');
+  }
+
+  // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
+  const downLinks = document.querySelectorAll('.down');
+  downLinks.forEach(link => {
+    link.addEventListener('click', handleClick);
+  });
+
+  // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
+  const submenuLinks = document.querySelectorAll('.submenu a');
+  submenuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Закрываем подменю после клика на ссылку
+      const submenu = this.closest('.submenu');
+      submenu.classList.remove('active');
+    });
+  });
+
+  // Функция для закрытия всех подменю
+  function closeAllSubmenus() {
+    const submenus = document.querySelectorAll('.submenu');
+    submenus.forEach(submenu => {
+      submenu.classList.remove('active');
+    });
+  }
+
+  // Функция для открытия/закрытия основного меню
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+  }
+
+  // Проверяем изменение медиа-запроса
+  mediaQuery.addEventListener("change", event => {
+    // Если ширина экрана меньше 986px, закрываем все подменю
+    if (!event.matches) {
+      closeAllSubmenus();
+    }
+  });
+});
+
+
+function toggleForm() {
+  var form = document.getElementById("myForm");
+  if (form.style.display === "none" || form.style.display === "") {
+    form.style.display = "block";
+  } else {
+    form.style.display = "none";
+  }
+}
+
+
+var phoneInputCallback = function(event) {
+      var el = event.target,
+        clearVal = el.dataset.phoneClear,
+        pattern = el.dataset.phonePattern,
+        matrix_def = "+7 (___) ___-__-__",
+        matrix = pattern ? pattern : matrix_def,
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = event.target.value.replace(/\D/g, "");
+        // проверяем длину значения и очищаем поле, если оно неполное
+         if (clearVal !== 'false' && event.type === 'blur') {
+            if (val.length < matrix.match(/([\_\d])/g).length) {
+            event.target.value = '';
+            return;
+            }
+        }
+        // Заменяем символы ввода на шаблон телефонного номера
+        if (def.length >= val.length) val = def;
+        event.target.value = matrix.replace(/./g, function(a) {
+            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+        });
+    };
+    
+    // Получаем все элементы с атрибутом data-phone-pattern
+    var phoneInputs = document.querySelectorAll('[data-phone-pattern]');
+    for (let elem of phoneInputs) {
+      for (let ev of ['input', 'blur', 'focus']) {
+        elem.addEventListener(ev, phoneInputCallback);
+      }
+    }
+</script>
+
+
     </body>
 </html>

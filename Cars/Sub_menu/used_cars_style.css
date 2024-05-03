@@ -812,20 +812,21 @@ footer {
 /* Стили для текста в футере */
 .footer-text1 {
     padding: 0 20px 0 20px;
-    color: #ffffff;
+
     max-width: 800px;
 }
 
 /* Стили для текста в футере */
 .footer-text2 {
     padding: 0 0 0 0;
-    color: #ffffff;
+
 }
 
 /* Стили для текста в футере */
 .footer-text3 {
     padding: 0 30px 10px 20px;
-    color: #ffffff;
+
+
 }
 
 .footer-icons {
@@ -866,7 +867,6 @@ footer {
 @media screen and (width: 1024px) {
     .footer-text1 {
         padding: 0 20px 0 20px;
-        color: #ffffff;
         max-width: 400px;
     }
 }
@@ -880,7 +880,6 @@ footer {
         flex-wrap: nowrap;
     }
 }
-
 
 /* Стили для темной темы */
 body.dark-theme {
@@ -899,16 +898,22 @@ body.light-theme {
     background-color: black;
 }
 
-/* Стили для темной темы */
 .dark-theme footer {
     background-color: rgb(255, 255, 255);
+    color: #000;
+}
+.light-theme footer{
+    color: white;
+}
+/* Стили для темной темы */
+.dark-theme
+.footer-text1
+.footer-text3 {
+    color: black;
+    
 }
 
-/* Стили для темной темы */
-.dark-theme,
-.footer-text1 {
-    color: black;
-}
+
 
 /* Стили для темной темы */
 .dark-theme,
@@ -922,17 +927,6 @@ body.light-theme {
     background-color: black;
 }
 
-/* Стили для темной темы */
-.dark-theme .news-center {
-    color: aliceblue;
-    background-color: black;
-}
-
-/* Стили для темной темы */
-.dark-theme .news-content {
-    color: aliceblue;
-
-}
 
 /* Стили для темной темы */
 .dark-theme .crumbs {
@@ -950,4 +944,19 @@ body.light-theme {
     .dark-theme .bar {
         background-color: rgb(255, 255, 255);
     }
+}
+
+.dark-theme .pod_car{
+    background-color: #000;
+    color: #fff;
+}
+.dark-theme .car-block{
+    background-color: #000;
+    color: #fff;
+}
+.dark-theme .car-title{
+    background-color: #000;
+    color: #fff;}
+.dark-theme .car-title > span{
+    color: #fff;
 }

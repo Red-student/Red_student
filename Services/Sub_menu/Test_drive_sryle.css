@@ -299,7 +299,7 @@ nav a {
     margin-top: 5px;
     letter-spacing: .01em;
     line-height: 1.2;
-    font-size: 16px;
+    font-size: 20px;
 }
 .block3_img_text > h1 > br{
     display: none;
@@ -350,7 +350,7 @@ nav a {
     margin-top: 40px;
     letter-spacing: .01em;
     line-height: 1.2;
-    font-size: 18px;
+    font-size: 28px;
 }
 
 /*стили для кнопки "Подробнее" на картинке*/

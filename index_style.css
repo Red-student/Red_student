@@ -107,6 +107,7 @@ nav a {
     background-color: #D81324;
 }
 
+/* Медиа-запрос для экранов с максимальной шириной 987 пикселей */
 @media screen and (max-width: 987px) {
 
     /* Стили для логотипа при меньших экранах */
@@ -115,12 +116,14 @@ nav a {
         margin: 13px 0 7px 10px;
     }
 
+    /* Стили для навигационной панели при меньших экранах */
     .navbar {
         display: flex;
         justify-content: flex-end;
         align-items: center;
     }
 
+    /* Стили для кнопки навигации при меньших экранах */
     .navbar-toggle {
         position: absolute;
         cursor: pointer;
@@ -129,6 +132,7 @@ nav a {
         right: 20px;
     }
 
+    /* Стили для линий кнопки навигации */
     .bar {
         width: 25px;
         height: 3px;
@@ -137,6 +141,7 @@ nav a {
         transition: 0.4s;
     }
 
+    /* Стили для меню навигации при меньших экранах */
     .menu {
         list-style: none;
         padding: 0;
@@ -153,21 +158,25 @@ nav a {
         z-index: 100;
     }
 
+    /* Активация меню */
     .menu.active {
         display: block;
     }
 
+    /* Стили для элементов списка в меню */
     .menu li {
         padding: 10px 0;
         text-align: center;
     }
 
+    /* Стили для ссылок в меню */
     .menu li a {
         text-decoration: none;
         color: #003559;
         transition: 0.3s;
     }
 
+    /* Показываем подменю при наведении на элемент списка верхнего уровня */
     .menu li a:hover {
         color: #D81324;
     }
@@ -183,6 +192,7 @@ nav a {
         font-size: 14px;
     }
 
+    /* Стили для выпадающего подменю */
     .submenu {
         display: none;
         position: relative;
@@ -193,40 +203,48 @@ nav a {
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
+    /* Показываем подменю при наведении на элемент списка верхнего уровня */
     .menu>li:hover .submenu {
         display: block;
     }
 
+    /* Показываем подменю при наведении на элемент списка верхнего уровня */
     .submenu.active {
         display: block;
     }
 
+    /* Стили для элементов подменю */
     .submenu li {
         margin: 5px 0;
     }
 
+    /* Стили для ссылок в подменю */
     .submenu li a {
         color: #003559;
         text-align: center;
         font-weight: bold;
     }
 
+    /* При наведении на ссылку в подменю */
     .submenu li a:hover {
         color: #ffffff;
     }
 
+    /* Дополнительные стили для ссылок */
     .submenu a {
         text-align: center;
         font-weight: bold;
     }
 }
 
+/* Медиа-запрос для экранов с максимальной шириной 397 пикселей */
 @media screen and (max-width: 397px) {
     .menu {
         width: 80%;
     }
 }
 
+/* Медиа-запрос для экранов с минимальной шириной 986.5 пикселей и максимальной шириной 1500 пикселей */
 @media screen and (min-width: 986.5px) and (max-width: 1500px) {
 
     .menu>li {
@@ -239,12 +257,14 @@ nav a {
 
 }
 
+/*Стили для хлебных крошек*/
 .crumbs {
     margin: 10px 0px;
     background-color: rgb(195, 195, 195, 0.15);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
+/*Стили хлебные крошки*/
 .crumbs>h3 {
     padding: 10px 25px;
     margin: 0px 5px;
@@ -265,11 +285,13 @@ nav a {
     user-select: none;
 }
 
+/*Стили для кнопок*/
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
+/*Стили для кнопок*/
 .prev:hover,
 .next:hover {
     background-color: #0056b3;
@@ -403,6 +425,7 @@ nav a {
     margin-top: 50px;
 }
 
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_block3 {
         padding: 0px;
@@ -421,6 +444,7 @@ nav a {
     margin-right: 50px;
 }
 
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_block3 {
         padding-right: 0px;
@@ -428,8 +452,6 @@ nav a {
         margin-right: 0px;
         opacity: 1;
     }
-
-
 }
 
 /* Стиль для текста заголовка */
@@ -489,6 +511,7 @@ nav a {
     margin-bottom: 150px;
 }
 
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_block2 {
         flex-wrap: wrap;
@@ -534,6 +557,7 @@ nav a {
     margin-right: 50px;
 }
 
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_block3-2 {
         width: 100%;
@@ -555,17 +579,20 @@ nav a {
     margin-left: 15PX;
 }
 
+/* Стили для анимации появления элементов справа (.delighter.right) */
 .delighter.right {
     transform: translate(100%);
     opacity: 0;
     transition: all 0.75s ease-out;
 }
 
+/* Стили для анимации появления элементов справа (.delighter.right) в момент начала анимации */
 .delighter.right.started {
     transform: none;
     opacity: 1;
 }
 
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_title_img2 {
         margin-right: 15px;
@@ -597,15 +624,6 @@ nav a {
     }
 }
 
-.hidden {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.visible {
-    opacity: 1;
-}
-
 /* Стили для списка блока*/
 .videocard_list ul {
     display: flex;
@@ -629,12 +647,14 @@ nav a {
     }
 }
 
+/* Медиа-запрос для устройств с шириной экрана 768px */
 @media screen and (width:768px) {
     .videocard_list ul {
         margin-bottom: 15px;
     }
 }
 
+/* Медиа-запрос для устройств с шириной экрана от 768px до 1024px */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .div_block2 {
         padding-right: 0%;
@@ -691,23 +711,27 @@ nav a {
     padding: 0;
 }
 
+/* Стили для анимации появления элементов слева (.delighter.left) */
 .delighter.left {
     transform: translate(-100%);
     opacity: 0;
     transition: all 0.75s ease-out;
 }
 
+/* Стили для анимации появления элементов слева (.delighter.left) в момент начала анимации */
 .delighter.left.started {
     transform: none;
     opacity: 1;
 }
 
+/* Стили для анимации появления элементов справа (.delighter.right) */
 .delighter.right {
     transform: translate(100%);
     opacity: 0;
     transition: all 0.75s ease-out;
 }
 
+/* Стили для анимации появления элементов справа (.delighter.right) в момент начала анимации */
 .delighter.right.started {
     transform: none;
     opacity: 1;
@@ -794,31 +818,19 @@ nav a {
     width: 100%;
 }
 
-.news-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/*стили для кнопок*/
 .controls {
     display: none;
-    /* Спрячем кнопки управления по умолчанию */
 }
 
+/*Стили для адаптивного дизайна блока новостей*/
 @media screen and (min-width: 480px) and (max-width: 768px) {
-    .news-wrapper {
-        flex-direction: row-reverse;
-        justify-content: center;
-        align-items: center;
-        /* Выравнивание по вертикали */
-    }
 
     .news-container {
         display: contents;
         margin: 0 10px;
         justify-content: center;
         align-items: center;
-        /* Добавим небольшие отступы по бокам */
     }
 
     .controls {
@@ -854,23 +866,20 @@ footer {
 /* Стили для текста в футере */
 .footer-text1 {
     padding: 0 20px 0 20px;
-
     max-width: 800px;
 }
 
 /* Стили для текста в футере */
 .footer-text2 {
     padding: 0 0 0 0;
-
 }
 
 /* Стили для текста в футере */
 .footer-text3 {
     padding: 0 30px 10px 20px;
-
-
 }
 
+/* Стили для икнонок в футере */
 .footer-icons {
     display: flex;
     justify-content: center;
@@ -883,10 +892,12 @@ footer {
     display: inline-block;
 }
 
+/* Стили для икнонок в футере */
 .footer-icons a:first-child {
     margin-left: 0;
 }
 
+/* Стили для икнонок в футере */
 .footer-icons a:not(:first-child) {
     margin-left: 50px;
 }
@@ -895,17 +906,17 @@ footer {
 @media screen and (max-width: 768px) {
     .footer-row {
         flex-direction: column;
-        /* Располагаем элементы в столбец */
+
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
         margin-bottom: 20px;
-        /* Увеличиваем отступ между блоками на мобильных устройствах */
     }
 }
 
+/* Медиа-запросы для адаптивного дизайна */
 @media screen and (width: 1024px) {
     .footer-text1 {
         padding: 0 20px 0 20px;
@@ -913,6 +924,7 @@ footer {
     }
 }
 
+/* Медиа-запросы для адаптивного дизайна */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .footer-text3 {
         padding: 0 20px 10px 20px;
@@ -954,11 +966,10 @@ body.light-theme {
 /* Стили для темной темы */
 .dark-theme .footer-text1 .footer-text3 {
     color: black;
-
 }
 
 /* Стили для темной темы */
-.dark-theme  .footer-icons>a {
+.dark-theme .footer-icons>a {
     filter: brightness(0.1);
 }
 
@@ -977,14 +988,11 @@ body.light-theme {
 /* Стили для темной темы */
 .dark-theme .news-content {
     color: aliceblue;
-
 }
 
 /* Стили для темной темы */
 .dark-theme .crumbs {
     color: aliceblue;
-
-
 }
 
 /* Стили для темной темы */

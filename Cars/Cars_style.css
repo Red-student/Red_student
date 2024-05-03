@@ -902,13 +902,10 @@ body.light-theme {
 /* Стили для темной темы */
 .dark-theme footer {
     background-color: rgb(255, 255, 255);
+    color: #000;
 }
 
-/* Стили для темной темы */
-.dark-theme,
-.footer-text1 {
-    color: black;
-}
+
 
 /* Стили для темной темы */
 .dark-theme,
@@ -922,17 +919,6 @@ body.light-theme {
     background-color: black;
 }
 
-/* Стили для темной темы */
-.dark-theme .news-center {
-    color: aliceblue;
-    background-color: black;
-}
-
-/* Стили для темной темы */
-.dark-theme .news-content {
-    color: aliceblue;
-
-}
 
 /* Стили для темной темы */
 .dark-theme .crumbs {

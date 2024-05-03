@@ -98,7 +98,7 @@
     document.cookie = "secretWord=" + currentSecretWord + ";expires=" + getExpirationDate(2);
 
     // Функция для сохранения учетных данных
-    function saveCredentials() {
+    function savedCredentials() {
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
       var secretWord = document.getElementById("secretWord").value;
@@ -107,7 +107,7 @@
       document.cookie = "username=" + username + ";expires=" + getExpirationDate(2);
       document.cookie = "password=" + password + ";expires=" + getExpirationDate(2);
 
-      // Если введенное секретное слово совпадает с текущим, показываем кнопку для просмотра секретных данных
+      // Если введенное секретное слово совпадает с текущим, показываем кнопку для просмотра секретных данных 
       var currentSecretWord = getCookie("secretWord");
       if (secretWord == currentSecretWord) {
         document.getElementById('showCookies').style.display = 'flex'
@@ -119,7 +119,7 @@
       }
     }
     // Функция для отображения секретных данных
-    function showCookies() {
+    function showsCookies() {
       // Показываем секретные данные и скрываем форму ввода
       document.getElementById("secretContent").textContent = "Секретные данные";
       document.getElementById("loginForm").style.display = "none";
@@ -147,7 +147,7 @@
     }
 
     // Функция для очистки всех куки и перезагрузки страницы
-    function clearCredentials() {
+    function clearTheData() {
       document.cookie = "username=;expires=Thu, 01 Jan 1950 00:00:00 GMT";
       document.cookie = "password=;expires=Thu, 01 Jan 1950 00:00:00 GMT";
       document.cookie = "secretWord=;expires=Thu, 01 Jan 1950 00:00:00 GMT";
@@ -160,7 +160,8 @@
       var currentDate = new Date();
       if (currentDate > expirationDate) {
         alert("Cookies have expired. Please login again.");
-        clearCredentials(); // Очищаем куки
+
+        clearTheData(); // Очищаем куки
       }
     };
   </script>

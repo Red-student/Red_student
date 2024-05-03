@@ -244,23 +244,6 @@ nav a {
     margin: 0px 5px;
 }
 
-/*Стили для ссылки которая открывает ноове окно*/
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #003559;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-/*Стили для ссылки которая открывает ноове окно, при наведении курсора*/
-.button:hover {
-    background-color: #0056b3;
-}
-
 /* Стили для формы обратной связи */
 #feedback-form {
     max-width: 500px;
@@ -299,7 +282,7 @@ input[type="checkbox"] {
 }
 
 /* Стили для кнопок */
-button {
+main > button {
     padding: 10px 20px;
     margin-top: 15px;
     background-color: #003559;
@@ -310,7 +293,7 @@ button {
 }
 
 /* Стили для кнопок при наведении курсора */
-button:hover {
+main > button:hover {
     background-color: #0056b3;
 }
 
@@ -325,7 +308,7 @@ button:hover {
 }
 
 /* Стили для футера */
-footer{
+footer {
     position: absolute;
     background-color: #000000;
     width: 100%;
@@ -336,7 +319,7 @@ footer{
 }
 
 /* Стили для строк футера */
-.footer-row{
+.footer-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -344,65 +327,149 @@ footer{
 }
 
 /* Стили для текста в футере */
-.footer-text1{
+.footer-text1 {
     padding: 0 20px 0 20px;
-    color: #ffffff;
+
     max-width: 800px;
 }
 
 /* Стили для текста в футере */
-.footer-text2{
+.footer-text2 {
     padding: 0 0 0 0;
-    color: #ffffff;
+
 }
 
 /* Стили для текста в футере */
-.footer-text3{
+.footer-text3 {
     padding: 0 30px 10px 20px;
-    color: #ffffff;
+
+
 }
+
 .footer-icons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 /* Стили для иконок в футере */
-.footer-icons a{
+.footer-icons a {
     text-decoration: none;
     display: inline-block;
 }
 
 .footer-icons a:first-child {
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .footer-icons a:not(:first-child) {
-    margin-left: 50px; 
+    margin-left: 50px;
 }
+
 /* Медиа-запросы для адаптивного дизайна */
 @media screen and (max-width: 768px) {
     .footer-row {
-        flex-direction: column; /* Располагаем элементы в столбец */
+        flex-direction: column;
+        /* Располагаем элементы в столбец */
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
-        margin-bottom: 20px; /* Увеличиваем отступ между блоками на мобильных устройствах */
+        margin-bottom: 20px;
+        /* Увеличиваем отступ между блоками на мобильных устройствах */
     }
 }
+
 @media screen and (width: 1024px) {
-    .footer-text1{
+    .footer-text1 {
         padding: 0 20px 0 20px;
-        color: #ffffff;
         max-width: 400px;
     }
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .footer-text3 {
         padding: 0 20px 10px 20px;
     }
-    .footer-icons{
+
+    .footer-icons {
         flex-wrap: nowrap;
+    }
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для светлой темы */
+body.light-theme {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+/* Стили для темной темы */
+.dark-theme header {
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.dark-theme footer {
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+
+/*Стили для светлой темы*/
+.light-theme footer {
+    color: white;
+}
+
+/* Стили для темной темы */
+.dark-theme .footer-text1 .footer-text3 {
+    color: black;
+
+}
+
+/* Стили для темной темы */
+.dark-theme,
+.footer-icons>a {
+    background-color: rgb(0, 0, 0);
+}
+
+/* Стили для темной темы */
+.dark-theme .div_title p {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.dark-theme .news-center {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.dark-theme .news-content {
+    color: aliceblue;
+
+}
+
+/* Стили для темной темы */
+.dark-theme .crumbs {
+    color: aliceblue;
+
+
+}
+
+/* Стили для темной темы */
+@media screen and (max-width: 987px) {
+    .dark-theme .navbar-toggle {
+        color: #ffffff;
+    }
+
+    .dark-theme .bar {
+        background-color: rgb(255, 255, 255);
     }
 }

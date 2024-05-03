@@ -1,201 +1,208 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Feedback_style.css">
-    <link rel="icon" href="../img/badge.png" type="image/png">
-    <title>Обратная связь</title>
-  </head>
 
-  <body>
-    <!-- Хедер с логотипом и меню -->
-    <header>
-      <!-- Логотип -->
-      <div>
-        <a href="../index.html">
-          <img src="../img/Logo.png" alt="logo" class="logo">
-        </a>
-      </div>
-      <!-- Меню навигации -->
-      <div>
-        <nav class="navbar">
-          <ul class="menu" id="menu">
-            <li>
-              <a href="../index.html">Главная</a>
-            </li>
-            <li>
-              <a href="../Cars/Cars.html" class="down">Автомобили</a>
-              <ul class="submenu">
-                <li><a href="../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
-                <li><a href="../Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="../Services/Services.html"  class="down">Услуги</a>
-              <ul class="submenu">
-                <li><a href="../Services/Sub_menu/Lending.html">Кредитование</a></li>
-                <li><a href="../Services/Sub_menu/Insurance.html">Страхование</a></li>
-                <li><a href="../Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
-                <li><a href="../Services/Sub_menu/stocks.html">Акции</a></li>
-                <li><a href="../Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
-                <li><a href="../Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
-              </ul>
-            </li>
-            <li>
-                <a href="../Favourites/Favourites.html">Избранное</a>
-            </li>
-            <li class="hreader_right">
-              <a href="./About_us.html" class="down">О нас</a>
-              <ul class="submenu">
-                <li><a href="./Feedback.html">Обратная связь</a></li>
-              </ul>
-            </li>
-            <li class="hreader_right">
-              <a href="../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
-            </li>
-          </ul>
-          <div class="navbar-toggle" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <div class="crumbs">
-        <h3>О нас / Обратная связь</h3>
-      </div>
-      <form id="feedback-form">
-        <label for="username">Ваше имя:</label><br>
-        <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
-        <label for="phone">Ваш телефон:</label><br>
-        <input type="tel" id="phone" name="phone" data-phone-pattern="+7 (___) ___-__-__" required placeholder="Введите номер телефона"><br>
-        <label for="message">Сообщения (максимальный размер 450 символов):</label><br>
-        <textarea id="message" name="message" maxlength="450" required placeholder="Введите сообщение"></textarea><br>
-        <label for="captcha">Captcha (5 + 3):</label><br>
-        <input type="text" id="captcha" name="captcha" required placeholder="Введите ответ на капчу сюда"><br>
-        <input type="checkbox" id="consent" required>
-        <label for="consent">Разрешение на обработку персоналньх данных</label><br>
-        <button type="submit" id="submit-btn">Отправить</button>
-        <button type="button" id="toggle-history-btn">Показать историю</button>
-      </form>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Feedback_style.css">
+  <link rel="icon" href="../img/badge.png" type="image/png">
+  <title>Обратная связь</title>
+  <script src="../theme.js"></script>
+</head>
 
-    </main>
-      <!--Блок footer(подвал)-->
-    <footer>
-      <div class="footer-row">
-        <div class="footer-text1">
-          <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность каждой единицы транспортного средства. </p>
-          <p>© 2024 Все права защищены.</p>
+<body>
+  <!-- Хедер с логотипом и меню -->
+  <header>
+    <!-- Логотип -->
+    <div>
+      <a href="../index.html">
+        <img src="../img/Logo.png" alt="logo" class="logo">
+      </a>
+    </div>
+    <!-- Меню навигации -->
+    <div>
+      <nav class="navbar">
+        <ul class="menu" id="menu">
+          <li>
+            <a href="../index.html">Главная</a>
+          </li>
+          <li>
+            <a href="../Cars/Cars.html" class="down">Автомобили</a>
+            <ul class="submenu">
+              <li><a href="../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+              <li><a href="../Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../Services/Services.html" class="down">Услуги</a>
+            <ul class="submenu">
+              <li><a href="../Services/Sub_menu/Lending.html">Кредитование</a></li>
+              <li><a href="../Services/Sub_menu/Insurance.html">Страхование</a></li>
+              <li><a href="../Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
+              <li><a href="../Services/Sub_menu/stocks.html">Акции</a></li>
+              <li><a href="../Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
+              <li><a href="../Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../Favourites/Favourites.html">Избранное</a>
+          </li>
+          <li class="hreader_right">
+            <a href="./About_us.html" class="down">О нас</a>
+            <ul class="submenu">
+              <li><a href="./Feedback.html">Обратная связь</a></li>
+            </ul>
+          </li>
+          <li class="hreader_right">
+            <a href="../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
+          </li>
+        </ul>
+        <div class="navbar-toggle" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
         </div>
-        <div class="footer-text1">
-            <p>Связь с разработчиком</p>
-            <p>APO2013@ku.edu.kz</p>
-            <p>+7 705 268 3304</p>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="crumbs">
+      <h3>О нас / Обратная связь</h3>
+    </div>
+    <form id="feedback-form">
+      <label for="username">Ваше имя:</label><br>
+      <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
+      <label for="phone">Ваш телефон:</label><br>
+      <input type="tel" id="phone" name="phone" data-phone-pattern="+7 (___) ___-__-__" required
+        placeholder="Введите номер телефона"><br>
+      <label for="message">Сообщения (максимальный размер 450 символов):</label><br>
+      <textarea id="message" name="message" maxlength="450" required placeholder="Введите сообщение"></textarea><br>
+      <label for="captcha">Captcha (5 + 3):</label><br>
+      <input type="text" id="captcha" name="captcha" required placeholder="Введите ответ на капчу сюда"><br>
+      <input type="checkbox" id="consent" required>
+      <label for="consent">Разрешение на обработку персоналньх данных</label><br>
+      <button type="submit" id="submit-btn">Отправить</button>
+      <button type="button" id="toggle-history-btn">Показать историю</button>
+    </form>
+
+  </main>
+  <!--Блок footer(подвал)-->
+  <footer>
+    <div class="footer-row">
+      <div class="footer-text1">
+        <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы предлагаем
+          широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность каждой единицы
+          транспортного средства. </p>
+        <p>© 2024 Все права защищены.</p>
+      </div>
+      <div class="footer-text1">
+        <p>Связь с разработчиком</p>
+        <p>APO2013@ku.edu.kz</p>
+        <p>+7 705 268 3304</p>
+      </div>
+      <div class="footer-text3">
+        <p>Следите за нашими новостями в социальных сетях!</p>
+        <div class="footer-icons">
+          <a href="https://www.instagram.com/kozybayevuniversity/">
+            <img src="../img/instagram.svg" alt="instagram">
+          </a>
+
+          <a href="https://www.facebook.com/kozybayevuniversity/">
+            <img src="../img/facebook.svg" alt="facebook">
+          </a>
+
+          <a href="https://t.me/s/kozybayevuniversity/1973">
+            <img src="../img/telegram.svg" alt="telegram">
+          </a>
+          <button id="themeToggle">Сменить тему</button>
         </div>
-          <div class="footer-text3">
-            <p>Следите за нашими новостями в социальных сетях!</p>
-            <div class="footer-icons">
-              <a href="https://www.instagram.com/kozybayevuniversity/">
-                  <img src="../img/instagram.svg" alt="instagram">
-              </a>
+      </div>
+    </div>
+  </footer>
 
-              <a href="https://www.facebook.com/kozybayevuniversity/">
-                  <img src="../img/facebook.svg" alt="facebook">
-              </a>
+  <!--Внешний скрипт работы гиперссылки-->
+  <script src="./Feedback_script.js"></script>
+  <script>
+    //скрипт для бургера
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+    //скрипт для выпадающего списка в списке
+    document.querySelectorAll('.down').forEach(item => {
+      item.addEventListener('click', event => {
+        item.querySelector('.submenu').classList.toggle("active");
+        event.preventDefault();
+      });
+    });
+    //скрипт меню
+    window.addEventListener("DOMContentLoaded", function () {
+      const mediaQuery = window.matchMedia("(max-width: 986px)");
 
-              <a href="https://t.me/s/kozybayevuniversity/1973">
-                  <img src="../img/telegram.svg" alt="telegram">
-              </a>
-            </div>
-          </div>            
-        </div>
-    </footer>
+      // Функция для обработки событий клика
+      function handleClick(event) {
+        // Если ширина экрана меньше 986px, выходим из функции
+        if (!mediaQuery.matches) {
+          return;
+        }
 
-    <!--Внешний скрипт работы гиперссылки-->
-    <script src="./Feedback_script.js"></script>
-    <script>
-      //скрипт для бургера
+        // Получаем следующий элемент после текущего элемента списка (подменю)
+        const submenu = this.nextElementSibling;
+
+        // Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
+        if (submenu.classList.contains('active')) {
+          return;
+        }
+
+        // Отменяем действие по умолчанию (переход по ссылке)
+        event.preventDefault();
+
+        // Закрываем все подменю
+        closeAllSubmenus();
+
+        // Открываем текущее подменю
+        submenu.classList.add('active');
+      }
+
+      // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
+      const downLinks = document.querySelectorAll('.down');
+      downLinks.forEach(link => {
+        link.addEventListener('click', handleClick);
+      });
+
+      // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
+      const submenuLinks = document.querySelectorAll('.submenu a');
+      submenuLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          // Закрываем подменю после клика на ссылку
+          const submenu = this.closest('.submenu');
+          submenu.classList.remove('active');
+        });
+      });
+
+      // Функция для закрытия всех подменю
+      function closeAllSubmenus() {
+        const submenus = document.querySelectorAll('.submenu');
+        submenus.forEach(submenu => {
+          submenu.classList.remove('active');
+        });
+      }
+
+      // Функция для открытия/закрытия основного меню
       function toggleMenu() {
-         var menu = document.getElementById("menu");
-         menu.classList.toggle("active");
-     }
-     //скрипт для выпадающего списка в списке
-     document.querySelectorAll('.down').forEach(item => {
-         item.addEventListener('click', event => {
-             item.querySelector('.submenu').classList.toggle("active");
-             event.preventDefault();
-         });
-     });
-     //скрипт меню
-window.addEventListener("DOMContentLoaded", function() {
-const mediaQuery = window.matchMedia("(max-width: 986px)");
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("active");
+      }
 
-// Функция для обработки событий клика
-function handleClick(event) {
-// Если ширина экрана меньше 986px, выходим из функции
-if (!mediaQuery.matches) {
-return;
-}
+      // Проверяем изменение медиа-запроса
+      mediaQuery.addEventListener("change", event => {
+        // Если ширина экрана меньше 986px, закрываем все подменю
+        if (!event.matches) {
+          closeAllSubmenus();
+        }
+      });
+    });
+  </script>
+</body>
 
-// Получаем следующий элемент после текущего элемента списка (подменю)
-const submenu = this.nextElementSibling;
-
-// Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
-if (submenu.classList.contains('active')) {
-return;
-}
-
-// Отменяем действие по умолчанию (переход по ссылке)
-event.preventDefault();
-
-// Закрываем все подменю
-closeAllSubmenus();
-
-// Открываем текущее подменю
-submenu.classList.add('active');
-}
-
-// Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
-const downLinks = document.querySelectorAll('.down');
-downLinks.forEach(link => {
-link.addEventListener('click', handleClick);
-});
-
-// Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
-const submenuLinks = document.querySelectorAll('.submenu a');
-submenuLinks.forEach(link => {
-link.addEventListener('click', function() {
-// Закрываем подменю после клика на ссылку
-const submenu = this.closest('.submenu');
-submenu.classList.remove('active');
-});
-});
-
-// Функция для закрытия всех подменю
-function closeAllSubmenus() {
-const submenus = document.querySelectorAll('.submenu');
-submenus.forEach(submenu => {
-submenu.classList.remove('active');
-});
-}
-
-// Функция для открытия/закрытия основного меню
-function toggleMenu() {
-const menu = document.getElementById("menu");
-menu.classList.toggle("active");
-}
-
-// Проверяем изменение медиа-запроса
-mediaQuery.addEventListener("change", event => {
-// Если ширина экрана меньше 986px, закрываем все подменю
-if (!event.matches) {
-closeAllSubmenus();
-}
-});
-});
- </script>
-  </body>
 </html>

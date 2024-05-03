@@ -880,3 +880,87 @@ footer {
         flex-wrap: nowrap;
     }
 }
+
+/* Стили для темной темы */
+body.dark-theme {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для светлой темы */
+body.light-theme {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+/* Стили для темной темы */
+.dark-theme header {
+    background-color: black;
+}
+
+.dark-theme footer {
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+
+.light-theme footer {
+    color: white;
+}
+
+/* Стили для темной темы */
+.dark-theme .footer-text1 .footer-text3 {
+    color: black;
+
+}
+
+
+
+/* Стили для темной темы */
+.dark-theme,
+.footer-icons>a {
+    background-color: rgb(0, 0, 0);
+}
+
+/* Стили для темной темы */
+.dark-theme .div_title p {
+    color: aliceblue;
+    background-color: black;
+}
+
+
+/* Стили для темной темы */
+.dark-theme .crumbs {
+    color: aliceblue;
+
+
+}
+
+/* Стили для темной темы */
+@media screen and (max-width: 987px) {
+    .dark-theme .navbar-toggle {
+        color: #ffffff;
+    }
+
+    .dark-theme .bar {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+.dark-theme .pod_car {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-theme .car-block {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-theme .car-title {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-theme .car-title>span {
+    color: #fff;
+}

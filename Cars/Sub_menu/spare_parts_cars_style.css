@@ -575,14 +575,12 @@ select::-ms-expand {
 
 .content_block5 span {
     font-weight: bold;
-    /* Жирный шрифт для числа */
 }
 
 /* Медиа-запрос для адаптивности */
 @media screen and (max-width: 767px) {
     .content_block5 {
         font-size: 18px;
-        /* Уменьшаем размер шрифта для мобильных устройств */
     }
 }
 
@@ -853,14 +851,12 @@ footer {
 @media screen and (max-width: 768px) {
     .footer-row {
         flex-direction: column;
-        /* Располагаем элементы в столбец */
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
         margin-bottom: 20px;
-        /* Увеличиваем отступ между блоками на мобильных устройствах */
     }
 }
 

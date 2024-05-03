@@ -400,18 +400,13 @@ nav a {
     display: none;
     width: 50%;
     position: fixed;
-    /* Фиксированное позиционирование, чтобы она оставалась на месте даже при прокрутке */
     top: 50%;
-    /* Положение по вертикали */
     left: 50%;
-    /* Положение по горизонтали */
     transform: translate(-50%, -50%);
-    /* Центрирование формы */
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     z-index: 99999;
-    /* Поверх всех блоков */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -533,14 +528,12 @@ footer {
 @media screen and (max-width: 768px) {
     .footer-row {
         flex-direction: column;
-        /* Располагаем элементы в столбец */
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
         margin-bottom: 20px;
-        /* Увеличиваем отступ между блоками на мобильных устройствах */
     }
 }
 

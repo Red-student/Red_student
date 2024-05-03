@@ -381,14 +381,12 @@ footer {
 @media screen and (max-width: 768px) {
     .footer-row {
         flex-direction: column;
-        /* Располагаем элементы в столбец */
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
         margin-bottom: 20px;
-        /* Увеличиваем отступ между блоками на мобильных устройствах */
     }
 }
 

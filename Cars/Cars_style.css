@@ -666,6 +666,7 @@ select::-ms-expand {
 .car-block {
     background-color: #f0f0f0;
     border-radius: 15px;
+    margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: calc(25% - 20px);
 }
@@ -878,4 +879,90 @@ footer {
     .footer-icons {
         flex-wrap: nowrap;
     }
+}
+
+
+/* Стили для темной темы */
+body.dark-theme {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для светлой темы */
+body.light-theme {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+/* Стили для темной темы */
+.dark-theme header {
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.dark-theme footer {
+    background-color: rgb(255, 255, 255);
+}
+
+/* Стили для темной темы */
+.dark-theme,
+.footer-text1 {
+    color: black;
+}
+
+/* Стили для темной темы */
+.dark-theme,
+.footer-icons>a {
+    background-color: rgb(0, 0, 0);
+}
+
+/* Стили для темной темы */
+.dark-theme .div_title p {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.dark-theme .news-center {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.dark-theme .news-content {
+    color: aliceblue;
+
+}
+
+/* Стили для темной темы */
+.dark-theme .crumbs {
+    color: aliceblue;
+
+
+}
+
+/* Стили для темной темы */
+@media screen and (max-width: 987px) {
+    .dark-theme .navbar-toggle {
+        color: #ffffff;
+    }
+
+    .dark-theme .bar {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+.dark-theme .pod_car{
+    background-color: #000;
+    color: #fff;
+}
+.dark-theme .car-block{
+    background-color: #000;
+    color: #fff;
+}
+.dark-theme .car-title{
+    background-color: #000;
+    color: #fff;}
+.dark-theme .car-title > span{
+    color: #fff;
 }

@@ -1,0 +1,28 @@
+.dark-theme body{
+    color: aliceblue;
+    background-color: black;
+}
+
+.dark-theme header{
+    background-color: black;
+}
+
+.dark-theme footer{
+    color: black;
+    background-color: aliceblue;
+}
+
+.dark-theme .div_title p{
+    color: aliceblue;
+}
+.dark-theme .news-center{
+    color: aliceblue;
+    background-color: black;
+}
+
+.dark-theme .news-content{
+    color: aliceblue;
+}
+.dark-theme .crumbs{
+    color: aliceblue;
+}

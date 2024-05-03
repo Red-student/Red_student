@@ -1,21 +1,21 @@
 /*Стили для всех элементов в теге body*/
-body{
+body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 /*Стили header*/
-header{
+header {
     display: flex;
     background-color: #ffffff;
-    top: 0; 
+    top: 0;
     z-index: 100;
     width: 100%;
 }
 
 /*Логотип*/
-.logo{
+.logo {
     height: 90px;
     width: auto;
     margin: 7px 0 7px 35px;
@@ -23,8 +23,8 @@ header{
 
 
 /*Стили навигационного меню */
-nav{
-    margin-left: 20px; 
+nav {
+    margin-left: 20px;
 }
 
 /*Стили навигационного меню для списка*/
@@ -43,14 +43,14 @@ nav a {
 }
 
 /*Стили для элементов списка верхнего уровня в меню*/
-.menu > li {
+.menu>li {
     display: inline-block;
     position: relative;
     padding: 12px 25px;
 }
 
 /*Стили для ссылок в элементах списка верхнего уровня*/
-.menu > li > a {
+.menu>li>a {
     font-family: 'Exo 2', sans-serif;
     height: 70px;
     line-height: 70px;
@@ -75,7 +75,7 @@ nav a {
 }
 
 /*Стили для выпадающего меню при на ведении на пункт меню*/
-.menu > li:hover .submenu {
+.menu>li:hover .submenu {
     visibility: visible;
     opacity: 1;
     transform: perspective(600px) rotateX(0deg);
@@ -102,11 +102,12 @@ nav a {
 
 /*Стили для ссылок в выпадающем меню при наведении на них курсора*/
 .submenu li a:hover {
-    color: #ffffff; 
-    background-color: #D81324; 
+    color: #ffffff;
+    background-color: #D81324;
 }
 
 @media screen and (max-width: 987px) {
+
     /* Стили для логотипа при меньших экранах */
     .logo {
         height: 60px;
@@ -147,7 +148,7 @@ nav a {
         max-width: 300px;
         border-radius: 5px;
         background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         z-index: 100;
     }
 
@@ -171,13 +172,13 @@ nav a {
     }
 
     /* Элементы списка верхнего уровня в меню */
-    .menu > li {
+    .menu>li {
         display: block;
         padding: 0px 10px;
     }
 
     /* Ссылки в элементах списка верхнего уровня */
-    .menu > li > a {
+    .menu>li>a {
         font-size: 14px;
     }
 
@@ -188,10 +189,10 @@ nav a {
         right: 0;
         background-color: #fff;
         border-radius: 0 0 5px 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    .menu > li:hover .submenu {
+    .menu>li:hover .submenu {
         display: block;
     }
 
@@ -218,35 +219,39 @@ nav a {
         font-weight: bold;
     }
 }
+
 @media screen and (max-width: 397px) {
     .menu {
         width: 80%;
     }
 }
+
 @media screen and (min-width: 986.5px) and (max-width: 1500px) {
 
-    .menu > li {
+    .menu>li {
         padding: 12px 0px;
     }
-    .menu > li > a {
+
+    .menu>li>a {
         padding: 0 15px;
     }
 
 }
 
-.crumbs{
+.crumbs {
     margin: 10px 0px;
     background-color: rgb(195, 195, 195, 0.15);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.crumbs > h3{
+.crumbs>h3 {
     padding: 10px 25px;
     margin: 0px 5px;
 }
 
 /* Стили для кнопок prev/next */
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     width: auto;
     margin-top: -22px;
@@ -264,105 +269,122 @@ nav a {
     border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background-color: #0056b3;
 }
 
 /*Стили для фотогалереи*/
 .cssSlider {
-	display: block;
-	position: relative;
-	width: 100%;
-	overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
+
 .cssSlider .slides {
-	overflow: hidden;
-	width: 100%;
-	height: 70vmin;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    overflow: hidden;
+    width: 100%;
+    height: 70vmin;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.cssSlider .slides > li {
-	width: 100%;
-	height: 70vmin;
-	position: absolute;
-	z-index: 1;
-	overflow: hidden;
+
+.cssSlider .slides>li {
+    width: 100%;
+    height: 70vmin;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
 }
-.cssSlider .slides > li > img {
-	width: 100%;
-	height: auto;
+
+.cssSlider .slides>li>img {
+    width: 100%;
+    height: auto;
 }
 
 .cssSlider .thumbnails {
-	display: block;
-	position: relative;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
-.cssSlider .thumbnails > li {
-	float: left;
-	width: 20%;
+
+.cssSlider .thumbnails>li {
+    float: left;
+    width: 20%;
 }
-.cssSlider .thumbnails > li > a {
-	display: block;
+
+.cssSlider .thumbnails>li>a {
+    display: block;
 }
-.cssSlider .thumbnails > li > a > img {
-	width: 100%;
-	height: auto;
+
+.cssSlider .thumbnails>li>a>img {
+    width: 100%;
+    height: auto;
 }
+
 .cssSlider .slides li:target {
-	z-index: 3;
+    z-index: 3;
     animation: slide 1s 1;
 }
+
 .cssSlider .slides li:not(:target) {
     animation: hidden 1s 1;
 }
+
 @-webkit-keyframes slide {
-	0% {
-		-webkit-transform: translateX(-100%);
-		        transform: translateX(-100%);
-	}
-	100% {
-		-webkit-transform: translateX(0%);
-		        transform: translateX(0%);
-	}
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
 }
+
 @keyframes slide {
-	0% {
-		-webkit-transform: translateX(-100%);
-		        transform: translateX(-100%);
-	}
-	100% {
-		-webkit-transform: translateX(0%);
-		        transform: translateX(0%);
-	}
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
 }
+
 @-webkit-keyframes hidden {
-	0% {
-		z-index: 2;
-		-webkit-transform: translateX(0%);
-		        transform: translateX(0%);
-	}
-	100% {
-		z-index: 2;
-		-webkit-transform: translateX(100%);
-		        transform: translateX(100%);
-	}
+    0% {
+        z-index: 2;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+
+    100% {
+        z-index: 2;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
 }
+
 @keyframes hidden {
-	0% {
-		z-index: 2;
-		-webkit-transform: translateX(0%);
-		        transform: translateX(0%);
-	}
-	100% {
-		z-index: 2;
-		-webkit-transform: translateX(100%);
-		        transform: translateX(100%);
-	}
+    0% {
+        z-index: 2;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+
+    100% {
+        z-index: 2;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
 }
 
 
@@ -370,7 +392,7 @@ nav a {
 
 
 /*Стиль для основоного блока в котором лежит текст и картинка*/
-.div_block2{
+.div_block2 {
     display: flex;
     overflow: hidden;
     padding-right: 7%;
@@ -379,15 +401,17 @@ nav a {
     margin-left: auto;
     margin-top: 50px;
 }
+
 @media screen and (max-width: 768px) {
-    .div_block3{
+    .div_block3 {
         padding: 0px;
         margin: 0px;
     }
-    
+
 }
+
 /* Стиль для блока с текстом */
-.div_block3{
+.div_block3 {
     transform: none;
     width: 100%;
     position: relative;
@@ -395,18 +419,20 @@ nav a {
     padding-left: 50px;
     margin-right: 50px;
 }
+
 @media screen and (max-width: 768px) {
-    .div_block3{
+    .div_block3 {
         padding-right: 0px;
         padding-left: 0px;
         margin-right: 0px;
         opacity: 1;
     }
-    
-    
+
+
 }
+
 /* Стиль для текста заголовка */
-.div_title span{
+.div_title span {
     font-size: 21px;
     color: #D81324;
     font-weight: bold;
@@ -414,7 +440,7 @@ nav a {
 }
 
 /* Стиль для абзаца */
-.div_title p{
+.div_title p {
     font-size: 20px;
     color: #000000;
     line-height: 28px;
@@ -422,7 +448,7 @@ nav a {
 }
 
 /* Стиль для заголовка (второго) */
-.div_title h2{
+.div_title h2 {
     font-size: 33px;
     color: #0B2154;
     font-weight: bold;
@@ -430,7 +456,7 @@ nav a {
 }
 
 /*стиль для блока в котором находится картинка*/
-.div_title_img{
+.div_title_img {
     transform: none;
     position: relative;
     min-height: 1px;
@@ -439,10 +465,10 @@ nav a {
 }
 
 /* Стиль для изображений в блоке */
-.div_title_acardimg img{
-    display: block; 
-    margin: 0 auto; 
-    width: 100%; 
+.div_title_acardimg img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
     height: auto;
     border: 0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -451,7 +477,7 @@ nav a {
 
 
 /* Стиль для второго основного блока, содержащего текст и картинку */
-.div_block2-2{
+.div_block2-2 {
     display: flex;
     overflow: hidden;
     padding-right: 7%;
@@ -463,36 +489,42 @@ nav a {
 }
 
 @media screen and (max-width: 768px) {
-    .div_block2{
+    .div_block2 {
         flex-wrap: wrap;
         padding-right: 0px;
         padding-left: 0px;
         margin-bottom: 0px;
     }
-    .div_block2-2{
+
+    .div_block2-2 {
         flex-wrap: wrap;
         padding-right: 0px;
         padding-left: 0px;
         margin-bottom: 0px;
         margin-top: 75px;
     }
-    .div_title{
+
+    .div_title {
         padding-right: 15px;
         padding-left: 15px;
     }
-    .div_title span{
+
+    .div_title span {
         font-size: 20px;
     }
-    .div_title h2{
+
+    .div_title h2 {
         font-size: 32px;
     }
+
     .div_title p {
         font-size: 19px;
     }
-    
+
 }
+
 /* Стиль для блока с текстом */
-.div_block3-2{
+.div_block3-2 {
     transform: none;
     width: 100%;
     position: relative;
@@ -502,20 +534,20 @@ nav a {
 }
 
 @media screen and (max-width: 768px) {
-    .div_block3-2{
+    .div_block3-2 {
         width: 100%;
         margin-right: 0px;
-        
+
         padding-right: 0px;
-    
+
         padding-left: 0px;
     }
-   
+
 }
 
 
 /*Стиль для блока в котором находится картинка*/
-.div_title_img2{
+.div_title_img2 {
     transform: none;
     position: relative;
     min-height: 1px;
@@ -532,27 +564,31 @@ nav a {
     transform: none;
     opacity: 1;
 }
+
 @media screen and (max-width: 768px) {
     .div_title_img2 {
-        margin-right: 15px; 
+        margin-right: 15px;
     }
 }
+
 /* Стиль для изображений в блоке */
-.div_title_acardimg2 img{
-    display: block; 
-    margin: 0 auto; 
+.div_title_acardimg2 img {
+    display: block;
+    margin: 0 auto;
     width: 100%;
     height: auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
+
 /* Медиа-запрос для устройств с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_title_acardimg2 img {
         text-align: center;
-        width: 100%; 
+        width: 100%;
     }
-    .div_title_acardimg2{
+
+    .div_title_acardimg2 {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -563,7 +599,8 @@ nav a {
 .hidden {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-  }
+}
+
 .visible {
     opacity: 1;
 }
@@ -576,6 +613,7 @@ nav a {
     padding: 0;
     margin: 0;
 }
+
 /* Медиа-запрос для устройств с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .videocard_list ul {
@@ -583,7 +621,8 @@ nav a {
         margin-left: 10px;
         font-size: 12px;
     }
-    .videocard_list{
+
+    .videocard_list {
         padding-right: 1px;
         padding-left: 1px;
     }
@@ -594,21 +633,26 @@ nav a {
         margin-bottom: 15px;
     }
 }
-@media screen and (min-width: 769px) and (max-width: 1024px){
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     .div_block2 {
-        padding-right: 0%; 
+        padding-right: 0%;
         padding-left: 0%;
     }
+
     .div_block3 {
         padding-left: 15px;
     }
+
     .div_block2-2 {
-        padding-right: 0%; 
+        padding-right: 0%;
         padding-left: 0%;
     }
+
     .div_block3-2 {
         padding-left: 15px;
     }
+
     .div_title_img2 {
         transform: none;
         position: relative;
@@ -617,12 +661,14 @@ nav a {
         padding-left: 15px;
         margin-left: 0PX;
     }
+
     .videocard_list ul {
         margin-bottom: 15px;
         margin-left: 10px;
         font-size: 12px;
     }
 }
+
 /* Стили для элемента списка блока */
 .videocard_list li {
     flex: 0 0 50%;
@@ -648,11 +694,12 @@ nav a {
     transform: translate(-100%);
     opacity: 0;
     transition: all 0.75s ease-out;
-  }
-  .delighter.left.started {
+}
+
+.delighter.left.started {
     transform: none;
     opacity: 1;
-  }
+}
 
 .delighter.right {
     transform: translate(100%);
@@ -664,6 +711,7 @@ nav a {
     transform: none;
     opacity: 1;
 }
+
 /* Стили для контейнера с новостями */
 .news-container {
     display: flex;
@@ -671,9 +719,9 @@ nav a {
     margin: 20px 15px;
     flex-wrap: wrap;
 }
-  
+
 /* Стили для центрированного заголовка новостей */
-.news-center{
+.news-center {
     text-align: center;
     background-color: #ffffff;
     margin-bottom: 40px;
@@ -684,30 +732,30 @@ nav a {
 .news-block {
     width: calc(30% - 40px);
     padding: 20px;
-    background-color: rgb(195, 195, 195,0.15);
+    background-color: rgb(195, 195, 195, 0.15);
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 /* Медиа-запрос для устройств с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .news-block {
-        width: calc(50% - 40px); 
+        width: calc(50% - 40px);
     }
 }
 
 /* Медиа-запрос для устройств с шириной экрана меньше 480px */
 @media screen and (max-width: 480px) {
     .news-block {
-        width: calc(100% - 40px); 
+        width: calc(100% - 40px);
     }
 }
 
 /* Стили для ссылок в блоке новости */
-.news-block a{
-    color: #c21220; 
-    text-decoration: none; 
+.news-block a {
+    color: #c21220;
+    text-decoration: none;
 }
 
 /* Стили для заголовка новости */
@@ -724,25 +772,25 @@ nav a {
 }
 
 /* Стили для ссылок "Читать больше" */
-.news-details a{
+.news-details a {
     display: inline-block;
     font-size: 20px;
     font-weight: bold;
-    color: #003559; 
+    color: #003559;
     text-decoration: none;
     margin-top: 10px;
     transition: color 0.3s ease-in-out;
 }
 
 /* Анимация изменения цвета ссылок при наведении */
-.news-details:hover a{
+.news-details:hover a {
     color: #D81324;
     transition: color 0.3s ease-in-out;
 }
 
 /* Стили для изображения новостей (картинки) */
 .news-image {
-    width: 100%;  
+    width: 100%;
 }
 
 .news-wrapper {
@@ -752,21 +800,24 @@ nav a {
 }
 
 .controls {
-    display: none; /* Спрячем кнопки управления по умолчанию */
+    display: none;
+    /* Спрячем кнопки управления по умолчанию */
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
     .news-wrapper {
         flex-direction: row-reverse;
         justify-content: center;
-        align-items: center; /* Выравнивание по вертикали */
+        align-items: center;
+        /* Выравнивание по вертикали */
     }
 
     .news-container {
         display: contents;
         margin: 0 10px;
         justify-content: center;
-        align-items: center; /* Добавим небольшие отступы по бокам */
+        align-items: center;
+        /* Добавим небольшие отступы по бокам */
     }
 
     .controls {
@@ -782,20 +833,26 @@ nav a {
 
 /* Скрытие стандартного скроллбара */
 ::-webkit-scrollbar {
-    width: 10px; /* Ширина скроллбара */
-    background: transparent; /* Убираем фон */
+    width: 10px;
+    /* Ширина скроллбара */
+    background: transparent;
+    /* Убираем фон */
 }
+
 ::-webkit-scrollbar-track {
     background: transparent;
-  }
+}
+
 /* Стилизация ползунка */
 ::-webkit-scrollbar-thumb {
-    background-color: #3a3a3a; /* Цвет ползунка */
-    border-radius: 8px; /* Скругление углов ползунка */
+    background-color: #3a3a3a;
+    /* Цвет ползунка */
+    border-radius: 8px;
+    /* Скругление углов ползунка */
 }
 
 /* Стили для футера */
-footer{
+footer {
     position: absolute;
     background-color: #000000;
     width: 100%;
@@ -806,7 +863,7 @@ footer{
 }
 
 /* Стили для строк футера */
-.footer-row{
+.footer-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -814,66 +871,115 @@ footer{
 }
 
 /* Стили для текста в футере */
-.footer-text1{
+.footer-text1 {
     padding: 0 20px 0 20px;
     color: #ffffff;
     max-width: 800px;
 }
 
 /* Стили для текста в футере */
-.footer-text2{
+.footer-text2 {
     padding: 0 0 0 0;
     color: #ffffff;
 }
 
 /* Стили для текста в футере */
-.footer-text3{
+.footer-text3 {
     padding: 0 30px 10px 20px;
     color: #ffffff;
 }
+
 .footer-icons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 /* Стили для иконок в футере */
-.footer-icons a{
+.footer-icons a {
     text-decoration: none;
     display: inline-block;
 }
 
 .footer-icons a:first-child {
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .footer-icons a:not(:first-child) {
-    margin-left: 50px; 
+    margin-left: 50px;
 }
 
 /* Медиа-запросы для адаптивного дизайна */
 @media screen and (max-width: 768px) {
     .footer-row {
-        flex-direction: column; /* Располагаем элементы в столбец */
+        flex-direction: column;
+        /* Располагаем элементы в столбец */
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
-        margin-bottom: 20px; /* Увеличиваем отступ между блоками на мобильных устройствах */
+        margin-bottom: 20px;
+        /* Увеличиваем отступ между блоками на мобильных устройствах */
     }
 }
+
 @media screen and (width: 1024px) {
-    .footer-text1{
+    .footer-text1 {
         padding: 0 20px 0 20px;
         color: #ffffff;
         max-width: 400px;
     }
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .footer-text3 {
         padding: 0 20px 10px 20px;
     }
-    .footer-icons{
+
+    .footer-icons {
         flex-wrap: nowrap;
     }
+}
+body.dark-theme {
+    color: aliceblue;
+    background-color: black;
+}
+
+body.light-theme{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+.dark-theme header{
+    background-color: black;
+}
+
+.dark-theme footer{
+    color: #000;
+    background-color: rgb(255, 255, 255);
+}
+.dark-theme, .footer-text1, .footer-text3{
+    color: #000 ; 
+
+}
+.dark-theme, .footer-icons > a{
+    background-color: rgb(0, 0, 0);
+}
+.dark-theme .div_title p{
+    color: aliceblue;
+    background-color: black;
+}
+.dark-theme .news-center{
+    color: aliceblue;
+    background-color: black;
+}
+
+.dark-theme .news-content{
+    color: aliceblue;
+    
+}
+.dark-theme .crumbs{
+    color: aliceblue;
+
+    
 }

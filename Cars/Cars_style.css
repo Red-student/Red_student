@@ -1,21 +1,22 @@
 /*Стили для всех элементов в теге body*/
-body{
+body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
+    color: black;
 }
 
 /*Стили header*/
-header{
+header {
     display: flex;
     background-color: #ffffff;
-    top: 0; 
+    top: 0;
     z-index: 100;
     width: 100%;
 }
 
 /*Логотип*/
-.logo{
+.logo {
     height: 90px;
     width: auto;
     margin: 7px 0 7px 35px;
@@ -23,8 +24,8 @@ header{
 
 
 /*Стили навигационного меню */
-nav{
-    margin-left: 20px; 
+nav {
+    margin-left: 20px;
 }
 
 /*Стили навигационного меню для списка*/
@@ -43,14 +44,14 @@ nav a {
 }
 
 /*Стили для элементов списка верхнего уровня в меню*/
-.menu > li {
+.menu>li {
     display: inline-block;
     position: relative;
     padding: 12px 25px;
 }
 
 /*Стили для ссылок в элементах списка верхнего уровня*/
-.menu > li > a {
+.menu>li>a {
     font-family: 'Exo 2', sans-serif;
     height: 70px;
     line-height: 70px;
@@ -75,7 +76,7 @@ nav a {
 }
 
 /*Стили для выпадающего меню при на ведении на пункт меню*/
-.menu > li:hover .submenu {
+.menu>li:hover .submenu {
     visibility: visible;
     opacity: 1;
     transform: perspective(600px) rotateX(0deg);
@@ -102,11 +103,12 @@ nav a {
 
 /*Стили для ссылок в выпадающем меню при наведении на них курсора*/
 .submenu li a:hover {
-    color: #ffffff; 
-    background-color: #D81324; 
+    color: #ffffff;
+    background-color: #D81324;
 }
 
 @media screen and (max-width: 987px) {
+
     /* Стили для логотипа при меньших экранах */
     .logo {
         height: 60px;
@@ -147,7 +149,7 @@ nav a {
         max-width: 300px;
         border-radius: 5px;
         background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         z-index: 100;
     }
 
@@ -171,13 +173,13 @@ nav a {
     }
 
     /* Элементы списка верхнего уровня в меню */
-    .menu > li {
+    .menu>li {
         display: block;
         padding: 0px 10px;
     }
 
     /* Ссылки в элементах списка верхнего уровня */
-    .menu > li > a {
+    .menu>li>a {
         font-size: 14px;
     }
 
@@ -188,10 +190,10 @@ nav a {
         right: 0;
         background-color: #fff;
         border-radius: 0 0 5px 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    .menu > li:hover .submenu {
+    .menu>li:hover .submenu {
         display: block;
     }
 
@@ -218,29 +220,32 @@ nav a {
         font-weight: bold;
     }
 }
+
 @media screen and (max-width: 397px) {
     .menu {
         width: 80%;
     }
 }
+
 @media screen and (min-width: 986.5px) and (max-width: 1500px) {
 
-    .menu > li {
+    .menu>li {
         padding: 12px 0px;
     }
-    .menu > li > a {
+
+    .menu>li>a {
         padding: 0 15px;
     }
 
 }
 
-.crumbs{
+.crumbs {
     margin: 10px 0px;
     background-color: rgb(195, 195, 195, 0.15);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.crumbs > h3{
+.crumbs>h3 {
     padding: 10px 25px;
     margin: 0px 5px;
 }
@@ -273,7 +278,7 @@ nav a {
 .h1_title {
     display: flex;
     margin-bottom: 16px;
-    font-size: 40px;
+    font-size: 34px;
     color: #000000;
     text-transform: uppercase;
     margin: 0 0 0 10px;
@@ -282,11 +287,13 @@ nav a {
     line-height: 1.333;
     letter-spacing: .01em;
 }
+
 @media screen and (max-width:768px) {
-    .h1_title{
-        font-size: 30px;
+    .h1_title {
+        font-size: 24px;
     }
 }
+
 /* Стили для блока параметров каталога */
 .pois_catalog {
     padding: 20px;
@@ -316,6 +323,13 @@ nav a {
     font-style: normal;
     letter-spacing: .01em;
     color: #000000;
+}
+
+/*Стили для мобильной версии блока pois_catalog2_h3*/
+@media screen and (max-width:768px) {
+    .pois_catalog2 {
+        font-size: 24px;
+    }
 }
 
 /*Стили для контейнера фильтров */
@@ -379,8 +393,16 @@ nav a {
     border-radius: 5px;
 }
 
+@media screen and (max-width:768px) {
+
+    .filter-item select,
+    .filter-item input {
+        font-size: 15px;
+    }
+}
+
 /* Стили для выпадающего списка фильтра */
-.filter-item select{
+.filter-item select {
     cursor: pointer;
 }
 
@@ -391,11 +413,11 @@ nav a {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 /* Стили для кнопок */
-button{
+button {
     cursor: pointer;
 }
 
@@ -436,7 +458,7 @@ button{
 }
 
 /* Стили для кнопки показа при наведении курсора мыши */
-.show-button:hover button{
+.show-button:hover button {
     color: #ffffff;
     background-color: #0056b3;
 }
@@ -449,11 +471,12 @@ button{
 }
 
 /* Стили для поля ввода строки поиска */
-.search-bar input[type="text"]{
-    width: 100%; /* Занимает всю доступную ширину */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.search-bar input {
+    width: 217px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 /* Стили для иконки поиска */
@@ -464,49 +487,66 @@ button{
     transform: translateY(-50%);
 }
 
-/* Медиа-запросы для адаптивности */
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: 809px) {
+    .extended-search button {
+        width: 200px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .show-button button {
+        width: 200px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .search-bar input {
+        width: 175px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
     .filter-container3 {
-        flex-direction: column; /* Располагаем элементы вертикально */
-        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
-    .filter-container3 > * {
-        margin-bottom: 5px; /* Уменьшаем пространство между элементами */
-    }
-
-    .search-bar {
-        flex-grow: 1; /* Растягиваем по всей доступной ширине */
-        margin-bottom: 10px; /* Пространство между элементами */
+    button {
+        margin-bottom: 5px;
     }
 }
 
 /* Стили для отступа между элементами */
-span{
+span {
     padding-left: 5px;
 }
 
 /* Стили для выпадающего списка */
 select {
-  appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M6 9.5L12 15.5L18 9.5" stroke="%23494949" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M6 9.5L12 15.5L18 9.5" stroke="%23494949" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
 }
 
 /* Стили для скрытия стрелки выпадающего списка в IE */
 select::-ms-expand {
-  display: none; 
+    display: none;
 }
 
 /* Стили для блока контента */
-.content_block1{
-padding: 0 15px;
+.content_block1 {
+    padding: 0 15px;
     margin: 0 auto;
 }
 
 /* Стили для внутреннего контейнера блока контента */
-.content_block2{
+.content_block2 {
     position: relative;
     padding: 20px 20px 12.5px 20px;
     background-color: rgba(198, 198, 198, 0.408);
@@ -515,91 +555,104 @@ padding: 0 15px;
 }
 
 /* Стили для отступа снизу */
-.content_block3{
+.content_block3 {
     margin-bottom: 32px;
 }
 
 /* Стили для контейнера заголовка и элемента фильтра */
-.content_block4{
+.content_block4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 /* Стили для заголовка */
-.content_block5{
+.content_block5 {
     font-size: 34px;
     font-weight: 550;
 }
 
 .content_block5 span {
-    font-weight: bold; /* Жирный шрифт для числа */
+    font-weight: bold;
+    /* Жирный шрифт для числа */
 }
 
 /* Медиа-запрос для адаптивности */
 @media screen and (max-width: 767px) {
     .content_block5 {
-        font-size: 18px; /* Уменьшаем размер шрифта для мобильных устройств */
+        font-size: 18px;
+        /* Уменьшаем размер шрифта для мобильных устройств */
     }
 }
 
 /* Стили для элемента фильтра */
-.content_block5-1{
+.content_block5-1 {
     flex-basis: 240px;
     width: 240px;
-    margin-left: 16px 
+    margin-left: 16px
 }
 
 /* Стили для выпадающего списка фильтра */
-.content_block5-2{
+.content_block5-2 {
     display: inline-block;
     position: relative;
     outline: 0;
     width: 100%;
-    max-height: 40px 
+    max-height: 40px
 }
 
 /* Общие стили для выпадающего списка */
-.select-css { 
-    display: block; 
-    font-size: 18px; 
-    font-weight: 550; 
-    color: #444; 
-    line-height: 1.3; 
+.select-css {
+    display: block;
+    font-size: 18px;
+    font-weight: 550;
+    color: #444;
+    line-height: 1.3;
     padding: 10px 22px 9px 10px;
-    width: 100%;  
-    box-sizing: border-box; 
-    margin: 0; 
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
     border: 1px solid #aaa;
-    box-shadow: 0 1px 0 1px rgba(0,0,0,.04); 
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
     border-radius: 8px;
     -moz-appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
     appearance: none;
-    background-color: #fff; 
-    background-image: url("../img/filtr.png"); 
+    background-color: #fff;
+    background-image: url("../img/filtr.png");
     background-repeat: no-repeat, repeat;
     background-position: right 9px top 50%, 0 0;
     background-size: 20px auto, 100%;
 }
 
 /* Стили для скрытия стрелки выпадающего списка в IE */
-.select-css::-ms-expand { 
+.select-css::-ms-expand {
     display: none;
 }
 
 /* Стили при наведении на выпадающий список */
-.select-css:hover{ 
+.select-css:hover {
     border-color: #000000;
 }
 
 /* Стили при фокусе на выпадающем списке */
-.select-css:focus{ 
+.select-css:focus {
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.7);
     color: #000000;
-    outline: none; 
-} 
+    outline: none;
+}
+
+/*Стили для мобильной версии блока select-css*/
+@media (max-width: 500px) {
+    .select-css {
+        padding: 10px 22px 9px 10px;
+        background-position: right 9px top 50%, 0 0;
+        background-size: 20px auto, 100%;
+        font-size: 15px;
+    }
+
+}
 
 /* Стили для контейнера автомобилей */
 .car-container {
@@ -615,35 +668,35 @@ padding: 0 15px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: calc(25% - 20px);
-    margin-bottom: 20px; /* Отступ между блоками */
 }
 
 /* Стили для ссылки в блоке автомобиля */
-.car-block a{
-    color: black; 
-    text-decoration: none; 
+.car-block a {
+    color: black;
+    text-decoration: none;
 }
 
 /* Медиа-запрос для экранов до 1023px */
 @media screen and (max-width:1023px) {
-    .car-block{
+    .car-block {
         width: calc(50% - 20px);
     }
 }
 
 /* Медиа-запрос для экранов до 768px */
 @media screen and (max-width:768px) {
-    .car-block{
+    .car-block {
         width: calc(50% - 20px);
     }
 }
 
 /* Медиа-запрос для экранов до 639px */
 @media screen and (max-width:639px) {
-    .car-block{
+    .car-block {
         width: calc(100% - 0px);
     }
 }
+
 /* Стили для заголовка блока автомобиля */
 .car-title {
     display: flex;
@@ -653,7 +706,7 @@ padding: 0 15px;
     font-weight: bold;
     color: #000000;
 }
-  
+
 /* Стили для содержимого блока автомобиля */
 .car-content {
     color: #9f9f9f;
@@ -662,31 +715,31 @@ padding: 0 15px;
 }
 
 /* Стили для отступа между элементами содержимого блока автомобиля */
-.car-content + .car-content {
-    margin-top: -9px; 
+.car-content+.car-content {
+    margin-top: -9px;
 }
 
 /* Стили для контейнера изображения автомобиля и краткой информации */
-.pod_car{
+.pod_car {
     position: relative;
-    padding: 0 8px 0 8px; 
+    padding: 0 8px 0 8px;
 }
 
 /* Стили для изображения автомобиля */
 .car-image {
-    width: 100%; 
+    width: 100%;
     border-radius: 10px 10px 0 0;
 }
 
 /* Стили для иконки "сердце" */
 .heart-icon {
-    color:#000000;
-    margin-right: 15px; 
+    color: #000000;
+    margin-right: 15px;
     font-size: 35px;
 }
 
 /* Стили для контейнера автомобилей (второй блок) */
-.car-container2{
+.car-container2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -696,36 +749,36 @@ padding: 0 15px;
 
 /* Стили для переключении между страницами контента */
 .pagination {
-    text-align: center; 
-    margin-top: 25px; 
+    text-align: center;
+    margin-top: 25px;
 }
 
 /* Стили для списка страниц*/
 .pagination ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
 }
 
 /* Стили для элементов списка страниц */
 .pagination li {
-    display: inline; 
-    margin: 0 5px; 
+    display: inline;
+    margin: 0 5px;
 }
 
 /* Стили для ссылок в списке страниц */
 .pagination li a {
     text-decoration: none;
-    color: #000; 
-    font-size: 23px; 
+    color: #000;
+    font-size: 23px;
 }
 
 /* Стили при наведении на ссылки в списке страниц */
 .pagination li a:hover {
-    color: #f00; 
+    color: #f00;
 }
 
 /* Стили для описания блока с информацией о том что даелает данная страница */
-.catalog-description{
+.catalog-description {
     background-color: rgba(198, 198, 198, 0.611);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
@@ -737,7 +790,7 @@ padding: 0 15px;
 }
 
 /* Стили для футера */
-footer{
+footer {
     position: absolute;
     background-color: #000000;
     width: 100%;
@@ -748,7 +801,7 @@ footer{
 }
 
 /* Стили для строк футера */
-.footer-row{
+.footer-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -756,66 +809,73 @@ footer{
 }
 
 /* Стили для текста в футере */
-.footer-text1{
+.footer-text1 {
     padding: 0 20px 0 20px;
     color: #ffffff;
     max-width: 800px;
 }
 
 /* Стили для текста в футере */
-.footer-text2{
+.footer-text2 {
     padding: 0 0 0 0;
     color: #ffffff;
 }
 
 /* Стили для текста в футере */
-.footer-text3{
+.footer-text3 {
     padding: 0 30px 10px 20px;
     color: #ffffff;
 }
+
 .footer-icons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 /* Стили для иконок в футере */
-.footer-icons a{
+.footer-icons a {
     text-decoration: none;
     display: inline-block;
 }
 
 .footer-icons a:first-child {
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .footer-icons a:not(:first-child) {
-    margin-left: 50px; 
+    margin-left: 50px;
 }
 
 /* Медиа-запросы для адаптивного дизайна */
 @media screen and (max-width: 768px) {
     .footer-row {
-        flex-direction: column; /* Располагаем элементы в столбец */
+        flex-direction: column;
+        /* Располагаем элементы в столбец */
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
-        margin-bottom: 20px; /* Увеличиваем отступ между блоками на мобильных устройствах */
+        margin-bottom: 20px;
+        /* Увеличиваем отступ между блоками на мобильных устройствах */
     }
 }
+
 @media screen and (width: 1024px) {
-    .footer-text1{
+    .footer-text1 {
         padding: 0 20px 0 20px;
         color: #ffffff;
         max-width: 400px;
     }
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .footer-text3 {
         padding: 0 20px 10px 20px;
     }
-    .footer-icons{
+
+    .footer-icons {
         flex-wrap: nowrap;
     }
 }

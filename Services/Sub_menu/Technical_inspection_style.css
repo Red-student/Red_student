@@ -1,30 +1,30 @@
 /*Стили для всех элементов в теге body*/
-body{
+body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 /*Стили header*/
-header{
+header {
     display: flex;
     background-color: #ffffff;
     position: sticky;
-    top: 0; 
+    top: 0;
     z-index: 100;
     width: 100%;
 }
 
 /*Логотип*/
-.logo{
+.logo {
     height: 90px;
     width: auto;
     margin: 7px 0 7px 35px;
 }
 
 /*Стили навигационного меню */
-nav{
-    margin-left: 20px; 
+nav {
+    margin-left: 20px;
 }
 
 /*Стили навигационного меню для списка*/
@@ -43,14 +43,14 @@ nav a {
 }
 
 /*Стили для элементов списка верхнего уровня в меню*/
-.menu > li {
+.menu>li {
     display: inline-block;
     position: relative;
     padding: 12px 25px;
 }
 
 /*Стили для ссылок в элементах списка верхнего уровня*/
-.menu > li > a {
+.menu>li>a {
     font-family: 'Exo 2', sans-serif;
     height: 70px;
     line-height: 70px;
@@ -75,7 +75,7 @@ nav a {
 }
 
 /*Стили для выпадающего меню при на ведении на пункт меню*/
-.menu > li:hover .submenu {
+.menu>li:hover .submenu {
     visibility: visible;
     opacity: 1;
     transform: perspective(600px) rotateX(0deg);
@@ -102,12 +102,13 @@ nav a {
 
 /*Стили для ссылок в выпадающем меню при наведении на них курсора*/
 .submenu li a:hover {
-    color: #ffffff; 
-    background-color: #D81324; 
+    color: #ffffff;
+    background-color: #D81324;
 }
 
+/* Медиа-запросы для адаптивного дизайна меню и логотипа при разрешении экрана до 987px*/
 @media screen and (max-width: 987px) {
-    /* Стили для логотипа при меньших экранах */
+
     .logo {
         height: 60px;
         margin: 13px 0 7px 10px;
@@ -147,7 +148,7 @@ nav a {
         max-width: 300px;
         border-radius: 5px;
         background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         z-index: 100;
     }
 
@@ -170,14 +171,12 @@ nav a {
         color: #D81324;
     }
 
-    /* Элементы списка верхнего уровня в меню */
-    .menu > li {
+    .menu>li {
         display: block;
         padding: 0px 10px;
     }
 
-    /* Ссылки в элементах списка верхнего уровня */
-    .menu > li > a {
+    .menu>li>a {
         font-size: 14px;
     }
 
@@ -188,10 +187,10 @@ nav a {
         right: 0;
         background-color: #fff;
         border-radius: 0 0 5px 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    .menu > li:hover .submenu {
+    .menu>li:hover .submenu {
         display: block;
     }
 
@@ -218,35 +217,43 @@ nav a {
         font-weight: bold;
     }
 }
+
+/*Стили меню для экранов до 397px*/
 @media screen and (max-width: 397px) {
     .menu {
         width: 80%;
     }
 }
+
+/*стили меню при разрешении экрана от 986.5px до 1500px*/
 @media screen and (min-width: 986.5px) and (max-width: 1500px) {
 
-    .menu > li {
+    .menu>li {
         padding: 12px 0px;
     }
-    .menu > li > a {
+
+    .menu>li>a {
         padding: 0 15px;
     }
 
 }
-.crumbs{
+
+/*Стили для блока "Хлебных крошек*/
+.crumbs {
     margin: 10px 0px;
     background-color: rgb(195, 195, 195, 0.15);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.crumbs > h3{
+/*Стили для "Хлебных крошек*/
+.crumbs>h3 {
     padding: 10px 25px;
     margin: 0px 5px;
 }
 
 
 /*Стили для блока содержащего основной контент страницы Техосмотр*/
-.Tec_ins_content_1{
+.Tec_ins_content_1 {
     background-color: rgba(198, 198, 198, 0.408);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
@@ -255,7 +262,7 @@ nav a {
 }
 
 /*Стили для блока который содержит контент*/
-.Tec_ins_content_2{
+.Tec_ins_content_2 {
     width: 100%;
     max-width: 1460px;
     padding-top: 15px;
@@ -263,42 +270,74 @@ nav a {
 }
 
 /*Стиль заголовка*/
-.Tec_ins_heading{
+.Tec_ins_heading {
     text-align: center;
     padding-bottom: 16px;
 }
 
 /*Стили для "Красивой таблицы"*/
-.Tec_ins_offers{
-    overflow-x:auto;
+.Tec_ins_offers {
+    overflow-x: auto;
 }
 
+/*Стили бля таблицы*/
 table {
     border-collapse: collapse;
     width: 100%;
-    border: 2px solid #000000;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
 }
-th, td {
-padding: 8px;
-text-align: center;
-border-bottom: 1px solid #ddd;
+
+/*Стили для содержание ячеек*/
+th,
+td {
+    padding: 12px;
+
+    text-align: center;
+    border-bottom: 2px solid #000000c2;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
 }
+
+/*стиль при наведении мыши*/
 tr:hover {
-background-color: #f5f5f5;
+    filter: brightness(150%);
 }
+
+/*стиль для цвета заголовка*/
 th {
-background-color: #014792;
-color: white;
+    background-color: #014792;
+    color: rgb(255, 255, 255);
 }
 
+/* Первая полоска - каждая четная строка */
+tr:nth-child(odd) {
+    background-color: #0452a5e6;
+    color: #000000;
+}
+
+/* Вторая полоска - каждая нечетная строка */
 tr:nth-child(even) {
-    background-color: rgb(0, 0, 0);
-    color: #fff;
+    background-color: #6c94be;
+    color: rgb(0, 0, 0);
 }
 
-  
+/* Стили для описания блока с информацией о том что даелает данная страница */
+.catalog-description {
+    background-color: rgba(198, 198, 198, 0.611);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 8px 20px 20px 20px;
+    margin: 15px 30px;
+    color: #333;
+    text-align: center;
+}
+
 /* Стили для футера */
-footer{
+footer {
     position: absolute;
     background-color: #000000;
     width: 100%;
@@ -309,7 +348,7 @@ footer{
 }
 
 /* Стили для строк футера */
-.footer-row{
+.footer-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -317,65 +356,73 @@ footer{
 }
 
 /* Стили для текста в футере */
-.footer-text1{
+.footer-text1 {
     padding: 0 20px 0 20px;
     color: #ffffff;
     max-width: 800px;
 }
 
 /* Стили для текста в футере */
-.footer-text2{
+.footer-text2 {
     padding: 0 0 0 0;
     color: #ffffff;
 }
 
 /* Стили для текста в футере */
-.footer-text3{
+.footer-text3 {
     padding: 0 30px 10px 20px;
     color: #ffffff;
 }
+
 .footer-icons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 /* Стили для иконок в футере */
-.footer-icons a{
+.footer-icons a {
     text-decoration: none;
     display: inline-block;
 }
 
 .footer-icons a:first-child {
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .footer-icons a:not(:first-child) {
-    margin-left: 50px; 
+    margin-left: 50px;
 }
-/* Медиа-запросы для адаптивного дизайна */
+
+/* Медиа-запросы для адаптивного дизайна подвала при разрешение экрана до 768px*/
 @media screen and (max-width: 768px) {
     .footer-row {
-        flex-direction: column; /* Располагаем элементы в столбец */
+        flex-direction: column;
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
-        margin-bottom: 20px; /* Увеличиваем отступ между блоками на мобильных устройствах */
+        margin-bottom: 20px;
     }
 }
+
+/* Медиа-запросы для адаптивного дизайна подвала при разрешении экрана 1024px*/
 @media screen and (width: 1024px) {
-    .footer-text1{
+    .footer-text1 {
         padding: 0 20px 0 20px;
         color: #ffffff;
         max-width: 400px;
     }
 }
+
+/* Медиа-запросы для адаптивного дизайна подвала при разрешении экрана от 769px до 1024px*/
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .footer-text3 {
         padding: 0 20px 10px 20px;
     }
-    .footer-icons{
+
+    .footer-icons {
         flex-wrap: nowrap;
     }
 }

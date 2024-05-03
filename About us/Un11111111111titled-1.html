@@ -84,6 +84,7 @@
     <input type="text" id="secretWord" placeholder="Введите секретное слово"><br>
     <button onclick="saveCredentials()">Сохранить данные</button>
     <button id="showCookies" onclick="showCookies()">Показать секретные данные</button>
+    <p id="notCurrentSecretWord" style="display: none;">Неверное секретное слово</p>
   </div>
   <div id="secretData">
     <h2>Секретные данные</h2>
@@ -109,12 +110,14 @@
       // Если введенное секретное слово совпадает с текущим, показываем кнопку для просмотра секретных данных
       var currentSecretWord = getCookie("secretWord");
       if (secretWord == currentSecretWord) {
-        document.getElementById('showCookies').style.display = 'flex';
-      } else {
-        document.getElementById('showCookies').style.display = 'none';
+        document.getElementById('showCookies').style.display = 'flex'
+        document.getElementById('notCurrentSecretWord').style.display = 'none'
+      }
+      else {
+        document.getElementById('showCookies').style.display = 'none'
+        document.getElementById('notCurrentSecretWord').style.display = 'flex'
       }
     }
-
     // Функция для отображения секретных данных
     function showCookies() {
       // Показываем секретные данные и скрываем форму ввода

@@ -812,20 +812,21 @@ footer {
 /* Стили для текста в футере */
 .footer-text1 {
     padding: 0 20px 0 20px;
-    color: #ffffff;
+
     max-width: 800px;
 }
 
 /* Стили для текста в футере */
 .footer-text2 {
     padding: 0 0 0 0;
-    color: #ffffff;
+
 }
 
 /* Стили для текста в футере */
 .footer-text3 {
     padding: 0 30px 10px 20px;
-    color: #ffffff;
+
+
 }
 
 .footer-icons {
@@ -866,7 +867,6 @@ footer {
 @media screen and (width: 1024px) {
     .footer-text1 {
         padding: 0 20px 0 20px;
-        color: #ffffff;
         max-width: 400px;
     }
 }
@@ -916,7 +916,7 @@ body.light-theme {
 
 
 /* Стили для темной темы */
-.dark-theme  .footer-icons>a {
+.dark-theme .footer-icons>a {
     filter: brightness(0.1);
 }
 

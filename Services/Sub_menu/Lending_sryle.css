@@ -261,7 +261,7 @@ nav a {
 /*стили для второго блока контента*/
 .content_block2 {
     width: 100%;
-    max-width: 1460px;
+
     padding-top: 15px;
     margin: 0 auto;
 
@@ -582,7 +582,6 @@ button:hover:not(#themeToggle) {
 
 .content_block5 {
     width: 100%;
-    max-width: 1460px;
     padding-top: 15px;
     margin: 0 auto;
 }
@@ -792,4 +791,8 @@ body.light-theme {
 
 .dark-theme .block3_img {
     filter: brightness(0.75);
+}
+
+.dark-theme .form-container{
+    background-color: #000;
 }

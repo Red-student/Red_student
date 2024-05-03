@@ -256,7 +256,7 @@ nav a {
 /*стили для второго блока контента*/
 .content_block2{
     width: 100%;
-    max-width: 1460px;
+
     padding-top: 15px;
     margin: 0 auto;
 
@@ -469,7 +469,7 @@ nav a {
 }
 
 /*стили для кнопки*/
-button {
+button:not(#themeToggle) {
     padding: 10px 20px;
     background-color: #003559;
     color: white;
@@ -479,7 +479,7 @@ button {
 }
 
 /*стили для кнопки*/
-button:hover{
+button:hover:not(#themeToggle){
     background-color: #0056b3;
 }
 
@@ -516,6 +516,25 @@ button:hover{
     width: 25%; /* Изменено на 50% для центрирования */
 }
 
+@media screen and (max-width:1000px) {
+    .filter-item {
+        width: 50%
+    }
+}
+
+@media screen and (max-width:515px) {
+    .filter-item {
+        width: 80%
+    }
+}
+
+/*Медиа стиль для адаптивности блока выбора авто*/
+@media screen and (max-width:439px) {
+    .filter-item {
+        width: 90%
+    }
+}
+
 .filter-item select {
     width: 100%; /* Изменено на 100% для полной ширины родительского блока */
     padding: 10px;
@@ -544,7 +563,7 @@ button:hover{
 
 .content_block5{
     width: 100%;
-    max-width: 1460px;
+
     padding-top: 15px;
     margin: 0 auto;
 }
@@ -578,7 +597,7 @@ button:hover{
     width: 1em; /* Задаем фиксированную ширину для маркеров */
 }
 /* Стили для футера */
-footer{
+footer {
     position: absolute;
     background-color: #000000;
     width: 100%;
@@ -589,7 +608,7 @@ footer{
 }
 
 /* Стили для строк футера */
-.footer-row{
+.footer-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -597,65 +616,158 @@ footer{
 }
 
 /* Стили для текста в футере */
-.footer-text1{
+.footer-text1 {
     padding: 0 20px 0 20px;
-    color: #ffffff;
+
     max-width: 800px;
 }
 
 /* Стили для текста в футере */
-.footer-text2{
+.footer-text2 {
     padding: 0 0 0 0;
-    color: #ffffff;
+
 }
 
 /* Стили для текста в футере */
-.footer-text3{
+.footer-text3 {
     padding: 0 30px 10px 20px;
-    color: #ffffff;
+
+
 }
+
 .footer-icons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 /* Стили для иконок в футере */
-.footer-icons a{
+.footer-icons a {
     text-decoration: none;
     display: inline-block;
 }
 
 .footer-icons a:first-child {
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .footer-icons a:not(:first-child) {
-    margin-left: 50px; 
+    margin-left: 50px;
 }
+
 /* Медиа-запросы для адаптивного дизайна */
 @media screen and (max-width: 768px) {
     .footer-row {
-        flex-direction: column; /* Располагаем элементы в столбец */
+        flex-direction: column;
+        /* Располагаем элементы в столбец */
     }
 
     .footer-text1,
     .footer-text2,
     .footer-text3 {
-        margin-bottom: 20px; /* Увеличиваем отступ между блоками на мобильных устройствах */
+        margin-bottom: 20px;
+        /* Увеличиваем отступ между блоками на мобильных устройствах */
     }
 }
+
 @media screen and (width: 1024px) {
-    .footer-text1{
+    .footer-text1 {
         padding: 0 20px 0 20px;
-        color: #ffffff;
         max-width: 400px;
     }
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .footer-text3 {
         padding: 0 20px 10px 20px;
     }
-    .footer-icons{
+
+    .footer-icons {
         flex-wrap: nowrap;
     }
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для светлой темы */
+body.light-theme {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+/* Стили для темной темы */
+.dark-theme header {
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.dark-theme footer {
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+
+/*Стили для светлой темы*/
+.light-theme footer {
+    color: white;
+}
+
+/* Стили для темной темы */
+.dark-theme .footer-text1 .footer-text3 {
+    color: black;
+
+}
+
+/* Стили для темной темы */
+.dark-theme  .footer-icons>a {
+    filter: brightness(0.1);
+}
+
+/* Стили для темной темы */
+.dark-theme .div_title p {
+    color: aliceblue;
+    background-color: black;
+}
+
+
+/* Стили для темной темы */
+.dark-theme .crumbs {
+    color: aliceblue;
+
+
+}
+
+/* Стили для темной темы */
+@media screen and (max-width: 987px) {
+    .dark-theme .navbar-toggle {
+        color: #ffffff;
+    }
+
+    .dark-theme .bar {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+
+.dark-theme .content_block4 {
+    background-color: #000;
+}
+
+.dark-theme .content_block5_fon {
+    background-color: #000;
+}
+
+.dark-theme .content_block3 {
+    background-color: #000;
+}
+
+.dark-theme .block3_img {
+    filter: brightness(0.75);
+}
+
+.dark-theme .form-container{
+    background-color: #000;
 }

@@ -1,48 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secret Page</title>
-
+  <title>Login Page</title>
 
   <style>
-    .lab15-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .lab15-wrapper {
-      max-width: 400px;
+    #loginForm {
+      max-width: 300px;
       margin: 0 auto;
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
 
-    .lab15-wrapper h2 {
+    #loginForm h2 {
       font-size: 24px;
       margin-bottom: 20px;
     }
 
-    .lab15-wrapper form label {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .lab15-wrapper form input {
-      width: 100%;
-      padding: 8px;
+    #loginForm input {
+      width: calc(100% - 20px);
+      padding: 10px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
 
-    .lab15-wrapper form button {
+    #loginForm button {
       width: 100%;
       padding: 10px;
       background-color: #007bff;
@@ -50,26 +36,32 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin-top: 10px;
     }
 
-    .lab15-wrapper form button:hover {
+    #loginForm button:hover {
       background-color: #0056b3;
     }
 
-    .secret-data {
+    #secretData {
       display: none;
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
-    .secret-data h2 {
-      font-size: 20px;
+    #secretData h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #secretData p {
       margin-bottom: 15px;
     }
 
-    .secret-data p {
-      margin-bottom: 15px;
-    }
-
-    .secret-data button {
+    #secretData button {
       padding: 8px;
       background-color: #dc3545;
       color: #fff;
@@ -78,68 +70,96 @@
       cursor: pointer;
     }
 
-    .secret-data button:hover {
+    #secretData button:hover {
       background-color: #c82333;
     }
   </style>
 </head>
 
 <body>
-  <div class="lab15-wrapper">
+  <div id="loginForm">
     <h2>Добро пожаловать на Секретную страницу</h2>
-    <form id="loginForm">
-      <label for="username">Введите имя:</label>
-      <input type="text" id="username" name="username" /><br />
-      <label for="password">Введите пароль:</label>
-      <input type="password" id="password" name="password" /><br />
-      <label for="secretWord">Введите секретное слово:</label>
-      <input type="text" id="secretWord" name="secretWord" /><br />
-      <button type="button" onclick="subForm()">Submit</button>
-    </form>
-    <div class="secret-data hidden">
-      <h2>Secret Data:</h2>
-      <p id="secretContent"></p>
-      <button class="secret-button" type="button" onclick="deleteCookie()">
-        Delete Username from Cookie
-      </button>
-    </div>
+    <input type="text" id="username" placeholder="Введите ваше имя"><br>
+    <input type="password" id="password" placeholder="Введите пароль"><br>
+    <input type="text" id="secretWord" placeholder="Введите секретное слово"><br>
+    <button onclick="saveCredentials()">Сохранить данные</button>
+    <button id="showCookies" onclick="showCookies()">Показать секретные данные</button>
+  </div>
+  <div id="secretData">
+    <h2>Секретные данные</h2>
+    <p id="secretContent"></p>
+    <button onclick="clearCredentials()">Очистить данные</button>
   </div>
 
   <script>
-    // Проверка введенных значений
-    function subForm() {
+    // Устанавливаем текущее секретное слово и сохраняем его в куки
+    var currentSecretWord = 'Section';
+    document.cookie = "secretWord=" + currentSecretWord + ";expires=" + getExpirationDate(2);
+
+    // Функция для сохранения учетных данных
+    function saveCredentials() {
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
       var secretWord = document.getElementById("secretWord").value;
 
-      if (username === "name" && password === "password" && secretWord === "section") {
-        document.cookie = "username=" + username + "; expires=" + getCookieExpirationDate(2);
-        document.querySelector(".secret-data").classList.remove("hidden");
-        document.getElementById("secretContent").textContent = getCookie("username");
+      // Сохраняем учетные данные в куки с сроком действия 2 дня
+      document.cookie = "username=" + username + ";expires=" + getExpirationDate(2);
+      document.cookie = "password=" + password + ";expires=" + getExpirationDate(2);
+
+      // Если введенное секретное слово совпадает с текущим, показываем кнопку для просмотра секретных данных
+      var currentSecretWord = getCookie("secretWord");
+      if (secretWord == currentSecretWord) {
+        document.getElementById('showCookies').style.display = 'flex';
       } else {
-        alert("Вы ввели неверные данные повторите попытку");
+        document.getElementById('showCookies').style.display = 'none';
       }
     }
 
-    // Удаление имени
-    function deleteCookie() {
-      document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.querySelector(".secret-data").classList.add("hidden");
+    // Функция для отображения секретных данных
+    function showCookies() {
+      // Показываем секретные данные и скрываем форму ввода
+      document.getElementById("secretContent").textContent = "Секретные данные";
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("secretData").style.display = "block";
+      document.getElementById('secretContent').innerHTML = "Имя: " + getCookie('username') + "<br>" + 'Пароль: ' + getCookie('password') + "<br>";
     }
 
-    //Функция вывода
-    function getCookie(name) {
-      var value = "; " + document.cookie;
-      var parts = value.split("; " + name + "=");
-      if (parts.length === 2) return parts.pop().split(";").shift();
-    }
-
-    // Функция таймаут куки
-    function getCookieExpirationDate(days) {
+    // Функция для вычисления даты истечения срока действия куки
+    function getExpirationDate(days) {
       var date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      date.setDate(date.getDate() + days);
       return date.toUTCString();
     }
+
+    // Функция для получения значения куки по имени
+    function getCookie(name) {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith(name + "=")) {
+          return cookie.substring(name.length + 1);
+        }
+      }
+      return "";
+    }
+
+    // Функция для очистки всех куки и перезагрузки страницы
+    function clearCredentials() {
+      document.cookie = "username=;expires=Thu, 01 Jan 1950 00:00:00 GMT";
+      document.cookie = "password=;expires=Thu, 01 Jan 1950 00:00:00 GMT";
+      document.cookie = "secretWord=;expires=Thu, 01 Jan 1950 00:00:00 GMT";
+      location.reload();
+    }
+
+    // Проверяем срок действия куки при загрузке страницы
+    window.onload = function () {
+      var expirationDate = new Date(getCookie("expires"));
+      var currentDate = new Date();
+      if (currentDate > expirationDate) {
+        alert("Cookies have expired. Please login again.");
+        clearCredentials(); // Очищаем куки
+      }
+    };
   </script>
 </body>
 

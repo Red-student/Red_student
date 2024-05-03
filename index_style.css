@@ -9,6 +9,7 @@ body {
 header {
     display: flex;
     background-color: #ffffff;
+    position: sticky;
     top: 0;
     z-index: 100;
     width: 100%;
@@ -944,15 +945,16 @@ body.light-theme {
     background-color: rgb(255, 255, 255);
     color: #000;
 }
-.light-theme footer{
+
+/*Стили для светлой темы*/
+.light-theme footer {
     color: white;
 }
+
 /* Стили для темной темы */
-.dark-theme
-.footer-text1
-.footer-text3 {
+.dark-theme .footer-text1 .footer-text3 {
     color: black;
-    
+
 }
 
 /* Стили для темной темы */

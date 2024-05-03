@@ -24,16 +24,16 @@ var myChart = new Chart(ctx, {
                 'rgba(128, 128, 128, 1)'
             ],
             borderWidth: 1
-            }]
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
         },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            },
-            responsive: true
-        }
+        responsive: true
+    }
 });
 // Опции для диаграммы
 var options = {
@@ -52,7 +52,7 @@ var ctx = document.getElementById('myChart').getContext('2d');
 
 // Создаем круговую диаграмму
 var myChart = new Chart(ctx, {
-    type: 'bar', 
+    type: 'bar',
     data: data,
     options: options
 });

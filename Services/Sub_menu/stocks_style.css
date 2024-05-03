@@ -468,9 +468,10 @@ body.light-theme {
     }
 }
 
-.dark-theme .stocks_block1{
+.dark-theme .stocks_block1 {
     background-color: #000;
 }
-.dark-theme  .footer-icons>a {
+
+.dark-theme .footer-icons>a {
     filter: brightness(0.1);
 }

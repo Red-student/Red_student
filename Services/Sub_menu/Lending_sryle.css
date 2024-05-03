@@ -747,7 +747,7 @@ body.light-theme {
 }
 
 /* Стили для темной темы */
-.dark-theme  .footer-icons>a {
+.dark-theme .footer-icons>a {
     filter: brightness(0.1);
 }
 
@@ -793,6 +793,6 @@ body.light-theme {
     filter: brightness(0.75);
 }
 
-.dark-theme .form-container{
+.dark-theme .form-container {
     background-color: #000;
 }

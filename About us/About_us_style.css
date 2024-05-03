@@ -1,30 +1,30 @@
 /*Стили для всех элементов в теге body*/
-body{
+body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 /*Стили header*/
-header{
+header {
     display: flex;
     background-color: #ffffff;
     position: sticky;
-    top: 0; 
+    top: 0;
     z-index: 100;
     width: 100%;
 }
 
 /*Логотип*/
-.logo{
+.logo {
     height: 90px;
     width: auto;
     margin: 7px 0 7px 35px;
 }
 
 /*Стили навигационного меню */
-nav{
-    margin-left: 20px; 
+nav {
+    margin-left: 20px;
 }
 
 /*Стили навигационного меню для списка*/
@@ -43,14 +43,14 @@ nav a {
 }
 
 /*Стили для элементов списка верхнего уровня в меню*/
-.menu > li {
+.menu>li {
     display: inline-block;
     position: relative;
     padding: 12px 25px;
 }
 
 /*Стили для ссылок в элементах списка верхнего уровня*/
-.menu > li > a {
+.menu>li>a {
     font-family: 'Exo 2', sans-serif;
     height: 70px;
     line-height: 70px;
@@ -75,7 +75,7 @@ nav a {
 }
 
 /*Стили для выпадающего меню при на ведении на пункт меню*/
-.menu > li:hover .submenu {
+.menu>li:hover .submenu {
     visibility: visible;
     opacity: 1;
     transform: perspective(600px) rotateX(0deg);
@@ -102,11 +102,12 @@ nav a {
 
 /*Стили для ссылок в выпадающем меню при наведении на них курсора*/
 .submenu li a:hover {
-    color: #ffffff; 
-    background-color: #D81324; 
+    color: #ffffff;
+    background-color: #D81324;
 }
 
 @media screen and (max-width: 987px) {
+
     /* Стили для логотипа при меньших экранах */
     .logo {
         height: 60px;
@@ -147,7 +148,7 @@ nav a {
         max-width: 300px;
         border-radius: 5px;
         background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         z-index: 100;
     }
 
@@ -171,13 +172,13 @@ nav a {
     }
 
     /* Элементы списка верхнего уровня в меню */
-    .menu > li {
+    .menu>li {
         display: block;
         padding: 0px 10px;
     }
 
     /* Ссылки в элементах списка верхнего уровня */
-    .menu > li > a {
+    .menu>li>a {
         font-size: 14px;
     }
 
@@ -188,10 +189,10 @@ nav a {
         right: 0;
         background-color: #fff;
         border-radius: 0 0 5px 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    .menu > li:hover .submenu {
+    .menu>li:hover .submenu {
         display: block;
     }
 
@@ -218,28 +219,32 @@ nav a {
         font-weight: bold;
     }
 }
+
 @media screen and (max-width: 397px) {
     .menu {
         width: 80%;
     }
 }
+
 @media screen and (min-width: 986.5px) and (max-width: 1500px) {
 
-    .menu > li {
+    .menu>li {
         padding: 12px 0px;
     }
-    .menu > li > a {
+
+    .menu>li>a {
         padding: 0 15px;
     }
 
 }
-.crumbs{
+
+.crumbs {
     margin: 10px 0px;
     background-color: rgb(195, 195, 195, 0.15);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.crumbs > h3{
+.crumbs>h3 {
     padding: 10px 25px;
     margin: 0px 5px;
 }
@@ -266,18 +271,18 @@ h1 {
 }
 
 /* Стили для элементов списка */
-li{
+li {
     font-size: 17px;
 }
 
 /* Стили для контейнера .chart-container */
 .chart-container {
     position: relative;
-    text-align: center; 
-    width: 80%; 
-    max-width: 600px; 
-    margin: 0 auto; 
-    height: 300px; 
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 300px;
 }
 
 /* Стили для футера */
@@ -406,7 +411,7 @@ body.light-theme {
 }
 
 /* Стили для темной темы */
-.dark-theme  .footer-icons>a {
+.dark-theme .footer-icons>a {
     filter: brightness(0.1);
 }
 

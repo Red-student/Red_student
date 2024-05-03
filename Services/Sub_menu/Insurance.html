@@ -1,608 +1,622 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <title>Страхование</title>
-        
-        <!-- Подключение стиля -->
-        <link rel="stylesheet" href="insurance_sryle.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="../../img/badge.png" type="image/png">
-        <script src="../../theme.js"></script>
-    </head>
 
-    <body>
-        <!-- Хедер с логотипом и меню -->
-        <header>
-            <!-- Логотип -->
-            <div>
-                <a href="../../index.html">
-                    <img src="../../img/Logo.png" alt="logo" class="logo">
-                </a>
-            </div>
-            <!-- Меню навигации -->
-            <div>
-                <nav class="navbar">
-                    <ul class="menu" id="menu">
-                        <li>
-                            <a href="../../index.html">Главная</a>
-                        </li>
-                        <li>
-                            <a href="../../Cars/Cars.html" class="down">Автомобили</a>
-                            <ul class="submenu">
-                                <li><a href="../../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
-                                <li><a href="../../Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../Services.html"  class="down">Услуги</a>
-                            <ul class="submenu">
-                                <li><a href="./Lending.html">Кредитование</a></li>
-                                <li><a href="./Insurance.html">Страхование</a></li>
-                                <li><a href="./Test_drive.html">Тест-драйв</a></li>
-                                <li><a href="./stocks.html">Акции</a></li>
-                                <li><a href="./Technical_inspection.html">Техосмотр</a></li>
-                                <li><a href="./Tire_service.html">Шиномонтаж</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../../Favourites/Favourites.html">Избранное</a>
-                        </li>
-                        <li class="hreader_right">
-                            <a href="../../About%20us/About_us.html" class="down">О нас</a>
-                            <ul class="submenu">
-                                <li><a href="../../About%20us/Feedback.html">Обратная связь</a></li>
-                            </ul>
-                        </li>
-                        <li class="hreader_right">
-                            <a href="../../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
-                        </li>
-                    </ul>
-                    <div class="navbar-toggle" onclick="toggleMenu()">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                      </div>
-                </nav>
-            </div>
-        </header>
+<head>
+    <title>Страхование</title>
 
-        <!--Блок main-->
-        <main>
-            <div class="crumbs">
-                <h3>Услуги / Страхование</h3>
-            </div>
-            <div class="content_block1">
-                <div class="content_block2">
-                    <div class="content_block3">
-                        <div class="block3_img">
-                            <img src="../../img/insurance_fon.webp" alt="insurance_auto">
-                        </div>
-                        <div class="block3_img_and_text">
-                            <div class="block3_img_text">
-                                <h1>
-                                    Страхование автомобиля 
-                                    <br>
-                                    На выгодных условиях!
-                                </h1>
-                                <div class="block3_img_text_detailed">
-                                    <a href="#" onclick="toggleForm()" target="_top"><span>Подробнее</span></a>
-                                </div>
-                            </div>
-                            <div class="block3_text">
-                                <p>
-                                    Приобретая автомобиль в Petro Avto, Вы сведете к минимуму риски, связанные с владением и эксплуатацией средства повышенной опасности. Наиболее оптимальный способ минимизировать моральный и материальный ущерб — застраховать Ваш автомобиль.
-Мы постарались создать не только наиболее комфортные условия оформления страховки, но и собрать специальные предложения от лучших компаний, в очередной раз подтверждая статус одного из новейших автомобильных дилеров Казахстана.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Подключение стиля -->
+    <link rel="stylesheet" href="insurance_sryle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/badge.png" type="image/png">
+    <script src="../../theme.js"></script>
+</head>
+
+<body>
+    <!-- Хедер с логотипом и меню -->
+    <header>
+        <!-- Логотип -->
+        <div>
+            <a href="../../index.html">
+                <img src="../../img/Logo.png" alt="logo" class="logo">
+            </a>
+        </div>
+        <!-- Меню навигации -->
+        <div>
+            <nav class="navbar">
+                <ul class="menu" id="menu">
+                    <li>
+                        <a href="../../index.html">Главная</a>
+                    </li>
+                    <li>
+                        <a href="../../Cars/Cars.html" class="down">Автомобили</a>
+                        <ul class="submenu">
+                            <li><a href="../../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+                            <li><a href="../../Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../Services.html" class="down">Услуги</a>
+                        <ul class="submenu">
+                            <li><a href="./Lending.html">Кредитование</a></li>
+                            <li><a href="./Insurance.html">Страхование</a></li>
+                            <li><a href="./Test_drive.html">Тест-драйв</a></li>
+                            <li><a href="./stocks.html">Акции</a></li>
+                            <li><a href="./Technical_inspection.html">Техосмотр</a></li>
+                            <li><a href="./Tire_service.html">Шиномонтаж</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../../Favourites/Favourites.html">Избранное</a>
+                    </li>
+                    <li class="hreader_right">
+                        <a href="../../About%20us/About_us.html" class="down">О нас</a>
+                        <ul class="submenu">
+                            <li><a href="../../About%20us/Feedback.html">Обратная связь</a></li>
+                        </ul>
+                    </li>
+                    <li class="hreader_right">
+                        <a href="../../Login_Registration/Login_Registration.html">Вход / Регистрация</a>
+                    </li>
+                </ul>
+                <div class="navbar-toggle" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
-                <div class="content_block4">
-                    <div class="block4_text1">
-                        <h1>
-                            Оформление Страхование!
-                        </h1>
+            </nav>
+        </div>
+    </header>
+
+    <!--Блок main-->
+    <main>
+        <div class="crumbs">
+            <h3>Услуги / Страхование</h3>
+        </div>
+        <div class="content_block1">
+            <div class="content_block2">
+                <div class="content_block3">
+                    <div class="block3_img">
+                        <img src="../../img/insurance_fon.webp" alt="insurance_auto">
                     </div>
-                    <div class="block4_text1">
-                        <h2>
-                            Выберите автомобиль
-                        </h2>
-                        <div class="block4_forma">
-                            <div class="filter-item">
-                                <select id="brandSelect">
-                                    <option value="" disabled selected>Выберите или введите марку</option>
-                                    <option value="Volvo">Volvo</option>
-                                    <option value="Audi">Audi</option>
-                                    <option value="BMW">BMW</option>
-                                    <option value="Mercedes-Benz">Mercedes-Benz</option>
-                                    <option value="Toyota">Toyota</option>
-                                    <option value="Honda">Honda</option>
-                                    <option value="ford">Ford</option>
-                                    <option value="chevrolet">Chevrolet</option>
-                                    <option value="subaru">Subaru</option>
-                                    <option value="nissan">Nissan</option>
-                                    <option value="kia">Kia</option>
-                                    <option value="hyundai">Hyundai</option>
-                                    <option value="volkswagen">Volkswagen</option>
-                                    <option value="mazda">Mazda</option>
-                                    <option value="lexus">Lexus</option>
-                                    <option value="mitsubishi">Mitsubishi</option>
-                                    <option value="haval">Haval</option>
-                                    <option value="chery">Chery</option>
-                                    <option value="geely">Geely</option>
-                                </select>
-                            </div>
-                            <div class="filter-item" title="Выберите марку авто">
-                                <select id="model" disabled style="cursor: not-allowed;">
-                                    <option value="" selected>Модель</option>
-                                </select>
-                            </div>
-                            <div class="filter-item" title="Выберите марку и модель">
-                                <select id="generation" disabled style="cursor: not-allowed;">
-                                    <option value="" selected>Поколение</option>
-                                </select>
+                    <div class="block3_img_and_text">
+                        <div class="block3_img_text">
+                            <h1>
+                                Страхование автомобиля
+                                <br>
+                                На выгодных условиях!
+                            </h1>
+                            <div class="block3_img_text_detailed">
+                                <a href="#" onclick="toggleForm()" target="_top"><span>Подробнее</span></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="block4_text1">
-                        <h2>
-                            Контактные данные
-                        </h2>
-                        <div class="block4_Contact_information">
-                            <form>
-                                <label for="username2">Ваше имя:</label><br>
-                                <input type="text" id="username2" name="username2" required placeholder="Введите имя"><br>
-                                <label for="phone2">Ваш телефон:</label><br>
-                                <input type="tel" id="phone2" name="phone2" data-phone-pattern="+7 (___) ___-__-__" required placeholder="Введите номер телефона"><br>
-                                <label for="your_email2">Ваша почта:</label><br>
-                                <input type="email" id="your_email2" name="your_email2" required placeholder="Введите email"><br>
-                                <input type="checkbox" id="consent" required>
-                                <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
-                                <button type="submit" id="submit-btn">Отправить заявку</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="content_block5">
-                    <div class="content_block5_fon">
-                        <h2>
-                            Автокредит
-                        </h2>
-                        <div class="b_about_credit">
+                        <div class="block3_text">
                             <p>
-                                Хотите обезопасить себя и свою семью от финансовых рисков? Не откладывайте на потом, ведь защитить свое имущество и здоровье можно уже сегодня, воспользовавшись страховыми услугами наших партнеров. Не подвергайте себя лишнему стрессу, обеспечьте себя надежным страховым покрытием и будьте уверены в завтрашнем дне.
+                                Приобретая автомобиль в Petro Avto, Вы сведете к минимуму риски, связанные с владением и
+                                эксплуатацией средства повышенной опасности. Наиболее оптимальный способ минимизировать
+                                моральный и материальный ущерб — застраховать Ваш автомобиль.
+                                Мы постарались создать не только наиболее комфортные условия оформления страховки, но и
+                                собрать специальные предложения от лучших компаний, в очередной раз подтверждая статус
+                                одного из новейших автомобильных дилеров Казахстана.
                             </p>
-                            <p>Наши преимущества:</p>
-                            <div>
-                                <ul class="b_list_simple__list">
-                                    <li class="b_list_simple__item">
-                                        Широкий выбор страховых программ
-                                    </li>
-                                    <li class="b_list_simple__item">
-                                        Гибкие условия для клиентов                                
-                                    </li>
-                                    <li class="b_list_simple__item">
-                                        Быстрое оформление полиса                              
-                                    </li>
-                                    <li class="b_list_simple__item">
-                                        Страхование от 18 до 85 лет, включая пенсионеров                             
-                                    </li>
-                                    <li class="b_list_simple__item">
-                                        Привлекательные тарифы и скидки для наших клиентов
-                                    </li>
-                                    <li class="b_list_simple__item">
-                                        Полное покрытие в случае страхового случая
-                                    </li>
-                                    <li class="b_list_simple__item">
-                                        Профессиональная поддержка и консультации на каждом этапе
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="myForm" class="form-container">
-                <span class="close" onclick="toggleForm()">&times;</span>
-                <h4>Заявка на консультацию</h4>
-                <form>
-                    <label for="username">Ваше имя:</label><br>
-                    <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
-                    <label for="phone">Ваш телефон:</label><br>
-                    <input type="tel" id="phone" name="phone" data-phone-pattern="+7 (___) ___-__-__" required placeholder="Введите номер телефона"><br>
-                    <label for="your_email">Ваша почта*</label><br>
-                    <input type="email" id="your_email" name="your_email" required placeholder="Введите email"><br>
-                    <input type="checkbox" id="consent" required>
-                    <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
-                    <button type="submit" id="submit-btn">Отправить заявку</button>
-                </form>
-            </div>
-        </main>
-
-
-        <!--Блок footer(подвал)-->
-        <footer>
-            <div class="footer-row">
-                <div class="footer-text1">
-                    <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность каждой единицы транспортного средства. </p>
-                    <p>© 2024 Все права защищены.</p>
+            <div class="content_block4">
+                <div class="block4_text1">
+                    <h1>
+                        Оформление Страхование!
+                    </h1>
                 </div>
-                <div class="footer-text1">
-                    <p>Связь с разработчиком</p>
-                    <p>APO2013@ku.edu.kz</p>
-                    <p>+7 705 268 3304</p>
-                    <button id="themeToggle">Сменить тему</button>
-                </div>
-                <div class="footer-text3">
-                    <p>Следите за нашими новостями в социальных сетях!</p>
-                    <div class="footer-icons">
-                        <a href="https://www.instagram.com/kozybayevuniversity/">
-                            <img src="../../img/instagram.svg" alt="instagram">
-                        </a>
-
-                        <a href="https://www.facebook.com/kozybayevuniversity/">
-                            <img src="../../img/facebook.svg" alt="facebook">
-                        </a>
-
-                        <a href="https://t.me/s/kozybayevuniversity/1973">
-                            <img src="../../img/telegram.svg" alt="telegram">
-                        </a>
+                <div class="block4_text1">
+                    <h2>
+                        Выберите автомобиль
+                    </h2>
+                    <div class="block4_forma">
+                        <div class="filter-item">
+                            <select id="brandSelect">
+                                <option value="" disabled selected>Выберите или введите марку</option>
+                                <option value="Volvo">Volvo</option>
+                                <option value="Audi">Audi</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Honda">Honda</option>
+                                <option value="ford">Ford</option>
+                                <option value="chevrolet">Chevrolet</option>
+                                <option value="subaru">Subaru</option>
+                                <option value="nissan">Nissan</option>
+                                <option value="kia">Kia</option>
+                                <option value="hyundai">Hyundai</option>
+                                <option value="volkswagen">Volkswagen</option>
+                                <option value="mazda">Mazda</option>
+                                <option value="lexus">Lexus</option>
+                                <option value="mitsubishi">Mitsubishi</option>
+                                <option value="haval">Haval</option>
+                                <option value="chery">Chery</option>
+                                <option value="geely">Geely</option>
+                            </select>
+                        </div>
+                        <div class="filter-item" title="Выберите марку авто">
+                            <select id="model" disabled style="cursor: not-allowed;">
+                                <option value="" selected>Модель</option>
+                            </select>
+                        </div>
+                        <div class="filter-item" title="Выберите марку и модель">
+                            <select id="generation" disabled style="cursor: not-allowed;">
+                                <option value="" selected>Поколение</option>
+                            </select>
+                        </div>
                     </div>
-                </div>            
+                </div>
+                <div class="block4_text1">
+                    <h2>
+                        Контактные данные
+                    </h2>
+                    <div class="block4_Contact_information">
+                        <form>
+                            <label for="username2">Ваше имя:</label><br>
+                            <input type="text" id="username2" name="username2" required placeholder="Введите имя"><br>
+                            <label for="phone2">Ваш телефон:</label><br>
+                            <input type="tel" id="phone2" name="phone2" data-phone-pattern="+7 (___) ___-__-__" required
+                                placeholder="Введите номер телефона"><br>
+                            <label for="your_email2">Ваша почта:</label><br>
+                            <input type="email" id="your_email2" name="your_email2" required
+                                placeholder="Введите email"><br>
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
+                            <button type="submit" id="submit-btn">Отправить заявку</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            //скрипт для бургера
-            function toggleMenu() {
-                var menu = document.getElementById("menu");
-                menu.classList.toggle("active");
-            }
-            //скрипт для выпадающего списка в списке
-            document.querySelectorAll('.down').forEach(item => {
-                item.addEventListener('click', event => {
-                    item.querySelector('.submenu').classList.toggle("active");
-                    event.preventDefault();
-                });
+            <div class="content_block5">
+                <div class="content_block5_fon">
+                    <h2>
+                        Автокредит
+                    </h2>
+                    <div class="b_about_credit">
+                        <p>
+                            Хотите обезопасить себя и свою семью от финансовых рисков? Не откладывайте на потом, ведь
+                            защитить свое имущество и здоровье можно уже сегодня, воспользовавшись страховыми услугами
+                            наших партнеров. Не подвергайте себя лишнему стрессу, обеспечьте себя надежным страховым
+                            покрытием и будьте уверены в завтрашнем дне.
+                        </p>
+                        <p>Наши преимущества:</p>
+                        <div>
+                            <ul class="b_list_simple__list">
+                                <li class="b_list_simple__item">
+                                    Широкий выбор страховых программ
+                                </li>
+                                <li class="b_list_simple__item">
+                                    Гибкие условия для клиентов
+                                </li>
+                                <li class="b_list_simple__item">
+                                    Быстрое оформление полиса
+                                </li>
+                                <li class="b_list_simple__item">
+                                    Страхование от 18 до 85 лет, включая пенсионеров
+                                </li>
+                                <li class="b_list_simple__item">
+                                    Привлекательные тарифы и скидки для наших клиентов
+                                </li>
+                                <li class="b_list_simple__item">
+                                    Полное покрытие в случае страхового случая
+                                </li>
+                                <li class="b_list_simple__item">
+                                    Профессиональная поддержка и консультации на каждом этапе
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myForm" class="form-container">
+            <span class="close" onclick="toggleForm()">&times;</span>
+            <h4>Заявка на консультацию</h4>
+            <form>
+                <label for="username">Ваше имя:</label><br>
+                <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
+                <label for="phone">Ваш телефон:</label><br>
+                <input type="tel" id="phone" name="phone" data-phone-pattern="+7 (___) ___-__-__" required
+                    placeholder="Введите номер телефона"><br>
+                <label for="your_email">Ваша почта*</label><br>
+                <input type="email" id="your_email" name="your_email" required placeholder="Введите email"><br>
+                <input type="checkbox" id="consent" required>
+                <label for="consent">Разрешение на обработку персоналньх данных</label><br><br>
+                <button type="submit" id="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </main>
+
+
+    <!--Блок footer(подвал)-->
+    <footer>
+        <div class="footer-row">
+            <div class="footer-text1">
+                <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы
+                    предлагаем широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность
+                    каждой единицы транспортного средства. </p>
+                <p>© 2024 Все права защищены.</p>
+            </div>
+            <div class="footer-text1">
+                <p>Связь с разработчиком</p>
+                <p>APO2013@ku.edu.kz</p>
+                <p>+7 705 268 3304</p>
+                <button id="themeToggle">Сменить тему</button>
+            </div>
+            <div class="footer-text3">
+                <p>Следите за нашими новостями в социальных сетях!</p>
+                <div class="footer-icons">
+                    <a href="https://www.instagram.com/kozybayevuniversity/">
+                        <img src="../../img/instagram.svg" alt="instagram">
+                    </a>
+
+                    <a href="https://www.facebook.com/kozybayevuniversity/">
+                        <img src="../../img/facebook.svg" alt="facebook">
+                    </a>
+
+                    <a href="https://t.me/s/kozybayevuniversity/1973">
+                        <img src="../../img/telegram.svg" alt="telegram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        //скрипт для бургера
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+        //скрипт для выпадающего списка в списке
+        document.querySelectorAll('.down').forEach(item => {
+            item.addEventListener('click', event => {
+                item.querySelector('.submenu').classList.toggle("active");
+                event.preventDefault();
             });
-            //скрипт меню
-window.addEventListener("DOMContentLoaded", function() {
-  const mediaQuery = window.matchMedia("(max-width: 986px)");
-
-  // Функция для обработки событий клика
-  function handleClick(event) {
-    // Если ширина экрана меньше 986px, выходим из функции
-    if (!mediaQuery.matches) {
-      return;
-    }
-
-    // Получаем следующий элемент после текущего элемента списка (подменю)
-    const submenu = this.nextElementSibling;
-
-    // Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
-    if (submenu.classList.contains('active')) {
-      return;
-    }
-
-    // Отменяем действие по умолчанию (переход по ссылке)
-    event.preventDefault();
-
-    // Закрываем все подменю
-    closeAllSubmenus();
-
-    // Открываем текущее подменю
-    submenu.classList.add('active');
-  }
-
-  // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
-  const downLinks = document.querySelectorAll('.down');
-  downLinks.forEach(link => {
-    link.addEventListener('click', handleClick);
-  });
-
-  // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
-  const submenuLinks = document.querySelectorAll('.submenu a');
-  submenuLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      // Закрываем подменю после клика на ссылку
-      const submenu = this.closest('.submenu');
-      submenu.classList.remove('active');
-    });
-  });
-
-  // Функция для закрытия всех подменю
-  function closeAllSubmenus() {
-    const submenus = document.querySelectorAll('.submenu');
-    submenus.forEach(submenu => {
-      submenu.classList.remove('active');
-    });
-  }
-
-  // Функция для открытия/закрытия основного меню
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("active");
-  }
-
-  // Проверяем изменение медиа-запроса
-  mediaQuery.addEventListener("change", event => {
-    // Если ширина экрана меньше 986px, закрываем все подменю
-    if (!event.matches) {
-      closeAllSubmenus();
-    }
-  });
-});
-
-
-
-
-
-function toggleForm() {
-  var form = document.getElementById("myForm");
-  if (form.style.display === "none" || form.style.display === "") {
-    form.style.display = "block";
-  } else {
-    form.style.display = "none";
-  }
-}
-
-
-var phoneInputCallback = function(event) {
-      var el = event.target,
-        clearVal = el.dataset.phoneClear,
-        pattern = el.dataset.phonePattern,
-        matrix_def = "+7 (___) ___-__-__",
-        matrix = pattern ? pattern : matrix_def,
-        i = 0,
-        def = matrix.replace(/\D/g, ""),
-        val = event.target.value.replace(/\D/g, "");
-        // проверяем длину значения и очищаем поле, если оно неполное
-         if (clearVal !== 'false' && event.type === 'blur') {
-            if (val.length < matrix.match(/([\_\d])/g).length) {
-            event.target.value = '';
-            return;
-            }
-        }
-        // Заменяем символы ввода на шаблон телефонного номера
-        if (def.length >= val.length) val = def;
-        event.target.value = matrix.replace(/./g, function(a) {
-            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
         });
-    };
-    
-    // Получаем все элементы с атрибутом data-phone-pattern
-    var phoneInputs = document.querySelectorAll('[data-phone-pattern]');
-    for (let elem of phoneInputs) {
-      for (let ev of ['input', 'blur', 'focus']) {
-        elem.addEventListener(ev, phoneInputCallback);
-      }
-    }
+        //скрипт меню
+        window.addEventListener("DOMContentLoaded", function () {
+            const mediaQuery = window.matchMedia("(max-width: 986px)");
 
-
-//скрипт формы подачи заявки на кредит автомобиля
-    var modelsAndGenerations = {
-    "volvo": {
-        "models": ["S60", "S90", "XC40", "XC60", "XC90"],
-        "generations": ["1st generation", "2nd generation"]
-    },
-    "audi": {
-        "models": ["A3", "A4", "A5", "A6", "Q3", "Q5", "Q7"],
-        "generations": ["B8", "B9"]
-    },
-    "bmw": {
-        "models": ["3 Series", "5 Series", "X3", "X5", "X7"],
-        "generations": ["E90", "G20"]
-    },
-    "mercedes": {
-        "models": ["C-Class", "E-Class", "S-Class", "GLC", "GLE", "GLS"],
-        "generations": ["W204", "W213"]
-    },
-    "toyota": {
-        "models": ["Camry", "Corolla", "RAV4", "Highlander", "Prius"],
-        "generations": ["XV50", "XV70"]
-    },
-    "honda": {
-        "models": ["Civic", "Accord", "CR-V", "Pilot", "Odyssey"],
-        "generations": ["10th generation", "5th generation"]
-    },
-    "ford": {
-        "models": ["Focus", "Fiesta", "Escape", "Explorer", "F-150"],
-        "generations": ["MK4", "MK5"]
-    },
-    "chevrolet": {
-        "models": ["Cruze", "Malibu", "Equinox", "Tahoe", "Suburban"],
-        "generations": ["2nd generation", "4th generation"]
-    },
-    "subaru": {
-        "models": ["Impreza", "Legacy", "Outback", "Forester", "Ascent"],
-        "generations": ["4th generation", "5th generation"]
-    },
-    "nissan": {
-        "models": ["Altima", "Maxima", "Rogue", "Pathfinder", "Armada"],
-        "generations": ["4th generation", "5th generation"]
-    },
-    "kia": {
-        "models": ["Optima", "Sorento", "Sportage", "Telluride", "Stinger"],
-        "generations": ["4th generation", "5th generation"]
-    },
-    "hyundai": {
-        "models": ["Sonata", "Elantra", "Tucson", "Santa Fe", "Palisade"],
-        "generations": ["DN8", "NX4"]
-    },
-    "volkswagen": {
-        "models": ["Golf", "Passat", "Tiguan", "Atlas", "Jetta"],
-        "generations": ["MK7", "MK8"]
-    },
-    "mazda": {
-        "models": ["Mazda3", "Mazda6", "CX-5", "CX-9", "MX-5 Miata"],
-        "generations": ["4th generation", "5th generation"]
-    },
-    "lexus": {
-        "models": ["IS", "ES", "RX", "NX", "GX"],
-        "generations": ["2nd generation", "3rd generation"]
-    },
-    "mitsubishi": {
-        "models": ["Lancer", "Outlander", "Eclipse Cross", "Pajero", "ASX"],
-        "generations": ["10th generation", "11th generation"]
-    },
-    "haval": {
-        "models": ["H2", "H6", "H9", "H5", "F7"],
-        "generations": ["1st generation", "2nd generation"]
-    },
-    "chery": {
-        "models": ["Tiggo", "Arrizo", "QQ", "E5", "Fulwin"],
-        "generations": ["3rd generation", "4th generation"]
-    },
-    "geely": {
-        "models": ["Coolray", "Emgrand", "Atlas", "Vision", "Bo Yue"],
-        "generations": ["2nd generation", "3rd generation"]
-    }
-};
-const brandSelect = document.getElementById('brandSelect');
-const modelSelect = document.getElementById('model');
-const generationSelect = document.getElementById('generation');
-
-brandSelect.addEventListener('change', function() {
-    modelSelect.innerHTML = '<option value="" selected>Модель</option>'; // Сбрасываем список моделей при изменении марки
-    generationSelect.innerHTML = '<option value="" selected>Поколение</option>'; // Сбрасываем список поколений при изменении марки
-    const selectedBrand = this.value.toLowerCase();
-    if (selectedBrand !== '') {
-        modelSelect.removeAttribute('disabled');
-        const models = modelsAndGenerations[selectedBrand].models;
-        models.forEach(model => {
-            const option = document.createElement('option');
-            option.value = model;
-            option.textContent = model;
-            modelSelect.appendChild(option);
-        });
-        modelSelect.style.cursor = 'pointer'; // Меняем курсор, если есть доступные модели
-    } else {
-        modelSelect.setAttribute('disabled', true);
-        modelSelect.style.cursor = 'not-allowed'; // Возвращаем курсор на стандартный, если нет выбора марки
-    }
-});
-
-modelSelect.addEventListener('change', function() {
-    generationSelect.innerHTML = '<option value="" selected>Поколение</option>'; // Сбрасываем список поколений при изменении модели
-    const selectedModel = this.value;
-    if (selectedModel !== '') {
-        generationSelect.removeAttribute('disabled');
-        const generations = modelsAndGenerations[brandSelect.value.toLowerCase()].generations;
-        generations.forEach(generation => {
-            const option = document.createElement('option');
-            option.value = generation;
-            option.textContent = generation;
-            generationSelect.appendChild(option);
-        });
-        generationSelect.style.cursor = 'pointer'; // Меняем курсор, если есть доступные поколения
-    } else {
-        generationSelect.setAttribute('disabled', true);
-        generationSelect.style.cursor = 'not-allowed'; // Возвращаем курсор на стандартный, если нет выбора модели
-    }
-});
-
-generationSelect.addEventListener('change', function() {
-    if (this.value !== '') {
-        this.style.cursor = 'pointer';
-    } else {
-        this.style.cursor = 'not-allowed';
-    }
-});
-
-
-
-
-
-
-$(document).ready(function() {
-    $('.select').each(function() {
-        const _this = $(this),
-            selectOption = _this.find('option'),
-            selectOptionLength = selectOption.length,
-            selectedOption = selectOption.filter(':selected'),
-            duration = 450; // длительность анимации 
-
-        _this.hide();
-        _this.wrap('<div class="select"></div>');
-        $('<div>', {
-            class: 'new-select',
-            text: _this.children('option:disabled').text()
-        }).insertAfter(_this);
-
-        const selectHead = _this.next('.new-select');
-        $('<div>', {
-            class: 'new-select__list'
-        }).insertAfter(selectHead);
-
-        const selectList = selectHead.next('.new-select__list');
-        for (let i = 1; i < selectOptionLength; i++) {
-            $('<div>', {
-                class: 'new-select__item',
-                html: $('<span>', {
-                    text: selectOption.eq(i).text()
-                })
-            })
-            .attr('data-value', selectOption.eq(i).val())
-            .appendTo(selectList);
-        }
-
-        const selectItem = selectList.find('.new-select__item');
-        selectList.slideUp(0);
-
-        // Определение положения выпадающего списка
-        const windowHeight = $(window).height();
-        const selectPosition = selectHead.offset().top;
-
-        selectHead.on('click', function() {
-            if (!$(this).hasClass('on')) {
-                $(this).addClass('on');
-
-                // Если новый селект находится ближе к верху страницы, показать список внизу
-                if (selectPosition < windowHeight / 2) {
-                    selectList.slideDown(duration);
-                } else {
-                    selectList.slideUp(duration);
+            // Функция для обработки событий клика
+            function handleClick(event) {
+                // Если ширина экрана меньше 986px, выходим из функции
+                if (!mediaQuery.matches) {
+                    return;
                 }
 
-                selectItem.on('click', function() {
-                    let chooseItem = $(this).data('value');
+                // Получаем следующий элемент после текущего элемента списка (подменю)
+                const submenu = this.nextElementSibling;
 
-                    $('select').val(chooseItem).attr('selected', 'selected');
-                    selectHead.text($(this).find('span').text());
+                // Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
+                if (submenu.classList.contains('active')) {
+                    return;
+                }
 
-                    selectList.slideUp(duration);
-                    selectHead.removeClass('on');
+                // Отменяем действие по умолчанию (переход по ссылке)
+                event.preventDefault();
+
+                // Закрываем все подменю
+                closeAllSubmenus();
+
+                // Открываем текущее подменю
+                submenu.classList.add('active');
+            }
+
+            // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
+            const downLinks = document.querySelectorAll('.down');
+            downLinks.forEach(link => {
+                link.addEventListener('click', handleClick);
+            });
+
+            // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
+            const submenuLinks = document.querySelectorAll('.submenu a');
+            submenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    // Закрываем подменю после клика на ссылку
+                    const submenu = this.closest('.submenu');
+                    submenu.classList.remove('active');
+                });
+            });
+
+            // Функция для закрытия всех подменю
+            function closeAllSubmenus() {
+                const submenus = document.querySelectorAll('.submenu');
+                submenus.forEach(submenu => {
+                    submenu.classList.remove('active');
+                });
+            }
+
+            // Функция для открытия/закрытия основного меню
+            function toggleMenu() {
+                const menu = document.getElementById("menu");
+                menu.classList.toggle("active");
+            }
+
+            // Проверяем изменение медиа-запроса
+            mediaQuery.addEventListener("change", event => {
+                // Если ширина экрана меньше 986px, закрываем все подменю
+                if (!event.matches) {
+                    closeAllSubmenus();
+                }
+            });
+        });
+
+
+
+
+
+        function toggleForm() {
+            var form = document.getElementById("myForm");
+            if (form.style.display === "none" || form.style.display === "") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+
+
+        var phoneInputCallback = function (event) {
+            var el = event.target,
+                clearVal = el.dataset.phoneClear,
+                pattern = el.dataset.phonePattern,
+                matrix_def = "+7 (___) ___-__-__",
+                matrix = pattern ? pattern : matrix_def,
+                i = 0,
+                def = matrix.replace(/\D/g, ""),
+                val = event.target.value.replace(/\D/g, "");
+            // проверяем длину значения и очищаем поле, если оно неполное
+            if (clearVal !== 'false' && event.type === 'blur') {
+                if (val.length < matrix.match(/([\_\d])/g).length) {
+                    event.target.value = '';
+                    return;
+                }
+            }
+            // Заменяем символы ввода на шаблон телефонного номера
+            if (def.length >= val.length) val = def;
+            event.target.value = matrix.replace(/./g, function (a) {
+                return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+            });
+        };
+
+        // Получаем все элементы с атрибутом data-phone-pattern
+        var phoneInputs = document.querySelectorAll('[data-phone-pattern]');
+        for (let elem of phoneInputs) {
+            for (let ev of ['input', 'blur', 'focus']) {
+                elem.addEventListener(ev, phoneInputCallback);
+            }
+        }
+
+
+        //скрипт формы подачи заявки на кредит автомобиля
+        var modelsAndGenerations = {
+            "volvo": {
+                "models": ["S60", "S90", "XC40", "XC60", "XC90"],
+                "generations": ["1st generation", "2nd generation"]
+            },
+            "audi": {
+                "models": ["A3", "A4", "A5", "A6", "Q3", "Q5", "Q7"],
+                "generations": ["B8", "B9"]
+            },
+            "bmw": {
+                "models": ["3 Series", "5 Series", "X3", "X5", "X7"],
+                "generations": ["E90", "G20"]
+            },
+            "mercedes": {
+                "models": ["C-Class", "E-Class", "S-Class", "GLC", "GLE", "GLS"],
+                "generations": ["W204", "W213"]
+            },
+            "toyota": {
+                "models": ["Camry", "Corolla", "RAV4", "Highlander", "Prius"],
+                "generations": ["XV50", "XV70"]
+            },
+            "honda": {
+                "models": ["Civic", "Accord", "CR-V", "Pilot", "Odyssey"],
+                "generations": ["10th generation", "5th generation"]
+            },
+            "ford": {
+                "models": ["Focus", "Fiesta", "Escape", "Explorer", "F-150"],
+                "generations": ["MK4", "MK5"]
+            },
+            "chevrolet": {
+                "models": ["Cruze", "Malibu", "Equinox", "Tahoe", "Suburban"],
+                "generations": ["2nd generation", "4th generation"]
+            },
+            "subaru": {
+                "models": ["Impreza", "Legacy", "Outback", "Forester", "Ascent"],
+                "generations": ["4th generation", "5th generation"]
+            },
+            "nissan": {
+                "models": ["Altima", "Maxima", "Rogue", "Pathfinder", "Armada"],
+                "generations": ["4th generation", "5th generation"]
+            },
+            "kia": {
+                "models": ["Optima", "Sorento", "Sportage", "Telluride", "Stinger"],
+                "generations": ["4th generation", "5th generation"]
+            },
+            "hyundai": {
+                "models": ["Sonata", "Elantra", "Tucson", "Santa Fe", "Palisade"],
+                "generations": ["DN8", "NX4"]
+            },
+            "volkswagen": {
+                "models": ["Golf", "Passat", "Tiguan", "Atlas", "Jetta"],
+                "generations": ["MK7", "MK8"]
+            },
+            "mazda": {
+                "models": ["Mazda3", "Mazda6", "CX-5", "CX-9", "MX-5 Miata"],
+                "generations": ["4th generation", "5th generation"]
+            },
+            "lexus": {
+                "models": ["IS", "ES", "RX", "NX", "GX"],
+                "generations": ["2nd generation", "3rd generation"]
+            },
+            "mitsubishi": {
+                "models": ["Lancer", "Outlander", "Eclipse Cross", "Pajero", "ASX"],
+                "generations": ["10th generation", "11th generation"]
+            },
+            "haval": {
+                "models": ["H2", "H6", "H9", "H5", "F7"],
+                "generations": ["1st generation", "2nd generation"]
+            },
+            "chery": {
+                "models": ["Tiggo", "Arrizo", "QQ", "E5", "Fulwin"],
+                "generations": ["3rd generation", "4th generation"]
+            },
+            "geely": {
+                "models": ["Coolray", "Emgrand", "Atlas", "Vision", "Bo Yue"],
+                "generations": ["2nd generation", "3rd generation"]
+            }
+        };
+        const brandSelect = document.getElementById('brandSelect');
+        const modelSelect = document.getElementById('model');
+        const generationSelect = document.getElementById('generation');
+
+        brandSelect.addEventListener('change', function () {
+            modelSelect.innerHTML = '<option value="" selected>Модель</option>'; // Сбрасываем список моделей при изменении марки
+            generationSelect.innerHTML = '<option value="" selected>Поколение</option>'; // Сбрасываем список поколений при изменении марки
+            const selectedBrand = this.value.toLowerCase();
+            if (selectedBrand !== '') {
+                modelSelect.removeAttribute('disabled');
+                const models = modelsAndGenerations[selectedBrand].models;
+                models.forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model;
+                    option.textContent = model;
+                    modelSelect.appendChild(option);
+                });
+                modelSelect.style.cursor = 'pointer'; // Меняем курсор, если есть доступные модели
+            } else {
+                modelSelect.setAttribute('disabled', true);
+                modelSelect.style.cursor = 'not-allowed'; // Возвращаем курсор на стандартный, если нет выбора марки
+            }
+        });
+
+        modelSelect.addEventListener('change', function () {
+            generationSelect.innerHTML = '<option value="" selected>Поколение</option>'; // Сбрасываем список поколений при изменении модели
+            const selectedModel = this.value;
+            if (selectedModel !== '') {
+                generationSelect.removeAttribute('disabled');
+                const generations = modelsAndGenerations[brandSelect.value.toLowerCase()].generations;
+                generations.forEach(generation => {
+                    const option = document.createElement('option');
+                    option.value = generation;
+                    option.textContent = generation;
+                    generationSelect.appendChild(option);
+                });
+                generationSelect.style.cursor = 'pointer'; // Меняем курсор, если есть доступные поколения
+            } else {
+                generationSelect.setAttribute('disabled', true);
+                generationSelect.style.cursor = 'not-allowed'; // Возвращаем курсор на стандартный, если нет выбора модели
+            }
+        });
+
+        generationSelect.addEventListener('change', function () {
+            if (this.value !== '') {
+                this.style.cursor = 'pointer';
+            } else {
+                this.style.cursor = 'not-allowed';
+            }
+        });
+
+
+
+
+
+
+        $(document).ready(function () {
+            $('.select').each(function () {
+                const _this = $(this),
+                    selectOption = _this.find('option'),
+                    selectOptionLength = selectOption.length,
+                    selectedOption = selectOption.filter(':selected'),
+                    duration = 450; // длительность анимации 
+
+                _this.hide();
+                _this.wrap('<div class="select"></div>');
+                $('<div>', {
+                    class: 'new-select',
+                    text: _this.children('option:disabled').text()
+                }).insertAfter(_this);
+
+                const selectHead = _this.next('.new-select');
+                $('<div>', {
+                    class: 'new-select__list'
+                }).insertAfter(selectHead);
+
+                const selectList = selectHead.next('.new-select__list');
+                for (let i = 1; i < selectOptionLength; i++) {
+                    $('<div>', {
+                        class: 'new-select__item',
+                        html: $('<span>', {
+                            text: selectOption.eq(i).text()
+                        })
+                    })
+                        .attr('data-value', selectOption.eq(i).val())
+                        .appendTo(selectList);
+                }
+
+                const selectItem = selectList.find('.new-select__item');
+                selectList.slideUp(0);
+
+                // Определение положения выпадающего списка
+                const windowHeight = $(window).height();
+                const selectPosition = selectHead.offset().top;
+
+                selectHead.on('click', function () {
+                    if (!$(this).hasClass('on')) {
+                        $(this).addClass('on');
+
+                        // Если новый селект находится ближе к верху страницы, показать список внизу
+                        if (selectPosition < windowHeight / 2) {
+                            selectList.slideDown(duration);
+                        } else {
+                            selectList.slideUp(duration);
+                        }
+
+                        selectItem.on('click', function () {
+                            let chooseItem = $(this).data('value');
+
+                            $('select').val(chooseItem).attr('selected', 'selected');
+                            selectHead.text($(this).find('span').text());
+
+                            selectList.slideUp(duration);
+                            selectHead.removeClass('on');
+                        });
+
+                    } else {
+                        $(this).removeClass('on');
+                        selectList.slideUp(duration);
+                    }
                 });
 
-            } else {
-                $(this).removeClass('on');
-                selectList.slideUp(duration);
-            }
+                // Обновление положения выпадающего списка при изменении размера окна
+                $(window).on('resize', function () {
+                    const newWindowHeight = $(this).height();
+
+                    // Обновить положение нового селекта
+                    const newSelectPosition = selectHead.offset().top;
+
+                    // Если новый селект находится ближе к верху страницы, показать список внизу
+                    if (newSelectPosition < newWindowHeight / 2) {
+                        selectList.css('top', '100%');
+                    } else {
+                        selectList.css('top', 'auto');
+                        selectList.css('bottom', '100%');
+                    }
+                });
+            });
         });
 
-        // Обновление положения выпадающего списка при изменении размера окна
-        $(window).on('resize', function() {
-            const newWindowHeight = $(this).height();
-
-            // Обновить положение нового селекта
-            const newSelectPosition = selectHead.offset().top;
-
-            // Если новый селект находится ближе к верху страницы, показать список внизу
-            if (newSelectPosition < newWindowHeight / 2) {
-                selectList.css('top', '100%');
-            } else {
-                selectList.css('top', 'auto');
-                selectList.css('bottom', '100%');
-            }
-        });
-    });
-});
 
 
 
 
+    </script>
+</body>
 
-        </script>
-    </body>
 </html>

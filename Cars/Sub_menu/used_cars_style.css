@@ -916,9 +916,8 @@ body.light-theme {
 
 
 /* Стили для темной темы */
-.dark-theme,
-.footer-icons>a {
-    background-color: rgb(0, 0, 0);
+.dark-theme  .footer-icons>a {
+    filter: brightness(0.1);
 }
 
 /* Стили для темной темы */

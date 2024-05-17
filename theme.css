@@ -1,0 +1,132 @@
+.night-theme-button {
+    right: 0px;
+    top: 0px;
+    border: none;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255,0);
+    transition: filter .4s;
+}
+
+.night-theme-button-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+    opacity: 0;
+}
+
+.night-theme-button:hover {
+    filter: brightness(120%);
+}
+
+.night-theme-button:active {
+    filter: brightness(80%);
+}
+
+.night-theme-button-icon-moon {
+    opacity: 1;
+}
+
+body {
+    transition: background-color .4s, color .4s;
+}
+
+/* Стили для темной темы */
+body.night-theme {
+    color: white;
+    background-color: black;
+}
+
+body.night-theme .night-theme-button-icon-moon {
+    opacity: 0;
+}
+.night-theme-button-icon-sun circle,
+.night-theme-button-icon-sun path{
+    fill: white;
+}
+body.night-theme .night-theme-button-icon-sun {
+    opacity: 1;
+}
+/* Стили для темной темы */
+.night-theme header {
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.night-theme footer {
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+
+/* Стили для темной темы */
+.night-theme .footer-text1 .footer-text3 {
+    color: black;
+}
+
+/* Стили для темной темы */
+.night-theme .footer-icons>a {
+    filter: brightness(0.1);
+}
+
+.night-theme .logo{
+    content: url('./img/Logo_night.png');
+    height: 90px;
+    width: auto;
+    margin: 7px 0 7px 35px;
+}
+
+
+.night-theme .submenu{
+    background-color: rgba(0, 53, 89, 0.805);
+}
+.night-theme .submenu li a:hover {
+    background-color: rgba(216, 19, 35, 0.851);
+}
+/* Стили для темной темы */
+.night-theme .crumbs {
+    color: aliceblue;
+}
+
+/* Стили для темной темы */
+@media screen and (max-width: 987px) {
+    .night-theme .navbar-toggle {
+        color: #ffffff;
+    }
+
+    .night-theme .bar {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+/* Стили для темной темы */
+.night-theme .div_title p {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.night-theme .news-center {
+    color: aliceblue;
+    background-color: black;
+}
+
+/* Стили для темной темы */
+.night-theme .news-content {
+    color: aliceblue;
+}
+
+/* Стили для темной темы */
+@media screen and (max-width: 987px) {
+    .night-theme .navbar-toggle {
+        color: #ffffff;
+    }
+
+    .night-theme .bar {
+        background-color: rgb(255, 255, 255);
+    }
+}
+

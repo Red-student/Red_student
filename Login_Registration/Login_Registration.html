@@ -1,23 +1,51 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
 <head>
-    <title>Регистрация</title>
-    <!-- Подключение стиля -->
-    <link rel="stylesheet" href="./Registration_style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../img/badge.png" type="image/png">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <!---Custom CSS File--->
+  <link rel="icon" href="../img/badge.png" type="image/png">
+  <link rel="stylesheet" href="./Registration_style.css">
 </head>
-
 <body>
-    <div class="center">
-        <a href="../index.html">
-            <img src="https://avatars.mds.yandex.net/i?id=f1ef45163a18853faddb072d4a9db1713e46bd6b-12527723-images-thumbs&n=13"
-                alt="img-work">
-        </a>
-    </div>
+    <section class="wrapper">
+        <div class="form signup">
+          <header>Регистрация</header>
+          <form action="../index.html">
+            <input type="text" placeholder="Ваше имя" required />
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Пароль" required />
+            <input type="password" placeholder="Подтверждение пароля" required />
+            <div class="checkbox">
+              <input type="checkbox" id="signupCheck" />
+              <label for="signupCheck">Я принимаю все положения и условия</label>
+            </div>
+            <input type="submit" value="Регистрация" />
+          </form>
+        </div>
+        <div class="form login">
+          <header>Вход</header>
+          <form action="../index.html">
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Пароль" required />
+            <a href="https://ru.wikihow.com/%D0%B2%D1%81%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82%D1%8C-%D0%B7%D0%B0%D0%B1%D1%8B%D1%82%D1%8B%D0%B9-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C">Забыли пароль?</a>
+            <input type="submit" value="Войти" />
+          </form>
+        </div>
+        <script>
+          const wrapper = document.querySelector(".wrapper"),
+            signupHeader = document.querySelector(".signup header"),
+            loginHeader = document.querySelector(".login header");
+          loginHeader.addEventListener("click", () => {
+            wrapper.classList.add("active");
+          });
+          signupHeader.addEventListener("click", () => {
+            wrapper.classList.remove("active");
+          });
+        </script>
+      </section>
 </body>
-
 </html>

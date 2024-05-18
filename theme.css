@@ -15,7 +15,7 @@
     width: 40px;
     height: 40px;
     margin-left: -20px;
-    margin-top: -20px;
+    margin-top: -30px;
     opacity: 0;
 }
 
@@ -138,4 +138,52 @@ body.night-theme .night-theme-button-icon-sun {
         background-color: rgb(255, 255, 255);
     }
 }
+/* Стили для темной темы */
+@media screen and (max-width: 987px) {
+    .night-theme .navbar-toggle {
+        color: #ffffff;
+    }
 
+    .night-theme .bar {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+.night-theme .pod_car {
+    background-color: #000;
+    color: #fff;
+}
+
+.night-theme .car-block {
+    background-color: #000;
+    color: #fff;
+}
+
+.night-theme .car-title {
+    background-color: #000;
+    color: #fff;
+}
+
+.night-theme .car-title>span {
+    color: #fff;
+}
+
+.night-theme .search-icon path{
+    fill: #000000;
+}
+
+.night-theme .catalog-description{
+    color: #fff;
+}
+
+.night-theme .pagination li a{
+    color: #fff;
+}
+
+.night-theme .h1_title{
+    color: #fff;
+}
+
+.night-theme .heart-icon:active{
+    color: #f00;
+}

@@ -22,16 +22,18 @@ function onLoad(){
     });
 }
 */
-const nightThemeButton = document.getElementById("night-theme-button")
-
-nightThemeButton.addEventListener("click", function () {
-    document.body.classList.toggle("night-theme")
-
-    const theme = localStorage.getItem("theme")
-
-    if (theme == "night-theme") {
-        localStorage.setItem("theme", "")
-    } else {
-        localStorage.setItem("theme", "night-theme")
+window.onload = function() {
+    if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", '');
     }
-})
+    let currentTheme = localStorage.getItem("theme");
+    if (currentTheme === 'night-theme') {
+        document.body.classList.add('night-theme');
+    }
+
+    document.getElementById('night-theme-button').addEventListener('click', function() {
+        document.body.classList.toggle('night-theme');
+        const theme = document.body.classList.contains('night-theme') ? 'night-theme' : '';
+        localStorage.setItem("theme", theme);
+    });
+};

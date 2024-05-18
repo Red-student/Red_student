@@ -12,18 +12,93 @@ h1 {
     text-align: center;
     font-size: 30px;
 }
-
-/* Стили для абзацев внутри блока .div_block2 */
-.div_block2 p {
-    font-size: 20px;
-    text-align: center;
-}
-
 /* Стили для элементов списка */
 li {
     font-size: 17px;
 }
+/*Стиль для основоного блока в котором лежит текст и картинка*/
+.div_block2 {
+    display: flex;
+    overflow: hidden;
+    padding-right: 7%;
+    padding-left: 7%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
 
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+@media screen and (max-width: 768px) {
+    .div_block3 {
+        padding: 0px;
+        margin: 0px;
+    }
+
+}
+
+/* Стиль для блока с текстом */
+.div_block3 {
+    transform: none;
+    width: 100%;
+    position: relative;
+    padding-right: 15px;
+    padding-left: 50px;
+    margin-right: 50px;
+}
+
+/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+@media screen and (max-width: 768px) {
+    .div_block3 {
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: 0px;
+        opacity: 1;
+    }
+}
+
+/* Стиль для текста заголовка */
+.div_title span {
+    font-size: 21px;
+    color: #D81324;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Стиль для абзаца */
+.div_title p {
+    font-size: 20px;
+    color: #000000;
+    line-height: 28px;
+    text-align: justify;
+}
+
+/* Стиль для заголовка (второго) */
+.div_title h2 {
+    font-size: 33px;
+    color: #0B2154;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/*стиль для блока в котором находится картинка*/
+.div_title_img {
+    transform: none;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Стиль для изображений в блоке */
+.div_title_acardimg img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    border: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
 /* Стили для контейнера .chart-container */
 .chart-container {
     position: relative;
@@ -32,8 +107,15 @@ li {
     max-width: 600px;
     margin: 0 auto;
     height: 300px;
+    margin-bottom: 20px;
+    margin-top: 35px;
 }
-
+@media screen and (max-width: 600px) {
+    .chart-container{
+        width: 100%;
+        margin-bottom: 0px;
+    }
+}
 /* Стили для темной темы */
 body.dark-theme {
     color: aliceblue;

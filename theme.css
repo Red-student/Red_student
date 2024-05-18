@@ -55,7 +55,16 @@ body.night-theme .night-theme-button-icon-sun {
 .night-theme header {
     background-color: black;
 }
+.night-theme .prev,
+.night-theme .next{
+    background-color: rgba(255, 255, 255, 0.667);
+}
 
+/*Стили для кнопок*/
+.night-theme .prev:hover,
+.night-theme .next:hover {
+    background-color: rgba(177, 177, 177, 0.603);
+}
 /* Стили для темной темы */
 .night-theme footer {
     background-color: rgb(255, 255, 255);

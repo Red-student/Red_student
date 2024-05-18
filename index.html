@@ -214,7 +214,7 @@
             </div>
             <div class="news-wrapper">
                 <div class="controls">
-                    <button class="prev">Следующая</button>
+                    <button class="prev">&#5176;</button>
                 </div>
                 <div class="news-container">
                     <div class="news-block">
@@ -256,7 +256,7 @@
                     </div>
                 </div>
                 <div class="controls">
-                    <button class="next">Предыдущая</button>
+                    <button class="next">&#5171;</button>
                 </div>
             </div>
         </div>
@@ -318,49 +318,70 @@
             });
         });
 
-        //скрипт для блока новостей
         window.addEventListener("DOMContentLoaded", function () {
-            const mediaQuery = window.matchMedia("(min-width: 480px) and (max-width: 768px)");
+    const mediaQuery = window.matchMedia("(min-width: 480px) and (max-width: 768px)");
+    let currentIndex = 0;
+    let nextButton;
+    let prevButton;
 
-            function handleMediaQuery(mediaQuery) {
-                if (mediaQuery.matches) {
-                    const newsBlocks = document.querySelectorAll(".news-block");
-                    let currentIndex = 0;
+    function showNews(index, newsBlocks) {
+        if (index < 0) {
+            index = newsBlocks.length - 1;
+        } else if (index >= newsBlocks.length) {
+            index = 0;
+        }
+        newsBlocks.forEach((block, i) => {
+            block.style.display = i === index ? "block" : "none";
+        });
+        currentIndex = index;
+    }
 
-                    function showNews(index) {
-                        if (!mediaQuery.matches) return;
-                        if (index < 0) {
-                            index = newsBlocks.length - 1;
-                        } else if (index >= newsBlocks.length) {
-                            index = 0;
-                        }
-                        newsBlocks.forEach((block, i) => {
-                            block.style.display = i === index ? "block" : "none";
-                        });
-                        currentIndex = index;
-                    }
+    function handleMediaQuery(mediaQuery) {
+        const newsBlocks = document.querySelectorAll(".news-block");
+        
+        if (mediaQuery.matches) {
+            // Показываем только первую новость при загрузке страницы
+            showNews(currentIndex, newsBlocks);
 
-                    document.querySelector(".next").addEventListener("click", function () {
-                        showNews(currentIndex + 1);
-                    });
+            // Добавляем обработчики событий для кнопок "next" и "prev"
+            nextButton = document.querySelector(".next");
+            prevButton = document.querySelector(".prev");
 
-                    document.querySelector(".prev").addEventListener("click", function () {
-                        showNews(currentIndex - 1);
-                    });
+            nextButton.addEventListener("click", nextClickHandler);
+            prevButton.addEventListener("click", prevClickHandler);
 
-                    // Показываем только первую новость при загрузке страницы
-                    showNews(0);
-                }
+        } else {
+            // Убираем обработчики событий, если разрешение экрана не соответствует
+            if (nextButton && prevButton) {
+                nextButton.removeEventListener("click", nextClickHandler);
+                prevButton.removeEventListener("click", prevClickHandler);
             }
 
-            // Вызываем функцию при загрузке страницы
-            handleMediaQuery(mediaQuery);
-
-            // Добавляем слушатель события изменения медиа-запроса
-            mediaQuery.addEventListener("change", function (e) {
-                handleMediaQuery(e.currentTarget);
+            // Сбрасываем отображение всех новостных блоков
+            newsBlocks.forEach(block => {
+                block.style.display = "block";
             });
-        });
+        }
+    }
+
+    function nextClickHandler() {
+        const newsBlocks = document.querySelectorAll(".news-block");
+        showNews(currentIndex + 1, newsBlocks);
+    }
+
+    function prevClickHandler() {
+        const newsBlocks = document.querySelectorAll(".news-block");
+        showNews(currentIndex - 1, newsBlocks);
+    }
+
+    // Вызываем функцию handleMediaQuery при загрузке страницы
+    handleMediaQuery(mediaQuery);
+
+    // Добавляем слушатель события изменения состояния медиа-запроса
+    mediaQuery.addEventListener("change", function (e) {
+        handleMediaQuery(e.currentTarget);
+    });
+});
 
 
 

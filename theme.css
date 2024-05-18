@@ -187,3 +187,57 @@ body.night-theme .night-theme-button-icon-sun {
 .night-theme .heart-icon:active{
     color: #f00;
 }
+
+.night-theme .services-container > h2,
+.night-theme .services-container > p{
+    color: white;
+}
+.night-theme .consultation-block > h2,
+.night-theme .consultation-block > p{
+    color: white;
+}
+.night-theme .content_block4,
+.night-theme .content_block5_fon,
+.night-theme .content_block3{
+    background-color: rgb(102, 102, 102);
+}
+.night-theme .form-container{
+    background-color: rgb(102, 102, 102);
+}
+.night-theme .block3_img{
+    filter: brightness(85%);
+}
+
+/* Стили для темной темы */
+@media screen and (max-width: 987px) {
+    .night-theme .navbar-toggle {
+        color: #ffffff;
+    }
+
+    .night-theme .bar {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+.night-theme .stocks_block1 {
+    background-color: #000;
+}
+
+.night-theme .footer-icons>a {
+    filter: brightness(0.1);
+}
+
+
+.night-theme .content-wrapper{
+    background-color: #000000;
+}
+.night-theme .message > h2{
+    color: white;
+}
+.night-theme .div_titlee p {
+    color: white;
+}
+.night-theme #feedback-form input,
+.night-theme #feedback-form textarea{
+    filter: brightness(80%);
+}

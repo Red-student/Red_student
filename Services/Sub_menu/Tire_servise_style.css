@@ -199,7 +199,7 @@
 }
 
 /*стили для кнопки*/
-button:not(#themeToggle) {
+button:not(#themeToggle,.night-theme-button) {
     padding: 10px 20px;
     background-color: #003559;
     color: white;
@@ -209,93 +209,7 @@ button:not(#themeToggle) {
 }
 
 /*стили для кнопки*/
-button:hover:not(#themeToggle) {
+button:hover:not(#themeToggle,.night-theme-button) {
     background-color: #0056b3;
 }
 
-/* Стили для темной темы */
-body.dark-theme {
-    color: aliceblue;
-    background-color: black;
-}
-
-/* Стили для светлой темы */
-body.light-theme {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-}
-
-/* Стили для темной темы */
-.dark-theme header {
-    background-color: black;
-}
-
-/* Стили для темной темы */
-.dark-theme footer {
-    background-color: rgb(255, 255, 255);
-    color: #000;
-}
-
-/*Стили для светлой темы*/
-.light-theme footer {
-    color: white;
-}
-
-/* Стили для темной темы */
-.dark-theme .footer-text1 .footer-text3 {
-    color: black;
-
-}
-
-/* Стили для темной темы */
-.dark-theme .footer-icons>a {
-    filter: brightness(0.1);
-}
-
-/* Стили для темной темы */
-.dark-theme .div_title p {
-    color: aliceblue;
-    background-color: black;
-}
-
-/* Стили для темной темы */
-.dark-theme .news-center {
-    color: aliceblue;
-    background-color: black;
-}
-
-/* Стили для темной темы */
-.dark-theme .news-content {
-    color: aliceblue;
-
-}
-
-/* Стили для темной темы */
-.dark-theme .crumbs {
-    color: aliceblue;
-
-
-}
-
-/* Стили для темной темы */
-@media screen and (max-width: 987px) {
-    .dark-theme .navbar-toggle {
-        color: #ffffff;
-    }
-
-    .dark-theme .bar {
-        background-color: rgb(255, 255, 255);
-    }
-}
-
-.dark-theme .block3_text {
-    background-color: #000;
-}
-
-.dark-theme .block3_img {
-    filter: brightness(0.75);
-}
-
-.dark-theme .form-container {
-    background-color: #000;
-}

@@ -1,7 +1,7 @@
 /* Стили для формы обратной связи */
 #feedback-form {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -60,78 +60,21 @@ main>button:hover {
 #history {
     margin-top: 20px;
 }
-
-/* Стили для темной темы */
-body.dark-theme {
-    color: aliceblue;
-    background-color: black;
+#submit-btn {
+    background-color: #003a61; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 35px; /* Some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button an inline block */
+    font-size: 16px; /* Increase font size */
+    margin: 25px 0 0px 0; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
-/* Стили для светлой темы */
-body.light-theme {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-}
-
-/* Стили для темной темы */
-.dark-theme header {
-    background-color: black;
-}
-
-/* Стили для темной темы */
-.dark-theme footer {
-    background-color: rgb(255, 255, 255);
-    color: #000;
-}
-
-/*Стили для светлой темы*/
-.light-theme footer {
-    color: white;
-}
-
-/* Стили для темной темы */
-.dark-theme .footer-text1 .footer-text3 {
-    color: black;
-
-}
-
-/* Стили для темной темы */
-.dark-theme .footer-icons>a {
-    filter: brightness(0.1);
-}
-
-/* Стили для темной темы */
-.dark-theme .div_title p {
-    color: aliceblue;
-    background-color: black;
-}
-
-/* Стили для темной темы */
-.dark-theme .news-center {
-    color: aliceblue;
-    background-color: black;
-}
-
-/* Стили для темной темы */
-.dark-theme .news-content {
-    color: aliceblue;
-
-}
-
-/* Стили для темной темы */
-.dark-theme .crumbs {
-    color: aliceblue;
-
-
-}
-
-/* Стили для темной темы */
-@media screen and (max-width: 987px) {
-    .dark-theme .navbar-toggle {
-        color: #ffffff;
-    }
-
-    .dark-theme .bar {
-        background-color: rgb(255, 255, 255);
-    }
+#submit-btn:hover {
+    background-color: #0056b3; /* Darker green background on hover */
 }

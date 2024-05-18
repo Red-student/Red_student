@@ -132,21 +132,3 @@
         flex-wrap: wrap;
     }
 }
-
-
-/* Стили для темной темы */
-.dark-theme .div_title p {
-    color: aliceblue;
-    background-color: black;
-}
-
-/* Стили для темной темы */
-@media screen and (max-width: 987px) {
-    .dark-theme .navbar-toggle {
-        color: #ffffff;
-    }
-
-    .dark-theme .bar {
-        background-color: rgb(255, 255, 255);
-    }
-}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+<style>
+/* General styles for the navigation */
+nav {
+    position: absolute;
+    background-color: #3D4852;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+nav ul {
+    list-style-type: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+nav ul li {
+    padding: 0 15px;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 12px;
+    color: #DAE1E7;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    color: #eb6f4a;
+}
+
+/* Navbar toggle styles */
+.navbar-toggle {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Hidden menu styles */
+.menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.menu.active {
+    display: block;
+    max-height: 400px; /* Increase max-height for more items */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .menu-icon {
+        display: none;
+    }
+    nav {
+        position: relative;
+        top: -10px;
+        background-color: transparent;
+    }
+    nav ul {
+        max-height: 70px;
+        padding: 15px 0;
+        text-align: right;
+    }
+    nav ul li {
+        display: inline-flex;
+        padding-left: 20px;
+    }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 987px) {
+    .logo {
+        height: 60px;
+        margin: 13px 0 7px 10px;
+    }
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .menu {
+        width: 50%; /* Menu takes up half the screen width */
+        right: 0;   /* Position the menu on the right */
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="navbar">
+            <div class="navbar-toggle" id="navbar-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
+                <ul class="menu" id="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="#more">More</a>
+                        <ul class="submenu">
+                            <li><a href="#sub1">Submenu 1</a></li>
+                            <li><a href="#sub2">Submenu 2</a></li>
+                            <li><a href="#sub3">Submenu 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('navbar-toggle');
+    const menu = document.getElementById('menu');
+
+    toggleButton.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+});
+</script>
+</body>
+</html>

@@ -275,8 +275,18 @@ nav a {
 }
 
 /* Медиа-запрос для экранов с минимальной шириной 986.5 пикселей и максимальной шириной 1500 пикселей */
-@media screen and (min-width: 986.5px) and (max-width: 1500px) {
+@media screen and (min-width: 986.5px) and (max-width: 1070px) {
 
+    .menu>li {
+        padding: 12px 0px;
+    }
+
+    .menu>li>a {
+        padding: 0 8.5px;
+    }
+
+}
+@media screen and (min-width: 1070px){
     .menu>li {
         padding: 12px 0px;
     }
@@ -284,9 +294,7 @@ nav a {
     .menu>li>a {
         padding: 0 15px;
     }
-
 }
-
 /*Стили для хлебных крошек*/
 .crumbs {
     margin: 10px 0px;

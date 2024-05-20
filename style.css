@@ -180,7 +180,7 @@ nav a {
         width: 50%;
         max-height: 100vh;
         border-radius: 5px;
-        background-color: #fff;
+        background-color: #ffffff;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         z-index: 100;
         overflow-y: auto;
@@ -212,6 +212,7 @@ nav a {
     .menu>li {
         display: block;
         padding: 0px 10px;
+        box-shadow: 5px 1px 0px 0px rgb(0, 0, 0);
     }
 
     /* Ссылки в элементах списка верхнего уровня */
@@ -265,6 +266,7 @@ nav a {
         text-align: center;
         font-weight: bold;
     }
+    
 }
 
 /* Медиа-запрос для экранов с максимальной шириной 397 пикселей */
@@ -286,7 +288,7 @@ nav a {
     }
 
 }
-@media screen and (min-width: 1070px){
+@media screen and (min-width: 1070px)and (max-width: 1500px){
     .menu>li {
         padding: 12px 0px;
     }

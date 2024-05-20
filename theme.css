@@ -19,6 +19,8 @@
     opacity: 0;
 }
 
+
+
 .night-theme-button:hover {
     filter: brightness(120%);
 }
@@ -250,4 +252,15 @@ body.night-theme .night-theme-button-icon-sun {
 .night-theme #feedback-form input,
 .night-theme #feedback-form textarea{
     filter: brightness(80%);
+}
+@media screen and (max-width: 987px) {
+    .night-theme-button-icon{
+        margin-top: -20px;
+    }
+    .night-theme .menu{
+        background-color: rgb(102, 102, 102);
+    }
+    .night-theme .submenu{
+        background-color: rgb(102, 102, 102, 0.592);
+    }
 }

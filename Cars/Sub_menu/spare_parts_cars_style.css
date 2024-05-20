@@ -525,7 +525,7 @@ select::-ms-expand {
 
 /* Стили для описания блока с информацией о том что даелает данная страница */
 .catalog-description {
-    background-color: rgba(198, 198, 198, 0.611);
+    background-color: rgba(198, 198, 198, 0.408);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     font-size: 18px;

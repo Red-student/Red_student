@@ -208,9 +208,8 @@ body.night-theme .night-theme-button-icon-sun {
 .night-theme .consultation-block > p{
     color: white;
 }
-.night-theme .content_block4,
-.night-theme .content_block5_fon,
-.night-theme .content_block3{
+
+.night-theme .content_block5_fon{
     background-color: rgb(102, 102, 102);
 }
 .night-theme .form-container{
@@ -262,5 +261,9 @@ body.night-theme .night-theme-button-icon-sun {
     }
     .night-theme .submenu{
         background-color: rgb(102, 102, 102, 0.592);
+    }
+    .submenu li a:hover {
+        color: #ffffff;
+        background-color: #D81324;
     }
 }

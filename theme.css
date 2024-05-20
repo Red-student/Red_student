@@ -32,7 +32,7 @@
 }
 
 body {
-    transition: background-color .4s, color .4s;
+    transition: background-color .2s, color 0.2s;
 }
 
 /* Стили для темной темы */
@@ -54,6 +54,7 @@ body.night-theme .night-theme-button-icon-sun {
 /* Стили для темной темы */
 .night-theme header {
     background-color: black;
+    transition: background-color .25s, color .25s;
 }
 .night-theme .prev,
 .night-theme .next{
@@ -67,8 +68,9 @@ body.night-theme .night-theme-button-icon-sun {
 }
 /* Стили для темной темы */
 .night-theme footer {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(233, 233, 233);
     color: #000;
+    transition: background-color .25s, color .25s;
 }
 
 /* Стили для темной темы */
@@ -86,6 +88,14 @@ body.night-theme .night-theme-button-icon-sun {
     height: 90px;
     width: auto;
     margin: 7px 0 7px 35px;
+}
+@media screen and (max-width: 987px) {
+    .night-theme .logo{
+        content: url('./img/Logo_night.png');
+        height: 60px;
+        width: auto;
+        margin: 13px 0 7px 10px;
+    }
 }
 
 

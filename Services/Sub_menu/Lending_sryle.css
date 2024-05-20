@@ -17,7 +17,7 @@
 }
 
 /*стили для третьего блока контента*/
-.content_block3 {
+.content_block3_servise {
     border-radius: 24px;
     overflow: hidden;
     background-color: #fff;
@@ -244,8 +244,7 @@ button:hover:not(#themeToggle,.night-theme-button) {
     background-color: #0056b3;
 }
 
-/*стили блока 4*/
-.content_block4 {
+.content_block4_servise {
     margin-top: 25px;
     border-radius: 24px;
     overflow: hidden;
@@ -263,36 +262,24 @@ button:hover:not(#themeToggle,.night-theme-button) {
 .block4_forma {
     display: flex;
     flex-direction: column;
-    align-items: end;
-}
-
-.block4_forma {
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    margin: 0 25px;
 }
 
 .filter-item {
     margin-bottom: 20px;
-    width: 25%;
+    width: 380px;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (min-width: 540px) and (max-width: 1000px) {
     .filter-item {
-        width: 50%
+        width: 380px;
     }
 }
 
-@media screen and (max-width:515px) {
+@media screen and (max-width: 515px) {
     .filter-item {
-        width: 80%
-    }
-}
-
-/*Медиа стиль для адаптивности блока выбора авто*/
-@media screen and (max-width:439px) {
-    .filter-item {
-        width: 90%
+        width: 100%;
     }
 }
 
@@ -317,48 +304,12 @@ button:hover:not(#themeToggle,.night-theme-button) {
 }
 
 .block4_Contact_information {
-    width: 300px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 25px;
     margin-bottom: 25px;
 }
-@media screen and (max-width:445px) {
-    
-    .block4_Contact_information{
-        margin: 25px 10px;
-
-    }
-    /*стили для ввода email*/
-#your_email2 {
-    width: 60%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/*стиль для ввода имени*/
-#username2 {
-    width: 60%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/*стиль для ввода номера телефона*/
-#phone2 {
-    width: 60%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-    
-}
-
 
 .content_block5 {
     width: 100%;

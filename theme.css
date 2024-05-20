@@ -208,9 +208,15 @@ body.night-theme .night-theme-button-icon-sun {
 .night-theme .consultation-block > p{
     color: white;
 }
-
+.night-theme .content_block4_servise,
+.night-theme .content_block3_servise,
 .night-theme .content_block5_fon{
-    background-color: rgb(102, 102, 102);
+    background-color: rgb(117, 117, 117);
+}
+
+
+.night-theme .block3_img_text > h1 {
+    color: #000;
 }
 .night-theme .form-container{
     background-color: rgb(102, 102, 102);

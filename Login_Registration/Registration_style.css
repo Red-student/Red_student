@@ -4,7 +4,6 @@
   margin: 0 auto;
   position: relative;
   max-width: 470px;
-  width: 100%;
   border-radius: 12px;
   padding: 20px 30px 120px;
   background: #4070f4;
@@ -14,6 +13,7 @@
       0.1);
   overflow: hidden;
 }
+
 .form.signup{
   text-align: center;
 }

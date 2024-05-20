@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,44 +9,264 @@
   <title>Login & Registration Form</title>
   <!---Custom CSS File--->
   <link rel="icon" href="../img/badge.png" type="image/png">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="./Registration_style.css">
+  <link rel="stylesheet" href="../theme.css">
+  <script defer src="../theme.js"></script>
 </head>
+
 <body>
-    <section class="wrapper">
-        <div class="form signup">
-          <header>Регистрация</header>
-          <form action="../index.html">
-            <input type="text" placeholder="Ваше имя" required />
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Пароль" required />
-            <input type="password" placeholder="Подтверждение пароля" required />
-            <div class="checkbox">
-              <input type="checkbox" id="signupCheck" />
-              <label for="signupCheck">Я принимаю все положения и условия</label>
-            </div>
-            <input type="submit" value="Регистрация" />
-          </form>
+  <!-- Хедер с логотипом и меню -->
+  <header>
+    <!-- Логотип -->
+    <div class="div_logo">
+      <a href="../index.html">
+        <img src="../img/Logo.png" alt="logo" class="logo">
+      </a>
+    </div>
+
+    <!-- Меню навигации -->
+    <div>
+      <nav class="navbar">
+        <ul class="menu" id="menu">
+          <li>
+            <a href="../index.html">Главная</a>
+          </li>
+          <li>
+            <a href="../Cars/Cars.html" class="down">Автомобили</a>
+            <ul class="submenu">
+              <li><a href="../Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+              <li><a href="../Cars/Sub_menu/used_cars.html">Автомобильные акссесуары</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../Services/Services.html" class="down">Услуги</a>
+            <ul class="submenu">
+              <li><a href="../Services/Sub_menu/Lending.html">Кредитование</a></li>
+              <li><a href="../Services/Sub_menu/Insurance.html">Страхование</a></li>
+              <li><a href="../Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
+              <li><a href="../Services/Sub_menu/stocks.html">Акции</a></li>
+              <li><a href="../Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
+              <li><a href="../Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../Favourites/Favourites.html">Избранное</a>
+          </li>
+          <li class="hreader_right">
+            <a href="../About%20us/About_us.html" class="down">О нас</a>
+            <ul class="submenu">
+              <li><a href="../About%20us/Feedback.html">Обратная связь</a></li>
+            </ul>
+          </li>
+          <li class="hreader_right">
+            <a href="./Login_Registration/Login_Registration.html">Вход / Регистрация</a>
+          </li>
+          <button class="night-theme-button" id="night-theme-button">
+            <svg class="night-theme-button-icon night-theme-button-icon-sun" viewBox="0 0 64 64">
+              <g>
+                <circle fill-rule="evenodd" clip-rule="evenodd" fill="#231F20" cx="32.003" cy="32.005" r="16.001" />
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20" d="M12.001,31.997c0-2.211-1.789-4-4-4H4c-2.211,0-4,1.789-4,4
+                                s1.789,4,4,4h4C10.212,35.997,12.001,34.208,12.001,31.997z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20"
+                  d="M12.204,46.139l-2.832,2.833c-1.563,1.562-1.563,4.094,0,5.656
+                                c1.562,1.562,4.094,1.562,5.657,0l2.833-2.832c1.562-1.562,1.562-4.095,0-5.657C16.298,44.576,13.767,44.576,12.204,46.139z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20" d="M32.003,51.999c-2.211,0-4,1.789-4,4V60c0,2.211,1.789,4,4,4
+                                s4-1.789,4-4l-0.004-4.001C36.003,53.788,34.21,51.999,32.003,51.999z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20"
+                  d="M51.798,46.143c-1.559-1.566-4.091-1.566-5.653-0.004
+                                s-1.562,4.095,0,5.657l2.829,2.828c1.562,1.57,4.094,1.562,5.656,0s1.566-4.09,0-5.656L51.798,46.143z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20" d="M60.006,27.997l-4.009,0.008
+                                c-2.203-0.008-3.992,1.781-3.992,3.992c-0.008,2.211,1.789,4,3.992,4h4.001c2.219,0.008,4-1.789,4-4
+                                C64.002,29.79,62.217,27.997,60.006,27.997z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20"
+                  d="M51.798,17.859l2.828-2.829c1.574-1.566,1.562-4.094,0-5.657
+                                c-1.559-1.567-4.09-1.567-5.652-0.004l-2.829,2.836c-1.562,1.555-1.562,4.086,0,5.649C47.699,19.426,50.239,19.418,51.798,17.859z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20"
+                  d="M32.003,11.995c2.207,0.016,4-1.789,4-3.992v-4
+                                c0-2.219-1.789-4-4-4c-2.211-0.008-4,1.781-4,3.993l0.008,4.008C28.003,10.206,29.792,11.995,32.003,11.995z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20" d="M12.212,17.855c1.555,1.562,4.079,1.562,5.646-0.004
+                                c1.574-1.551,1.566-4.09,0.008-5.649l-2.829-2.828c-1.57-1.571-4.094-1.559-5.657,0c-1.575,1.559-1.575,4.09-0.012,5.653
+                                L12.212,17.855z" />
+              </g>
+            </svg>
+
+            <svg class="night-theme-button-icon night-theme-button-icon-moon" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.23129 2.24048C9.24338 1.78695 10.1202 2.81145 9.80357 3.70098C8.72924 6.71928 9.38932 10.1474 11.6193 12.3765C13.8606 14.617 17.3114 15.2755 20.3395 14.1819C21.2206 13.8637 22.2173 14.7319 21.7817 15.7199C21.7688 15.7491 21.7558 15.7782 21.7427 15.8074C20.9674 17.5266 19.7272 19.1434 18.1227 20.2274C16.4125 21.3828 14.3957 22.0001 12.3316 22.0001H12.3306C9.93035 21.9975 7.6057 21.1603 5.75517 19.6321C3.90463 18.1039 2.64345 15.9797 2.18793 13.6237C1.73241 11.2677 2.11094 8.82672 3.2586 6.71917C4.34658 4.72121 6.17608 3.16858 8.20153 2.25386L8.23129 2.24048Z"
+                fill="#323232" />
+            </svg>
+            <span class="Changing">Смена темы</span>
+          </button>
+        </ul>
+        <div class="navbar-toggle" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
         </div>
-        <div class="form login">
-          <header>Вход</header>
-          <form action="../index.html">
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Пароль" required />
-            <a href="https://ru.wikihow.com/%D0%B2%D1%81%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82%D1%8C-%D0%B7%D0%B0%D0%B1%D1%8B%D1%82%D1%8B%D0%B9-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C">Забыли пароль?</a>
-            <input type="submit" value="Войти" />
-          </form>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrapper">
+    <div class="form signup">
+      <span>Регистрация</span>
+      <form action="../index.html">
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Пароль" required />
+        <input type="password" placeholder="Подтверждение пароля" required />
+        <div class="checkbox">
+          <input type="checkbox" id="signupCheck" />
+          <label for="signupCheck">Я принимаю все положения и условия</label>
         </div>
-        <script>
-          const wrapper = document.querySelector(".wrapper"),
-            signupHeader = document.querySelector(".signup header"),
-            loginHeader = document.querySelector(".login header");
-          loginHeader.addEventListener("click", () => {
-            wrapper.classList.add("active");
-          });
-          signupHeader.addEventListener("click", () => {
-            wrapper.classList.remove("active");
-          });
-        </script>
-      </section>
+        <input type="submit" value="Регистрация" />
+      </form>
+    </div>
+    <div class="form login">
+      <span>Вход</span>
+      <form action="../index.html">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Пароль" required />
+        <a
+          href="https://ru.wikihow.com/%D0%B2%D1%81%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82%D1%8C-%D0%B7%D0%B0%D0%B1%D1%8B%D1%82%D1%8B%D0%B9-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C">Забыли
+          пароль?</a>
+        <input type="submit" value="Войти" />
+      </form>
+    </div>
+
+    <script>
+      const wrapper = document.querySelector(".wrapper"),
+        signupHeader = document.querySelector(".signup span"),
+        loginHeader = document.querySelector(".login span");
+      loginHeader.addEventListener("click", () => {
+        wrapper.classList.add("active");
+      });
+      signupHeader.addEventListener("click", () => {
+        wrapper.classList.remove("active");
+      });
+    </script>
+  </section>
+  <footer>
+    <div class="footer-row">
+      <div class="footer-text1">
+        <p>Добро пожаловать на сайт автосалона Petro Avto – ваш надежный партнер в мире автомобилей. Мы
+          предлагаем широкий выбор автомобилей различных марок и моделей, гарантируя качество и надежность
+          каждой единицы транспортного средства. </p>
+        <p>© 2024 Все права защищены.</p>
+      </div>
+      <div class="footer-text1">
+        <p>Связь с разработчиком</p>
+        <p>APO2013@ku.edu.kz</p>
+        <p>+7 705 268 3304</p>
+      </div>
+      <div class="footer-text3">
+        <p>Следите за нашими новостями в социальных сетях!</p>
+        <div class="footer-icons">
+          <a href="https://www.instagram.com/kozybayevuniversity/">
+            <img src="../img/instagram.svg" alt="instagram">
+          </a>
+
+          <a href="https://www.facebook.com/kozybayevuniversity/">
+            <img src="../img/facebook.svg" alt="facebook">
+          </a>
+
+          <a href="https://t.me/s/kozybayevuniversity/1973">
+            <img src="../img/telegram.svg" alt="telegram">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+     // скрипт для темы
+     const theme = localStorage.getItem("theme")
+        if (theme) {
+            document.body.classList.add(theme)
+        }
+
+
+    
+                //скрипт для бургера
+                function toggleMenu() {
+                    var menu = document.getElementById("menu");
+                    menu.classList.toggle("active");
+                }
+                //скрипт для выпадающего списка в списке
+                document.querySelectorAll('.down').forEach(item => {
+                    item.addEventListener('click', event => {
+                        item.querySelector('.submenu').classList.toggle("active");
+                        event.preventDefault();
+                    });
+                });
+                //скрипт меню
+        window.addEventListener("DOMContentLoaded", function () {
+            const mediaQuery = window.matchMedia("(max-width: 986px)");
+
+            // Функция для обработки событий клика
+            function handleClick(event) {
+                // Если ширина экрана меньше 986px, выходим из функции
+                if (!mediaQuery.matches) {
+                    return;
+                }
+
+                // Получаем следующий элемент после текущего элемента списка (подменю)
+                const submenu = this.nextElementSibling;
+
+                // Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
+                if (submenu.classList.contains('active')) {
+                    return;
+                }
+
+                // Отменяем действие по умолчанию (переход по ссылке)
+                event.preventDefault();
+
+                // Закрываем все подменю
+                closeAllSubmenus();
+
+                // Открываем текущее подменю
+                submenu.classList.add('active');
+            }
+
+            // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
+            const downLinks = document.querySelectorAll('.down');
+            downLinks.forEach(link => {
+                link.addEventListener('click', handleClick);
+            });
+
+            // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
+            const submenuLinks = document.querySelectorAll('.submenu a');
+            submenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    // Закрываем подменю после клика на ссылку
+                    const submenu = this.closest('.submenu');
+                    submenu.classList.remove('active');
+                });
+            });
+
+            // Функция для закрытия всех подменю
+            function closeAllSubmenus() {
+                const submenus = document.querySelectorAll('.submenu');
+                submenus.forEach(submenu => {
+                    submenu.classList.remove('active');
+                });
+            }
+
+            // Функция для открытия/закрытия основного меню
+            function toggleMenu() {
+                const menu = document.getElementById("menu");
+                menu.classList.toggle("active");
+            }
+
+            // Проверяем изменение медиа-запроса
+            mediaQuery.addEventListener("change", event => {
+                // Если ширина экрана меньше 986px, закрываем все подменю
+                if (!event.matches) {
+                    closeAllSubmenus();
+                }
+            });
+        });
+  </script>
 </body>
+
 </html>

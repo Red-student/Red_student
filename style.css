@@ -124,6 +124,9 @@ nav a {
     content: "\E00C";
     display: none;
 }
+.Changing{
+    display: none;
+}
 /* Медиа-запрос для экранов с максимальной шириной 987 пикселей */
 @media screen and (max-width: 987px) {
 
@@ -213,7 +216,7 @@ nav a {
     .menu>li {
         display: block;
         padding: 0px 10px;
-        box-shadow: 5px 1px 0px 0px rgb(0, 0, 0);
+        box-shadow: 0px 1px 0px 0px rgb(0, 0, 0);
     }
 
     /* Ссылки в элементах списка верхнего уровня */
@@ -231,8 +234,8 @@ nav a {
         left: 0;
         right: 0;
         background-color: #fff;
-        border-radius: 0 0 5px 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 10px 2px rgba(0, 0, 0);
+        
     }
 
     /* Показываем подменю при наведении на элемент списка верхнего уровня */
@@ -248,6 +251,7 @@ nav a {
     /* Стили для элементов подменю */
     .submenu li {
         margin: 5px 0;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0);
     }
 
     /* Стили для ссылок в подменю */
@@ -266,6 +270,18 @@ nav a {
     .submenu a {
         text-align: center;
         font-weight: bold;
+        padding: 0px 0px;
+    }
+    .Changing{
+        display: block;
+        width: 200px;
+        text-decoration: none;
+        color: #003559;
+        transition: 0.3s;
+        font-family: 'Exo 2', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 15px;
     }
     
 }
@@ -353,7 +369,6 @@ footer {
 .footer-icons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 /* Стили для иконок в футере */

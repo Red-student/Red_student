@@ -261,6 +261,8 @@ body.night-theme .night-theme-button-icon-sun {
 @media screen and (max-width: 987px) {
     .night-theme-button-icon{
         margin-top: -20px;
+        height: 57px;
+        margin-left: -24px;
     }
     .night-theme .menu{
         background-color: rgb(102, 102, 102);
@@ -268,8 +270,13 @@ body.night-theme .night-theme-button-icon-sun {
     .night-theme .submenu{
         background-color: rgb(102, 102, 102, 0.592);
     }
-    .submenu li a:hover {
+    .night-theme .submenu li a:hover {
         color: #ffffff;
-        background-color: #D81324;
+        background-color: #65151b;
     }
+}
+
+
+.night-theme .wrapper{
+    background-color: rgba(32, 55, 118, 0.87);
 }

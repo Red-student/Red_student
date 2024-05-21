@@ -1,11 +1,3 @@
-//Функция открытия определенной страницы в новом окне
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('openWindowLink').addEventListener('click', function (event) {
-    // При нажатии на элемент с id "openWindowLink" выполняется следующая функция
-    event.preventDefault();
-    window.open('About_us.html', 'Новое окно', 'width=700,height=600');
-  });
-});
 
 document.addEventListener('DOMContentLoaded', function () {
   // Функция обработчика события для ввода телефонного номера
@@ -44,95 +36,94 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('feedback-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Получаем значения полей формы
+    // Получаем значения полей формы и проверяем наличие ошибок
     var username = document.getElementById('username').value;
     var phone = document.getElementById('phone').value;
     var message = document.getElementById('message').value;
     var captcha = document.getElementById('captcha').value;
     var consent = document.getElementById('consent').checked;
 
-    // Проверяем заполнение всех обязательных полей и капчи
-    if (!username || !phone || !message || !captcha || !consent) {
-      displayErrorMessage('Пожалуйста, заполните все поля и введите капчу.');
+    var errorMessage = '';
+
+    // Проверка наличия ошибок
+    if (!username) {
+      errorMessage += 'Пожалуйста, введите ваше имя.\n';
+    }
+
+    if (!phone) {
+      errorMessage += 'Пожалуйста, введите ваш номер телефона.\n';
+      displayErrorMessage('Пожалуйста, введите ваш номер телефона.', 'captcha');
+    }
+
+    if (!message) {
+      errorMessage += 'Пожалуйста, введите ваше сообщение.\n';
+    }
+
+    if (!captcha || parseInt(captcha) !== 8) {
+      errorMessage += 'Неверная капча. Пожалуйста, решите 5 + 3.\n';
+      displayErrorMessage('Неверная капча. Пожалуйста, решите 5 + 3.', 'captcha');
+    }
+
+    if (!consent) {
+      errorMessage += 'Для отправки формы необходимо дать согласие на обработку персональных данных.\n';
+    }
+
+    // Если есть ошибки, выводим их
+    if (errorMessage) {
+      displayErrorMessage(errorMessage);
       return;
     }
 
-    // Проверяем длину сообщения
-    if (message.length > 450) {
-      displayErrorMessage('Длина сообщения не должна превышать 450 символов.');
-      return;
-    }
-
-    // Проверяем капчу
-    if (parseInt(captcha) !== 8) {
-      displayErrorMessage('Неверная капча. Пожалуйста, решите 5 + 3.');
-      return;
-    }
-
-    // Получаем текущую историю из локального хранилища (если есть)
+    // Если ошибок нет, отправляем форму и очищаем поля
     var history = localStorage.getItem('feedbackHistory');
-
-    // Создаем новую запись для истории
     var entry = username + ', ' + phone + ', ' + message + '\n';
-
-    // Обновляем историю с новой записью
     if (history) {
       history += entry;
     } else {
       history = entry;
     }
-
-    // Сохраняем историю в локальное хранилище
     localStorage.setItem('feedbackHistory', history);
-
-    // Очищаем поля формы после отправки
     document.getElementById('username').value = '';
     document.getElementById('phone').value = '';
     document.getElementById('message').value = '';
     document.getElementById('captcha').value = '';
     document.getElementById('consent').checked = false;
-
-    // Очищаем сообщения об ошибках
     clearErrorMessages();
   });
 
-  // Обработчик для кнопки отображения истории
-  document.getElementById('toggle-history-btn').addEventListener('click', function () {
-    var historyDiv = document.getElementById('history');
+  // Функция для отображения сообщений об ошибках
+  function displayErrorMessage(message, inputId) {
+    var errorMessagesDiv = document.getElementById('error-messages');
+    errorMessagesDiv.innerText = message;
 
-    // Получаем текущее состояние отображения истории
-    var isHistoryVisible = historyDiv.style.display === 'block';
+    // Если есть ID поля ввода, выводим сообщение об ошибке в это поле
+    if (inputId) {
+      var inputField = document.getElementById(inputId);
+      inputField.setCustomValidity(message);
+      inputField.reportValidity();
 
-    if (!isHistoryVisible) {
-      // Получаем историю из локального хранилища
-      var history = localStorage.getItem('feedbackHistory');
-
-      // Если история есть, отображаем ее
-      if (history) {
-        // Вставляем историю в элемент с id="history"
-        historyDiv.innerText = history;
-        // Показываем элемент с историей
-        historyDiv.style.display = 'block';
-      } else {
-        historyDiv.innerText = 'No feedback history yet.';
+      // Очищаем сообщение об ошибке капчи, если переданное сообщение соответствует капче
+      if (inputId === 'captcha') {
+        clearCaptchaError();
       }
-    } else {
-      // Скрываем историю
-      historyDiv.style.display = 'none';
     }
-  });
-
+  }
   // Функция для отображения сообщений об ошибках
   function displayErrorMessage(message) {
     var errorMessagesDiv = document.getElementById('error-messages');
     errorMessagesDiv.innerText = message;
-    errorMessagesDiv.style.display = 'block';
+    errorMessagesDiv.classList.remove('hidden'); // Удаляем класс 'hidden', чтобы отобразить сообщение об ошибке
   }
 
   // Функция для очистки сообщений об ошибках
   function clearErrorMessages() {
     var errorMessagesDiv = document.getElementById('error-messages');
     errorMessagesDiv.innerText = '';
-    errorMessagesDiv.style.display = 'none';
+    errorMessagesDiv.classList.add('hidden'); // Добавляем класс 'hidden', чтобы скрыть сообщение об ошибке
+  }
+  // Функция для очистки сообщения об ошибке капчи
+  function clearCaptchaError() {
+    var captchaInput = document.getElementById('captcha');
+    captchaInput.setCustomValidity('');
   }
 });

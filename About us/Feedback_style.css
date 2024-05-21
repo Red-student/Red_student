@@ -78,3 +78,17 @@ main>button:hover {
 #submit-btn:hover {
     background-color: #0056b3; /* Darker green background on hover */
 }
+#error-messages {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid rgb(12, 16, 66);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+}
+.hidden {
+    display: none;
+}

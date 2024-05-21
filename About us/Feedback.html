@@ -107,6 +107,7 @@
     <div class="crumbs">
       <h3>О нас / Обратная связь</h3>
     </div>
+    <div id="error-messages" class="hidden"></div>
     <form id="feedback-form">
       <label for="username">Ваше имя:</label><br>
       <input type="text" id="username" name="username" required placeholder="Введите имя"><br>
@@ -115,7 +116,7 @@
         placeholder="Введите номер телефона"><br>
       <label for="message">Сообщения (максимальный размер 450 символов):</label><br>
       <textarea id="message" name="message" maxlength="450" required placeholder="Введите сообщение"></textarea><br>
-      <label for="captcha">Captcha (5 + 3):</label><br>
+      <label  for="captcha">Captcha (5 + 3):</label><br>
       <input type="text" id="captcha" name="captcha" required placeholder="Введите ответ на капчу сюда"><br>
       <input type="checkbox" id="consent" required>
       <label for="consent">Разрешение на обработку персоналньх данных</label><br>

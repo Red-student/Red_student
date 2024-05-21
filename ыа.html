@@ -1,309 +1,231 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Адаптивное меню</title>
     <style>
-/* Сброс стилей */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Стили для навигационного меню */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
 
-/* Основные стили для навигационного меню */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        .div_logo img {
+            height: 50px;
+        }
 
-.div_logo img {
-    height: 50px;
-}
+        .menu {
+            display: flex;
+            list-style: none;
+        }
 
-/* Стили для меню */
-.menu {
-    display: flex;
-    list-style: none;
-}
+        .menu li {
+            position: relative;
+        }
 
-.menu li {
-    position: relative;
-    
-}
+        .menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.3s;
+        }
 
-.menu a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #fff;
-    transition: background 0.3s;
-}
+        .menu a:hover {
+            background: #555;
+        }
 
-.menu a:hover {
-    background: #555;
-}
+        .submenu {
+            display: none;
+            background: #444;
+            list-style: none;
+            padding: 0;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: none;
+            position: absolute;
+            top: 100%; /* Сдвигаем подменю ниже */
+            left: 0;
+            width: 100%;
+            z-index: 1; /* Установим z-index, чтобы подменю находилось над другими элементами */
+        }
 
-/* Стили для подменю */
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #444;
-    list-style: none;
-    padding: 0;
-    border-radius: 0 0 5px 5px;
-    overflow: hidden;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-}
+        .submenu.active {
+            display: block;
+        }
 
-.submenu li {
-    width: 200px;
-}
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                width: 100%;
+                background: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 20px 0;
+            }
 
-.submenu a {
-    padding: 10px;
-    white-space: nowrap;
-}
+            .menu.active {
+                display: flex;
+            }
 
-.menu li:hover .submenu {
-    display: block;
-}
+            .menu li {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-/* Адаптивные стили */
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 20px 0;
-    }
+            .menu li .submenu {
+                position: static;
+                display: none;
+                background: #444;
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+            }
 
-    .menu.active {
-        display: flex;
-    }
+            .menu li .submenu li {
+                width: 100%;
+            }
 
-    .menu li {
-        width: 100%;
-    }
+            .menu li .submenu a {
+                padding-left: 30px;
+            }
 
-    .menu li .submenu {
-        position: static;
-        display: none;
-        background: #444;
-        box-shadow: none;
-        padding: 0;
-        border-radius: 0;
-    }
+            .menu li .submenu.active {
+                display: block;
+            }
 
-    .menu li .submenu li {
-        width: 100%;
-    }
+            .navbar-toggle {
+                display: block;
+                cursor: pointer;
+            }
 
-    .menu li .submenu a {
-        padding-left: 30px;
-    }
+            .navbar-toggle .bar {
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                margin: 4px 0;
+                transition: all 0.3s ease;
+            }
 
-    .menu li .submenu.active {
-        display: block;
-    }
+            .submenu-toggle {
+                cursor: pointer;
+                padding: 10px;
+                color: #fff;
+                background: #333;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-    .navbar-toggle {
-        display: block;
-        cursor: pointer;
-    }
+            .submenu-toggle:hover {
+                background: #555;
+            }
 
-    .navbar-toggle .bar {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 4px 0;
-        transition: all 0.3s ease;
-    }
-}
+            .submenu-toggle::after {
+                content: '\25BC'; /* Стрелка вниз для отображения подменю */
+                font-size: 12px;
+                margin-left: 5px;
+            }
+        }
 
-@media (min-width: 769px) {
-    .navbar-toggle {
-        display: none;
-    }
-}
-/* Добавим стили для анимации бургера */
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: all 0.3s ease;
-}
+        @media (min-width: 769px) {
+            .navbar-toggle {
+                display: none;
+            }
 
-.change .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 5px);
-}
+            .submenu-toggle {
+                display: none;
+            }
+        }
 
-.change .bar:nth-child(2) {
-    opacity: 0;
-}
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
 
-.change .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -5px);
-}
-/* Стили для галереи */
-.gallery {
-    padding: 20px;
-    text-align: center;
-}
+        .change .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
 
-.gallery h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #333;
-}
+        .change .bar:nth-child(2) {
+            opacity: 0;
+        }
 
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px;
-}
-
-.gallery-item {
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-    filter: brightness(80%);
-}
-
-/* Lightbox стили */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-/* Стили для кнопки переключения темы */
-.night-theme-button {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px;
-    transition: background 0.3s;
-}
-
-.night-theme-button:hover {
-    background: #555;
-}
-
-.night-theme-button-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-}
+        .change .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
 
     </style>
 </head>
+
 <body>
     <header>
         <!-- Логотип -->
         <div class="div_logo">
             <a href="./index.html">
-                <img src="./img/Logo.png"
+                <img src="./img/Logo.png" alt="Логотип">
             </a>
         </div>
 
         <!-- Меню навигации -->
         <nav class="navbar">
             <ul class="menu" id="menu">
-                <li><a href="./index.html">Главная</a></li>
                 <li>
-                    <a href="./Cars/Cars.html" class="down">Автомобили</a>
+                    <a href="./index.html">Главная</a>
+                </li>
+                <li>
+                    <a href="#">Автомобили</a>
+                    <span class="submenu-toggle"></span>
+                    <!-- Подменю -->
                     <ul class="submenu">
-                        <li><a href="./Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
-                        <li><a href="./Cars/Sub_menu/used_cars.html">Автомобильные аксессуары</a></li>
+                        <li><a href="#">Запчасти для автомобиля</a></li>
+                        <li><a href="#">Автомобильные аксессуары</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="./Services/Services.html" class="down">Услуги</a>
+                    <a href="#">Услуги</a>
+                    <span class="submenu-toggle"></span>
+                    <!-- Подменю -->
                     <ul class="submenu">
-                        <li><a href="./Services/Sub_menu/Lending.html">Кредитование</a></li>
-                        <li><a href="./Services/Sub_menu/Insurance.html">Страхование</a></li>
-                        <li><a href="./Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
-                        <li><a href="./Services/Sub_menu/stocks.html">Акции</a></li>
-                        <li><a href="./Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
-                        <li><a href="./Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
+                        <li><a href="#">Кредитование</a></li>
+                        <li><a href="#">Страхование</a></li>
+                        <li><a href="#">Тест-драйв</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Техосмотр</a></li>
+                        <li><a href="#">Шиномонтаж</a></li>
                     </ul>
                 </li>
-                <li><a href="./Favourites/Favourites.html">Избранное</a></li>
                 <li class="header_right">
-                    <a href="./About%20us/About_us.html" class="down">О нас</a>
+                    <a href="#">О нас</a>
+                    <span class="submenu-toggle"></span>
+                    <!-- Подменю -->
                     <ul class="submenu">
-                        <li><a href="./About%20us/Feedback.html">Обратная связь</a></li>
+                        <li><a href="#">Обратная связь</a></li>
                     </ul>
                 </li>
-                <li class="header_right"><a href="./Login_Registration/Login_Registration.html">Вход / Регистрация</a></li>
+                <li class="header_right">
+                    <a href="#">Вход / Регистрация</a>
+                </li>
                 <button class="night-theme-button" id="night-theme-button">
                     <svg class="night-theme-button-icon night-theme-button-icon-sun" viewBox="0 0 64 64">
                         <!-- SVG content -->
@@ -321,27 +243,37 @@ header {
             </div>
         </nav>
     </header>
-    <main>
-        <section class="gallery">
-            <h1>Фотогалерея</h1>
-            <div class="gallery-container">
-        вьте больше изображений по необходимости -->
-            </div>
-        </section>
-    </main>
 
-    <div class="lightbox" id="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" src="">
-    </div>
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const toggleButton = document.querySelector('.navbar-toggle');
+            menu.classList.toggle('active');
+            toggleButton.classList.toggle('change');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const submenu = this.parentElement.querySelector('.submenu');
+                    submenu.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
 document.addEventListener('DOMContentLoaded', function() {
     const menu = document.getElementById('menu');
     const toggleButton = document.querySelector('.navbar-toggle');
 
     toggleButton.addEventListener('click', function() {
         menu.classList.toggle('active');
-        toggleButton.classList.toggle('change'); // Добавляем/удаляем класс для анимации бургера
+        toggleButton.classList.toggle('change');
     });
 
     const submenuLinks = document.querySelectorAll('.menu > li > a.down');
@@ -353,29 +285,4 @@ document.addEventListener('DOMContentLoaded', function() {
             submenu.classList.toggle('active');
         });
     });
-
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeLightbox = document.querySelector('.lightbox .close');
-
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            lightbox.style.display = 'flex';
-            lightboxImg.src = this.querySelector('img').src;
-        });
-    });
-
-    closeLightbox.addEventListener('click', function() {
-        lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', function(e) {
-        if (e.target !== lightboxImg) {
-            lightbox.style.display = 'none';
-        }
-    });
 });
-    </script>
-</body>
-</html>

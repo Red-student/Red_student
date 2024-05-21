@@ -8,6 +8,7 @@
     cursor: pointer;
     background-color: rgb(255, 255, 255,0);
     transition: filter .4s;
+    
 }
 
 .night-theme-button-icon {
@@ -97,6 +98,9 @@ body.night-theme .night-theme-button-icon-sun {
         height: 60px;
         width: auto;
         margin: 13px 0 7px 10px;
+    }
+    .night-theme-button{
+        height: 43px;
     }
 }
 
@@ -271,8 +275,8 @@ body.night-theme .night-theme-button-icon-sun {
         background-color: rgb(102, 102, 102, 0.592);
     }
     .night-theme .submenu li a:hover {
-        color: #ffffff;
-        background-color: #65151b;
+        color: #D81324;
+        background-color: transparent;
     }
 }
 

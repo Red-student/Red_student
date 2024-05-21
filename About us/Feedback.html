@@ -116,7 +116,7 @@
         placeholder="Введите номер телефона"><br>
       <label for="message">Сообщения (максимальный размер 450 символов):</label><br>
       <textarea id="message" name="message" maxlength="450" required placeholder="Введите сообщение"></textarea><br>
-      <label  for="captcha">Captcha (5 + 3):</label><br>
+      <label for="captcha">Captcha (5 + 3):</label><br>
       <input type="text" id="captcha" name="captcha" required placeholder="Введите ответ на капчу сюда"><br>
       <input type="checkbox" id="consent" required>
       <label for="consent">Разрешение на обработку персоналньх данных</label><br>
@@ -159,8 +159,8 @@
 
   <!--Внешний скрипт работы гиперссылки-->
   <script>
-        // скрипт для темы
-        const theme = localStorage.getItem("theme")
+    // скрипт для темы
+    const theme = localStorage.getItem("theme")
     if (theme) {
       document.body.classList.add(theme)
     }
@@ -168,10 +168,26 @@
   <script src="./Feedback_script.js"></script>
   <script>
 
-    //скрипт для бургера
-    function toggleMenu() {
-      var menu = document.getElementById("menu");
-      menu.classList.toggle("active");
+    // скрипт для бургер меню
+    document.addEventListener('DOMContentLoaded', function () {
+      const menu = document.getElementById('menu');
+      const toggleButton = document.querySelector('.navbar-toggle');
+
+      toggleButton.addEventListener('click', function () {
+        menu.classList.toggle('active');
+        toggleButton.classList.toggle('change');
+
+        // При открытии/закрытии бургер-меню закрываем все подменю
+        closeAllSubmenus();
+      });
+    });
+
+    // Функция для закрытия всех подменю
+    function closeAllSubmenus() {
+      const submenus = document.querySelectorAll('.submenu');
+      submenus.forEach(submenu => {
+        submenu.classList.remove('active');
+      });
     }
     //скрипт для выпадающего списка в списке
     document.querySelectorAll('.down').forEach(item => {

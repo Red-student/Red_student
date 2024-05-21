@@ -303,6 +303,7 @@
         if (theme) {
             document.body.classList.add(theme)
         }
+        // скрипт для бургер меню
         document.addEventListener('DOMContentLoaded', function () {
             const menu = document.getElementById('menu');
             const toggleButton = document.querySelector('.navbar-toggle');
@@ -310,8 +311,19 @@
             toggleButton.addEventListener('click', function () {
                 menu.classList.toggle('active');
                 toggleButton.classList.toggle('change');
+
+                // При открытии/закрытии бургер-меню закрываем все подменю
+                closeAllSubmenus();
             });
         });
+
+        // Функция для закрытия всех подменю
+        function closeAllSubmenus() {
+            const submenus = document.querySelectorAll('.submenu');
+            submenus.forEach(submenu => {
+                submenu.classList.remove('active');
+            });
+        }
         //скрипт для выпадающего списка в списке
         document.querySelectorAll('.down').forEach(item => {
             item.addEventListener('click', event => {

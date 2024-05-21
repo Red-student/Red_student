@@ -110,81 +110,83 @@
 
   <section class="wrapper">
     <div class="form signup">
-        <span>Регистрация</span>
-        <form action="../index.html">
-            <input type="text" placeholder="Ваше имя" required />
-            <input type="email" placeholder="Email" required />
-            <div class="password-container">
-                <input type="password" id="signup-password" placeholder="Пароль" required />
-                <span class="toggle-password open-eye" onclick="togglePassword('signup-password')">👁️</span>
-            </div>
-            <div class="password-container">
-                <input type="password" id="signup-confirm-password" placeholder="Подтверждение пароля" required />
-                <span class="toggle-password open-eye" onclick="togglePassword('signup-confirm-password')">👁️</span>
-            </div>
-            <div class="checkbox">
-                <input type="checkbox" id="signupCheck" />
-                <label for="signupCheck">Я согласен с условиями использования и политикой конфиденциальности</label>
-            </div>
-            <input type="submit" value="Регистрация" />
-        </form>
+      <span>Регистрация</span>
+      <form action="../index.html">
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Email" required />
+        <div class="password-container">
+          <input type="password" id="signup-password" placeholder="Пароль" required />
+          <span class="toggle-password open-eye" onclick="togglePassword('signup-password')">👁️</span>
+        </div>
+        <div class="password-container">
+          <input type="password" id="signup-confirm-password" placeholder="Подтверждение пароля" required />
+          <span class="toggle-password open-eye" onclick="togglePassword('signup-confirm-password')">👁️</span>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="signupCheck" />
+          <label for="signupCheck">Я согласен с условиями использования и политикой конфиденциальности</label>
+        </div>
+        <input type="submit" value="Регистрация" />
+      </form>
     </div>
     <div class="form login">
-        <span>Вход</span>
-        <form action="../index.html">
-            <input type="email" placeholder="Email" required />
-            <div class="password-container">
-                <input type="password" id="login-password" placeholder="Пароль" required />
-                <span class="toggle-password open-eye" onclick="togglePassword('login-password')">👁️</span>
-            </div>
-            <a href="https://ru.wikihow.com/%D0%B2%D1%81%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82%D1%8C-%D0%B7%D0%B0%D0%B1%D1%8B%D1%82%D1%8B%D0%B9-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C">Забыли пароль?</a>
-            <input type="submit" value="Войти" />
-        </form>
+      <span>Вход</span>
+      <form action="../index.html">
+        <input type="email" placeholder="Email" required />
+        <div class="password-container">
+          <input type="password" id="login-password" placeholder="Пароль" required />
+          <span class="toggle-password open-eye" onclick="togglePassword('login-password')">👁️</span>
+        </div>
+        <a
+          href="https://ru.wikihow.com/%D0%B2%D1%81%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82%D1%8C-%D0%B7%D0%B0%D0%B1%D1%8B%D1%82%D1%8B%D0%B9-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C">Забыли
+          пароль?</a>
+        <input type="submit" value="Войти" />
+      </form>
     </div>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const wrapper = document.querySelector(".wrapper"),
-        signupHeader = document.querySelector(".signup span"),
-        loginHeader = document.querySelector(".login span");
+      document.addEventListener('DOMContentLoaded', function () {
+        const wrapper = document.querySelector(".wrapper"),
+          signupHeader = document.querySelector(".signup span"),
+          loginHeader = document.querySelector(".login span");
 
-    loginHeader.addEventListener("click", () => {
-        wrapper.classList.add("active");
-    });
+        loginHeader.addEventListener("click", () => {
+          wrapper.classList.add("active");
+        });
 
-    signupHeader.addEventListener("click", () => {
-        wrapper.classList.remove("active");
-    });
+        signupHeader.addEventListener("click", () => {
+          wrapper.classList.remove("active");
+        });
 
-    // Функция для показа/скрытия паролей
-    function togglePassword(passwordFieldId) {
-        const passwordField = document.getElementById(passwordFieldId);
-        const icon = passwordField.nextElementSibling;
+        // Функция для показа/скрытия паролей
+        function togglePassword(passwordFieldId) {
+          const passwordField = document.getElementById(passwordFieldId);
+          const icon = passwordField.nextElementSibling;
 
-        if (passwordField.type === "password") {
+          if (passwordField.type === "password") {
             passwordField.type = "text";
             icon.classList.remove('open-eye');
             icon.classList.add('closed-eye');
             icon.textContent = '🙈';
-        } else {
+          } else {
             passwordField.type = "password";
             icon.classList.remove('closed-eye');
             icon.classList.add('open-eye');
             icon.textContent = '👁️';
+          }
         }
-    }
 
-    // Привязываем функцию к глазкам в обеих формах
-    const togglePasswordIcons = document.querySelectorAll('.toggle-password');
-    togglePasswordIcons.forEach(icon => {
-        icon.addEventListener('click', function() {
+        // Привязываем функцию к глазкам в обеих формах
+        const togglePasswordIcons = document.querySelectorAll('.toggle-password');
+        togglePasswordIcons.forEach(icon => {
+          icon.addEventListener('click', function () {
             const passwordField = this.previousElementSibling;
             togglePassword(passwordField.id);
+          });
         });
-    });
-});
+      });
     </script>
-</section>
+  </section>
   <footer>
     <div class="footer-row">
       <div class="footer-text1">
@@ -217,93 +219,109 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </footer>
   <script>
-     // скрипт для темы
-     const theme = localStorage.getItem("theme")
-        if (theme) {
-            document.body.classList.add(theme)
+    // скрипт для темы
+    const theme = localStorage.getItem("theme")
+    if (theme) {
+      document.body.classList.add(theme)
+    }
+
+
+
+    // скрипт для бургер меню
+    document.addEventListener('DOMContentLoaded', function () {
+      const menu = document.getElementById('menu');
+      const toggleButton = document.querySelector('.navbar-toggle');
+
+      toggleButton.addEventListener('click', function () {
+        menu.classList.toggle('active');
+        toggleButton.classList.toggle('change');
+
+        // При открытии/закрытии бургер-меню закрываем все подменю
+        closeAllSubmenus();
+      });
+    });
+
+    // Функция для закрытия всех подменю
+    function closeAllSubmenus() {
+      const submenus = document.querySelectorAll('.submenu');
+      submenus.forEach(submenu => {
+        submenu.classList.remove('active');
+      });
+    }
+    //скрипт для выпадающего списка в списке
+    document.querySelectorAll('.down').forEach(item => {
+      item.addEventListener('click', event => {
+        item.querySelector('.submenu').classList.toggle("active");
+        event.preventDefault();
+      });
+    });
+    //скрипт меню
+    window.addEventListener("DOMContentLoaded", function () {
+      const mediaQuery = window.matchMedia("(max-width: 986px)");
+
+      // Функция для обработки событий клика
+      function handleClick(event) {
+        // Если ширина экрана меньше 986px, выходим из функции
+        if (!mediaQuery.matches) {
+          return;
         }
 
+        // Получаем следующий элемент после текущего элемента списка (подменю)
+        const submenu = this.nextElementSibling;
 
-    
-                //скрипт для бургера
-                function toggleMenu() {
-                    var menu = document.getElementById("menu");
-                    menu.classList.toggle("active");
-                }
-                //скрипт для выпадающего списка в списке
-                document.querySelectorAll('.down').forEach(item => {
-                    item.addEventListener('click', event => {
-                        item.querySelector('.submenu').classList.toggle("active");
-                        event.preventDefault();
-                    });
-                });
-                //скрипт меню
-        window.addEventListener("DOMContentLoaded", function () {
-            const mediaQuery = window.matchMedia("(max-width: 986px)");
+        // Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
+        if (submenu.classList.contains('active')) {
+          return;
+        }
 
-            // Функция для обработки событий клика
-            function handleClick(event) {
-                // Если ширина экрана меньше 986px, выходим из функции
-                if (!mediaQuery.matches) {
-                    return;
-                }
+        // Отменяем действие по умолчанию (переход по ссылке)
+        event.preventDefault();
 
-                // Получаем следующий элемент после текущего элемента списка (подменю)
-                const submenu = this.nextElementSibling;
+        // Закрываем все подменю
+        closeAllSubmenus();
 
-                // Если подменю уже открыто, не предотвращаем действие по умолчанию (переход по ссылке)
-                if (submenu.classList.contains('active')) {
-                    return;
-                }
+        // Открываем текущее подменю
+        submenu.classList.add('active');
+      }
 
-                // Отменяем действие по умолчанию (переход по ссылке)
-                event.preventDefault();
+      // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
+      const downLinks = document.querySelectorAll('.down');
+      downLinks.forEach(link => {
+        link.addEventListener('click', handleClick);
+      });
 
-                // Закрываем все подменю
-                closeAllSubmenus();
-
-                // Открываем текущее подменю
-                submenu.classList.add('active');
-            }
-
-            // Получаем все элементы списка с классом .down и добавляем обработчик события клика для каждого
-            const downLinks = document.querySelectorAll('.down');
-            downLinks.forEach(link => {
-                link.addEventListener('click', handleClick);
-            });
-
-            // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
-            const submenuLinks = document.querySelectorAll('.submenu a');
-            submenuLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    // Закрываем подменю после клика на ссылку
-                    const submenu = this.closest('.submenu');
-                    submenu.classList.remove('active');
-                });
-            });
-
-            // Функция для закрытия всех подменю
-            function closeAllSubmenus() {
-                const submenus = document.querySelectorAll('.submenu');
-                submenus.forEach(submenu => {
-                    submenu.classList.remove('active');
-                });
-            }
-
-            // Функция для открытия/закрытия основного меню
-            function toggleMenu() {
-                const menu = document.getElementById("menu");
-                menu.classList.toggle("active");
-            }
-
-            // Проверяем изменение медиа-запроса
-            mediaQuery.addEventListener("change", event => {
-                // Если ширина экрана меньше 986px, закрываем все подменю
-                if (!event.matches) {
-                    closeAllSubmenus();
-                }
-            });
+      // Получаем все ссылки в подменю и добавляем обработчик события клика для каждой
+      const submenuLinks = document.querySelectorAll('.submenu a');
+      submenuLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          // Закрываем подменю после клика на ссылку
+          const submenu = this.closest('.submenu');
+          submenu.classList.remove('active');
         });
+      });
+
+      // Функция для закрытия всех подменю
+      function closeAllSubmenus() {
+        const submenus = document.querySelectorAll('.submenu');
+        submenus.forEach(submenu => {
+          submenu.classList.remove('active');
+        });
+      }
+
+      // Функция для открытия/закрытия основного меню
+      function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("active");
+      }
+
+      // Проверяем изменение медиа-запроса
+      mediaQuery.addEventListener("change", event => {
+        // Если ширина экрана меньше 986px, закрываем все подменю
+        if (!event.matches) {
+          closeAllSubmenus();
+        }
+      });
+    });
   </script>
 </body>
 

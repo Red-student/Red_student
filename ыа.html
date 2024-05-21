@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивное меню</title>
+    <style>
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Основные стили для навигационного меню */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.div_logo img {
+    height: 50px;
+}
+
+/* Стили для меню */
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+    
+}
+
+.menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background: #555;
+}
+
+/* Стили для подменю */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #444;
+    list-style: none;
+    padding: 0;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+}
+
+.submenu li {
+    width: 200px;
+}
+
+.submenu a {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu li .submenu {
+        position: static;
+        display: none;
+        background: #444;
+        box-shadow: none;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .menu li .submenu li {
+        width: 100%;
+    }
+
+    .menu li .submenu a {
+        padding-left: 30px;
+    }
+
+    .menu li .submenu.active {
+        display: block;
+    }
+
+    .navbar-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-toggle {
+        display: none;
+    }
+}
+/* Добавим стили для анимации бургера */
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.change .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.change .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+/* Стили для галереи */
+.gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
+
+/* Lightbox стили */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Стили для кнопки переключения темы */
+.night-theme-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.night-theme-button:hover {
+    background: #555;
+}
+
+.night-theme-button-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Логотип -->
+        <div class="div_logo">
+            <a href="./index.html">
+                <img src="./img/Logo.png"
+            </a>
+        </div>
+
+        <!-- Меню навигации -->
+        <nav class="navbar">
+            <ul class="menu" id="menu">
+                <li><a href="./index.html">Главная</a></li>
+                <li>
+                    <a href="./Cars/Cars.html" class="down">Автомобили</a>
+                    <ul class="submenu">
+                        <li><a href="./Cars/Sub_menu/spare_parts_cars.html">Запчасти для автомобиля</a></li>
+                        <li><a href="./Cars/Sub_menu/used_cars.html">Автомобильные аксессуары</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./Services/Services.html" class="down">Услуги</a>
+                    <ul class="submenu">
+                        <li><a href="./Services/Sub_menu/Lending.html">Кредитование</a></li>
+                        <li><a href="./Services/Sub_menu/Insurance.html">Страхование</a></li>
+                        <li><a href="./Services/Sub_menu/Test_drive.html">Тест-драйв</a></li>
+                        <li><a href="./Services/Sub_menu/stocks.html">Акции</a></li>
+                        <li><a href="./Services/Sub_menu/Technical_inspection.html">Техосмотр</a></li>
+                        <li><a href="./Services/Sub_menu/Tire_service.html">Шиномонтаж</a></li>
+                    </ul>
+                </li>
+                <li><a href="./Favourites/Favourites.html">Избранное</a></li>
+                <li class="header_right">
+                    <a href="./About%20us/About_us.html" class="down">О нас</a>
+                    <ul class="submenu">
+                        <li><a href="./About%20us/Feedback.html">Обратная связь</a></li>
+                    </ul>
+                </li>
+                <li class="header_right"><a href="./Login_Registration/Login_Registration.html">Вход / Регистрация</a></li>
+                <button class="night-theme-button" id="night-theme-button">
+                    <svg class="night-theme-button-icon night-theme-button-icon-sun" viewBox="0 0 64 64">
+                        <!-- SVG content -->
+                    </svg>
+                    <svg class="night-theme-button-icon night-theme-button-icon-moon" viewBox="0 0 24 24">
+                        <!-- SVG content -->
+                    </svg>
+                    <span class="Changing">Смена темы</span>
+                </button>
+            </ul>
+            <div class="navbar-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="gallery">
+            <h1>Фотогалерея</h1>
+            <div class="gallery-container">
+        вьте больше изображений по необходимости -->
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="">
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menu = document.getElementById('menu');
+    const toggleButton = document.querySelector('.navbar-toggle');
+
+    toggleButton.addEventListener('click', function() {
+        menu.classList.toggle('active');
+        toggleButton.classList.toggle('change'); // Добавляем/удаляем класс для анимации бургера
+    });
+
+    const submenuLinks = document.querySelectorAll('.menu > li > a.down');
+
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
+            submenu.classList.toggle('active');
+        });
+    });
+
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.querySelector('.lightbox .close');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = this.querySelector('img').src;
+        });
+    });
+
+    closeLightbox.addEventListener('click', function() {
+        lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target !== lightboxImg) {
+            lightbox.style.display = 'none';
+        }
+    });
+});
+    </script>
+</body>
+</html>

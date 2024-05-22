@@ -1,3 +1,4 @@
+/* Кнопка для смены темы */
 .night-theme-button {
     right: 0px;
     top: 0px;
@@ -6,34 +7,36 @@
     width: 60px;
     height: 60px;
     cursor: pointer;
-    background-color: rgb(255, 255, 255,0);
-    transition: filter .4s;
-    
+    background-color: rgb(255, 255, 255, 0);
+    transition: filter .4s; 
 }
 
+/* Иконки внутри кнопки */
 .night-theme-button-icon {
     position: absolute;
     width: 40px;
     height: 40px;
     margin-left: -20px;
     margin-top: -30px;
-    opacity: 0;
+    opacity: 0; 
 }
 
-
-
+/* Эффект при наведении на кнопку */
 .night-theme-button:hover {
-    filter: brightness(120%);
+    filter: brightness(120%); 
 }
 
+/* Эффект при нажатии на кнопку */
 .night-theme-button:active {
-    filter: brightness(80%);
+    filter: brightness(80%); 
 }
 
+/* Иконка луны для светлой темы */
 .night-theme-button-icon-moon {
     opacity: 1;
 }
 
+/* Плавный переход фона и цвета текста */
 body {
     transition: background-color .2s, color 0.2s;
 }
@@ -44,79 +47,95 @@ body.night-theme {
     background-color: black;
 }
 
+/* Скрываем иконку луны в темной теме */
 body.night-theme .night-theme-button-icon-moon {
     opacity: 0;
 }
+
+/* Цвет иконки солнца в темной теме */
 .night-theme-button-icon-sun circle,
-.night-theme-button-icon-sun path{
+.night-theme-button-icon-sun path {
     fill: white;
 }
+
+/* Показываем иконку солнца в темной теме */
 body.night-theme .night-theme-button-icon-sun {
     opacity: 1;
 }
-/* Стили для темной темы */
+
+/* Фон заголовка в темной теме */
 .night-theme header {
     background-color: black;
     transition: background-color .25s, color .25s;
 }
+
+/* Фон для кнопок навигации */
 .night-theme .prev,
-.night-theme .next{
+.night-theme .next {
     background-color: rgba(255, 255, 255, 0.667);
 }
 
-/*Стили для кнопок*/
+/* Эффект при наведении на кнопки навигации */
 .night-theme .prev:hover,
 .night-theme .next:hover {
     background-color: rgba(177, 177, 177, 0.603);
 }
-/* Стили для темной темы */
+
+/* Фон и цвет текста для футера */
 .night-theme footer {
     background-color: rgb(233, 233, 233);
     color: #000;
     transition: background-color .25s, color .25s;
 }
 
-/* Стили для темной темы */
+/* Цвет текста в футере */
 .night-theme .footer-text1 .footer-text3 {
     color: black;
 }
 
-/* Стили для темной темы */
+/* Иконки футера */
 .night-theme .footer-icons>a {
     filter: brightness(0.1);
 }
 
-.night-theme .logo{
+/* Логотип для темной темы */
+.night-theme .logo {
     content: url('./img/Logo_night.png');
     height: 90px;
     width: auto;
     margin: 7px 0 7px 35px;
 }
+
+/* Логотип для темной темы на мобильных устройствах */
 @media screen and (max-width: 987px) {
-    .night-theme .logo{
+    .night-theme .logo {
         content: url('./img/Logo_night.png');
         height: 60px;
         width: auto;
         margin: 13px 0 7px 10px;
     }
-    .night-theme-button{
-        height: 43px;
+
+    .night-theme-button {
+        height: 43px; /* Уменьшенная высота кнопки на мобильных */
     }
 }
 
-
-.night-theme .submenu{
+/* Фон для выпадающего меню в темной теме */
+.night-theme .submenu {
     background-color: rgba(0, 53, 89, 0.805);
 }
+
+/* Фон для пунктов выпадающего меню при наведении */
 .night-theme .submenu li a:hover {
     background-color: rgba(216, 19, 35, 0.851);
 }
-/* Стили для темной темы */
+
+/* Цвет крошек (breadcrumb) */
 .night-theme .crumbs {
     color: aliceblue;
 }
 
-/* Стили для темной темы */
+/* Цвет для бургер-меню на мобильных устройствах */
 @media screen and (max-width: 987px) {
     .night-theme .navbar-toggle {
         color: #ffffff;
@@ -127,34 +146,24 @@ body.night-theme .night-theme-button-icon-sun {
     }
 }
 
-/* Стили для темной темы */
+/* Фон и цвет для div заголовка */
 .night-theme .div_title p {
     color: aliceblue;
     background-color: black;
 }
 
-/* Стили для темной темы */
+/* Фон и цвет для центра новостей */
 .night-theme .news-center {
     color: aliceblue;
     background-color: black;
 }
 
-/* Стили для темной темы */
+/* Цвет контента новостей */
 .night-theme .news-content {
     color: aliceblue;
 }
 
-/* Стили для темной темы */
-@media screen and (max-width: 987px) {
-    .night-theme .navbar-toggle {
-        color: #ffffff;
-    }
-
-    .night-theme .bar {
-        background-color: rgb(255, 255, 255);
-    }
-}
-/* Стили для темной темы */
+/* Цвет и фон для div заголовка на мобильных */
 @media screen and (max-width: 987px) {
     .night-theme .navbar-toggle {
         color: #ffffff;
@@ -165,126 +174,147 @@ body.night-theme .night-theme-button-icon-sun {
     }
 }
 
+/* Фон для блока автомобиля */
 .night-theme .pod_car {
     background-color: #000;
     color: #fff;
 }
 
+/* Фон для блока с машиной */
 .night-theme .car-block {
     background-color: #000;
     color: #fff;
 }
 
+/* Фон для заголовка машины */
 .night-theme .car-title {
     background-color: #000;
     color: #fff;
 }
 
+/* Цвет текста в заголовке машины */
 .night-theme .car-title>span {
     color: #fff;
 }
 
-.night-theme .search-icon path{
+/* Цвет иконки поиска */
+.night-theme .search-icon path {
     fill: #000000;
 }
 
-.night-theme .catalog-description{
+/* Цвет описания каталога */
+.night-theme .catalog-description {
     color: #fff;
 }
 
-.night-theme .pagination li a{
+/* Цвет ссылок на страницы в пагинации */
+.night-theme .pagination li a {
     color: #fff;
 }
 
-.night-theme .h1_title{
+/* Цвет заголовка h1 */
+.night-theme .h1_title {
     color: #fff;
 }
 
-.night-theme .heart-icon:active{
+/* Цвет активного сердечка */
+.night-theme .heart-icon:active {
     color: #f00;
 }
 
-.night-theme .services-container > h2,
-.night-theme .services-container > p{
+/* Цвет заголовков и текста в контейнере услуг */
+.night-theme .services-container>h2,
+.night-theme .services-container>p {
     color: white;
 }
-.night-theme .consultation-block > h2,
-.night-theme .consultation-block > p{
+
+/* Цвет заголовков и текста в блоке консультаций */
+.night-theme .consultation-block>h2,
+.night-theme .consultation-block>p {
     color: white;
 }
+
+/* Фон для различных блоков */
 .night-theme .content_block4_servise,
 .night-theme .content_block3_servise,
-.night-theme .content_block5_fon{
+.night-theme .content_block5_fon {
     background-color: rgb(117, 117, 117);
 }
 
-
-.night-theme .block3_img_text > h1 {
+/* Цвет заголовка в блоке изображения */
+.night-theme .block3_img_text>h1 {
     color: #000;
 }
-.night-theme .form-container{
+
+/* Фон для контейнера формы */
+.night-theme .form-container {
     background-color: rgb(102, 102, 102);
 }
-.night-theme .block3_img{
+
+/* Фильтр для изображения в блоке */
+.night-theme .block3_img {
     filter: brightness(85%);
 }
 
-/* Стили для темной темы */
-@media screen and (max-width: 987px) {
-    .night-theme .navbar-toggle {
-        color: #ffffff;
-    }
-
-    .night-theme .bar {
-        background-color: rgb(255, 255, 255);
-    }
-}
-
+/* Фон для блока акций */
 .night-theme .stocks_block1 {
     background-color: #000;
 }
 
+/* Фильтр для иконок в футере */
 .night-theme .footer-icons>a {
     filter: brightness(0.1);
 }
 
-
-.night-theme .content-wrapper{
+/* Фон для обертки контента */
+.night-theme .content-wrapper {
     background-color: #000000;
 }
-.night-theme .message > h2{
+
+/* Цвет заголовка сообщения */
+.night-theme .message>h2 {
     color: white;
 }
+
+/* Цвет текста в div заголовке */
 .night-theme .div_titlee p {
     color: white;
 }
+
+/* Фильтр для ввода и текстовой области формы обратной связи */
 .night-theme #feedback-form input,
-.night-theme #feedback-form textarea{
+.night-theme #feedback-form textarea {
     filter: brightness(80%);
 }
+
+/* Высота и цвет для кнопки темы на мобильных устройствах */
 @media screen and (max-width: 987px) {
-    .night-theme-button-icon{
+    .night-theme-button-icon {
         margin-top: -20px;
         height: 57px;
         margin-left: -24px;
     }
-    .night-theme .menu{
+
+    .night-theme .menu {
         background-color: rgb(102, 102, 102);
     }
-    .night-theme .submenu{
+
+    .night-theme .submenu {
         background-color: rgb(102, 102, 102, 0.592);
     }
+
     .night-theme .submenu li a:hover {
         color: #D81324;
         background-color: transparent;
     }
 }
 
-
-.night-theme .wrapper{
+/* Фон для обертки */
+.night-theme .wrapper {
     background-color: rgba(32, 55, 118, 0.87);
 }
 
-.night-theme .box{
+/* Тень для бокса */
+.night-theme .box {
     box-shadow: 5px 20px 30px rgba(255, 255, 255, 0.701);
 }

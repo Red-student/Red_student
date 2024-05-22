@@ -10,10 +10,8 @@
 /*стили для второго блока контента*/
 .content_block2 {
     width: 100%;
-
     padding-top: 15px;
     margin: 0 auto;
-
 }
 
 /*стили для третьего блока контента*/
@@ -230,7 +228,7 @@
 }
 
 /*стили для кнопки*/
-button:not(#themeToggle,.night-theme-button) {
+button:not(#themeToggle, .night-theme-button) {
     padding: 10px 20px;
     background-color: #003559;
     color: white;
@@ -240,7 +238,7 @@ button:not(#themeToggle,.night-theme-button) {
 }
 
 /*стили для кнопки*/
-button:hover:not(#themeToggle,.night-theme-button) {
+button:hover:not(#themeToggle, .night-theme-button) {
     background-color: #0056b3;
 }
 
@@ -254,12 +252,14 @@ button:hover:not(#themeToggle,.night-theme-button) {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Заголовки внутри .block4_text1 с центрированием текста и отступами */
 .block4_text1>h1,
 .block4_text1>h2 {
     text-align: center;
     padding: 15px 20px;
 }
 
+/* Форма внутри .block4_forma с вертикальным выравниванием и отступами */
 .block4_forma {
     display: flex;
     flex-direction: column;
@@ -267,23 +267,27 @@ button:hover:not(#themeToggle,.night-theme-button) {
     margin: 0 25px;
 }
 
+/* Элементы фильтра с отступом снизу и фиксированной шириной */
 .filter-item {
     margin-bottom: 20px;
     width: 380px;
 }
 
+/* Адаптивные стили для .filter-item на экранах от 540px до 1000px */
 @media screen and (min-width: 540px) and (max-width: 1000px) {
     .filter-item {
         width: 380px;
     }
 }
 
+/* Адаптивные стили для .filter-item на экранах до 515px */
 @media screen and (max-width: 515px) {
     .filter-item {
         width: 100%;
     }
 }
 
+/* Стили для выпадающих списков внутри .filter-item */
 .filter-item select {
     width: 100%;
     padding: 10px;
@@ -294,17 +298,19 @@ button:hover:not(#themeToggle,.night-theme-button) {
     cursor: pointer;
 }
 
+/* Стили для отключенных выпадающих списков */
 .filter-item select:disabled {
     background-color: #f2f2f2;
     cursor: not-allowed;
 }
 
+/* Стили для активных выпадающих списков */
 .filter-item select:focus {
     outline: none;
     border-color: #007bff;
 }
 
-
+/* Контактная информация с вертикальным выравниванием и отступами */
 .block4_Contact_information {
     display: flex;
     flex-direction: column;
@@ -313,13 +319,14 @@ button:hover:not(#themeToggle,.night-theme-button) {
     margin-bottom: 25px;
 }
 
-
+/* Основной контейнер блока контента с отступами */
 .content_block5 {
     width: 100%;
     padding-top: 15px;
     margin: 0 auto;
 }
 
+/* Фоновый контейнер внутри .content_block5 с отступами, тенями и закругленными углами */
 .content_block5_fon {
     position: relative;
     height: 100%;
@@ -329,19 +336,23 @@ button:hover:not(#themeToggle,.night-theme-button) {
     border-radius: 24px;
 }
 
+/* Заголовки внутри .content_block5_fon с центрированием текста */
 .content_block5_fon>h2 {
     text-align: center;
 }
 
+/* Параграфы внутри .b_about_credit с увеличенным размером шрифта */
 .b_about_credit>p {
     font-size: 20px;
 }
 
+/* Стили для списка без маркеров и отступов слева */
 .b_list_simple__list {
     list-style-type: none;
     padding-left: 0;
 }
 
+/* Псевдоэлемент перед каждым элементом списка с символом и цветом */
 .b_list_simple__item::before {
     content: "\25b6";
     color: #0056b3;

@@ -1,6 +1,5 @@
-
-
 .wrapper {
+  /* Контейнер, обрамляющий форму, выравнивание по центру, ограничение по ширине, скругление углов */
   text-align: center;
   margin: 0 auto;
   position: relative;
@@ -8,15 +7,12 @@
   border-radius: 12px;
   padding: 20px 30px 120px;
   background: #194969;
-  box-shadow: 0 5px 10px rgba(0,
-      0,
-      0,
-      0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
-
 .form.login {
+  /* Форма для входа, позиционирование, фон и анимация */
   text-align: center;
   position: absolute;
   left: 50%;
@@ -31,13 +27,8 @@
   box-sizing: border-box;
 }
 
-.wrapper.active .form.login {
-  bottom: -15%;
-  border-radius: 35%;
-  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
-}
-
 .form span {
+  /* Стили для текста формы (обычный и активный) */
   font-size: 30px;
   text-align: center;
   color: #fff;
@@ -46,19 +37,13 @@
 }
 
 .form.login span {
+  /* Стили для текста формы входа */
   color: #333;
   opacity: 0.6;
 }
 
-.wrapper.active .form.login span {
-  opacity: 1;
-}
-
-.wrapper.active .signup span {
-  opacity: 0.6;
-}
-
 .wrapper form {
+  /* Стили для формы в целом */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -66,6 +51,7 @@
 }
 
 form input {
+  /* Стили для ввода текста */
   height: 60px;
   outline: none;
   border: none;
@@ -78,41 +64,26 @@ form input {
 }
 
 .form.login input {
+  /* Стили для ввода текста в форме входа */
   border: 1px solid #aaa;
 }
 
-.form.login input:focus {
-  box-shadow: 0 1px 0 #ddd;
-}
-
-form .checkbox {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .checkbox input[type="checkbox"] {
+  /* Стили для чекбокса */
   height: 16px;
   width: 16px;
   accent-color: #fff;
   cursor: pointer;
 }
 
-form .checkbox label {
-  cursor: pointer;
-  color: #fff;
-}
-
 form a {
+  /* Стили для ссылок */
   color: #333;
   text-decoration: none;
 }
 
-form a:hover {
-  text-decoration: underline;
-}
-
 form input[type="submit"] {
+  /* Стили для кнопки отправки формы */
   margin-top: 15px;
   padding: none;
   font-size: 18px;
@@ -120,46 +91,44 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-.form.login input[type="submit"] {
- background: #003559; 
-  color: #fff;
-  border: none;
-}
-
 .password-container {
+  /* Стили для контейнера пароля */
   position: relative;
-  width: 100%; /* Ensure container takes full width */
-}
-
-.password-container input[type="password"],
-.password-container input[type="text"] {
-  width: 100%; /* Make input take full width of the container */
-  padding-right: 40px; /* Ensure there's space for the eye icon inside the input */
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  width: 100%;
 }
 
 .toggle-password {
+  /* Стили для переключателя отображения пароля */
   position: absolute;
   top: 50%;
-  right: 10px; /* Position the eye icon to the right */
+  right: 10px;
   transform: translateY(-50%);
   cursor: pointer;
-  user-select: none; /* Prevent text selection on double click */
+  user-select: none;
 }
-.night-theme form input{
+
+.night-theme form input {
+  /* Стили для темной темы: ввод текста */
   background: #000000c7;
-  color:rgba(255, 255, 255, 0.721);
+  color: rgba(255, 255, 255, 0.721);
 }
-.night-theme .form span{
-  color:rgba(255, 255, 255, 0.936);
+
+.night-theme .form span {
+  /* Стили для темной темы: текст формы */
+  color: rgba(255, 255, 255, 0.936);
 }
-.night-theme .form.login{
+
+.night-theme .form.login {
+  /* Стили для темной темы: форма входа */
   background: #000000c7;
 }
-.night-theme form a{
+
+.night-theme form a {
+  /* Стили для темной темы: ссылки */
   color: white;
 }
 
-.night-theme .form.login input[type="submit"]{
+.night-theme .form.login input[type="submit"] {
+  /* Стили для темной темы: кнопка отправки формы */
   background: rgba(32, 55, 118, 0.87);
 }

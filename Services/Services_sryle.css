@@ -121,6 +121,7 @@
     background-color: #0056b3;
 }
 
+/* Стили для экранов до 768px*/
 @media screen and (max-width: 768px) {
     .services-container p {
         text-align: justify;

@@ -12,10 +12,12 @@ h1 {
     text-align: center;
     font-size: 30px;
 }
+
 /* Стили для элементов списка */
 li {
     font-size: 17px;
 }
+
 /*Стиль для основоного блока в котором лежит текст и картинка*/
 .div_block2 {
     display: flex;
@@ -98,6 +100,7 @@ li {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
+
 /* Стили для контейнера .chart-container */
 .chart-container {
     position: relative;
@@ -109,6 +112,7 @@ li {
     margin-bottom: 20px;
     margin-top: 35px;
 }
+
 /* Медиа-запрос для устройств с шириной экрана меньше 768px (планшеты и мобильные устройства) */
 @media (max-width: 768px) {
     .chart-container {
@@ -124,6 +128,7 @@ li {
         height: 200px;
     }
 }
+
 /* Медиа-запрос для устройств с шириной экрана меньше 480px (мобильные устройства) */
 @media (max-width: 350px) {
     .chart-container {
@@ -133,30 +138,40 @@ li {
 }
 
 @media screen and (max-width: 768px) {
+
+    /* Медиа-запрос для экранов с шириной до 768px */
     .div_block2 {
+        /* Блок 2 */
         flex-wrap: wrap;
         padding-right: 0px;
         padding-left: 0px;
         margin-bottom: 0px;
     }
+
     .div_title {
+        /* Заголовок блока */
         padding-right: 15px;
         padding-left: 15px;
     }
 
     .div_title span {
+        /* Стили для span в заголовке блока */
         font-size: 20px;
     }
 
     .div_title h2 {
+        /* Стили для заголовка h2 в блоке */
         font-size: 32px;
     }
 
     .div_title p {
+        /* Стили для абзацев в заголовке блока */
         font-size: 19px;
     }
 
 }
-strong{
+
+strong {
+    /* Стили для жирного текста */
     color: #0B2154;
 }

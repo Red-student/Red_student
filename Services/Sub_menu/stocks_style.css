@@ -1,4 +1,4 @@
-/*Стили для блока содержащего основной контент страницы Акции*/
+/* Стили для блока, содержащего основной контент страницы Акции */
 .stocks_content_1 {
     background-color: rgba(198, 198, 198, 0.408);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -7,7 +7,7 @@
     margin: 15px 30px;
 }
 
-/*Стили для блока который содержит контент*/
+/* Стили для блока, который содержит контент */
 .stocks_content_2 {
     width: 100%;
     max-width: 1460px;
@@ -15,17 +15,20 @@
     margin: 0 auto;
 }
 
+/* Стили для заголовка страницы Акции */
 .stocks_heading {
     text-align: center;
     padding-bottom: 16px;
 }
 
+/* Стили для контейнера с предложениями */
 .stocks_offers {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
+/* Стили для отдельного блока предложения */
 .stocks_block1 {
     background-color: #f0f0f0;
     border-radius: 15px;
@@ -34,36 +37,41 @@
     margin-bottom: 20px;
 }
 
-@media screen and (max-width:1023px) {
+/* Адаптивные стили для экрана шириной до 1023px */
+@media screen and (max-width: 1023px) {
     .stocks_block1 {
         width: calc(33.3333% - 20px);
     }
 }
 
-@media screen and (max-width:768px) {
+/* Адаптивные стили для экрана шириной до 768px */
+@media screen and (max-width: 768px) {
     .stocks_block1 {
         width: calc(50% - 20px);
     }
 }
 
-@media screen and (max-width:639px) {
+/* Адаптивные стили для экрана шириной до 639px */
+@media screen and (max-width: 639px) {
     .stocks_block1 {
         width: calc(100% - 0px);
     }
 }
 
+/* Стили для изображения в блоке предложения */
 .stocks_block1_img {
     width: 100%;
     border-radius: 10px 10px 0 0;
 }
 
+/* Стили для текста в блоке предложения */
 .stocks_block1_text {
     position: relative;
-    padding: 0 8px 0 8px;
+    padding: 0 8px;
 }
 
+/* Общие стили для параграфов */
 p {
     font-size: 20px;
     padding-left: 5px;
 }
-

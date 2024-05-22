@@ -1,4 +1,4 @@
-
+/* Контейнер для боксов */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -6,38 +6,45 @@
     padding: 2% 2%;
     box-sizing: border-box;
     min-height: 50vh;
-  }
-  
-  .box {
+}
+
+/* Боксы внутри контейнера */
+.box {
     flex: 1;
     overflow: hidden;
     transition: flex 0.8s ease, margin 0.8s ease, box-shadow 0.8s ease;
     margin: 0 2%;
-    box-shadow: 0 20px 30px rgba(0,0,0,.1);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .1);
     line-height: 0;
-  }
-  
-  .box > img {
+}
+
+/* Изображения внутри боксов */
+.box > img {
     width: 150%;
     height: calc(100% - 10vh);
-    object-fit: cover; 
+    object-fit: cover;
     transition: width 0.8s ease, height 0.8s ease, transform 0.8s ease;
-  }
-  
-  .box > span {
+}
+
+/* Текст внутри боксов */
+.box > span {
     font-size: 3.8vh;
     display: block;
     text-align: center;
     height: 10vh;
     line-height: 2.6;
-  }
-  
-  .box:hover { flex: 1 1 50%; }
-  .box:hover > img {
+}
+
+/* Эффект при наведении на боксы */
+.box:hover {
+    flex: 1 1 50%;
+}
+.box:hover > img {
     width: 100%;
     height: 700px;
-  }
-/* Media Queries for Responsiveness */
+}
+
+/* Медиа-запросы для адаптивного дизайна */
 @media screen and (max-width: 1200px) {
     .box {
         flex: 1 1 5%;
@@ -59,7 +66,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
     .box > span {
         font-size: 2.5vh;
     }
@@ -83,14 +89,15 @@
         height: calc(100% - 8vh);
     }
 }
-/* Стили для кнопок prev/next */
+
+/* Кнопки "prev" и "next" */
 .prev,
 .next {
     display: flex;
     cursor: pointer;
     width: auto;
     margin: 22px;
-    padding: 25px 15px 25px 15px;
+    padding: 25px 15px;
     background-color: rgba(0, 0, 0, 0.25);
     color: white;
     font-weight: bold;
@@ -101,18 +108,17 @@
     border-radius: 5px;
 }
 
-/*Стили для кнопок*/
 .next {
     right: 0;
 }
 
-/*Стили для кнопок*/
+/* Эффект при наведении на кнопки "prev" и "next" */
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.603);
 }
 
-/*Стиль для основоного блока в котором лежит текст и картинка*/
+/* Основной блок с текстом и картинкой */
 .div_block2 {
     display: flex;
     overflow: hidden;
@@ -123,16 +129,15 @@
     margin-top: 50px;
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+/* Медиа-запросы для блока .div_block3 на устройствах с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_block3 {
         padding: 0px;
         margin: 0px;
     }
-
 }
 
-/* Стиль для блока с текстом */
+/* Блок с текстом внутри основного блока */
 .div_block3 {
     transform: none;
     width: 100%;
@@ -142,7 +147,7 @@
     margin-right: 50px;
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+/* Медиа-запросы для блока .div_block3 на устройствах с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_block3 {
         padding-right: 0px;
@@ -152,7 +157,7 @@
     }
 }
 
-/* Стиль для текста заголовка */
+/* Текст заголовка внутри блока .div_title */
 .div_title span {
     font-size: 21px;
     color: #D81324;
@@ -160,7 +165,7 @@
     text-transform: uppercase;
 }
 
-/* Стиль для абзаца */
+/* Абзац текста внутри блока .div_title */
 .div_title p {
     font-size: 20px;
     color: #000000;
@@ -168,7 +173,7 @@
     text-align: justify;
 }
 
-/* Стиль для заголовка (второго) */
+/* Второй заголовок внутри блока .div_title */
 .div_title h2 {
     font-size: 33px;
     color: #0B2154;
@@ -176,7 +181,7 @@
     margin: 15px 0;
 }
 
-/*стиль для блока в котором находится картинка*/
+/* Блок с картинкой внутри .div_title */
 .div_title_img {
     transform: none;
     position: relative;
@@ -185,7 +190,7 @@
     padding-left: 15px;
 }
 
-/* Стиль для изображений в блоке */
+/* Изображения внутри блока .div_title_acardimg */
 .div_title_acardimg img {
     display: block;
     margin: 0 auto;
@@ -196,8 +201,7 @@
     border-radius: 10px;
 }
 
-
-/* Стиль для второго основного блока, содержащего текст и картинку */
+/* Второй основной блок с текстом и картинкой */
 .div_block2-2 {
     display: flex;
     overflow: hidden;
@@ -209,7 +213,7 @@
     margin-bottom: 150px;
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+/* Медиа-запросы для блоков .div_block2 и .div_block2-2 на устройствах с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_block2 {
         flex-wrap: wrap;
@@ -242,10 +246,9 @@
     .div_title p {
         font-size: 19px;
     }
-
 }
 
-/* Стиль для блока с текстом */
+/* Блок с текстом внутри второго основного блока */
 .div_block3-2 {
     transform: none;
     width: 100%;
@@ -255,21 +258,17 @@
     margin-right: 50px;
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+/* Медиа-запросы для блока .div_block3-2 на устройствах с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_block3-2 {
         width: 100%;
         margin-right: 0px;
-
         padding-right: 0px;
-
         padding-left: 0px;
     }
-
 }
 
-
-/*Стиль для блока в котором находится картинка*/
+/* Блок с картинкой внутри второго основного блока */
 .div_title_img2 {
     transform: none;
     position: relative;
@@ -277,27 +276,27 @@
     margin-left: 15PX;
 }
 
-/* Стили для анимации появления элементов справа (.delighter.right) */
+/* Анимация появления элементов справа */
 .delighter.right {
     transform: translate(100%);
     opacity: 0;
     transition: all 0.75s ease-out;
 }
 
-/* Стили для анимации появления элементов справа (.delighter.right) в момент начала анимации */
+/* Анимация начала появления элементов справа */
 .delighter.right.started {
     transform: none;
     opacity: 1;
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+/* Медиа-запрос для блока .div_title_img2 на устройствах с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_title_img2 {
         margin-right: 15px;
     }
 }
 
-/* Стиль для изображений в блоке */
+/* Изображения внутри блока .div_title_acardimg2 */
 .div_title_acardimg2 img {
     display: block;
     margin: 0 auto;
@@ -307,7 +306,7 @@
     border-radius: 10px;
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+/* Медиа-запросы для изображений в блоке .div_title_acardimg2 на устройствах с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .div_title_acardimg2 img {
         text-align: center;
@@ -322,7 +321,7 @@
     }
 }
 
-/* Стили для списка блока*/
+/* Контейнер для списка видео */
 .videocard_list ul {
     display: flex;
     flex-wrap: wrap;
@@ -331,7 +330,7 @@
     margin: 0;
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+/* Медиа-запросы для списка видео на устройствах с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .videocard_list ul {
         margin-bottom: 15px;
@@ -345,14 +344,14 @@
     }
 }
 
-/* Медиа-запрос для устройств с шириной экрана 768px */
+/* Медиа-запрос для списка видео на устройствах с шириной экрана 768px */
 @media screen and (width:768px) {
     .videocard_list ul {
         margin-bottom: 15px;
     }
 }
 
-/* Медиа-запрос для устройств с шириной экрана от 768px до 1024px */
+/* Медиа-запросы для списка видео на устройствах с шириной экрана от 768px до 1024px */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .div_block2 {
         padding-right: 0%;
@@ -388,7 +387,7 @@
     }
 }
 
-/* Стили для элемента списка блока */
+/* Элемент списка в блоке видео */
 .videocard_list li {
     flex: 0 0 50%;
     display: flex;
@@ -397,45 +396,31 @@
     margin-bottom: 20px;
 }
 
-
-/* Стили для SVG-иконок в элементе списка*/
+/* SVG-иконки в элементе списка видео */
 .videocard_list li svg {
     margin-right: 10px;
 }
 
-/* Стили для абзацев в элементе списка*/
+/* Абзацы в элементе списка видео */
 .videocard_list li p {
     margin: 0;
     padding: 0;
 }
 
-/* Стили для анимации появления элементов слева (.delighter.left) */
+/* Анимация появления элементов слева */
 .delighter.left {
     transform: translate(-100%);
     opacity: 0;
     transition: all 0.75s ease-out;
 }
 
-/* Стили для анимации появления элементов слева (.delighter.left) в момент начала анимации */
+/* Анимация начала появления элементов слева */
 .delighter.left.started {
     transform: none;
     opacity: 1;
 }
 
-/* Стили для анимации появления элементов справа (.delighter.right) */
-.delighter.right {
-    transform: translate(100%);
-    opacity: 0;
-    transition: all 0.75s ease-out;
-}
-
-/* Стили для анимации появления элементов справа (.delighter.right) в момент начала анимации */
-.delighter.right.started {
-    transform: none;
-    opacity: 1;
-}
-
-/* Стили для контейнера с новостями */
+/* Контейнер для новостей */
 .news-container {
     display: flex;
     justify-content: space-around;
@@ -443,7 +428,7 @@
     flex-wrap: wrap;
 }
 
-/* Стили для центрированного заголовка новостей */
+/* Центрированный заголовок новостей */
 .news-center {
     text-align: center;
     background-color: #ffffff;
@@ -451,7 +436,7 @@
     margin-top: 60px;
 }
 
-/* Стили для блока новости */
+/* Блок новости */
 .news-block {
     width: calc(30% - 40px);
     padding: 20px;
@@ -461,40 +446,40 @@
     margin-bottom: 10px;
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 768px */
+/* Медиа-запросы для блока новости на устройствах с шириной экрана меньше 768px */
 @media screen and (max-width: 768px) {
     .news-block {
         width: calc(75% - 0px);
     }
 }
 
-/* Медиа-запрос для устройств с шириной экрана меньше 480px */
+/* Медиа-запросы для блока новости на устройствах с шириной экрана меньше 480px */
 @media screen and (max-width: 480px) {
     .news-block {
         width: calc(100% - 40px);
     }
 }
 
-/* Стили для ссылок в блоке новости */
+/* Ссылки в блоке новости */
 .news-block a {
     color: #c21220;
     text-decoration: none;
 }
 
-/* Стили для заголовка новости */
+/* Заголовок новости */
 .news-title {
     font-size: 18px;
     font-weight: bold;
     color: #003559;
 }
 
-/* Стили для содержания новости */
+/* Содержание новости */
 .news-content {
     color: #000000;
     text-align: justify;
 }
 
-/* Стили для ссылок "Читать больше" */
+/* Ссылки "Читать больше" */
 .news-details a {
     display: inline-block;
     font-size: 20px;
@@ -511,35 +496,32 @@
     transition: color 0.3s ease-in-out;
 }
 
-/* Стили для изображения новостей (картинки) */
+/* Изображения новостей */
 .news-image {
     width: 100%;
 }
 
-/*стили для кнопок*/
+/* Скрытие кнопок управления */
 .controls {
     display: none;
 }
 
-/*Стили для адаптивного дизайна блока новостей*/
+/* Адаптивный дизайн блока новостей */
 @media screen and (min-width: 480px) and (max-width: 768px) {
-
     .news-container {
         display: flex;
         margin: 0 10px;
         justify-content: center;
         align-items: center;
     }
-    .news-wrapper{
+    .news-wrapper {
         display: flex;
     }
-
     .controls {
         display: flex;
         align-items: center;
         position: relative;
     }
-
     .controls button {
         color: #000;
     }

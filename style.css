@@ -277,7 +277,8 @@ nav a {
 
     /* При наведении на ссылку в подменю */
     .submenu li a:hover {
-        color: #ffffff;
+        color: #003559;
+        background-color: transparent;
     }
 
     /* Дополнительные стили для ссылок */

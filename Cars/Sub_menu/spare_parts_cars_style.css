@@ -74,16 +74,20 @@
 }
 
 /*Стили для мобильной версии блока pois_catalog2_h3*/
-@media screen and (max-width:768px) {
+@media screen and (max-width:708px) {
     .pois_catalog2 {
         font-size: 24px;
+    }
+    .pois_catalog3 {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
     }
 }
 
 /*Стили для контейнера фильтров */
 .pois_catalog3 {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -102,7 +106,12 @@
     flex-wrap: wrap;
     justify-content: flex-end;
 }
-
+/*Стили для мобильной версии блока filter-container2*/
+@media screen and (max-width:565px) {
+    .filter-container2 {
+        margin-right: 20px;
+    }
+}
 /* Стили для группы фильтров */
 .filter-group {
     display: flex;
@@ -140,7 +149,14 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
+@media screen and (min-width:565px) and (max-width:708px) {
+    .pois_catalog3 {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+}
 @media screen and (max-width:768px) {
 
     .filter-item select,
@@ -412,6 +428,7 @@ select::-ms-expand {
 .car-block {
     background-color: #f0f0f0;
     border-radius: 15px;
+    margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: calc(25% - 20px);
 }

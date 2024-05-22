@@ -73,18 +73,25 @@
     color: #000000;
 }
 
-/*Стили для мобильной версии блока pois_catalog2_h3*/
-@media screen and (max-width:768px) {
-    .pois_catalog2 {
-        font-size: 24px;
-    }
-}
+
 
 /*Стили для контейнера фильтров */
 .pois_catalog3 {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
+}
+
+/*Стили для мобильной версии блока pois_catalog2_h3*/
+@media screen and (max-width:708px) {
+    .pois_catalog2 {
+        font-size: 24px;
+    }
+
+    .pois_catalog3 {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
 }
 
 /* Стили для контейнера фильтров */
@@ -101,6 +108,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+
+}
+
+/*Стили для мобильной версии блока filter-container2*/
+@media screen and (max-width:565px) {
+    .filter-container2 {
+        margin-right: 20px;
+    }
 }
 
 /* Стили для группы фильтров */
@@ -139,6 +154,15 @@
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+@media screen and (min-width:565px) and (max-width:708px) {
+    .pois_catalog3 {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -484,9 +508,11 @@ select::-ms-expand {
     margin-right: 15px;
     font-size: 35px;
 }
-.heart-icon:active{
+
+.heart-icon:active {
     color: #f00;
 }
+
 /* Стили для контейнера автомобилей (второй блок) */
 .car-container2 {
     display: flex;
